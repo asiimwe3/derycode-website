@@ -6,6 +6,14 @@
   <meta name="description" content="DeryCode - Building the Future with Technology, Blockchain, AI & Digital Marketing. Uganda's leading full-service technology company." />
   <meta name="keywords" content="DeryCode, Software Development, Blockchain, AI, Web3, Uganda, Digital Marketing, Cybersecurity" />
   <title>DeryCode | Building the Future with Technology & Blockchain</title>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="DeryCode" />
+  <meta name="theme-color" content="#6C63FF" />
+  <link rel="apple-touch-icon" href="https://media.base44.com/images/public/69f8f20192eecc9587b7eca6/1eb2e552d_generated_image.png" />
+  <link rel="icon" type="image/png" href="https://media.base44.com/images/public/69f8f20192eecc9587b7eca6/1eb2e552d_generated_image.png" />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -608,5 +616,61 @@
 </button>
 
 <script src="script.js"></script>
+
+<!-- PWA Install Banner -->
+<div id="pwaInstallBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,#6C63FF,#43E97B);color:#fff;padding:16px 24px;z-index:9999;display:none;align-items:center;justify-content:space-between;gap:16px;font-family:Inter,sans-serif;">
+  <div style="display:flex;align-items:center;gap:14px;">
+    <img src="https://media.base44.com/images/public/69f8f20192eecc9587b7eca6/1eb2e552d_generated_image.png" style="width:46px;height:46px;border-radius:12px;" />
+    <div>
+      <div style="font-weight:800;font-size:0.95rem;">Install DeryCode App</div>
+      <div style="font-size:0.78rem;opacity:0.85;">Add to your home screen — works offline!</div>
+    </div>
+  </div>
+  <div style="display:flex;gap:10px;">
+    <button id="pwaInstallBtn" style="background:#fff;color:#6C63FF;border:none;padding:10px 22px;border-radius:50px;font-weight:800;cursor:pointer;font-size:0.88rem;">Install</button>
+    <button id="pwaDismissBtn" style="background:rgba(255,255,255,0.2);color:#fff;border:none;padding:10px 16px;border-radius:50px;font-weight:700;cursor:pointer;font-size:0.88rem;">✕</button>
+  </div>
+</div>
+
+<script>
+// Register Service Worker
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js')
+      .then(reg => console.log('SW registered:', reg.scope))
+      .catch(err => console.log('SW error:', err));
+  });
+}
+
+// PWA Install Banner
+let deferredPrompt;
+const banner = document.getElementById('pwaInstallBanner');
+const installBtn = document.getElementById('pwaInstallBtn');
+const dismissBtn = document.getElementById('pwaDismissBtn');
+
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredPrompt = e;
+  setTimeout(() => { banner.style.display = 'flex'; }, 3000);
+});
+
+installBtn && installBtn.addEventListener('click', async () => {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    deferredPrompt = null;
+    banner.style.display = 'none';
+  }
+});
+
+dismissBtn && dismissBtn.addEventListener('click', () => {
+  banner.style.display = 'none';
+});
+
+window.addEventListener('appinstalled', () => {
+  banner.style.display = 'none';
+  console.log('DeryCode PWA installed!');
+});
+</script>
 </body>
 </html>
