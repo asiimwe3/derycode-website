@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://asiimwe3.github.io/derycode-website/sitemap.xml
