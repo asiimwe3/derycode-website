@@ -509,3 +509,56 @@ body {
   .booking-form-wrap { padding: 20px 16px; }
   .about-team-photo img { height: 250px; }
 }
+
+/* ===== SERVICE CATEGORIES ===== */
+.service-category { margin-bottom: 64px; }
+.service-category:last-of-type { margin-bottom: 0; }
+
+.service-category-header {
+  display: flex; align-items: center; gap: 18px;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--card-border);
+}
+.service-category-icon {
+  width: 52px; height: 52px; border-radius: 16px; flex-shrink: 0;
+  background: var(--gradient2); display: flex; align-items: center;
+  justify-content: center; color: #fff; font-size: 1.3rem;
+}
+.service-category-header h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.3rem; font-weight: 800; margin-bottom: 4px;
+}
+.service-category-header p {
+  font-size: 0.88rem; color: var(--text-muted);
+}
+
+/* Service feature list inside cards */
+.service-features {
+  list-style: none; margin: 0 0 20px; padding: 0;
+  display: flex; flex-direction: column; gap: 7px;
+}
+.service-features li {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.83rem; color: var(--text-muted);
+}
+.service-features li i {
+  color: var(--accent2); font-size: 0.7rem; flex-shrink: 0;
+}
+
+/* Services CTA banner */
+.services-cta {
+  text-align: center; margin-top: 60px;
+  padding: 48px 32px;
+  background: var(--card-bg); border: 1px solid var(--card-border);
+  border-radius: var(--radius); box-shadow: var(--shadow);
+}
+.services-cta p {
+  font-size: 1.1rem; color: var(--text-muted); margin-bottom: 24px; font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .service-category-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .services-cta { padding: 32px 20px; }
+  .services-cta p { font-size: 0.95rem; }
+}
