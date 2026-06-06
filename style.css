@@ -530,3 +530,35 @@ body {
   .stat-divider { display: none; }
   .hero-stats { flex-direction: column; gap: 16px; }
 }
+
+/* ===== TEAM PHOTO ===== */
+.about-team-photo {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 2px solid var(--card-border);
+  box-shadow: 0 20px 60px rgba(10,132,255,0.2);
+  transition: transform var(--transition);
+}
+.about-team-photo:hover { transform: scale(1.02); }
+.about-team-photo img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+.team-photo-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(10,132,255,0.9);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(8px);
+}
