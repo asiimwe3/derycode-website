@@ -2,8 +2,8 @@
   "name": "DeryCode - Technology & Blockchain",
   "short_name": "DeryCode",
   "description": "Uganda's leading full-service technology company. Blockchain, AI, Web3 & Digital Marketing.",
-  "start_url": "/derycode-website/",
-  "scope": "/derycode-website/",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#07070f",
@@ -59,19 +59,23 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": ["business", "productivity", "technology"],
+  "categories": [
+    "business",
+    "productivity",
+    "technology"
+  ],
   "screenshots": [],
   "shortcuts": [
     {
       "name": "Our Services",
       "short_name": "Services",
-      "url": "/derycode-website/#services",
+      "url": "/#services",
       "description": "View DeryCode services"
     },
     {
       "name": "Contact Us",
       "short_name": "Contact",
-      "url": "/derycode-website/#contact",
+      "url": "/#contact",
       "description": "Get in touch with DeryCode"
     }
   ]
