@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | DeryCode — Tech Insights from Uganda</title>
+  <meta name="description" content="Read the latest tech insights, tutorials, blockchain news, and updates from the DeryCode team in Uganda." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://derycode.netlify.app/blog.html" />
+  <link rel="icon" type="image/png" href="https://media.base44.com/images/public/69f8f20192eecc9587b7eca6/1eb2e552d_generated_image.png" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#6C63FF" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="blog.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">D</div>
+      <span class="logo-text">Dery<span class="accent">Code</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#portfolio">Portfolio</a></li>
+      <li><a href="blog.html" class="nav-active">Blog</a></li>
+      <li><a href="docs.html">Docs</a></li>
+      <li><a href="index.html#booking">Book a Call</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-moon" id="themeIcon"></i>
+      </button>
+      <a href="index.html#booking" class="btn btn-primary nav-cta">
+        <i class="fas fa-calendar-check"></i> Book a Call
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+
+<!-- BLOG HERO -->
+<section class="blog-hero">
+  <div class="blog-hero-content">
+    <span class="section-label">Insights & Updates</span>
+    <h1>DeryCode <span class="gradient-text">Blog</span></h1>
+    <p>Tech insights, tutorials, blockchain news, and updates from our team in Kampala, Uganda.</p>
+    <!-- Search -->
+    <div class="blog-search">
+      <i class="fas fa-search"></i>
+      <input type="text" id="blogSearch" placeholder="Search articles..." />
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORY FILTER -->
+<div class="blog-filters-wrap">
+  <div class="container">
+    <div class="blog-filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="blockchain">Blockchain</button>
+      <button class="filter-btn" data-filter="web">Web Dev</button>
+      <button class="filter-btn" data-filter="banking">Banking Tech</button>
+      <button class="filter-btn" data-filter="ai">AI</button>
+      <button class="filter-btn" data-filter="mobile">Mobile</button>
+      <button class="filter-btn" data-filter="web3">Web3</button>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURED POST -->
+<section class="blog-page-section">
+  <div class="container">
+    <div class="featured-post" data-category="blockchain">
+      <div class="featured-post-img blog-img-1">
+        <span class="blog-tag">⭐ Featured · Blockchain</span>
+      </div>
+      <div class="featured-post-body">
+        <div class="blog-meta">
+          <span><i class="fas fa-calendar"></i> June 1, 2026</span>
+          <span><i class="fas fa-clock"></i> 5 min read</span>
+          <span><i class="fas fa-user"></i> DeryCode Team</span>
+        </div>
+        <h2>What is DeryCoin? Uganda's First Community Blockchain Token</h2>
+        <p>DeryCoin is a blockchain-based token built by DeryCode to power digital commerce, rewards, and financial inclusion across Uganda and East Africa. In this article we break down what DeryCoin is, how it works, and why it matters for Africa's digital economy.</p>
+        <a href="blog-post.html?id=derycoin" class="btn btn-primary">
+          <i class="fas fa-book-open"></i> Read Full Article
+        </a>
+      </div>
+    </div>
+
+    <!-- ALL POSTS GRID -->
+    <div class="blog-posts-grid" id="blogPostsGrid">
+
+      <article class="blog-card" data-category="web" data-title="why every ugandan business needs a professional website in 2026">
+        <div class="blog-img blog-img-2"><span class="blog-tag">Web Development</span></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span><i class="fas fa-calendar"></i> May 20, 2026</span><span><i class="fas fa-clock"></i> 4 min</span></div>
+          <h3>Why Every Ugandan Business Needs a Professional Website in 2026</h3>
+          <p>From customer trust to Google rankings — a website is your most powerful business tool. Here's why you can't afford to skip it.</p>
+          <div class="blog-footer">
+            <span class="blog-author"><i class="fas fa-user-circle"></i> DeryCode Team</span>
+            <a href="#" class="blog-link">Read <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="banking" data-title="how digital banking software is transforming saccos in uganda">
+        <div class="blog-img blog-img-3"><span class="blog-tag">Banking Tech</span></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span><i class="fas fa-calendar"></i> May 10, 2026</span><span><i class="fas fa-clock"></i> 6 min</span></div>
+          <h3>How Digital Banking Software is Transforming SACCOs in Uganda</h3>
+          <p>Modern SACCO software is replacing manual record-keeping with real-time ledgers, MoMo integration, and mobile access for members.</p>
+          <div class="blog-footer">
+            <span class="blog-author"><i class="fas fa-user-circle"></i> DeryCode Team</span>
+            <a href="#" class="blog-link">Read <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="ai" data-title="how ai chatbots are helping african businesses serve customers 24/7">
+        <div class="blog-img blog-img-4"><span class="blog-tag">AI</span></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span><i class="fas fa-calendar"></i> Apr 28, 2026</span><span><i class="fas fa-clock"></i> 4 min</span></div>
+          <h3>How AI Chatbots Are Helping African Businesses Serve Customers 24/7</h3>
+          <p>AI-powered WhatsApp agents are handling sales, support, and bookings around the clock — without adding to your payroll.</p>
+          <div class="blog-footer">
+            <span class="blog-author"><i class="fas fa-user-circle"></i> DeryCode Team</span>
+            <a href="#" class="blog-link">Read <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="mobile" data-title="react native vs flutter which is best for your african startup">
+        <div class="blog-img blog-img-5"><span class="blog-tag">Mobile Apps</span></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span><i class="fas fa-calendar"></i> Apr 15, 2026</span><span><i class="fas fa-clock"></i> 5 min</span></div>
+          <h3>React Native vs Flutter: Which is Best for Your African Startup?</h3>
+          <p>Both are powerful cross-platform frameworks. We break down the pros, cons, and costs to help you choose the right one for your project.</p>
+          <div class="blog-footer">
+            <span class="blog-author"><i class="fas fa-user-circle"></i> DeryCode Team</span>
+            <a href="#" class="blog-link">Read <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="web3" data-title="creating your own token in 2026 a step by step guide">
+        <div class="blog-img blog-img-6"><span class="blog-tag">Web3</span></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span><i class="fas fa-calendar"></i> Apr 5, 2026</span><span><i class="fas fa-clock"></i> 7 min</span></div>
+          <h3>Creating Your Own Token in 2026: A Step-by-Step Guide</h3>
+          <p>From writing your smart contract to launching on a DEX — everything you need to create and launch your own crypto token.</p>
+          <div class="blog-footer">
+            <span class="blog-author"><i class="fas fa-user-circle"></i> DeryCode Team</span>
+            <a href="#" class="blog-link">Read <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="web" data-title="building a pwa progressive web app in uganda">
+        <div class="blog-img blog-img-1"><span class="blog-tag">Web Development</span></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span><i class="fas fa-calendar"></i> Mar 22, 2026</span><span><i class="fas fa-clock"></i> 5 min</span></div>
+          <h3>Building a PWA: Why Progressive Web Apps Are Perfect for Uganda</h3>
+          <p>Low data costs, offline-first experience, and no app store needed — PWAs are the smartest choice for businesses targeting Ugandan users.</p>
+          <div class="blog-footer">
+            <span class="blog-author"><i class="fas fa-user-circle"></i> DeryCode Team</span>
+            <a href="#" class="blog-link">Read <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="blockchain" data-title="defi decentralised finance explained for east africa">
+        <div class="blog-img blog-img-3"><span class="blog-tag">Blockchain</span></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span><i class="fas fa-calendar"></i> Mar 10, 2026</span><span><i class="fas fa-clock"></i> 6 min</span></div>
+          <h3>DeFi Explained: What Decentralised Finance Means for East Africa</h3>
+          <p>DeFi is reshaping how people borrow, save, and invest — without banks. Here's what it means for Uganda and the wider region.</p>
+          <div class="blog-footer">
+            <span class="blog-author"><i class="fas fa-user-circle"></i> DeryCode Team</span>
+            <a href="#" class="blog-link">Read <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="ai" data-title="how to integrate momo mobile money into your app uganda">
+        <div class="blog-img blog-img-4"><span class="blog-tag">Fintech</span></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span><i class="fas fa-calendar"></i> Feb 28, 2026</span><span><i class="fas fa-clock"></i> 5 min</span></div>
+          <h3>How to Integrate MoMo Mobile Money into Your App in Uganda</h3>
+          <p>MTN MoMo and Airtel Money APIs demystified — a practical guide to adding mobile payments to your web or mobile app.</p>
+          <div class="blog-footer">
+            <span class="blog-author"><i class="fas fa-user-circle"></i> DeryCode Team</span>
+            <a href="#" class="blog-link">Read <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="web3" data-title="nft marketplace development guide 2026">
+        <div class="blog-img blog-img-5"><span class="blog-tag">NFT / Web3</span></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span><i class="fas fa-calendar"></i> Feb 14, 2026</span><span><i class="fas fa-clock"></i> 8 min</span></div>
+          <h3>NFT Marketplace Development: A Complete Guide for 2026</h3>
+          <p>How to build a fully functional NFT marketplace — smart contracts, minting, wallets, royalties, and front-end integration.</p>
+          <div class="blog-footer">
+            <span class="blog-author"><i class="fas fa-user-circle"></i> DeryCode Team</span>
+            <a href="#" class="blog-link">Read <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- No results message -->
+    <div class="blog-no-results" id="noResults" style="display:none;">
+      <i class="fas fa-search"></i>
+      <h3>No articles found</h3>
+      <p>Try a different keyword or category.</p>
+    </div>
+
+    <!-- Newsletter CTA -->
+    <div class="blog-newsletter">
+      <div class="blog-newsletter-inner">
+        <div>
+          <h3>Get Articles in Your Inbox</h3>
+          <p>Weekly insights on tech, blockchain, and digital business from Uganda.</p>
+        </div>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" placeholder="your@email.com" required />
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i> Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">D</div>
+          <span class="logo-text">Dery<span class="accent">Code</span></span>
+        </a>
+        <p>Uganda's leading full-service technology company. Building the future with Software, Blockchain, AI & Web3.</p>
+        <div class="footer-socials">
+          <a href="https://wa.me/256772002326" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="mailto:info@derycode.com"><i class="fas fa-envelope"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="index.html#services">Software Development</a></li>
+          <li><a href="index.html#services">Blockchain & Web3</a></li>
+          <li><a href="index.html#services">AI & Machine Learning</a></li>
+          <li><a href="index.html#services">Mobile Apps</a></li>
+          <li><a href="index.html#services">Fintech Systems</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#portfolio">Our Work</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="docs.html">Documentation</a></li>
+          <li><a href="index.html#booking">Book a Call</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get Started</h4>
+        <p>Ready to build something great?</p>
+        <a href="index.html#booking" class="btn btn-primary btn-sm" style="margin-top:12px;">
+          <i class="fas fa-calendar-check"></i> Book Free Call
+        </a>
+        <p style="margin-top:16px;font-size:0.85rem;color:var(--text-muted);">
+          <i class="fas fa-map-marker-alt"></i> Kampala, Uganda
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="footerYear"></span> DeryCode. All rights reserved.</p>
+      <p>Made with <i class="fas fa-heart" style="color:var(--accent)"></i> in Uganda 🇺🇬</p>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+<script>
+// Theme
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = document.getElementById('themeIcon');
+const html = document.documentElement;
+const savedTheme = localStorage.getItem('derycode-theme') || 'dark';
+html.setAttribute('data-theme', savedTheme);
+themeIcon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+themeToggle.addEventListener('click', () => {
+  const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('derycode-theme', next);
+  themeIcon.className = next === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+});
+
+// Hamburger
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+const overlay = document.getElementById('mobileNavOverlay');
+function closeNav() { navLinks.classList.remove('open'); hamburger.classList.remove('active'); overlay.classList.remove('active'); document.body.style.overflow=''; }
+hamburger.addEventListener('click', () => { const open = navLinks.classList.contains('open'); open ? closeNav() : (navLinks.classList.add('open'), hamburger.classList.add('active'), overlay.classList.add('active'), document.body.style.overflow='hidden'); });
+overlay.addEventListener('click', closeNav);
+document.querySelectorAll('.nav-links a').forEach(l => l.addEventListener('click', closeNav));
+
+// Navbar scroll
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 20));
+
+// Back to top
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => backToTop.classList.toggle('visible', window.scrollY > 400));
+backToTop.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+
+// Footer year
+document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+// Category filter
+const filterBtns = document.querySelectorAll('.filter-btn');
+const cards = document.querySelectorAll('#blogPostsGrid .blog-card');
+const noResults = document.getElementById('noResults');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    let visible = 0;
+    cards.forEach(card => {
+      const match = filter === 'all' || card.dataset.category === filter;
+      card.style.display = match ? '' : 'none';
+      if (match) visible++;
+    });
+    noResults.style.display = visible === 0 ? 'block' : 'none';
+  });
+});
+
+// Search
+const searchInput = document.getElementById('blogSearch');
+searchInput.addEventListener('input', () => {
+  const q = searchInput.value.toLowerCase();
+  let visible = 0;
+  filterBtns.forEach(b => b.classList.remove('active'));
+  document.querySelector('[data-filter="all"]').classList.add('active');
+  cards.forEach(card => {
+    const title = card.dataset.title || '';
+    const match = title.includes(q) || q === '';
+    card.style.display = match ? '' : 'none';
+    if (match) visible++;
+  });
+  noResults.style.display = visible === 0 ? 'block' : 'none';
+});
+
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; obs.unobserve(e.target); } });
+}, {threshold:0.1});
+document.querySelectorAll('.blog-card').forEach(el => {
+  el.style.opacity='0'; el.style.transform='translateY(24px)'; el.style.transition='opacity 0.5s ease, transform 0.5s ease';
+  obs.observe(el);
+});
+
+// Newsletter
+document.getElementById('newsletterForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const btn = e.target.querySelector('button');
+  btn.innerHTML = '<i class="fas fa-check"></i> Subscribed!';
+  btn.style.background = 'linear-gradient(135deg,#43E97B,#38f9d7)';
+  setTimeout(() => { btn.innerHTML = '<i class="fas fa-paper-plane"></i> Subscribe'; btn.style.background = ''; e.target.reset(); }, 3000);
+});
+</script>
+</body>
+</html>
