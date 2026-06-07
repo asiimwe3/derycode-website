@@ -1,10 +1,10 @@
 const CACHE_NAME = 'derycode-v1';
 const ASSETS = [
-  '/derycode-website/',
-  '/derycode-website/index.html',
-  '/derycode-website/style.css',
-  '/derycode-website/script.js',
-  '/derycode-website/manifest.json',
+  '/',
+  '/index.html',
+  '/style.css',
+  '/script.js',
+  '/manifest.json',
   'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
 ];
