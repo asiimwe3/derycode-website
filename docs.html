@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentation | DeryCode Developer Resources</title>
+  <meta name="description" content="DeryCode documentation — guides, API references, DeryCoin docs, and tutorials for developers and clients." />
+  <link rel="icon" type="image/png" href="https://media.base44.com/images/public/69f8f20192eecc9587b7eca6/1eb2e552d_generated_image.png" />
+  <meta name="theme-color" content="#6C63FF" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="docs.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">D</div>
+      <span class="logo-text">Dery<span class="accent">Code</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="docs.html" class="nav-active">Docs</a></li>
+      <li><a href="index.html#booking">Book a Call</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-moon" id="themeIcon"></i>
+      </button>
+      <a href="index.html#booking" class="btn btn-primary nav-cta">
+        <i class="fas fa-calendar-check"></i> Book a Call
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+
+<!-- DOCS LAYOUT -->
+<div class="docs-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="docs-sidebar" id="docsSidebar">
+    <div class="docs-sidebar-header">
+      <div class="docs-search">
+        <i class="fas fa-search"></i>
+        <input type="text" id="docsSearch" placeholder="Search docs..." />
+      </div>
+    </div>
+    <nav class="docs-nav">
+
+      <div class="docs-nav-group">
+        <div class="docs-nav-label"><i class="fas fa-rocket"></i> Getting Started</div>
+        <ul>
+          <li><a href="#intro" class="docs-nav-link active">Introduction</a></li>
+          <li><a href="#request-project" class="docs-nav-link">How to Request a Project</a></li>
+          <li><a href="#dev-process" class="docs-nav-link">Our Development Process</a></li>
+          <li><a href="#payments" class="docs-nav-link">Payment & Milestones</a></li>
+        </ul>
+      </div>
+
+      <div class="docs-nav-group">
+        <div class="docs-nav-label"><i class="fas fa-coins"></i> DeryCoin</div>
+        <ul>
+          <li><a href="#derycoin-overview" class="docs-nav-link">Overview</a></li>
+          <li><a href="#derycoin-whitepaper" class="docs-nav-link">Whitepaper & Tokenomics</a></li>
+          <li><a href="#derycoin-buy" class="docs-nav-link">How to Buy DeryCoin</a></li>
+          <li><a href="#derycoin-api" class="docs-nav-link">Integration API</a></li>
+        </ul>
+      </div>
+
+      <div class="docs-nav-group">
+        <div class="docs-nav-label"><i class="fas fa-server"></i> API Reference</div>
+        <ul>
+          <li><a href="#api-overview" class="docs-nav-link">REST API Overview</a></li>
+          <li><a href="#api-auth" class="docs-nav-link">Authentication</a></li>
+          <li><a href="#api-endpoints" class="docs-nav-link">Endpoints</a></li>
+          <li><a href="#api-webhooks" class="docs-nav-link">Webhooks & Events</a></li>
+        </ul>
+      </div>
+
+      <div class="docs-nav-group">
+        <div class="docs-nav-label"><i class="fas fa-graduation-cap"></i> Tutorials</div>
+        <ul>
+          <li><a href="#tut-smartcontract" class="docs-nav-link">Deploy a Smart Contract</a></li>
+          <li><a href="#tut-reactnative" class="docs-nav-link">Build a React Native App</a></li>
+          <li><a href="#tut-chatbot" class="docs-nav-link">Add AI to Your Website</a></li>
+          <li><a href="#tut-momo" class="docs-nav-link">Integrate MoMo Payments</a></li>
+        </ul>
+      </div>
+
+      <div class="docs-nav-group">
+        <div class="docs-nav-label"><i class="fas fa-life-ring"></i> Support</div>
+        <ul>
+          <li><a href="#faq" class="docs-nav-link">FAQs</a></li>
+          <li><a href="#contact-support" class="docs-nav-link">Contact Support</a></li>
+        </ul>
+      </div>
+
+    </nav>
+  </aside>
+
+  <!-- MOBILE SIDEBAR TOGGLE -->
+  <button class="docs-sidebar-toggle" id="docsSidebarToggle">
+    <i class="fas fa-bars"></i> Menu
+  </button>
+
+  <!-- MAIN CONTENT -->
+  <main class="docs-main">
+
+    <!-- INTRO -->
+    <article class="docs-article" id="intro">
+      <div class="docs-breadcrumb"><a href="index.html">DeryCode</a> <i class="fas fa-chevron-right"></i> <span>Introduction</span></div>
+      <h1>DeryCode Documentation</h1>
+      <p class="docs-lead">Welcome to the DeryCode developer and client documentation. Here you'll find everything you need — from how to start a project with us, to integrating the DeryCoin API and deploying smart contracts.</p>
+      <div class="docs-callout docs-callout-info">
+        <i class="fas fa-info-circle"></i>
+        <div><strong>Need help fast?</strong> Reach our team directly on <a href="https://wa.me/256772002326" target="_blank">WhatsApp +256 772 002 326</a> — we typically respond within 30 minutes.</div>
+      </div>
+      <h2>What's in these docs?</h2>
+      <div class="docs-cards-mini">
+        <a href="#request-project" class="docs-card-mini"><i class="fas fa-rocket"></i><span>Getting Started</span></a>
+        <a href="#derycoin-overview" class="docs-card-mini"><i class="fas fa-coins"></i><span>DeryCoin</span></a>
+        <a href="#api-overview" class="docs-card-mini"><i class="fas fa-server"></i><span>API Reference</span></a>
+        <a href="#tut-smartcontract" class="docs-card-mini"><i class="fas fa-graduation-cap"></i><span>Tutorials</span></a>
+      </div>
+    </article>
+
+    <hr class="docs-divider" />
+
+    <!-- HOW TO REQUEST A PROJECT -->
+    <article class="docs-article" id="request-project">
+      <h1>How to Request a Project</h1>
+      <p class="docs-lead">Starting a project with DeryCode is simple. Follow these steps to get from idea to kick-off.</p>
+      <div class="docs-steps">
+        <div class="docs-step"><div class="docs-step-num">1</div><div><h4>Book a Free Consultation</h4><p>Use our <a href="index.html#booking">booking form</a> or WhatsApp us directly. Tell us your idea, goals, and budget range.</p></div></div>
+        <div class="docs-step"><div class="docs-step-num">2</div><div><h4>Discovery Call</h4><p>We schedule a 30–60 minute call to understand your requirements, tech stack preferences, timeline, and audience.</p></div></div>
+        <div class="docs-step"><div class="docs-step-num">3</div><div><h4>Receive a Proposal</h4><p>Within 48 hours we send a detailed proposal — scope, deliverables, timeline, and itemised cost in UGX.</p></div></div>
+        <div class="docs-step"><div class="docs-step-num">4</div><div><h4>Sign & Pay Deposit</h4><p>Accept the proposal, sign the agreement, and pay the first milestone (usually 40% upfront) to begin.</p></div></div>
+        <div class="docs-step"><div class="docs-step-num">5</div><div><h4>Build & Review</h4><p>We build in sprints, share progress regularly, and collect your feedback until the product is perfect.</p></div></div>
+        <div class="docs-step"><div class="docs-step-num">6</div><div><h4>Launch & Support</h4><p>We deploy your product, hand over all assets and credentials, and provide 30 days free post-launch support.</p></div></div>
+      </div>
+      <a href="index.html#booking" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Your Free Call</a>
+    </article>
+
+    <hr class="docs-divider" />
+
+    <!-- DEV PROCESS -->
+    <article class="docs-article" id="dev-process">
+      <h1>Our Development Process</h1>
+      <p class="docs-lead">We follow an agile, milestone-based process to keep you informed and in control at every stage.</p>
+      <table class="docs-table">
+        <thead><tr><th>Phase</th><th>Duration</th><th>What Happens</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Discovery</strong></td><td>3–5 days</td><td>Requirements gathering, wireframes, tech stack decision</td></tr>
+          <tr><td><strong>Design</strong></td><td>5–10 days</td><td>UI/UX mockups, branding, client approval</td></tr>
+          <tr><td><strong>Development</strong></td><td>2–12 weeks</td><td>Frontend, backend, database, integrations — built in sprints</td></tr>
+          <tr><td><strong>Testing (QA)</strong></td><td>3–7 days</td><td>Functional, performance, mobile, security testing</td></tr>
+          <tr><td><strong>Deployment</strong></td><td>1–2 days</td><td>Cloud deployment, domain setup, SSL, monitoring</td></tr>
+          <tr><td><strong>Support</strong></td><td>30 days free</td><td>Bug fixes, minor tweaks, knowledge transfer</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <hr class="docs-divider" />
+
+    <!-- PAYMENTS -->
+    <article class="docs-article" id="payments">
+      <h1>Payment & Milestones</h1>
+      <p class="docs-lead">All prices are quoted in Uganda Shillings (UGX). We offer flexible milestone-based payment plans.</p>
+      <div class="docs-callout docs-callout-success">
+        <i class="fas fa-check-circle"></i>
+        <div><strong>Installment Plans Available.</strong> We understand cash flow. Ask us about splitting payments across 2–4 milestones.</div>
+      </div>
+      <h2>Standard Payment Schedule</h2>
+      <table class="docs-table">
+        <thead><tr><th>Milestone</th><th>% of Total</th><th>When</th></tr></thead>
+        <tbody>
+          <tr><td>Project Kickoff</td><td><strong>40%</strong></td><td>After proposal acceptance</td></tr>
+          <tr><td>Design Approval</td><td><strong>20%</strong></td><td>After UI mockups are approved</td></tr>
+          <tr><td>Development Complete</td><td><strong>25%</strong></td><td>After staging delivery</td></tr>
+          <tr><td>Final Launch</td><td><strong>15%</strong></td><td>After go-live</td></tr>
+        </tbody>
+      </table>
+      <h2>Accepted Payment Methods</h2>
+      <div class="docs-tags"><span><i class="fas fa-mobile-alt"></i> MTN MoMo</span><span><i class="fas fa-mobile-alt"></i> Airtel Money</span><span><i class="fas fa-university"></i> Bank Transfer</span><span><i class="fab fa-bitcoin"></i> Crypto (BTC / ETH / USDT)</span><span><i class="fas fa-coins"></i> DeryCoin</span></div>
+    </article>
+
+    <hr class="docs-divider" />
+
+    <!-- DERYCOIN OVERVIEW -->
+    <article class="docs-article" id="derycoin-overview">
+      <h1>DeryCoin Overview</h1>
+      <p class="docs-lead">DeryCoin (DRC) is a blockchain-based utility token created by DeryCode to power digital commerce, rewards, and financial inclusion across Uganda and East Africa.</p>
+      <div class="docs-stat-row">
+        <div class="docs-stat-card"><span class="docs-stat-label">Token Name</span><span class="docs-stat-value">DeryCoin</span></div>
+        <div class="docs-stat-card"><span class="docs-stat-label">Symbol</span><span class="docs-stat-value">DRC</span></div>
+        <div class="docs-stat-card"><span class="docs-stat-label">Standard</span><span class="docs-stat-value">ERC-20</span></div>
+        <div class="docs-stat-card"><span class="docs-stat-label">Network</span><span class="docs-stat-value">Ethereum</span></div>
+        <div class="docs-stat-card"><span class="docs-stat-label">Total Supply</span><span class="docs-stat-value">100,000,000</span></div>
+      </div>
+      <h2>Use Cases</h2>
+      <ul class="docs-list-styled">
+        <li><i class="fas fa-check-circle"></i> Pay for DeryCode services at a 10% discount</li>
+        <li><i class="fas fa-check-circle"></i> Rewards and loyalty points for clients</li>
+        <li><i class="fas fa-check-circle"></i> P2P payments within the DeryCode ecosystem</li>
+        <li><i class="fas fa-check-circle"></i> Staking rewards for long-term holders</li>
+        <li><i class="fas fa-check-circle"></i> Digital marketplace transactions</li>
+      </ul>
+    </article>
+
+    <hr class="docs-divider" />
+
+    <!-- DERYCOIN WHITEPAPER -->
+    <article class="docs-article" id="derycoin-whitepaper">
+      <h1>Whitepaper & Tokenomics</h1>
+      <p class="docs-lead">DeryCoin is designed with a sustainable tokenomics model that rewards early adopters and ecosystem participants.</p>
+      <h2>Token Distribution</h2>
+      <div class="tokenomics-grid">
+        <div class="tokenomics-item" style="--pct-color:#6C63FF"><div class="token-pct">40%</div><div class="token-label">Public Sale</div><div class="token-amount">40,000,000 DRC</div></div>
+        <div class="tokenomics-item" style="--pct-color:#43E97B"><div class="token-pct">20%</div><div class="token-label">Team & Founders</div><div class="token-amount">20,000,000 DRC</div></div>
+        <div class="tokenomics-item" style="--pct-color:#FF6584"><div class="token-pct">15%</div><div class="token-label">Ecosystem & Rewards</div><div class="token-amount">15,000,000 DRC</div></div>
+        <div class="tokenomics-item" style="--pct-color:#4facfe"><div class="token-pct">15%</div><div class="token-label">Liquidity Pool</div><div class="token-amount">15,000,000 DRC</div></div>
+        <div class="tokenomics-item" style="--pct-color:#fee140"><div class="token-pct">10%</div><div class="token-label">Reserve Fund</div><div class="token-amount">10,000,000 DRC</div></div>
+      </div>
+    </article>
+
+    <hr class="docs-divider" />
+
+    <!-- HOW TO BUY -->
+    <article class="docs-article" id="derycoin-buy">
+      <h1>How to Buy DeryCoin</h1>
+      <p class="docs-lead">You can acquire DeryCoin directly from DeryCode or through supported exchanges.</p>
+      <div class="docs-steps">
+        <div class="docs-step"><div class="docs-step-num">1</div><div><h4>Set Up a Wallet</h4><p>Install MetaMask or Trust Wallet on your phone or browser. Create a new wallet and securely save your seed phrase.</p></div></div>
+        <div class="docs-step"><div class="docs-step-num">2</div><div><h4>Get ETH or USDT</h4><p>Buy Ethereum (ETH) or USDT from a local exchange or P2P platform. Send it to your wallet address.</p></div></div>
+        <div class="docs-step"><div class="docs-step-num">3</div><div><h4>Contact DeryCode</h4><p>WhatsApp us at <a href="https://wa.me/256772002326" target="_blank">+256 772 002 326</a> to purchase DRC directly at current rates.</p></div></div>
+        <div class="docs-step"><div class="docs-step-num">4</div><div><h4>Receive DeryCoin</h4><p>After payment confirmation, DRC tokens are sent directly to your wallet within 30 minutes.</p></div></div>
+      </div>
+      <div class="docs-callout docs-callout-warning">
+        <i class="fas fa-exclamation-triangle"></i>
+        <div><strong>Safety tip:</strong> Only buy DeryCoin through official DeryCode channels. Never share your seed phrase or private key with anyone.</div>
+      </div>
+    </article>
+
+    <hr class="docs-divider" />
+
+    <!-- API OVERVIEW -->
+    <article class="docs-article" id="api-overview">
+      <h1>REST API Overview</h1>
+      <p class="docs-lead">The DeryCode API lets you integrate our services and DeryCoin functionality into your own applications.</p>
+      <div class="docs-code-block">
+        <div class="docs-code-header"><span>Base URL</span><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i> Copy</button></div>
+        <pre><code>https://api.derycode.com/v1</code></pre>
+      </div>
+      <h2>Response Format</h2>
+      <div class="docs-code-block">
+        <div class="docs-code-header"><span>JSON Response</span><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i> Copy</button></div>
+        <pre><code>{
+  "status": "success",
+  "data": { ... },
+  "message": "OK",
+  "timestamp": "2026-06-07T11:31:00Z"
+}</code></pre>
+      </div>
+    </article>
+
+    <hr class="docs-divider" />
+
+    <!-- AUTHENTICATION -->
+    <article class="docs-article" id="api-auth">
+      <h1>Authentication</h1>
+      <p class="docs-lead">All API requests must be authenticated using an API key passed in the request header.</p>
+      <div class="docs-code-block">
+        <div class="docs-code-header"><span>Request Header</span><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i> Copy</button></div>
+        <pre><code>Authorization: Bearer YOUR_API_KEY
+Content-Type: application/json</code></pre>
+      </div>
+      <div class="docs-callout docs-callout-info">
+        <i class="fas fa-key"></i>
+        <div>To get your API key, <a href="index.html#booking">book a consultation</a> or email <a href="mailto:info@derycode.com">info@derycode.com</a>.</div>
+      </div>
+    </article>
+
+    <hr class="docs-divider" />
+
+    <!-- ENDPOINTS -->
+    <article class="docs-article" id="api-endpoints">
+      <h1>API Endpoints</h1>
+      <p class="docs-lead">Available endpoints for the DeryCoin integration API.</p>
+      <div class="endpoint-card">
+        <span class="method get">GET</span>
+        <code>/v1/token/info</code>
+        <p>Returns current DeryCoin token info — price, supply, holders, market cap.</p>
+      </div>
+      <div class="endpoint-card">
+        <span class="method post">POST</span>
+        <code>/v1/payment/create</code>
+        <p>Creates a DeryCoin payment request. Returns a payment address and amount in DRC.</p>
+      </div>
+      <div class="endpoint-card">
+        <span class="method get">GET</span>
+        <code>/v1/payment/:id</code>
+        <p>Checks the status of a payment by ID. Returns pending, confirmed, or failed.</p>
+      </div>
+      <div class="endpoint-card">
+        <span class="method post">POST</span>
+        <code>/v1/transfer</code>
+        <p>Initiates a DRC transfer from your account wallet to a destination address.</p>
+      </div>
+      <div class="endpoint-card">
+        <span class="method get">GET</span>
+        <code>/v1/balance/:address</code>
+        <p>Returns the DRC balance of any wallet address on the Ethereum network.</p>
+      </div>
+    </article>
+
+    <hr class="docs-divider" />
+
+    <!-- WEBHOOKS -->
+    <article class="docs-article" id="api-webhooks">
+      <h1>Webhooks & Events</h1>
+      <p class="docs-lead">DeryCode can send real-time event notifications to your server when key actions occur.</p>
+      <h2>Available Events</h2>
+      <table class="docs-table">
+        <thead><tr><th>Event</th><th>Trigger</th></tr></thead>
+        <tbody>
+          <tr><td><code>payment.received</code></td><td>A DRC payment is confirmed on-chain</td></tr>
+          <tr><td><code>payment.failed</code></td><td>A payment timed out or was rejected</td></tr>
+          <tr><td><code>transfer.complete</code></td><td>A DRC transfer is finalised</td></tr>
+          <tr><td><code>token.price_update</code></td><td>DRC price changes by more than 5%</td></tr>
+        </tbody>
+      </table>
+      <div class="docs-code-block">
+        <div class="docs-code-header"><span>Webhook Payload Example</span><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i> Copy</button></div>
+        <pre><code>{
+  "event": "payment.received",
+  "payment_id": "pay_abc123",
+  "amount_drc": 500,
+  "from_address": "0xABC...",
+  "timestamp": "2026-06-07T11:31:00Z"
+}</code></pre>
+      </div>
+    </article>
+
+    <hr class="docs-divider" />
+
+    <!-- TUTORIAL: SMART CONTRACT -->
+    <article class="docs-article" id="tut-smartcontract">
+      <h1>Tutorial: Deploy Your First Smart Contract</h1>
+      <p class="docs-lead">A beginner-friendly guide to writing and deploying a Solidity smart contract on Ethereum.</p>
+      <h2>Prerequisites</h2>
+      <ul class="docs-list-styled">
+        <li><i class="fas fa-check-circle"></i> Node.js installed (v18+)</li>
+        <li><i class="fas fa-check-circle"></i> MetaMask wallet with some test ETH</li>
+        <li><i class="fas fa-check-circle"></i> Basic understanding of JavaScript</li>
+      </ul>
+      <h2>Step 1 — Install Hardhat</h2>
+      <div class="docs-code-block">
+        <div class="docs-code-header"><span>Terminal</span><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i> Copy</button></div>
+        <pre><code>npm install --save-dev hardhat
+npx hardhat init</code></pre>
+      </div>
+      <h2>Step 2 — Write Your Contract</h2>
+      <div class="docs-code-block">
+        <div class="docs-code-header"><span>contracts/MyToken.sol</span><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i> Copy</button></div>
+        <pre><code>// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+contract MyToken is ERC20 {
+    constructor() ERC20("MyToken", "MTK") {
+        _mint(msg.sender, 1000000 * 10 ** decimals());
+    }
+}</code></pre>
+      </div>
+      <h2>Step 3 — Deploy</h2>
+      <div class="docs-code-block">
+        <div class="docs-code-header"><span>Terminal</span><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i> Copy</button></div>
+        <pre><code>npx hardhat compile
+npx hardhat run scripts/deploy.js --network sepolia</code></pre>
+      </div>
+      <div class="docs-callout docs-callout-info">
+        <i class="fas fa-lightbulb"></i>
+        <div>Need help with a more complex contract? <a href="index.html#booking">Book a consultation</a> — our blockchain team can build it for you.</div>
+      </div>
+    </article>
+
+    <hr class="docs-divider" />
+
+    <!-- TUTORIAL: MOMO -->
+    <article class="docs-article" id="tut-momo">
+      <h1>Tutorial: Integrate MoMo Mobile Money</h1>
+      <p class="docs-lead">Accept MTN Mobile Money payments in your web or mobile app using the MTN MoMo API.</p>
+      <h2>Step 1 — Get API Credentials</h2>
+      <p>Register at <a href="https://momodeveloper.mtn.com" target="_blank">momodeveloper.mtn.com</a> and create a sandbox account to get your <code>Subscription Key</code> and <code>API User</code>.</p>
+      <h2>Step 2 — Request to Pay</h2>
+      <div class="docs-code-block">
+        <div class="docs-code-header"><span>Node.js — Request to Pay</span><button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i> Copy</button></div>
+        <pre><code>const axios = require('axios');
+
+const response = await axios.post(
+  'https://sandbox.momodeveloper.mtn.com/collection/v1_0/requesttopay',
+  {
+    amount: "5000",
+    currency: "UGX",
+    externalId: "order_123",
+    payer: { partyIdType: "MSISDN", partyId: "256772000000" },
+    payerMessage: "Payment for DeryCode service",
+    payeeNote: "Thank you!"
+  },
+  {
+    headers: {
+      'Authorization': 'Bearer ' + token,
+      'X-Reference-Id': uuid,
+      'X-Target-Environment': 'sandbox',
+      'Ocp-Apim-Subscription-Key': YOUR_KEY
+    }
+  }
+);</code></pre>
+      </div>
+    </article>
+
+    <hr class="docs-divider" />
+
+    <!-- FAQ -->
+    <article class="docs-article" id="faq">
+      <h1>Frequently Asked Questions</h1>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">How long does a typical project take? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer"><p>It depends on the scope. A simple website takes 1–2 weeks. A full web application or mobile app typically takes 4–12 weeks. Banking or blockchain systems can take 3–6 months. We give you a precise timeline in the proposal.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Do you offer post-launch support? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer"><p>Yes — all projects include 30 days of free post-launch support. After that, we offer affordable monthly maintenance packages starting at UGX 500,000/month.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Can I pay in installments? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer"><p>Absolutely. We offer milestone-based payments (40% / 20% / 25% / 15%) and can arrange custom installment plans for larger projects. Just ask during the consultation.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Do you work with clients outside Uganda? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer"><p>Yes! We work with clients globally. Meetings are done via WhatsApp, Zoom, or Google Meet. Payments can be made in USD via crypto, wire transfer, or other agreed methods.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">What technologies do you specialize in? <i class="fas fa-chevron-down"></i></button>
+          <div class="faq-answer"><p>React, Next.js, React Native, Flutter, Node.js, Python, PostgreSQL, MongoDB, Firebase, Solidity, Web3.js, AWS, Docker, and more. See the full list on our <a href="index.html#technologies">Technologies page</a>.</p></div>
+        </div>
+      </div>
+    </article>
+
+    <hr class="docs-divider" />
+
+    <!-- CONTACT SUPPORT -->
+    <article class="docs-article" id="contact-support">
+      <h1>Contact Support</h1>
+      <p class="docs-lead">Our team is available 7 days a week to help with any technical questions.</p>
+      <div class="support-grid">
+        <a href="https://wa.me/256772002326" target="_blank" class="support-card">
+          <div class="support-icon" style="background:linear-gradient(135deg,#25D366,#128C7E)"><i class="fab fa-whatsapp"></i></div>
+          <h4>WhatsApp</h4>
+          <p>+256 772 002 326</p>
+          <span class="support-badge">Fastest response</span>
+        </a>
+        <a href="mailto:info@derycode.com" class="support-card">
+          <div class="support-icon" style="background:var(--gradient)"><i class="fas fa-envelope"></i></div>
+          <h4>Email</h4>
+          <p>info@derycode.com</p>
+          <span class="support-badge">Within 24 hours</span>
+        </a>
+        <a href="index.html#booking" class="support-card">
+          <div class="support-icon" style="background:var(--gradient2)"><i class="fas fa-calendar-check"></i></div>
+          <h4>Book a Call</h4>
+          <p>Schedule a consultation</p>
+          <span class="support-badge">Free</span>
+        </a>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+<script>
+// Theme
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = document.getElementById('themeIcon');
+const html = document.documentElement;
+const savedTheme = localStorage.getItem('derycode-theme') || 'dark';
+html.setAttribute('data-theme', savedTheme);
+themeIcon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+themeToggle.addEventListener('click', () => {
+  const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('derycode-theme', next);
+  themeIcon.className = next === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+});
+
+// Hamburger
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+const overlay = document.getElementById('mobileNavOverlay');
+function closeNav() { navLinks.classList.remove('open'); hamburger.classList.remove('active'); overlay.classList.remove('active'); document.body.style.overflow=''; }
+hamburger.addEventListener('click', () => { navLinks.classList.contains('open') ? closeNav() : (navLinks.classList.add('open'), hamburger.classList.add('active'), overlay.classList.add('active'), document.body.style.overflow='hidden'); });
+overlay.addEventListener('click', closeNav);
+document.querySelectorAll('.nav-links a').forEach(l => l.addEventListener('click', closeNav));
+
+// Navbar scroll
+window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20));
+
+// Back to top
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => backToTop.classList.toggle('visible', window.scrollY > 400));
+backToTop.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+
+// Footer year (if present)
+const fy = document.getElementById('footerYear');
+if (fy) fy.textContent = new Date().getFullYear();
+
+// Docs sidebar toggle (mobile)
+const sidebarToggle = document.getElementById('docsSidebarToggle');
+const sidebar = document.getElementById('docsSidebar');
+sidebarToggle.addEventListener('click', () => sidebar.classList.toggle('open'));
+
+// Active nav link on scroll
+const articles = document.querySelectorAll('.docs-article');
+const navLinksDoc = document.querySelectorAll('.docs-nav-link');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinksDoc.forEach(l => l.classList.remove('active'));
+      const link = document.querySelector(`.docs-nav-link[href="#${e.target.id}"]`);
+      if (link) link.classList.add('active');
+    }
+  });
+}, { threshold: 0.3, rootMargin: '-80px 0px -60% 0px' });
+articles.forEach(a => obs.observe(a));
+
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+// Copy code
+function copyCode(btn) {
+  const code = btn.closest('.docs-code-block').querySelector('code').textContent;
+  navigator.clipboard.writeText(code).then(() => {
+    btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+    setTimeout(() => btn.innerHTML = '<i class="fas fa-copy"></i> Copy', 2000);
+  });
+}
+
+// Docs search
+document.getElementById('docsSearch').addEventListener('input', function() {
+  const q = this.value.toLowerCase();
+  document.querySelectorAll('.docs-nav-link').forEach(link => {
+    const match = link.textContent.toLowerCase().includes(q) || q === '';
+    link.style.display = match ? '' : 'none';
+  });
+});
+</script>
+</body>
+</html>
