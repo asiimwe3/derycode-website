@@ -206,8 +206,33 @@ body {
 
 /* ===== ABOUT ===== */
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-.about-team-photo { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
-.about-team-photo img { width: 100%; height: 420px; object-fit: cover; display: block; }
+.about-team-photo {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: #090914;
+  isolation: isolate;
+}
+.about-team-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(7,7,15,0) 55%, rgba(7,7,15,0.2) 100%);
+  mix-blend-mode: soft-light;
+}
+.about-team-photo img {
+  width: 100%;
+  height: clamp(360px, 42vw, 520px);
+  object-fit: cover;
+  object-position: center 42%;
+  display: block;
+  image-rendering: auto;
+  filter: brightness(1.03) contrast(1.06) saturate(1.08);
+  transform: translateZ(0) scale(1.01);
+  backface-visibility: hidden;
+}
 .team-photo-badge {
   position: absolute; bottom: 20px; left: 20px;
   background: var(--gradient); color: #fff; padding: 8px 20px;
@@ -441,7 +466,7 @@ body {
 /* Tablet */
 @media (max-width: 1024px) {
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
-  .about-team-photo img { height: 320px; }
+  .about-team-photo img { height: clamp(320px, 58vw, 480px); }
   .booking-wrapper { grid-template-columns: 1fr; gap: 40px; }
   .contact-grid { grid-template-columns: 1fr; gap: 40px; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
@@ -507,7 +532,7 @@ body {
   .hero-badge { font-size: 0.72rem; padding: 7px 14px; }
   .btn-lg { padding: 14px 24px; font-size: 0.95rem; }
   .booking-form-wrap { padding: 20px 16px; }
-  .about-team-photo img { height: 250px; }
+  .about-team-photo img { height: clamp(280px, 76vw, 380px); }
 }
 
 /* ===== SERVICE CATEGORIES ===== */
