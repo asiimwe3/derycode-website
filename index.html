@@ -119,7 +119,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=20260608-image-quality" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
@@ -220,7 +220,10 @@
     <div class="about-grid">
       <div class="about-visual">
         <div class="about-team-photo">
-          <img src="https://media.base44.com/images/public/whatsapp/69f8f20192eecc9587b7eca6/your_agent/69f8f20192eecc9587b7eca8/b8d83a008_whatsapp_image_1834807390819019.jpg" alt="DeryCode Team" width="1200" height="900" loading="lazy" decoding="async" />
+          <picture>
+            <source srcset="assets/derycode-team-hq.webp" type="image/webp" />
+            <img src="assets/derycode-team-hq.jpg" alt="DeryCode Team" width="1600" height="1600" loading="lazy" decoding="async" />
+          </picture>
           <div class="team-photo-badge"><i class="fas fa-users"></i> Our Team</div>
         </div>
       </div>
