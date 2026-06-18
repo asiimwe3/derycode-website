@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://derycode.publicvm.com/</loc>
-    <lastmod>2026-06-07</lastmod>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://derycode.publicvm.com/hero.webp</image:loc>
+      <image:title>DeryCode - Uganda Software, Blockchain &amp; AI Company</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://derycode.publicvm.com/blog.html</loc>
-    <lastmod>2026-06-07</lastmod>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://derycode.publicvm.com/docs.html</loc>
-    <lastmod>2026-06-07</lastmod>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
