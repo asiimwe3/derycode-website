@@ -8,6 +8,9 @@
   <meta name="robots" content="index, follow" />
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
   <link rel="canonical" href="https://derycode.publicvm.com/blog.html" />
+  <link rel="alternate" hreflang="en-ug" href="https://derycode.publicvm.com/blog.html" />
+  <link rel="alternate" hreflang="en" href="https://derycode.publicvm.com/blog.html" />
+  <link rel="alternate" hreflang="x-default" href="https://derycode.publicvm.com/blog.html" />
   <link rel="icon" type="image/png" href="https://media.base44.com/images/public/69f8f20192eecc9587b7eca6/1eb2e552d_generated_image.png" />
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#D4A017" />
@@ -26,22 +29,54 @@
   <meta property="og:title" content="Blog | DeryCode — Tech Insights from Uganda" />
   <meta property="og:description" content="Read the latest tech insights, tutorials, blockchain news, and updates from the DeryCode team in Kampala, Uganda." />
   <meta property="og:image" content="https://media.base44.com/images/public/69f8f20192eecc9587b7eca6/1eb2e552d_generated_image.png" />
+  <meta property="og:image:alt" content="DeryCode Blog — Tech Insights from Uganda" />
+  <meta property="og:locale" content="en_UG" /> />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Blog | DeryCode — Tech Insights from Uganda" />
   <meta name="twitter:description" content="Tech insights, blockchain news, AI tutorials and updates from DeryCode in Uganda." />
-  <meta name="twitter:image" content="https://media.base44.com/images/public/69f8f20192eecc9587b7eca6/1eb2e552d_generated_image.png" />
+  <meta name="twitter:image" content="https://media.base44.com/images/public/69f8f20192eecc9587b7eca6/1eb2e552d_generated_image.png"
+  <meta name="twitter:image:alt" content="DeryCode Blog — Tech Insights from Uganda" /> />
+  
+
+  <!-- Blog Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Blog",
     "name": "DeryCode Blog",
+    "description": "Tech insights, tutorials, blockchain news, and updates from the DeryCode team in Uganda.",
     "url": "https://derycode.publicvm.com/blog.html",
-    "description": "Tech insights, tutorials, blockchain news and updates from the DeryCode team in Uganda.",
     "publisher": {
       "@type": "Organization",
       "name": "DeryCode",
-      "logo": "https://media.base44.com/images/public/69f8f20192eecc9587b7eca6/1eb2e552d_generated_image.png"
-    }
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://media.base44.com/images/public/69f8f20192eecc9587b7eca6/1eb2e552d_generated_image.png"
+      }
+    },
+    "blogPost": [
+      {
+        "@type": "BlogPosting",
+        "headline": "Building Uganda's Tech Future with Blockchain",
+        "image": "https://derycode.publicvm.com/blog1.webp",
+        "author": {"@type": "Organization", "name": "DeryCode"},
+        "publisher": {"@type": "Organization", "name": "DeryCode"}
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "AI & Automation for African Businesses",
+        "image": "https://derycode.publicvm.com/blog2.webp",
+        "author": {"@type": "Organization", "name": "DeryCode"},
+        "publisher": {"@type": "Organization", "name": "DeryCode"}
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Web3 and the Future of Digital Payments in Uganda",
+        "image": "https://derycode.publicvm.com/blog3.webp",
+        "author": {"@type": "Organization", "name": "DeryCode"},
+        "publisher": {"@type": "Organization", "name": "DeryCode"}
+      }
+    ]
   }
   </script>
 </head>

@@ -1,14 +1,38 @@
 User-agent: *
 Allow: /
+Allow: /$
+Allow: /blog.html
+Allow: /docs.html
+Allow: /sitemap.xml
+Allow: /robots.txt
+Allow: /manifest.json
+Allow: /hero.webp
+Allow: /team.webp
+Allow: /about.webp
+Allow: /derycoin.webp
 
-# Block irrelevant bots to save crawl budget
+# Block resource crawling
+User-agent: *
+Disallow: /style.css
+Disallow: /script.js
+Disallow: /sw.js
+Disallow: /blog.css
+Disallow: /docs.css
+
+# Block SEO tool bots to save crawl budget
 User-agent: AhrefsBot
 Disallow: /
 
 User-agent: SemrushBot
 Disallow: /
 
-# AI crawlers - allow for indexing
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Allow AI crawlers for AI search visibility
 User-agent: GPTBot
 Allow: /
 
@@ -21,7 +45,23 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# Allow Google
 User-agent: Googlebot
+Allow: /
+Allow: /*.webp$
+Allow: /*.png$
+Allow: /*.jpg$
+
+User-agent: Googlebot-Image
 Allow: /
 
 Sitemap: https://derycode.publicvm.com/sitemap.xml
