@@ -328,6 +328,176 @@
     }
   ]
   </script>
+<style>
+
+/* ============================================================
+   ALIBABA-STYLE SERVICES — Extra CSS
+   ============================================================ */
+
+/* Category Tabs */
+.svc-tabs-wrap { overflow-x: auto; margin-bottom: 32px; padding-bottom: 4px; }
+.svc-tabs { display: flex; gap: 10px; white-space: nowrap; padding: 4px 0; }
+.svc-tab {
+  padding: 10px 20px; border-radius: 50px; border: 1.5px solid var(--card-border);
+  background: var(--card-bg); color: var(--text-muted); font-size: 13px; font-weight: 600;
+  cursor: pointer; transition: all 0.25s; display: inline-flex; align-items: center; gap: 8px;
+  white-space: nowrap;
+}
+.svc-tab:hover { border-color: var(--primary); color: var(--primary); }
+.svc-tab.active { background: var(--gradient); color: #fff; border-color: transparent; box-shadow: 0 4px 16px rgba(212,160,23,0.35); }
+
+/* Featured Slider */
+.svc-slider-wrap { position: relative; margin-bottom: 48px; border-radius: 24px; overflow: hidden; }
+.svc-slider { display: flex; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
+.svc-slide {
+  min-width: 100%; padding: 50px 48px; display: flex; align-items: center;
+  justify-content: space-between; gap: 24px; border-radius: 24px;
+}
+.svc-slide-text { flex: 1; }
+.slide-badge {
+  display: inline-block; background: rgba(212,160,23,0.2); color: var(--accent);
+  border: 1px solid rgba(212,160,23,0.4); border-radius: 50px; padding: 5px 14px;
+  font-size: 12px; font-weight: 700; margin-bottom: 16px; letter-spacing: 0.5px;
+}
+.svc-slide-text h2 { font-size: clamp(1.5rem,3vw,2.2rem); font-weight: 800; color: #fff; margin-bottom: 12px; line-height: 1.25; }
+.svc-slide-text p { color: rgba(255,255,255,0.75); font-size: 1rem; line-height: 1.6; margin-bottom: 20px; }
+.slide-price { font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 20px; }
+.slide-price strong { color: var(--accent); font-size: 20px; }
+.svc-slide-img { font-size: 100px; color: rgba(212,160,23,0.3); flex-shrink: 0; display: flex; align-items: center; }
+.slide-btn {
+  position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5);
+  color: #fff; border: none; width: 44px; height: 44px; border-radius: 50%;
+  cursor: pointer; font-size: 16px; z-index: 2; transition: background 0.2s; display: flex; align-items: center; justify-content: center;
+}
+.slide-btn:hover { background: var(--primary); }
+.slide-btn.prev { left: 16px; }
+.slide-btn.next { right: 16px; }
+.slide-dots { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; }
+.slide-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.4); cursor: pointer; transition: all 0.2s; }
+.slide-dot.active { background: var(--accent); width: 24px; border-radius: 4px; }
+
+/* Product Grid */
+.svc-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+.svc-product-card {
+  background: var(--card-bg); border: 1px solid var(--card-border);
+  border-radius: 18px; overflow: hidden; cursor: pointer;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+}
+.svc-product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--primary); }
+.svc-product-img {
+  height: 160px; display: flex; align-items: center; justify-content: center;
+  position: relative; flex-direction: column; gap: 10px;
+}
+.svc-big-icon { font-size: 52px; color: rgba(212,160,23,0.85); }
+.svc-badge {
+  position: absolute; top: 10px; left: 10px;
+  background: rgba(0,0,0,0.55); color: var(--accent);
+  border: 1px solid rgba(212,160,23,0.4); border-radius: 50px;
+  padding: 3px 10px; font-size: 11px; font-weight: 700;
+}
+.svc-badge-hot {
+  position: absolute; top: 10px; right: 10px;
+  background: rgba(212,160,23,0.15); border: 1px solid rgba(212,160,23,0.35);
+  border-radius: 50px; padding: 3px 10px; font-size: 11px; font-weight: 700; color: #fff;
+}
+.svc-product-body { padding: 16px; }
+.svc-rating { font-size: 11px; color: var(--primary); margin-bottom: 8px; display: flex; align-items: center; gap: 4px; }
+.svc-rating span { color: var(--text-muted); }
+.svc-product-body h4 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; line-height: 1.3; }
+.svc-product-body p { font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px; }
+.svc-price-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.svc-from { font-size: 11px; color: var(--text-muted); }
+.svc-price { font-size: 16px; font-weight: 800; color: var(--primary); }
+.svc-popular {
+  background: linear-gradient(135deg,var(--primary),var(--accent));
+  color: #fff; font-size: 10px; font-weight: 700;
+  padding: 2px 8px; border-radius: 50px; margin-left: auto;
+}
+
+/* Modal Overlay */
+.svc-modal-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 1000;
+  display: none; backdrop-filter: blur(4px);
+}
+.svc-modal-overlay.show { display: block; }
+
+/* Modal */
+.svc-modal {
+  position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%) scale(0.9);
+  background: var(--card-bg); border: 1px solid var(--card-border);
+  border-radius: 24px; width: 90%; max-width: 680px; max-height: 88vh;
+  overflow-y: auto; z-index: 1001; display: none; opacity: 0;
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+}
+.svc-modal.show { display: block; opacity: 1; transform: translate(-50%,-50%) scale(1); }
+.svc-modal-close {
+  position: absolute; top: 16px; right: 16px; background: rgba(0,0,0,0.4);
+  color: #fff; border: none; width: 36px; height: 36px; border-radius: 50%;
+  cursor: pointer; font-size: 14px; z-index: 2; display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+}
+.svc-modal-close:hover { background: var(--primary); }
+
+/* Modal Image Slides */
+.svc-modal-imgs { position: relative; height: 200px; overflow: hidden; background: #111; border-radius: 24px 24px 0 0; display: flex; }
+.modal-img-slide {
+  min-width: 100%; height: 200px; display: flex; align-items: center; justify-content: center;
+  transition: transform 0.4s ease;
+}
+.modal-img-prev, .modal-img-next {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(0,0,0,0.5); color: #fff; border: none;
+  width: 36px; height: 36px; border-radius: 50%; cursor: pointer; z-index: 2;
+  font-size: 13px; display: flex; align-items: center; justify-content: center;
+}
+.modal-img-prev { left: 10px; }
+.modal-img-next { right: 10px; }
+
+/* Modal Body */
+.svc-modal-body { padding: 28px; }
+.svc-modal-tag {
+  display: inline-block; background: rgba(212,160,23,0.12);
+  color: var(--primary); border: 1px solid rgba(212,160,23,0.3);
+  border-radius: 50px; padding: 4px 14px; font-size: 12px; font-weight: 700;
+  margin-bottom: 12px;
+}
+.svc-modal-body h2 { font-size: 22px; font-weight: 800; color: var(--text); margin-bottom: 12px; }
+.svc-modal-desc { color: var(--text-muted); font-size: 14px; line-height: 1.7; margin-bottom: 20px; }
+.svc-modal-features { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 24px; }
+.smf { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text); }
+.smf i { color: var(--primary); font-size: 14px; flex-shrink: 0; }
+.svc-modal-tiers { display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
+.smt {
+  flex: 1; min-width: 100px; background: var(--bg); border: 1.5px solid var(--card-border);
+  border-radius: 14px; padding: 14px 12px; text-align: center; position: relative;
+}
+.smt.featured { border-color: var(--primary); background: rgba(212,160,23,0.06); }
+.smt-badge {
+  position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
+  background: var(--gradient); color: #fff; font-size: 10px; font-weight: 700;
+  padding: 2px 10px; border-radius: 50px; white-space: nowrap;
+}
+.smt-name { font-size: 12px; color: var(--text-muted); font-weight: 600; margin-bottom: 4px; }
+.smt-price { font-size: 16px; font-weight: 800; color: var(--primary); }
+.smt-desc { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+.svc-modal-body .btn { margin-right: 12px; margin-top: 8px; font-size: 14px; }
+
+@media (max-width: 640px) {
+  .svc-slide { padding: 32px 24px; flex-direction: column; }
+  .svc-slide-img { display: none; }
+  .svc-product-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .svc-modal-features { grid-template-columns: 1fr; }
+  .svc-modal-tiers { flex-direction: column; }
+  .svc-modal-body .btn { width: 100%; justify-content: center; margin-right: 0; }
+}
+
+</style>
 </head>
 <body>
 
@@ -459,423 +629,509 @@
 </section>
 
 <!-- ===== SERVICES ===== -->
+<!-- ============================================================
+     SERVICES — Alibaba-style e-commerce marketplace layout
+     ============================================================ -->
 <section class="section section-alt" id="services">
   <div class="container">
     <div class="section-header">
       <span class="section-label">What We Do</span>
       <h2 class="section-title">Our <span class="gradient-text">Services</span></h2>
-      <p class="section-subtitle">From landing pages to blockchain ecosystems — we build everything. Explore our full service offering below.</p>
+      <p class="section-subtitle">Browse our full catalogue — click any service to see details, pricing, and examples.</p>
     </div>
 
-    <!-- Category: Web -->
-    <div class="service-category">
-      <div class="service-category-header">
-        <div class="service-category-icon"><i class="fas fa-globe"></i></div>
-        <div>
-          <h3>Web Development</h3>
-          <p>Professional websites and powerful web applications built to perform.</p>
-        </div>
-      </div>
-      <div class="services-grid">
-
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
-          <h3>Websites</h3>
-          <p>Beautiful, fast, SEO-optimised websites for businesses, portfolios, hotels, NGOs, and more.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Landing pages & corporate sites</li>
-            <li><i class="fas fa-check"></i> E-commerce & product stores</li>
-            <li><i class="fas fa-check"></i> Portfolio & agency websites</li>
-            <li><i class="fas fa-check"></i> PWA & offline-capable sites</li>
-          </ul>
-          <div class="pricing-tiers">
-            <div class="price-tier">
-              <span class="tier-name">Starter</span>
-              <span class="tier-price">UGX 750K</span>
-              <span class="tier-desc">5-page business site</span>
-            </div>
-            <div class="price-tier featured">
-              <span class="tier-badge">Popular</span>
-              <span class="tier-name">Pro</span>
-              <span class="tier-price">UGX 1.8M</span>
-              <span class="tier-desc">Full site + CMS + SEO</span>
-            </div>
-            <div class="price-tier">
-              <span class="tier-name">Custom</span>
-              <span class="tier-price">UGX 3.7M+</span>
-              <span class="tier-desc">E-commerce / complex</span>
-            </div>
-          </div>
-          <a href="#booking" class="service-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-window-restore"></i></div>
-          <h3>Web Applications</h3>
-          <p>Full-stack web apps with authentication, dashboards, APIs, real-time features, and cloud deployment.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> SaaS platforms & dashboards</li>
-            <li><i class="fas fa-check"></i> Admin panels & CRMs</li>
-            <li><i class="fas fa-check"></i> Booking & scheduling apps</li>
-            <li><i class="fas fa-check"></i> REST & GraphQL APIs</li>
-          </ul>
-          <div class="pricing-tiers">
-            <div class="price-tier">
-              <span class="tier-name">Basic</span>
-              <span class="tier-price">UGX 3M</span>
-              <span class="tier-desc">Simple CRUD app</span>
-            </div>
-            <div class="price-tier featured">
-              <span class="tier-badge">Popular</span>
-              <span class="tier-name">Pro</span>
-              <span class="tier-price">UGX 9.2M</span>
-              <span class="tier-desc">Full SaaS + auth + API</span>
-            </div>
-            <div class="price-tier">
-              <span class="tier-name">Enterprise</span>
-              <span class="tier-price">UGX 22M+</span>
-              <span class="tier-desc">Scalable + cloud infra</span>
-            </div>
-          </div>
-          <a href="#booking" class="service-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
-          <h3>Mobile Apps</h3>
-          <p>Cross-platform iOS & Android apps using React Native and Flutter — smooth, scalable, production-ready.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> iOS & Android (React Native / Flutter)</li>
-            <li><i class="fas fa-check"></i> Push notifications & offline support</li>
-            <li><i class="fas fa-check"></i> App Store & Play Store deployment</li>
-            <li><i class="fas fa-check"></i> MoMo & payment integrations</li>
-          </ul>
-          <div class="pricing-tiers">
-            <div class="price-tier">
-              <span class="tier-name">Starter</span>
-              <span class="tier-price">UGX 4.4M</span>
-              <span class="tier-desc">Simple mobile app</span>
-            </div>
-            <div class="price-tier featured">
-              <span class="tier-badge">Popular</span>
-              <span class="tier-name">Pro</span>
-              <span class="tier-price">UGX 13M</span>
-              <span class="tier-desc">Full-featured app</span>
-            </div>
-            <div class="price-tier">
-              <span class="tier-name">Enterprise</span>
-              <span class="tier-price">UGX 30M+</span>
-              <span class="tier-desc">Complex / marketplace</span>
-            </div>
-          </div>
-          <a href="#booking" class="service-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
-        </div>
-
+    <!-- CATEGORY TABS -->
+    <div class="svc-tabs-wrap">
+      <div class="svc-tabs" id="svcTabs">
+        <button class="svc-tab active" data-cat="all"><i class="fas fa-th"></i> All Services</button>
+        <button class="svc-tab" data-cat="web"><i class="fas fa-globe"></i> Web</button>
+        <button class="svc-tab" data-cat="mobile"><i class="fas fa-mobile-alt"></i> Mobile</button>
+        <button class="svc-tab" data-cat="banking"><i class="fas fa-university"></i> Banking</button>
+        <button class="svc-tab" data-cat="business"><i class="fas fa-briefcase"></i> Business Systems</button>
+        <button class="svc-tab" data-cat="blockchain"><i class="fas fa-cubes"></i> Blockchain</button>
+        <button class="svc-tab" data-cat="ai"><i class="fas fa-robot"></i> AI</button>
+        <button class="svc-tab" data-cat="design"><i class="fas fa-paint-brush"></i> Design</button>
       </div>
     </div>
 
-    <!-- Category: Business Systems -->
-    <div class="service-category">
-      <div class="service-category-header">
-        <div class="service-category-icon"><i class="fas fa-building"></i></div>
-        <div>
-          <h3>Business & Enterprise Systems</h3>
-          <p>Powerful internal tools and management platforms to run your organisation efficiently.</p>
+    <!-- FEATURED SLIDER -->
+    <div class="svc-slider-wrap">
+      <div class="svc-slider" id="svcSlider">
+        <div class="svc-slide" style="background:linear-gradient(135deg,#0a0800 60%,#b8860b)">
+          <div class="svc-slide-text">
+            <span class="slide-badge">🔥 Most Popular</span>
+            <h2>Full-Stack Web Development</h2>
+            <p>From landing pages to enterprise SaaS — beautiful, fast & SEO-optimized websites built in Uganda.</p>
+            <div class="slide-price">From <strong>UGX 750,000</strong></div>
+            <button class="btn btn-primary" onclick="openModal('web-app')"><i class="fas fa-eye"></i> View Details</button>
+          </div>
+          <div class="svc-slide-img"><i class="fas fa-laptop-code"></i></div>
+        </div>
+        <div class="svc-slide" style="background:linear-gradient(135deg,#0a0800 60%,#1a3a6e)">
+          <div class="svc-slide-text">
+            <span class="slide-badge">💰 High ROI</span>
+            <h2>Banking & SACCO Software</h2>
+            <p>Core banking, MoMo integration, loan management and SACCO platforms for Ugandan institutions.</p>
+            <div class="slide-price">From <strong>UGX 7,400,000</strong></div>
+            <button class="btn btn-primary" onclick="openModal('banking')"><i class="fas fa-eye"></i> View Details</button>
+          </div>
+          <div class="svc-slide-img"><i class="fas fa-university"></i></div>
+        </div>
+        <div class="svc-slide" style="background:linear-gradient(135deg,#0a0800 60%,#1a1a6e)">
+          <div class="svc-slide-text">
+            <span class="slide-badge">🚀 Trending</span>
+            <h2>Blockchain & Web3 Development</h2>
+            <p>Smart contracts, DeFi platforms, NFT marketplaces, and tokenization — built on Polygon & Ethereum.</p>
+            <div class="slide-price">From <strong>UGX 5,500,000</strong></div>
+            <button class="btn btn-primary" onclick="openModal('smart-contracts')"><i class="fas fa-eye"></i> View Details</button>
+          </div>
+          <div class="svc-slide-img"><i class="fas fa-cubes"></i></div>
+        </div>
+        <div class="svc-slide" style="background:linear-gradient(135deg,#0a0800 60%,#1a4a1a)">
+          <div class="svc-slide-text">
+            <span class="slide-badge">📱 In Demand</span>
+            <h2>Mobile App Development</h2>
+            <p>Cross-platform iOS & Android apps using React Native — from idea to Play Store fast.</p>
+            <div class="slide-price">From <strong>UGX 4,400,000</strong></div>
+            <button class="btn btn-primary" onclick="openModal('mobile')"><i class="fas fa-eye"></i> View Details</button>
+          </div>
+          <div class="svc-slide-img"><i class="fas fa-mobile-alt"></i></div>
         </div>
       </div>
-      <div class="services-grid">
-
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-university"></i></div>
-          <h3>Banking Software</h3>
-          <p>Core banking systems, microfinance platforms, SACCO software, and digital payment infrastructure.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Core banking & ledger systems</li>
-            <li><i class="fas fa-check"></i> MoMo / Airtel Money integration</li>
-            <li><i class="fas fa-check"></i> Loan & savings management</li>
-            <li><i class="fas fa-check"></i> SACCO & microfinance platforms</li>
-          </ul>
-          <div class="pricing-tiers">
-            <div class="price-tier">
-              <span class="tier-name">SACCO</span>
-              <span class="tier-price">UGX 7.4M</span>
-              <span class="tier-desc">Basic savings & loans</span>
-            </div>
-            <div class="price-tier featured">
-              <span class="tier-badge">Popular</span>
-              <span class="tier-name">Fintech</span>
-              <span class="tier-price">UGX 18.5M</span>
-              <span class="tier-desc">MoMo + full banking</span>
-            </div>
-            <div class="price-tier">
-              <span class="tier-name">Enterprise</span>
-              <span class="tier-price">UGX 55M+</span>
-              <span class="tier-desc">Core banking system</span>
-            </div>
-          </div>
-          <a href="#booking" class="service-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-briefcase"></i></div>
-          <h3>Business Management Systems</h3>
-          <p>ERP, HR, inventory, payroll, and operations management software tailored for African SMEs and enterprises.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> ERP & inventory management</li>
-            <li><i class="fas fa-check"></i> HR, payroll & staff management</li>
-            <li><i class="fas fa-check"></i> POS & sales tracking</li>
-            <li><i class="fas fa-check"></i> Real estate & property management</li>
-          </ul>
-          <div class="pricing-tiers">
-            <div class="price-tier">
-              <span class="tier-name">SME</span>
-              <span class="tier-price">UGX 3.7M</span>
-              <span class="tier-desc">Basic management tool</span>
-            </div>
-            <div class="price-tier featured">
-              <span class="tier-badge">Popular</span>
-              <span class="tier-name">Business</span>
-              <span class="tier-price">UGX 11M</span>
-              <span class="tier-desc">ERP + HR + inventory</span>
-            </div>
-            <div class="price-tier">
-              <span class="tier-name">Enterprise</span>
-              <span class="tier-price">UGX 30M+</span>
-              <span class="tier-desc">Multi-branch / custom</span>
-            </div>
-          </div>
-          <a href="#booking" class="service-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
-          <h3>School Digital Libraries</h3>
-          <p>E-library platforms, digital archives, and learning management systems for schools, universities, and institutions.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Digital book & resource management</li>
-            <li><i class="fas fa-check"></i> Student portals & LMS</li>
-            <li><i class="fas fa-check"></i> Online exams & assessments</li>
-            <li><i class="fas fa-check"></i> School admin & fee management</li>
-          </ul>
-          <div class="pricing-tiers">
-            <div class="price-tier">
-              <span class="tier-name">Basic</span>
-              <span class="tier-price">UGX 3M</span>
-              <span class="tier-desc">Library + student portal</span>
-            </div>
-            <div class="price-tier featured">
-              <span class="tier-badge">Popular</span>
-              <span class="tier-name">School</span>
-              <span class="tier-price">UGX 9.2M</span>
-              <span class="tier-desc">LMS + exams + admin</span>
-            </div>
-            <div class="price-tier">
-              <span class="tier-name">University</span>
-              <span class="tier-price">UGX 22M+</span>
-              <span class="tier-desc">Full institution system</span>
-            </div>
-          </div>
-          <a href="#booking" class="service-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-      </div>
+      <!-- Slider controls -->
+      <button class="slide-btn prev" id="slidePrev"><i class="fas fa-chevron-left"></i></button>
+      <button class="slide-btn next" id="slideNext"><i class="fas fa-chevron-right"></i></button>
+      <div class="slide-dots" id="slideDots"></div>
     </div>
 
-    <!-- Category: Blockchain & Crypto -->
-    <div class="service-category">
-      <div class="service-category-header">
-        <div class="service-category-icon"><i class="fas fa-link"></i></div>
-        <div>
-          <h3>Blockchain, Crypto & Web3</h3>
-          <p>From smart contracts to full crypto ecosystems — we build the decentralised future.</p>
+    <!-- SERVICE PRODUCT GRID -->
+    <div class="svc-product-grid" id="svcGrid">
+
+      <!-- Web: Websites -->
+      <div class="svc-product-card" data-cat="web" onclick="openModal('websites')">
+        <div class="svc-product-img" style="background:linear-gradient(135deg,#1a3a1a,#2d5a2d)">
+          <i class="fas fa-laptop-code svc-big-icon"></i>
+          <span class="svc-badge">Web</span>
+        </div>
+        <div class="svc-product-body">
+          <div class="svc-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span>5.0 (48 orders)</span></div>
+          <h4>Business Websites</h4>
+          <p>Landing pages, corporate sites, portfolios, hotels & NGOs. Fast, SEO-ready & mobile-first.</p>
+          <div class="svc-price-row">
+            <span class="svc-from">From</span>
+            <span class="svc-price">UGX 750K</span>
+            <span class="svc-popular">Popular</span>
+          </div>
         </div>
       </div>
-      <div class="services-grid">
 
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-cubes"></i></div>
-          <h3>Blockchain Development</h3>
-          <p>Smart contracts, DeFi protocols, NFT marketplaces, DAOs, and dApps on Ethereum, Solana, and more.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Smart contract development (Solidity)</li>
-            <li><i class="fas fa-check"></i> DeFi platforms & liquidity pools</li>
-            <li><i class="fas fa-check"></i> NFT collections & marketplaces</li>
-            <li><i class="fas fa-check"></i> DAO & governance systems</li>
-          </ul>
-          <div class="pricing-tiers">
-            <div class="price-tier">
-              <span class="tier-name">Contract</span>
-              <span class="tier-price">UGX 1.8M</span>
-              <span class="tier-desc">Single smart contract</span>
-            </div>
-            <div class="price-tier featured">
-              <span class="tier-badge">Popular</span>
-              <span class="tier-name">DApp</span>
-              <span class="tier-price">UGX 11M</span>
-              <span class="tier-desc">Full dApp + contracts</span>
-            </div>
-            <div class="price-tier">
-              <span class="tier-name">DeFi</span>
-              <span class="tier-price">UGX 37M+</span>
-              <span class="tier-desc">Protocol / exchange</span>
-            </div>
-          </div>
-          <a href="#booking" class="service-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
+      <!-- Web: Web Apps -->
+      <div class="svc-product-card" data-cat="web" onclick="openModal('web-app')">
+        <div class="svc-product-img" style="background:linear-gradient(135deg,#1a1a4a,#2d2d8e)">
+          <i class="fas fa-window-restore svc-big-icon"></i>
+          <span class="svc-badge">Web App</span>
         </div>
-
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-coins"></i></div>
-          <h3>Token & Coin Creation</h3>
-          <p>Create your own ERC-20, BEP-20, or SPL token with full tokenomics, vesting schedules, and launch strategy.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> ERC-20 / BEP-20 / SPL tokens</li>
-            <li><i class="fas fa-check"></i> Tokenomics design & whitepaper</li>
-            <li><i class="fas fa-check"></i> Vesting & staking contracts</li>
-            <li><i class="fas fa-check"></i> Presale & ICO platforms</li>
-          </ul>
-          <div class="pricing-tiers">
-            <div class="price-tier">
-              <span class="tier-name">Token</span>
-              <span class="tier-price">UGX 1.1M</span>
-              <span class="tier-desc">Basic ERC-20 token</span>
-            </div>
-            <div class="price-tier featured">
-              <span class="tier-badge">Popular</span>
-              <span class="tier-name">Launch</span>
-              <span class="tier-price">UGX 5.5M</span>
-              <span class="tier-desc">Token + ICO + staking</span>
-            </div>
-            <div class="price-tier">
-              <span class="tier-name">Ecosystem</span>
-              <span class="tier-price">UGX 18.5M+</span>
-              <span class="tier-desc">Full coin ecosystem</span>
-            </div>
+        <div class="svc-product-body">
+          <div class="svc-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span>5.0 (31 orders)</span></div>
+          <h4>Web Applications & SaaS</h4>
+          <p>Full-stack apps with auth, dashboards, real-time features, APIs & cloud deployment.</p>
+          <div class="svc-price-row">
+            <span class="svc-from">From</span>
+            <span class="svc-price">UGX 3M</span>
+            <span class="svc-popular">Top Rated</span>
           </div>
-          <a href="#booking" class="service-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-chart-bar"></i></div>
-          <h3>Crypto Platforms & DeryCoin</h3>
-          <p>Full crypto exchange platforms, trading dashboards, Web3 wallets, and DeryCoin — Uganda's blockchain token.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Crypto exchange & trading platforms</li>
-            <li><i class="fas fa-check"></i> Web3 wallets & portfolio trackers</li>
-            <li><i class="fas fa-check"></i> DeryCoin ecosystem & integrations</li>
-            <li><i class="fas fa-check"></i> Crypto payment gateways</li>
-          </ul>
-          <div class="pricing-tiers">
-            <div class="price-tier">
-              <span class="tier-name">Wallet</span>
-              <span class="tier-price">UGX 3.7M</span>
-              <span class="tier-desc">Web3 wallet app</span>
-            </div>
-            <div class="price-tier featured">
-              <span class="tier-badge">Popular</span>
-              <span class="tier-name">Platform</span>
-              <span class="tier-price">UGX 18.5M</span>
-              <span class="tier-desc">Exchange + dashboard</span>
-            </div>
-            <div class="price-tier">
-              <span class="tier-name">Full Eco</span>
-              <span class="tier-price">UGX 74M+</span>
-              <span class="tier-desc">Complete crypto ecosystem</span>
-            </div>
-          </div>
-          <a href="#booking" class="service-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Category: AI & Marketing -->
-    <div class="service-category">
-      <div class="service-category-header">
-        <div class="service-category-icon"><i class="fas fa-robot"></i></div>
-        <div>
-          <h3>AI, Automation & Digital Marketing</h3>
-          <p>Intelligent systems and marketing strategies that grow your business on autopilot.</p>
         </div>
       </div>
-      <div class="services-grid">
 
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-brain"></i></div>
-          <h3>AI & Machine Learning</h3>
-          <p>Chatbots, AI agents, predictive analytics, computer vision, and NLP-powered products for your business.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> WhatsApp & web AI chatbots</li>
-            <li><i class="fas fa-check"></i> AI agents & automation workflows</li>
-            <li><i class="fas fa-check"></i> Predictive analytics & data insights</li>
-            <li><i class="fas fa-check"></i> Computer vision & NLP solutions</li>
-          </ul>
-          <div class="pricing-tiers">
-            <div class="price-tier">
-              <span class="tier-name">Chatbot</span>
-              <span class="tier-price">UGX 1.5M</span>
-              <span class="tier-desc">Basic AI chatbot</span>
-            </div>
-            <div class="price-tier featured">
-              <span class="tier-badge">Popular</span>
-              <span class="tier-name">Agent</span>
-              <span class="tier-price">UGX 5.5M</span>
-              <span class="tier-desc">Full AI agent + integrations</span>
-            </div>
-            <div class="price-tier">
-              <span class="tier-name">Custom</span>
-              <span class="tier-price">UGX 18.5M+</span>
-              <span class="tier-desc">ML model + pipeline</span>
-            </div>
-          </div>
-          <a href="#booking" class="service-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
+      <!-- Mobile -->
+      <div class="svc-product-card" data-cat="mobile" onclick="openModal('mobile')">
+        <div class="svc-product-img" style="background:linear-gradient(135deg,#2d1a4a,#5a2d8e)">
+          <i class="fas fa-mobile-alt svc-big-icon"></i>
+          <span class="svc-badge">Mobile</span>
         </div>
-
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-chart-line"></i></div>
-          <h3>Digital Marketing</h3>
-          <p>SEO, social media management, content strategy, paid ads, and brand identity to grow your online presence.</p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> SEO & Google ranking</li>
-            <li><i class="fas fa-check"></i> Social media management</li>
-            <li><i class="fas fa-check"></i> Facebook, TikTok & Google Ads</li>
-            <li><i class="fas fa-check"></i> Brand identity & content creation</li>
-          </ul>
-          <div class="pricing-tiers">
-            <div class="price-tier">
-              <span class="tier-name">Basic</span>
-              <span class="tier-price">UGX 550K/mo</span>
-              <span class="tier-desc">SEO + 2 platforms</span>
-            </div>
-            <div class="price-tier featured">
-              <span class="tier-badge">Popular</span>
-              <span class="tier-name">Growth</span>
-              <span class="tier-price">UGX 1.5M/mo</span>
-              <span class="tier-desc">SEO + ads + content</span>
-            </div>
-            <div class="price-tier">
-              <span class="tier-name">Agency</span>
-              <span class="tier-price">UGX 3.3M/mo</span>
-              <span class="tier-desc">Full management</span>
-            </div>
+        <div class="svc-product-body">
+          <div class="svc-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span>4.9 (22 orders)</span></div>
+          <h4>Mobile Apps (iOS & Android)</h4>
+          <p>React Native & Flutter cross-platform apps. Push notifications, MoMo payments, offline support.</p>
+          <div class="svc-price-row">
+            <span class="svc-from">From</span>
+            <span class="svc-price">UGX 4.4M</span>
           </div>
-          <a href="#booking" class="service-link">Get a Quote <i class="fas fa-arrow-right"></i></a>
         </div>
-
       </div>
-    </div>
 
-        <!-- CTA -->
-    <div class="services-cta">
-      <p>Don't see exactly what you need? We build custom solutions.</p>
-      <a href="#booking" class="btn btn-primary btn-lg">
-        <i class="fas fa-calendar-check"></i> Book a Free Consultation
-      </a>
-    </div>
+      <!-- Banking -->
+      <div class="svc-product-card" data-cat="banking" onclick="openModal('banking')">
+        <div class="svc-product-img" style="background:linear-gradient(135deg,#1a3a4a,#0d5c7a)">
+          <i class="fas fa-university svc-big-icon"></i>
+          <span class="svc-badge">Fintech</span>
+          <span class="svc-badge-hot">🔥 Hot</span>
+        </div>
+        <div class="svc-product-body">
+          <div class="svc-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span>5.0 (17 orders)</span></div>
+          <h4>Banking & SACCO Software</h4>
+          <p>Core banking, MoMo integration, loan & savings management for SACCOs and MFIs.</p>
+          <div class="svc-price-row">
+            <span class="svc-from">From</span>
+            <span class="svc-price">UGX 7.4M</span>
+            <span class="svc-popular">Specialist</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Business Systems -->
+      <div class="svc-product-card" data-cat="business" onclick="openModal('erp')">
+        <div class="svc-product-img" style="background:linear-gradient(135deg,#3a1a1a,#8e2d2d)">
+          <i class="fas fa-briefcase svc-big-icon"></i>
+          <span class="svc-badge">ERP</span>
+        </div>
+        <div class="svc-product-body">
+          <div class="svc-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span>5.0 (14 orders)</span></div>
+          <h4>Business Management Systems</h4>
+          <p>ERP, HR, payroll, inventory, POS & real estate management platforms for African SMEs.</p>
+          <div class="svc-price-row">
+            <span class="svc-from">From</span>
+            <span class="svc-price">UGX 3.7M</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- School Library -->
+      <div class="svc-product-card" data-cat="business" onclick="openModal('library')">
+        <div class="svc-product-img" style="background:linear-gradient(135deg,#1a2d3a,#2d5a7a)">
+          <i class="fas fa-graduation-cap svc-big-icon"></i>
+          <span class="svc-badge">EdTech</span>
+        </div>
+        <div class="svc-product-body">
+          <div class="svc-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span>5.0 (9 orders)</span></div>
+          <h4>School Digital Libraries & LMS</h4>
+          <p>E-library platforms, student portals, online exams & school admin for schools and universities.</p>
+          <div class="svc-price-row">
+            <span class="svc-from">From</span>
+            <span class="svc-price">UGX 3M</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blockchain -->
+      <div class="svc-product-card" data-cat="blockchain" onclick="openModal('smart-contracts')">
+        <div class="svc-product-img" style="background:linear-gradient(135deg,#1a1a3a,#2d2d6e)">
+          <i class="fas fa-cubes svc-big-icon"></i>
+          <span class="svc-badge">Web3</span>
+          <span class="svc-badge-hot">🚀 New</span>
+        </div>
+        <div class="svc-product-body">
+          <div class="svc-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span>5.0 (11 orders)</span></div>
+          <h4>Smart Contracts & Blockchain</h4>
+          <p>Solidity smart contracts, DeFi, NFT marketplaces, token launches on Polygon & Ethereum.</p>
+          <div class="svc-price-row">
+            <span class="svc-from">From</span>
+            <span class="svc-price">UGX 5.5M</span>
+            <span class="svc-popular">Web3</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI -->
+      <div class="svc-product-card" data-cat="ai" onclick="openModal('ai')">
+        <div class="svc-product-img" style="background:linear-gradient(135deg,#2d3a1a,#5a7a2d)">
+          <i class="fas fa-robot svc-big-icon"></i>
+          <span class="svc-badge">AI</span>
+        </div>
+        <div class="svc-product-body">
+          <div class="svc-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span>5.0 (8 orders)</span></div>
+          <h4>AI & Automation Solutions</h4>
+          <p>AI-powered chatbots, automation scripts, ML models, and intelligent business tools.</p>
+          <div class="svc-price-row">
+            <span class="svc-from">From</span>
+            <span class="svc-price">UGX 2.5M</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Digital Marketing -->
+      <div class="svc-product-card" data-cat="design" onclick="openModal('marketing')">
+        <div class="svc-product-img" style="background:linear-gradient(135deg,#3a2d1a,#8e6a2d)">
+          <i class="fas fa-bullhorn svc-big-icon"></i>
+          <span class="svc-badge">Marketing</span>
+        </div>
+        <div class="svc-product-body">
+          <div class="svc-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span>4.8 (26 orders)</span></div>
+          <h4>Digital Marketing & SEO</h4>
+          <p>SEO, Google Ads, social media management, content creation & brand growth strategies.</p>
+          <div class="svc-price-row">
+            <span class="svc-from">From</span>
+            <span class="svc-price">UGX 800K/mo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- UI/UX Design -->
+      <div class="svc-product-card" data-cat="design" onclick="openModal('uiux')">
+        <div class="svc-product-img" style="background:linear-gradient(135deg,#3a1a3a,#7a2d7a)">
+          <i class="fas fa-paint-brush svc-big-icon"></i>
+          <span class="svc-badge">Design</span>
+        </div>
+        <div class="svc-product-body">
+          <div class="svc-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span>5.0 (19 orders)</span></div>
+          <h4>UI/UX Design & Branding</h4>
+          <p>Figma prototypes, brand identities, logos, pitch decks, and complete design systems.</p>
+          <div class="svc-price-row">
+            <span class="svc-from">From</span>
+            <span class="svc-price">UGX 500K</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DeryCoin -->
+      <div class="svc-product-card" data-cat="blockchain" onclick="openModal('derycoin')">
+        <div class="svc-product-img" style="background:linear-gradient(135deg,#3a2d00,#b8860b)">
+          <i class="fas fa-coins svc-big-icon"></i>
+          <span class="svc-badge">Crypto</span>
+          <span class="svc-badge-hot">🌍 Africa</span>
+        </div>
+        <div class="svc-product-body">
+          <div class="svc-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span>5.0 — DeryCoin</span></div>
+          <h4>Token & Cryptocurrency Development</h4>
+          <p>Launch your own token on Polygon or Ethereum — like DeryCoin. Full tokenomics, contract & listing support.</p>
+          <div class="svc-price-row">
+            <span class="svc-from">From</span>
+            <span class="svc-price">UGX 9M</span>
+            <span class="svc-popular">🏆 Flagship</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- API Integration -->
+      <div class="svc-product-card" data-cat="web" onclick="openModal('api')">
+        <div class="svc-product-img" style="background:linear-gradient(135deg,#1a3a2d,#2d7a5a)">
+          <i class="fas fa-plug svc-big-icon"></i>
+          <span class="svc-badge">API</span>
+        </div>
+        <div class="svc-product-body">
+          <div class="svc-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span>5.0 (33 orders)</span></div>
+          <h4>API & Payment Integrations</h4>
+          <p>MoMo, Airtel Money, PesaPal, Stripe, SMS APIs, WhatsApp Business & third-party integrations.</p>
+          <div class="svc-price-row">
+            <span class="svc-from">From</span>
+            <span class="svc-price">UGX 1.2M</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /svc-product-grid -->
 
   </div>
 </section>
 
-<!-- ===== PORTFOLIO ===== -->
+<!-- ============================================================
+     SERVICE MODALS
+     ============================================================ -->
+<div class="svc-modal-overlay" id="svcModalOverlay" onclick="closeModal()"></div>
+
+<!-- Websites Modal -->
+<div class="svc-modal" id="modal-websites">
+  <button class="svc-modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+  <div class="svc-modal-imgs">
+    <div class="modal-img-slide active" style="background:linear-gradient(135deg,#1a3a1a,#2d5a2d)"><i class="fas fa-laptop-code" style="font-size:80px;color:#D4A017;"></i></div>
+    <div class="modal-img-slide" style="background:linear-gradient(135deg,#0a0800,#3a2d00)"><i class="fas fa-search" style="font-size:80px;color:#D4A017;"></i></div>
+    <div class="modal-img-slide" style="background:linear-gradient(135deg,#1a1a3a,#2d2d6e)"><i class="fas fa-mobile-alt" style="font-size:80px;color:#D4A017;"></i></div>
+    <button class="modal-img-prev" onclick="modalSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+    <button class="modal-img-next" onclick="modalSlide(1)"><i class="fas fa-chevron-right"></i></button>
+  </div>
+  <div class="svc-modal-body">
+    <span class="svc-modal-tag">Web Development</span>
+    <h2>Business Websites</h2>
+    <p class="svc-modal-desc">Beautiful, fast, SEO-optimised websites that rank on Google and convert visitors into customers. We build for businesses, hotels, NGOs, portfolios, clinics, and more — all mobile-first.</p>
+    <div class="svc-modal-features">
+      <div class="smf"><i class="fas fa-check-circle"></i> Landing pages & corporate sites</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> E-commerce & product stores</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> PWA & offline-capable sites</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> Google Analytics & SEO setup</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> WhatsApp & booking integration</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> Hosting & domain setup</div>
+    </div>
+    <div class="svc-modal-tiers">
+      <div class="smt"><div class="smt-name">Starter</div><div class="smt-price">UGX 750K</div><div class="smt-desc">5-page business site</div></div>
+      <div class="smt featured"><div class="smt-badge">⭐ Popular</div><div class="smt-name">Pro</div><div class="smt-price">UGX 1.8M</div><div class="smt-desc">Full site + CMS + SEO</div></div>
+      <div class="smt"><div class="smt-name">Custom</div><div class="smt-price">UGX 3.7M+</div><div class="smt-desc">E-commerce / complex</div></div>
+    </div>
+    <a href="#booking" class="btn btn-primary btn-lg" onclick="closeModal()"><i class="fas fa-calendar-check"></i> Book a Free Consultation</a>
+    <a href="https://wa.me/256772002326?text=Hi DeryCode, I'm interested in a Business Website" target="_blank" class="btn btn-outline btn-lg"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+  </div>
+</div>
+
+<!-- Web App Modal -->
+<div class="svc-modal" id="modal-web-app">
+  <button class="svc-modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+  <div class="svc-modal-imgs">
+    <div class="modal-img-slide active" style="background:linear-gradient(135deg,#1a1a4a,#2d2d8e)"><i class="fas fa-window-restore" style="font-size:80px;color:#D4A017;"></i></div>
+    <div class="modal-img-slide" style="background:linear-gradient(135deg,#0a0800,#1a3a4a)"><i class="fas fa-database" style="font-size:80px;color:#D4A017;"></i></div>
+    <button class="modal-img-prev" onclick="modalSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+    <button class="modal-img-next" onclick="modalSlide(1)"><i class="fas fa-chevron-right"></i></button>
+  </div>
+  <div class="svc-modal-body">
+    <span class="svc-modal-tag">Full-Stack Development</span>
+    <h2>Web Applications & SaaS</h2>
+    <p class="svc-modal-desc">Full-stack web apps with authentication, real-time dashboards, REST APIs, and cloud deployment. We build platforms for startups, corporates, and enterprises across East Africa.</p>
+    <div class="svc-modal-features">
+      <div class="smf"><i class="fas fa-check-circle"></i> SaaS platforms & dashboards</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> Admin panels & CRMs</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> Booking & scheduling systems</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> REST & GraphQL APIs</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> Supabase / Firebase backend</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> Vercel / AWS deployment</div>
+    </div>
+    <div class="svc-modal-tiers">
+      <div class="smt"><div class="smt-name">Basic</div><div class="smt-price">UGX 3M</div><div class="smt-desc">Simple CRUD app</div></div>
+      <div class="smt featured"><div class="smt-badge">⭐ Popular</div><div class="smt-name">Pro</div><div class="smt-price">UGX 9.2M</div><div class="smt-desc">Full SaaS + auth + API</div></div>
+      <div class="smt"><div class="smt-name">Enterprise</div><div class="smt-price">UGX 22M+</div><div class="smt-desc">Scalable cloud infra</div></div>
+    </div>
+    <a href="#booking" class="btn btn-primary btn-lg" onclick="closeModal()"><i class="fas fa-calendar-check"></i> Book a Free Consultation</a>
+    <a href="https://wa.me/256772002326?text=Hi DeryCode, I need a Web Application" target="_blank" class="btn btn-outline btn-lg"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+  </div>
+</div>
+
+<!-- Mobile Modal -->
+<div class="svc-modal" id="modal-mobile">
+  <button class="svc-modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+  <div class="svc-modal-imgs">
+    <div class="modal-img-slide active" style="background:linear-gradient(135deg,#2d1a4a,#5a2d8e)"><i class="fas fa-mobile-alt" style="font-size:80px;color:#D4A017;"></i></div>
+    <div class="modal-img-slide" style="background:linear-gradient(135deg,#0a0800,#3a1a4a)"><i class="fas fa-google-play" style="font-size:80px;color:#D4A017;"></i></div>
+    <button class="modal-img-prev" onclick="modalSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+    <button class="modal-img-next" onclick="modalSlide(1)"><i class="fas fa-chevron-right"></i></button>
+  </div>
+  <div class="svc-modal-body">
+    <span class="svc-modal-tag">Mobile Development</span>
+    <h2>Mobile Apps (iOS & Android)</h2>
+    <p class="svc-modal-desc">Cross-platform iOS & Android apps using React Native and Flutter. From simple utility apps to full marketplace platforms — we handle design, development, and Play Store deployment.</p>
+    <div class="svc-modal-features">
+      <div class="smf"><i class="fas fa-check-circle"></i> React Native / Flutter</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> Push notifications & offline support</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> App Store & Play Store deployment</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> MoMo & PesaPal payments</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> Supabase backend integration</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> Admin dashboard included</div>
+    </div>
+    <div class="svc-modal-tiers">
+      <div class="smt"><div class="smt-name">Starter</div><div class="smt-price">UGX 4.4M</div><div class="smt-desc">Simple mobile app</div></div>
+      <div class="smt featured"><div class="smt-badge">⭐ Popular</div><div class="smt-name">Pro</div><div class="smt-price">UGX 13M</div><div class="smt-desc">Full-featured app</div></div>
+      <div class="smt"><div class="smt-name">Enterprise</div><div class="smt-price">UGX 30M+</div><div class="smt-desc">Complex / marketplace</div></div>
+    </div>
+    <a href="#booking" class="btn btn-primary btn-lg" onclick="closeModal()"><i class="fas fa-calendar-check"></i> Book a Free Consultation</a>
+    <a href="https://wa.me/256772002326?text=Hi DeryCode, I need a Mobile App" target="_blank" class="btn btn-outline btn-lg"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+  </div>
+</div>
+
+<!-- Banking Modal -->
+<div class="svc-modal" id="modal-banking">
+  <button class="svc-modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+  <div class="svc-modal-imgs">
+    <div class="modal-img-slide active" style="background:linear-gradient(135deg,#1a3a4a,#0d5c7a)"><i class="fas fa-university" style="font-size:80px;color:#D4A017;"></i></div>
+    <div class="modal-img-slide" style="background:linear-gradient(135deg,#0a0800,#1a3a1a)"><i class="fas fa-money-bill-wave" style="font-size:80px;color:#D4A017;"></i></div>
+    <button class="modal-img-prev" onclick="modalSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+    <button class="modal-img-next" onclick="modalSlide(1)"><i class="fas fa-chevron-right"></i></button>
+  </div>
+  <div class="svc-modal-body">
+    <span class="svc-modal-tag">Fintech & Banking</span>
+    <h2>Banking & SACCO Software</h2>
+    <p class="svc-modal-desc">We build core banking systems, SACCO platforms, microfinance software, and digital payment infrastructure for Ugandan institutions. MTN MoMo and Airtel Money integration included.</p>
+    <div class="svc-modal-features">
+      <div class="smf"><i class="fas fa-check-circle"></i> Core banking & ledger systems</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> MoMo / Airtel Money API</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> Loan & savings management</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> SACCO member portal</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> SMS alerts & statements</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> Regulatory compliance reports</div>
+    </div>
+    <div class="svc-modal-tiers">
+      <div class="smt"><div class="smt-name">SACCO</div><div class="smt-price">UGX 7.4M</div><div class="smt-desc">Basic savings & loans</div></div>
+      <div class="smt featured"><div class="smt-badge">⭐ Popular</div><div class="smt-name">Fintech</div><div class="smt-price">UGX 18.5M</div><div class="smt-desc">MoMo + full banking</div></div>
+      <div class="smt"><div class="smt-name">Enterprise</div><div class="smt-price">UGX 55M+</div><div class="smt-desc">Core banking system</div></div>
+    </div>
+    <a href="#booking" class="btn btn-primary btn-lg" onclick="closeModal()"><i class="fas fa-calendar-check"></i> Book a Free Consultation</a>
+    <a href="https://wa.me/256772002326?text=Hi DeryCode, I need Banking or SACCO Software" target="_blank" class="btn btn-outline btn-lg"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+  </div>
+</div>
+
+<!-- Smart Contracts Modal -->
+<div class="svc-modal" id="modal-smart-contracts">
+  <button class="svc-modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+  <div class="svc-modal-imgs">
+    <div class="modal-img-slide active" style="background:linear-gradient(135deg,#1a1a3a,#2d2d6e)"><i class="fas fa-cubes" style="font-size:80px;color:#D4A017;"></i></div>
+    <div class="modal-img-slide" style="background:linear-gradient(135deg,#0a0800,#2d1a4a)"><i class="fas fa-link" style="font-size:80px;color:#D4A017;"></i></div>
+    <button class="modal-img-prev" onclick="modalSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+    <button class="modal-img-next" onclick="modalSlide(1)"><i class="fas fa-chevron-right"></i></button>
+  </div>
+  <div class="svc-modal-body">
+    <span class="svc-modal-tag">Blockchain / Web3</span>
+    <h2>Smart Contracts & Blockchain</h2>
+    <p class="svc-modal-desc">We build and deploy smart contracts on Polygon and Ethereum — DeFi platforms, NFT marketplaces, token launches, and decentralized applications for African businesses going on-chain.</p>
+    <div class="svc-modal-features">
+      <div class="smf"><i class="fas fa-check-circle"></i> Solidity smart contract development</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> Token (ERC-20 / ERC-721) launches</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> NFT marketplace development</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> DeFi staking & liquidity pools</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> Contract auditing & verification</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> Polygon / Ethereum deployment</div>
+    </div>
+    <div class="svc-modal-tiers">
+      <div class="smt"><div class="smt-name">Token</div><div class="smt-price">UGX 5.5M</div><div class="smt-desc">ERC-20 token launch</div></div>
+      <div class="smt featured"><div class="smt-badge">⭐ Popular</div><div class="smt-name">dApp</div><div class="smt-price">UGX 16M</div><div class="smt-desc">Full dApp + contracts</div></div>
+      <div class="smt"><div class="smt-name">DeFi</div><div class="smt-price">UGX 40M+</div><div class="smt-desc">DEX / full DeFi</div></div>
+    </div>
+    <a href="#booking" class="btn btn-primary btn-lg" onclick="closeModal()"><i class="fas fa-calendar-check"></i> Book a Free Consultation</a>
+    <a href="https://wa.me/256772002326?text=Hi DeryCode, I need Blockchain development" target="_blank" class="btn btn-outline btn-lg"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+  </div>
+</div>
+
+<!-- ERP Modal -->
+<div class="svc-modal" id="modal-erp">
+  <button class="svc-modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+  <div class="svc-modal-imgs">
+    <div class="modal-img-slide active" style="background:linear-gradient(135deg,#3a1a1a,#8e2d2d)"><i class="fas fa-briefcase" style="font-size:80px;color:#D4A017;"></i></div>
+    <button class="modal-img-prev" onclick="modalSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+    <button class="modal-img-next" onclick="modalSlide(1)"><i class="fas fa-chevron-right"></i></button>
+  </div>
+  <div class="svc-modal-body">
+    <span class="svc-modal-tag">Business Systems</span>
+    <h2>Business Management & ERP</h2>
+    <p class="svc-modal-desc">ERP, HR, inventory, payroll, and operations management software tailored for African SMEs and enterprises. Real-time reporting, staff management, POS and more.</p>
+    <div class="svc-modal-features">
+      <div class="smf"><i class="fas fa-check-circle"></i> ERP & inventory management</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> HR, payroll & staff records</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> POS & sales tracking</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> Real estate & property management</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> Multi-branch support</div>
+      <div class="smf"><i class="fas fa-check-circle"></i> Custom reporting & analytics</div>
+    </div>
+    <div class="svc-modal-tiers">
+      <div class="smt"><div class="smt-name">SME</div><div class="smt-price">UGX 3.7M</div><div class="smt-desc">Basic management tool</div></div>
+      <div class="smt featured"><div class="smt-badge">⭐ Popular</div><div class="smt-name">Business</div><div class="smt-price">UGX 11M</div><div class="smt-desc">ERP + HR + inventory</div></div>
+      <div class="smt"><div class="smt-name">Enterprise</div><div class="smt-price">UGX 30M+</div><div class="smt-desc">Multi-branch / custom</div></div>
+    </div>
+    <a href="#booking" class="btn btn-primary btn-lg" onclick="closeModal()"><i class="fas fa-calendar-check"></i> Book a Free Consultation</a>
+    <a href="https://wa.me/256772002326?text=Hi DeryCode, I need a Business Management System" target="_blank" class="btn btn-outline btn-lg"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+  </div>
+</div>
+
+<!-- Other modals (library, ai, marketing, uiux, derycoin, api) - compact -->
+<div class="svc-modal" id="modal-library"><button class="svc-modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button><div class="svc-modal-imgs"><div class="modal-img-slide active" style="background:linear-gradient(135deg,#1a2d3a,#2d5a7a)"><i class="fas fa-graduation-cap" style="font-size:80px;color:#D4A017;"></i></div><button class="modal-img-prev" onclick="modalSlide(-1)"><i class="fas fa-chevron-left"></i></button><button class="modal-img-next" onclick="modalSlide(1)"><i class="fas fa-chevron-right"></i></button></div><div class="svc-modal-body"><span class="svc-modal-tag">EdTech</span><h2>School Digital Libraries & LMS</h2><p class="svc-modal-desc">E-library platforms, digital archives, student portals, online exams, and school administration systems for schools and universities across Uganda.</p><div class="svc-modal-features"><div class="smf"><i class="fas fa-check-circle"></i> Digital book & resource management</div><div class="smf"><i class="fas fa-check-circle"></i> Student portals & LMS</div><div class="smf"><i class="fas fa-check-circle"></i> Online exams & assessments</div><div class="smf"><i class="fas fa-check-circle"></i> School admin & fee management</div></div><div class="svc-modal-tiers"><div class="smt"><div class="smt-name">Basic</div><div class="smt-price">UGX 3M</div></div><div class="smt featured"><div class="smt-badge">⭐ Popular</div><div class="smt-name">Full LMS</div><div class="smt-price">UGX 9.2M</div></div><div class="smt"><div class="smt-name">University</div><div class="smt-price">UGX 22M+</div></div></div><a href="#booking" class="btn btn-primary btn-lg" onclick="closeModal()"><i class="fas fa-calendar-check"></i> Book a Consultation</a><a href="https://wa.me/256772002326?text=Hi DeryCode, I need a School LMS" target="_blank" class="btn btn-outline btn-lg"><i class="fab fa-whatsapp"></i> WhatsApp</a></div></div>
+
+<div class="svc-modal" id="modal-ai"><button class="svc-modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button><div class="svc-modal-imgs"><div class="modal-img-slide active" style="background:linear-gradient(135deg,#2d3a1a,#5a7a2d)"><i class="fas fa-robot" style="font-size:80px;color:#D4A017;"></i></div><button class="modal-img-prev" onclick="modalSlide(-1)"><i class="fas fa-chevron-left"></i></button><button class="modal-img-next" onclick="modalSlide(1)"><i class="fas fa-chevron-right"></i></button></div><div class="svc-modal-body"><span class="svc-modal-tag">Artificial Intelligence</span><h2>AI & Automation Solutions</h2><p class="svc-modal-desc">AI-powered chatbots, workflow automation, machine learning models, and intelligent business tools that save time and reduce costs for African businesses.</p><div class="svc-modal-features"><div class="smf"><i class="fas fa-check-circle"></i> AI chatbots & virtual assistants</div><div class="smf"><i class="fas fa-check-circle"></i> Business process automation</div><div class="smf"><i class="fas fa-check-circle"></i> ML model development</div><div class="smf"><i class="fas fa-check-circle"></i> WhatsApp AI agents</div></div><div class="svc-modal-tiers"><div class="smt"><div class="smt-name">Chatbot</div><div class="smt-price">UGX 2.5M</div></div><div class="smt featured"><div class="smt-badge">⭐ Popular</div><div class="smt-name">AI Agent</div><div class="smt-price">UGX 7M</div></div><div class="smt"><div class="smt-name">ML System</div><div class="smt-price">UGX 18M+</div></div></div><a href="#booking" class="btn btn-primary btn-lg" onclick="closeModal()"><i class="fas fa-calendar-check"></i> Book a Consultation</a><a href="https://wa.me/256772002326?text=Hi DeryCode, I need AI automation" target="_blank" class="btn btn-outline btn-lg"><i class="fab fa-whatsapp"></i> WhatsApp</a></div></div>
+
+<div class="svc-modal" id="modal-marketing"><button class="svc-modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button><div class="svc-modal-imgs"><div class="modal-img-slide active" style="background:linear-gradient(135deg,#3a2d1a,#8e6a2d)"><i class="fas fa-bullhorn" style="font-size:80px;color:#D4A017;"></i></div><button class="modal-img-prev" onclick="modalSlide(-1)"><i class="fas fa-chevron-left"></i></button><button class="modal-img-next" onclick="modalSlide(1)"><i class="fas fa-chevron-right"></i></button></div><div class="svc-modal-body"><span class="svc-modal-tag">Digital Marketing</span><h2>Digital Marketing & SEO</h2><p class="svc-modal-desc">SEO, Google Ads, social media management, content creation, and brand growth strategies to grow your business online in Uganda and beyond.</p><div class="svc-modal-features"><div class="smf"><i class="fas fa-check-circle"></i> Search Engine Optimization (SEO)</div><div class="smf"><i class="fas fa-check-circle"></i> Google & Meta Ads</div><div class="smf"><i class="fas fa-check-circle"></i> Social media management</div><div class="smf"><i class="fas fa-check-circle"></i> Content creation & copywriting</div></div><div class="svc-modal-tiers"><div class="smt"><div class="smt-name">Basic</div><div class="smt-price">UGX 800K/mo</div></div><div class="smt featured"><div class="smt-badge">⭐ Popular</div><div class="smt-name">Growth</div><div class="smt-price">UGX 2.5M/mo</div></div><div class="smt"><div class="smt-name">Full Scale</div><div class="smt-price">UGX 6M+/mo</div></div></div><a href="#booking" class="btn btn-primary btn-lg" onclick="closeModal()"><i class="fas fa-calendar-check"></i> Book a Consultation</a><a href="https://wa.me/256772002326?text=Hi DeryCode, I need Digital Marketing" target="_blank" class="btn btn-outline btn-lg"><i class="fab fa-whatsapp"></i> WhatsApp</a></div></div>
+
+<div class="svc-modal" id="modal-uiux"><button class="svc-modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button><div class="svc-modal-imgs"><div class="modal-img-slide active" style="background:linear-gradient(135deg,#3a1a3a,#7a2d7a)"><i class="fas fa-paint-brush" style="font-size:80px;color:#D4A017;"></i></div><button class="modal-img-prev" onclick="modalSlide(-1)"><i class="fas fa-chevron-left"></i></button><button class="modal-img-next" onclick="modalSlide(1)"><i class="fas fa-chevron-right"></i></button></div><div class="svc-modal-body"><span class="svc-modal-tag">Design & Branding</span><h2>UI/UX Design & Branding</h2><p class="svc-modal-desc">Figma prototypes, brand identities, logos, pitch decks, and complete design systems. We make your product look world-class from day one.</p><div class="svc-modal-features"><div class="smf"><i class="fas fa-check-circle"></i> Figma UI/UX prototypes</div><div class="smf"><i class="fas fa-check-circle"></i> Logo & brand identity</div><div class="smf"><i class="fas fa-check-circle"></i> Pitch deck & investor materials</div><div class="smf"><i class="fas fa-check-circle"></i> Design system & style guide</div></div><div class="svc-modal-tiers"><div class="smt"><div class="smt-name">Logo</div><div class="smt-price">UGX 500K</div></div><div class="smt featured"><div class="smt-badge">⭐ Popular</div><div class="smt-name">Brand Pack</div><div class="smt-price">UGX 2.2M</div></div><div class="smt"><div class="smt-name">Full Design</div><div class="smt-price">UGX 7M+</div></div></div><a href="#booking" class="btn btn-primary btn-lg" onclick="closeModal()"><i class="fas fa-calendar-check"></i> Book a Consultation</a><a href="https://wa.me/256772002326?text=Hi DeryCode, I need UI/UX Design" target="_blank" class="btn btn-outline btn-lg"><i class="fab fa-whatsapp"></i> WhatsApp</a></div></div>
+
+<div class="svc-modal" id="modal-derycoin"><button class="svc-modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button><div class="svc-modal-imgs"><div class="modal-img-slide active" style="background:linear-gradient(135deg,#3a2d00,#b8860b)"><i class="fas fa-coins" style="font-size:80px;color:#fff;"></i></div><button class="modal-img-prev" onclick="modalSlide(-1)"><i class="fas fa-chevron-left"></i></button><button class="modal-img-next" onclick="modalSlide(1)"><i class="fas fa-chevron-right"></i></button></div><div class="svc-modal-body"><span class="svc-modal-tag">Crypto / Token Launch</span><h2>Token & Cryptocurrency Development</h2><p class="svc-modal-desc">Launch your own cryptocurrency token on Polygon or Ethereum — just like DeryCoin. Full tokenomics design, smart contract, exchange listing support, and community launch strategy included.</p><div class="svc-modal-features"><div class="smf"><i class="fas fa-check-circle"></i> Tokenomics & whitepaper</div><div class="smf"><i class="fas fa-check-circle"></i> ERC-20 smart contract (audited)</div><div class="smf"><i class="fas fa-check-circle"></i> Polygon / Ethereum deployment</div><div class="smf"><i class="fas fa-check-circle"></i> DEX listing (QuickSwap / Uniswap)</div><div class="smf"><i class="fas fa-check-circle"></i> Token website & community setup</div></div><div class="svc-modal-tiers"><div class="smt"><div class="smt-name">Token</div><div class="smt-price">UGX 9M</div></div><div class="smt featured"><div class="smt-badge">⭐ Popular</div><div class="smt-name">Full Launch</div><div class="smt-price">UGX 22M</div></div><div class="smt"><div class="smt-name">Exchange</div><div class="smt-price">UGX 55M+</div></div></div><a href="#booking" class="btn btn-primary btn-lg" onclick="closeModal()"><i class="fas fa-calendar-check"></i> Book a Consultation</a><a href="https://wa.me/256772002326?text=Hi DeryCode, I want to launch a token" target="_blank" class="btn btn-outline btn-lg"><i class="fab fa-whatsapp"></i> WhatsApp</a></div></div>
+
+<div class="svc-modal" id="modal-api"><button class="svc-modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button><div class="svc-modal-imgs"><div class="modal-img-slide active" style="background:linear-gradient(135deg,#1a3a2d,#2d7a5a)"><i class="fas fa-plug" style="font-size:80px;color:#D4A017;"></i></div><button class="modal-img-prev" onclick="modalSlide(-1)"><i class="fas fa-chevron-left"></i></button><button class="modal-img-next" onclick="modalSlide(1)"><i class="fas fa-chevron-right"></i></button></div><div class="svc-modal-body"><span class="svc-modal-tag">Integrations</span><h2>API & Payment Integrations</h2><p class="svc-modal-desc">Connect your website or app to MTN MoMo, Airtel Money, PesaPal, Stripe, WhatsApp Business API, SMS gateways, and any third-party service.</p><div class="svc-modal-features"><div class="smf"><i class="fas fa-check-circle"></i> MTN MoMo & Airtel Money</div><div class="smf"><i class="fas fa-check-circle"></i> PesaPal & Stripe payments</div><div class="smf"><i class="fas fa-check-circle"></i> WhatsApp Business API</div><div class="smf"><i class="fas fa-check-circle"></i> SMS & email gateways</div></div><div class="svc-modal-tiers"><div class="smt"><div class="smt-name">Single API</div><div class="smt-price">UGX 1.2M</div></div><div class="smt featured"><div class="smt-badge">⭐ Popular</div><div class="smt-name">Multi API</div><div class="smt-price">UGX 3.5M</div></div><div class="smt"><div class="smt-name">Full Stack</div><div class="smt-price">UGX 8M+</div></div></div><a href="#booking" class="btn btn-primary btn-lg" onclick="closeModal()"><i class="fas fa-calendar-check"></i> Book a Consultation</a><a href="https://wa.me/256772002326?text=Hi DeryCode, I need API integration" target="_blank" class="btn btn-outline btn-lg"><i class="fab fa-whatsapp"></i> WhatsApp</a></div></div>
+
+<!-- Keyboard close -->
+<script>document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});</script>
+
+
 <section class="section" id="portfolio">
   <div class="container">
     <div class="section-header">
@@ -1527,5 +1783,103 @@
 </button>
 
 <script src="script.js?v=202606191851"></script>
+<script>
+// ============================================================
+// SERVICES — Slider + Filter + Modals
+// ============================================================
+(function() {
+  // --- SLIDER ---
+  const slider = document.getElementById('svcSlider');
+  const slides = slider ? slider.children : [];
+  const dotsWrap = document.getElementById('slideDots');
+  let cur = 0, autoTimer;
+
+  function buildDots() {
+    if (!dotsWrap || !slides.length) return;
+    dotsWrap.innerHTML = '';
+    for (let i = 0; i < slides.length; i++) {
+      const d = document.createElement('div');
+      d.className = 'slide-dot' + (i === 0 ? ' active' : '');
+      d.onclick = () => goSlide(i);
+      dotsWrap.appendChild(d);
+    }
+  }
+  function goSlide(n) {
+    cur = (n + slides.length) % slides.length;
+    if (slider) slider.style.transform = `translateX(-${cur * 100}%)`;
+    document.querySelectorAll('.slide-dot').forEach((d,i) => d.classList.toggle('active', i === cur));
+  }
+  function startAuto() { autoTimer = setInterval(() => goSlide(cur + 1), 4500); }
+  function stopAuto() { clearInterval(autoTimer); }
+
+  if (slider && slides.length) {
+    buildDots();
+    startAuto();
+    document.getElementById('slideNext')?.addEventListener('click', () => { stopAuto(); goSlide(cur+1); startAuto(); });
+    document.getElementById('slidePrev')?.addEventListener('click', () => { stopAuto(); goSlide(cur-1); startAuto(); });
+    slider.addEventListener('touchstart', e => { slider._tx = e.touches[0].clientX; });
+    slider.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - slider._tx;
+      if (Math.abs(dx) > 40) { stopAuto(); goSlide(dx < 0 ? cur+1 : cur-1); startAuto(); }
+    });
+  }
+
+  // --- CATEGORY FILTER ---
+  document.querySelectorAll('.svc-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+      document.querySelectorAll('.svc-tab').forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+      const cat = this.dataset.cat;
+      document.querySelectorAll('.svc-product-card').forEach(card => {
+        const show = cat === 'all' || card.dataset.cat === cat;
+        card.style.display = show ? '' : 'none';
+        card.style.animation = show ? 'fadeInUp 0.4s ease both' : '';
+      });
+    });
+  });
+
+  // --- MODALS ---
+  let modalImgIdx = 0;
+  window.openModal = function(id) {
+    document.getElementById('svcModalOverlay').classList.add('show');
+    const m = document.getElementById('modal-' + id);
+    if (!m) return;
+    document.querySelectorAll('.svc-modal').forEach(x => x.classList.remove('show'));
+    m.classList.add('show');
+    modalImgIdx = 0;
+    updateModalImgs(m);
+    document.body.style.overflow = 'hidden';
+  };
+  window.closeModal = function() {
+    document.getElementById('svcModalOverlay').classList.remove('show');
+    document.querySelectorAll('.svc-modal').forEach(x => x.classList.remove('show'));
+    document.body.style.overflow = '';
+  };
+  window.modalSlide = function(dir) {
+    const m = document.querySelector('.svc-modal.show');
+    if (!m) return;
+    const slides = m.querySelectorAll('.modal-img-slide');
+    modalImgIdx = (modalImgIdx + dir + slides.length) % slides.length;
+    updateModalImgs(m);
+  };
+  function updateModalImgs(m) {
+    const slides = m.querySelectorAll('.modal-img-slide');
+    slides.forEach((s,i) => {
+      s.style.transform = `translateX(${(i - modalImgIdx) * 100}%)`;
+      s.style.position = 'absolute';
+      s.style.width = '100%';
+      s.style.height = '100%';
+      s.style.top = '0';
+      s.style.transition = 'transform 0.4s ease';
+    });
+  }
+
+  // Fade-in animation
+  const style = document.createElement('style');
+  style.textContent = '@keyframes fadeInUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }';
+  document.head.appendChild(style);
+})();
+
+</script>
 </body>
 </html>
