@@ -89,7 +89,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
 
-document.querySelectorAll('.service-card, .portfolio-card, .tech-category, .booking-step, .value-item, .contact-item, .testimonial-card').forEach(el => {
+document.querySelectorAll('.service-card, .portfolio-card, .tech-category, .booking-step, .value-item, .contact-item, .testimonial-card, .why-card').forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(24px)';
   el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
@@ -271,4 +271,20 @@ if (contactForm) {
       window.open(`https://wa.me/256772002326?text=${waMsg}`, '_blank');
     }, 1000);
   });
+}
+
+
+// ===== NEWSLETTER =====
+function handleNewsletter(e) {
+  e.preventDefault();
+  const input = e.target.querySelector('input[type="email"]');
+  const btn = e.target.querySelector('button');
+  if (!input || !input.value) return;
+  btn.textContent = '✓ Subscribed!';
+  btn.style.background = '#25D366';
+  input.value = '';
+  setTimeout(() => {
+    btn.textContent = 'Subscribe';
+    btn.style.background = '';
+  }, 3500);
 }
