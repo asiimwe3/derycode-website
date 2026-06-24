@@ -498,6 +498,37 @@
 }
 
 </style>
+
+<style>
+/* ===== AD UNITS ===== */
+.dery-ad-wrap {
+  width: 100%; max-width: 900px; margin: 0 auto 32px;
+  padding: 10px 16px 14px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px; text-align: center; overflow: hidden;
+}
+.dery-ad-label {
+  font-size: 10px; color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 6px; font-weight: 600;
+}
+.dery-ad-banner {
+  display: flex; align-items: center; justify-content: center;
+  gap: 16px; flex-wrap: wrap; padding: 10px 0;
+}
+.dery-ad-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--gradient); color: #fff; border: none;
+  padding: 10px 24px; border-radius: 50px; font-size: 13px;
+  font-weight: 700; cursor: pointer; text-decoration: none;
+  transition: all 0.2s; box-shadow: 0 4px 14px rgba(212,160,23,0.3);
+}
+.dery-ad-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212,160,23,0.45); }
+.dery-ad-text { font-size: 13px; color: var(--text-muted); }
+@media(max-width:600px){ .dery-ad-banner { flex-direction: column; gap: 10px; } }
+</style>
+
 </head>
 <body>
 
@@ -578,6 +609,18 @@
     <span>Scroll Down</span>
   </div>
 </section>
+
+<!-- AD UNIT 1 — After Hero -->
+<div class="dery-ad-wrap" id="adUnit1">
+  <div class="dery-ad-label">Sponsored</div>
+  <div class="dery-ad-banner">
+    <span class="dery-ad-text">🚀 Discover amazing offers from our partners</span>
+    <a class="dery-ad-cta" href="https://omg10.com/4/11193648" target="_blank" rel="noopener">
+      <i class="fas fa-external-link-alt"></i> View Offer
+    </a>
+  </div>
+</div>
+
 
 <!-- TECH STRIP -->
 <div class="tech-strip">
@@ -1172,6 +1215,18 @@
 <script>document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});</script>
 
 
+
+<!-- AD UNIT 2 — Before Portfolio -->
+<div class="dery-ad-wrap" id="adUnit2">
+  <div class="dery-ad-label">Advertisement</div>
+  <div class="dery-ad-banner">
+    <span class="dery-ad-text">💡 Sponsored opportunities for you</span>
+    <a class="dery-ad-cta" href="https://omg10.com/4/11193648" target="_blank" rel="noopener">
+      <i class="fas fa-star"></i> Learn More
+    </a>
+  </div>
+</div>
+
 <section class="section" id="portfolio">
   <div class="container">
     <div class="section-header">
@@ -1762,6 +1817,18 @@
 </section>
 
 <!-- ===== FOOTER ===== -->
+
+<!-- AD UNIT 3 — Above Footer -->
+<div class="dery-ad-wrap" id="adUnit3">
+  <div class="dery-ad-label">Sponsored</div>
+  <div class="dery-ad-banner">
+    <span class="dery-ad-text">🌍 Partner offers — click to explore</span>
+    <a class="dery-ad-cta" href="https://omg10.com/4/11193648" target="_blank" rel="noopener">
+      <i class="fas fa-arrow-right"></i> Explore
+    </a>
+  </div>
+</div>
+
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
