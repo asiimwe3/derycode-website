@@ -498,6 +498,34 @@
 }
 
 </style>
+
+<style>
+/* ===== AD UNITS ===== */
+.dery-ad-wrap {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 32px;
+  padding: 12px 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+.dery-ad-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+@media (max-width: 600px) {
+  .dery-ad-wrap { padding: 8px; border-radius: 8px; }
+}
+</style>
+
 </head>
 <body>
 
@@ -587,6 +615,12 @@
 </div>
 
 <!-- ===== ABOUT ===== -->
+
+<!-- AD UNIT 1 — Below Hero (toggle: remove to disable) -->
+<div class="dery-ad-wrap" id="adUnit1">
+  <div class="dery-ad-label">Sponsored</div>
+  <script src="https://omg10.com/4/11193648" async></script>
+</div>
 <section class="section" id="about">
   <div class="container">
     <div class="section-header">
@@ -1132,6 +1166,12 @@
 <script>document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});</script>
 
 
+
+<!-- AD UNIT 2 — Between Services & Portfolio (toggle: remove to disable) -->
+<div class="dery-ad-wrap" id="adUnit2">
+  <div class="dery-ad-label">Advertisement</div>
+  <script src="https://omg10.com/4/11193648" async></script>
+</div>
 <section class="section" id="portfolio">
   <div class="container">
     <div class="section-header">
@@ -1722,6 +1762,12 @@
 </section>
 
 <!-- ===== FOOTER ===== -->
+
+<!-- AD UNIT 3 — Above Footer (toggle: remove to disable) -->
+<div class="dery-ad-wrap" id="adUnit3">
+  <div class="dery-ad-label">Sponsored</div>
+  <script src="https://omg10.com/4/11193648" async></script>
+</div>
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
