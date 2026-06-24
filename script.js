@@ -89,7 +89,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
 
-document.querySelectorAll('.service-card, .portfolio-card, .tech-category, .booking-step, .value-item, .contact-item').forEach(el => {
+document.querySelectorAll('.service-card, .portfolio-card, .tech-category, .booking-step, .value-item, .contact-item, .testimonial-card').forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(24px)';
   el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
