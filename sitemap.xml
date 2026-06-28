@@ -1,56 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
-  
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
   <url>
     <loc>https://derycode.publicvm.com/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://derycode.publicvm.com/hero.webp</image:loc>
-      <image:title>DeryCode — Software, Blockchain, AI & Web3 Company in Uganda</image:title>
-      <image:caption>Uganda's leading full-service technology company based in Kampala</image:caption>
+      <image:title>DeryCode — Software, Blockchain, AI &amp; Web3 Company in Uganda</image:title>
     </image:image>
     <image:image>
       <image:loc>https://derycode.publicvm.com/team.webp</image:loc>
       <image:title>DeryCode Team in Kampala, Uganda</image:title>
     </image:image>
-    <image:image>
-      <image:loc>https://derycode.publicvm.com/about.webp</image:loc>
-      <image:title>DeryCode Technology Network</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://derycode.publicvm.com/derycoin.webp</image:loc>
-      <image:title>DeryCoin (DRC) — ERC-20 Token by DeryCode</image:title>
-    </image:image>
   </url>
-  
+
   <url>
     <loc>https://derycode.publicvm.com/blog.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://derycode.publicvm.com/blog1.webp</image:loc>
-      <image:title>DeryCode Blog Post 1</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://derycode.publicvm.com/blog2.webp</image:loc>
-      <image:title>DeryCode Blog Post 2</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://derycode.publicvm.com/blog3.webp</image:loc>
-      <image:title>DeryCode Blog Post 3</image:title>
-    </image:image>
   </url>
-  
+
   <url>
     <loc>https://derycode.publicvm.com/docs.html</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
 </urlset>

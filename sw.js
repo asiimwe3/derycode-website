@@ -1,43 +1,85 @@
-const CACHE_NAME = 'derycode-v2';
-const ASSETS = [
-  '/',
-  '/index.html',
+/**
+ * DeryCode Service Worker — sw.js (refactored June 2026)
+ *
+ * Strategy: Cache-first for static assets, network-first for HTML.
+ * This avoids serving stale HTML while still making images/fonts/CSS
+ * load instantly from cache.
+ *
+ * Changes from original:
+ * - Removed attempt to cache cross-origin Google Fonts / cdnjs at
+ *   install time (they often block SW install with CORS errors)
+ * - Separate strategies for HTML (network-first) vs assets (cache-first)
+ * - Cache-busting: version bump clears old caches automatically
+ * - Added error handling so a cache miss doesn't throw
+ */
+
+const VERSION    = 'derycode-v3';
+const HTML_CACHE = VERSION + '-html';
+const ASSET_CACHE = VERSION + '-assets';
+
+// Static assets to pre-cache (versioned — all served locally)
+const PRECACHE_ASSETS = [
   '/style.css',
   '/script.js',
   '/manifest.json',
-  '/assets/derycode-team-hq.webp',
-  '/assets/derycode-team-hq.jpg',
-  'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap',
-  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
+  '/hero.webp',
+  '/about.webp',
+  '/team.webp',
+  '/derycoin.webp',
 ];
 
-// Install — cache all assets
-self.addEventListener('install', e => {
+// ── INSTALL ──────────────────────────────────────────────────
+self.addEventListener('install', (e) => {
   e.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS))
+    caches.open(ASSET_CACHE)
+      .then(cache => cache.addAll(PRECACHE_ASSETS))
+      .then(() => self.skipWaiting())
   );
-  self.skipWaiting();
 });
 
-// Activate — clean old caches
-self.addEventListener('activate', e => {
+// ── ACTIVATE ─────────────────────────────────────────────────
+self.addEventListener('activate', (e) => {
+  const keep = [HTML_CACHE, ASSET_CACHE];
   e.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
-    )
+    caches.keys()
+      .then(keys => Promise.all(
+        keys.filter(k => !keep.includes(k)).map(k => caches.delete(k))
+      ))
+      .then(() => self.clients.claim())
   );
-  self.clients.claim();
 });
 
-// Fetch — network first, fallback to cache
-self.addEventListener('fetch', e => {
+// ── FETCH ─────────────────────────────────────────────────────
+self.addEventListener('fetch', (e) => {
+  const { request } = e;
+  const url = new URL(request.url);
+
+  // Only handle same-origin GET requests
+  if (request.method !== 'GET' || url.origin !== location.origin) return;
+
+  // HTML pages → network-first, fallback to cache
+  if (request.headers.get('Accept')?.includes('text/html')) {
+    e.respondWith(
+      fetch(request)
+        .then(res => {
+          const clone = res.clone();
+          caches.open(HTML_CACHE).then(c => c.put(request, clone));
+          return res;
+        })
+        .catch(() => caches.match(request))
+    );
+    return;
+  }
+
+  // Static assets → cache-first, fallback to network
   e.respondWith(
-    fetch(e.request)
-      .then(res => {
+    caches.match(request).then(cached => {
+      if (cached) return cached;
+      return fetch(request).then(res => {
         const clone = res.clone();
-        caches.open(CACHE_NAME).then(cache => cache.put(e.request, clone));
+        caches.open(ASSET_CACHE).then(c => c.put(request, clone));
         return res;
-      })
-      .catch(() => caches.match(e.request))
+      });
+    }).catch(() => new Response('Offline', { status: 503 }))
   );
 });

@@ -1,25 +1,15 @@
 User-agent: *
 Allow: /
-Allow: /$
-Allow: /blog.html
-Allow: /docs.html
-Allow: /sitemap.xml
-Allow: /robots.txt
-Allow: /manifest.json
-Allow: /hero.webp
-Allow: /team.webp
-Allow: /about.webp
-Allow: /derycoin.webp
 
-# Block resource crawling
-User-agent: *
-Disallow: /style.css
-Disallow: /script.js
-Disallow: /sw.js
-Disallow: /blog.css
-Disallow: /docs.css
+# Explicitly allow key assets Google needs to render the page
+Allow: /style.css
+Allow: /script.js
+Allow: /sw.js
+Allow: /*.webp$
+Allow: /*.jpg$
+Allow: /*.png$
 
-# Block SEO tool bots to save crawl budget
+# Block junk bots only
 User-agent: AhrefsBot
 Disallow: /
 
@@ -32,34 +22,24 @@ Disallow: /
 User-agent: DotBot
 Disallow: /
 
-# Allow AI crawlers for AI search visibility
+# Allow AI crawlers
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
-User-agent: PerplexityBot
+User-agent: ClaudeBot
 Allow: /
 
-User-agent: ClaudeBot
+User-agent: PerplexityBot
 Allow: /
 
 User-agent: Google-Extended
 Allow: /
 
-User-agent: Applebot-Extended
-Allow: /
-
-User-agent: cohere-ai
-Allow: /
-
-# Allow Google
 User-agent: Googlebot
 Allow: /
-Allow: /*.webp$
-Allow: /*.png$
-Allow: /*.jpg$
 
 User-agent: Googlebot-Image
 Allow: /
