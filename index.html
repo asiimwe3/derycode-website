@@ -51,8 +51,8 @@
   <meta name="apple-mobile-web-app-capable"          content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title"            content="DeryCode" />
-  <link rel="apple-touch-icon" href="https://media.base44.com/images/public/69f8f20192eecc9587b7eca6/1eb2e552d_generated_image.png" />
-  <link rel="icon" type="image/png"                  href="https://media.base44.com/images/public/69f8f20192eecc9587b7eca6/1eb2e552d_generated_image.png" />
+  <link rel="apple-touch-icon" href="logo.webp" />
+  <link rel="icon" type="image/png"                  href="logo.webp" />
 
   <!-- ── Performance hints ── -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -181,12 +181,13 @@
 <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
   <div class="nav-container">
     <a href="#home" class="logo" aria-label="DeryCode — Home">
-      <div class="logo-icon" aria-hidden="true">D</div>
+      <img src="logo.webp" alt="DeryCode logo" class="logo-icon-img" width="38" height="38" />
       <span class="logo-text">Dery<span class="accent">Code</span></span>
     </a>
     <ul class="nav-links" id="navLinks" role="menubar">
       <li role="none"><a href="#home"     role="menuitem">Home</a></li>
       <li role="none"><a href="#about"    role="menuitem">About</a></li>
+      <li role="none"><a href="#founder"  role="menuitem">Founder</a></li>
       <li role="none"><a href="#services" role="menuitem">Services</a></li>
       <li role="none"><a href="#portfolio" role="menuitem">Portfolio</a></li>
       <li role="none"><a href="blog.html" role="menuitem">Blog</a></li>
@@ -314,7 +315,7 @@
       <div class="about-visual animate-on-scroll">
         <div class="about-team-photo">
           <img loading="lazy" decoding="async" width="600" height="420"
-               src="team.webp"
+               src="team-office.webp"
                alt="DeryCode development team collaborating in Kampala, Uganda" />
           <div class="team-photo-badge" aria-hidden="true">
             <i class="fas fa-users"></i> Our Team
@@ -355,6 +356,36 @@
         </div>
         <a href="#booking" class="btn btn-primary">
           <i class="fas fa-calendar-check" aria-hidden="true"></i> Work With Us
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOUNDER ── -->
+<section class="section" id="founder" aria-labelledby="founder-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Leadership</span>
+      <h2 class="section-title" id="founder-heading">Meet the <span class="gradient-text">Founder</span></h2>
+      <p class="section-subtitle">The developer behind DeryCode's mission to bring world-class technology to Uganda and Africa.</p>
+    </div>
+    <div class="about-grid founder-grid">
+      <div class="about-visual animate-on-scroll">
+        <div class="about-team-photo founder-photo">
+          <img loading="lazy" decoding="async" width="600" height="420"
+               src="founder.webp"
+               alt="Derick Asiimwe, Founder of DeryCode" />
+          <div class="team-photo-badge" aria-hidden="true">
+            <i class="fas fa-user-tie"></i> Founder & Lead Engineer
+          </div>
+        </div>
+      </div>
+      <div class="about-content">
+        <p class="about-lead">Derick Asiimwe founded DeryCode to prove that world-class software, blockchain, and AI solutions can be built right here in Uganda — for clients across Africa and beyond.</p>
+        <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: var(--sp-md);">With hands-on experience across full-stack web development, mobile apps, fintech/SACCO platforms, and Web3, Derick leads every DeryCode project personally — from architecture to deployment — ensuring every client gets senior-level quality.</p>
+        <a href="https://wa.me/256772002326?text=Hi%20Derick%2C%20I%27d%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i> Talk to the Founder
         </a>
       </div>
     </div>
@@ -1025,7 +1056,7 @@
         </div>
       </article>
       <article class="portfolio-card animate-on-scroll">
-        <div class="portfolio-img" style="background-image:url('https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?w=600&q=80');">
+        <div class="portfolio-img" style="background-image:url('blockchain-hero.webp');">
           <div class="portfolio-overlay">
             <a href="#contact" class="btn btn-primary btn-sm" aria-label="Inquire about DeryCoin">
               <i class="fas fa-envelope" aria-hidden="true"></i> Enquire
@@ -1822,7 +1853,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#home" class="logo" aria-label="DeryCode — Back to top">
-          <div class="logo-icon" aria-hidden="true">D</div>
+          <img src="logo.webp" alt="DeryCode logo" class="logo-icon-img" width="38" height="38" />
           <span class="logo-text">Dery<span class="accent">Code</span></span>
         </a>
         <p>Uganda's leading full-service technology company. Building the future with Software, Blockchain, AI &amp; Web3.</p>
@@ -1855,6 +1886,7 @@
         <h3>Company</h3>
         <ul>
           <li><a href="#about">About Us</a></li>
+          <li><a href="#founder">Founder</a></li>
           <li><a href="#portfolio">Our Work</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="docs.html">Documentation</a></li>

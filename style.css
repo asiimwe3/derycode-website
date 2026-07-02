@@ -211,6 +211,12 @@ body {
   color: #fff; font-size: 1.1rem; font-weight: 900;
   flex-shrink: 0;
 }
+.logo-icon-img {
+  width: 38px; height: 38px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  flex-shrink: 0;
+}
 .logo-text { font-size: 1.3rem; font-weight: 800; color: var(--text); }
 
 /* Nav links */
@@ -1128,4 +1134,8 @@ body {
   .navbar, .wa-float, .back-to-top, .hero-bg, #heroCanvas { display: none; }
   body { color: #000; background: #fff; }
   a::after { content: ' (' attr(href) ')'; }
+}
+
+.founder-photo .team-photo-badge {
+  background: var(--grad-primary, var(--grad-gold));
 }
