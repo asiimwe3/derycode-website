@@ -441,7 +441,7 @@ body {
 .hero-float-card span { display: block; font-size: 0.7rem; color: var(--text-muted); }
 .hero-float-1 { top: 6%; left: 0%; animation-delay: 0s; }
 .hero-float-2 { bottom: 12%; left: -2%; animation-delay: 1.5s; }
-.hero-float-3 { top: 44%; right: 2%; animation-delay: 3s; }
+.hero-float-3 { top: 44%; right: 10%; animation-delay: 3s; }
 
 @keyframes heroPanelFloat {
   0%, 100% { transform: translateY(0) rotate(-1deg); }
