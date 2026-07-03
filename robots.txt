@@ -9,7 +9,7 @@ Allow: /*.webp$
 Allow: /*.jpg$
 Allow: /*.png$
 
-# Block junk bots only
+# Block low-value scraper / SEO-spam bots (no referral value, waste crawl budget)
 User-agent: AhrefsBot
 Disallow: /
 
@@ -22,7 +22,35 @@ Disallow: /
 User-agent: DotBot
 Disallow: /
 
-# Allow AI crawlers
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: SerpstatBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+# Allow major search engines explicitly
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Allow AI crawlers (visibility in AI answer engines)
 User-agent: GPTBot
 Allow: /
 
@@ -38,10 +66,7 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-User-agent: Googlebot
-Allow: /
-
-User-agent: Googlebot-Image
+User-agent: OAI-SearchBot
 Allow: /
 
 Sitemap: https://derycode.publicvm.com/sitemap.xml
