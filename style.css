@@ -592,7 +592,9 @@ body {
   box-shadow: var(--shadow);
 }
 .about-team-photo img {
-  width: 100%; height: 420px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/3;
   object-fit: cover;
 }
 .team-photo-badge {
