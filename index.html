@@ -79,7 +79,7 @@
   </noscript>
 
   <!-- ── Main stylesheet ── -->
-  <link rel="stylesheet" href="style.css?v=20260802d" />
+  <link rel="stylesheet" href="style.css?v=20260802e" />
 
   <!-- ── Structured Data ── -->
   <script type="application/ld+json">
@@ -192,12 +192,68 @@
 <body>
 
 <!-- ── Disco Side Lights ── -->
-<div class="disco-light-left" aria-hidden="true"></div>
-<div class="disco-light-right" aria-hidden="true"></div>
-<div class="disco-orb disco-orb-left" aria-hidden="true"></div>
-<div class="disco-orb disco-orb-left-2" aria-hidden="true"></div>
-<div class="disco-orb disco-orb-right" aria-hidden="true"></div>
-<div class="disco-orb disco-orb-right-2" aria-hidden="true"></div>
+<style>
+  @keyframes discoSlideLeft {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 0% 200%; }
+  }
+  @keyframes discoSlideRight {
+    0% { background-position: 0% 200%; }
+    100% { background-position: 0% 0%; }
+  }
+  @keyframes discoOrbFloat1 {
+    0%, 100% { transform: translateY(0px) scale(1); opacity: 0.35; }
+    50% { transform: translateY(-50px) scale(1.4); opacity: 0.5; }
+  }
+  .disco-bar-left, .disco-bar-right {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 14px;
+    z-index: 99999;
+    pointer-events: none;
+    background-size: 100% 200%;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  .disco-bar-left {
+    left: 0;
+    background: linear-gradient(180deg, #ff006e, #fb5607, #ffbe0b, #8338ec, #3a86ff, #06ffa5, #ff006e);
+    box-shadow: -4px 0 30px rgba(255,0,110,0.7), 4px 0 40px rgba(131,56,236,0.5), 0 0 60px rgba(255,190,11,0.4);
+    animation-name: discoSlideLeft;
+  }
+  .disco-bar-right {
+    right: 0;
+    background: linear-gradient(180deg, #06ffa5, #3a86ff, #8338ec, #ffbe0b, #fb5607, #ff006e, #06ffa5);
+    box-shadow: 4px 0 30px rgba(6,255,165,0.7), -4px 0 40px rgba(58,134,255,0.5), 0 0 60px rgba(255,0,110,0.4);
+    animation-name: discoSlideRight;
+  }
+  .disco-glow {
+    position: fixed;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    filter: blur(70px);
+    pointer-events: none;
+    z-index: 99998;
+    animation: discoOrbFloat1 8s ease-in-out infinite;
+  }
+  .disco-glow-1 { left: -80px; top: 15%; background: radial-gradient(circle, rgba(255,0,110,0.6), transparent 70%); }
+  .disco-glow-2 { left: -50px; top: 55%; background: radial-gradient(circle, rgba(131,56,236,0.5), transparent 70%); animation-delay: 2s; }
+  .disco-glow-3 { right: -80px; top: 30%; background: radial-gradient(circle, rgba(6,255,165,0.5), transparent 70%); animation-delay: 1s; }
+  .disco-glow-4 { right: -50px; top: 65%; background: radial-gradient(circle, rgba(58,134,255,0.5), transparent 70%); animation-delay: 3s; }
+  @media (max-width: 768px) {
+    .disco-bar-left, .disco-bar-right { width: 8px; }
+    .disco-glow { width: 150px; height: 150px; }
+  }
+</style>
+<div class="disco-bar-left" aria-hidden="true"></div>
+<div class="disco-bar-right" aria-hidden="true"></div>
+<div class="disco-glow disco-glow-1" aria-hidden="true"></div>
+<div class="disco-glow disco-glow-2" aria-hidden="true"></div>
+<div class="disco-glow disco-glow-3" aria-hidden="true"></div>
+<div class="disco-glow disco-glow-4" aria-hidden="true"></div>
 
 <!-- ── Skip navigation (WCAG) ── -->
 <a class="skip-link" href="#main-content">Skip to main content</a>
