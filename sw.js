@@ -13,7 +13,7 @@
  * - Added error handling so a cache miss doesn't throw
  */
 
-const VERSION    = 'derycode-v4';
+const VERSION    = 'derycode-v5';
 const HTML_CACHE = VERSION + '-html';
 const ASSET_CACHE = VERSION + '-assets';
 
@@ -26,6 +26,18 @@ const PRECACHE_ASSETS = [
   '/about.webp',
   '/team.webp',
   '/derycoin.webp',
+  '/business-websites.html',
+  '/web-applications.html',
+  '/mobile-apps.html',
+  '/banking-sacco-software.html',
+  '/smart-contracts.html',
+  '/business-management-erp.html',
+  '/school-digital-libraries.html',
+  '/ai-automation.html',
+  '/digital-marketing.html',
+  '/uiux-design-branding.html',
+  '/token-crypto-development.html',
+  '/api-payment-integrations.html',
 ];
 
 // ── INSTALL ──────────────────────────────────────────────────

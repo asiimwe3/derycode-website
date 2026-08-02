@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Banking & SACCO Software | DeryCode</title>
+  <meta name="description" content="Core banking, MoMo integration, loan & savings management for SACCOs and microfinance institutions in Uganda." />
+  <meta name="keywords" content="fintech & banking, banking & sacco software, derycode, uganda, kampala" />
+  <link rel="canonical" href="https://derycode.publicvm.com/banking-sacco-software.html" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://derycode.publicvm.com/banking-sacco-software.html" />
+  <meta property="og:title" content="Banking & SACCO Software | DeryCode" />
+  <meta property="og:description" content="Core banking, MoMo integration, loan & savings management for SACCOs and microfinance institutions in Uganda." />
+  <meta property="og:site_name" content="DeryCode" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#D4A017" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="apple-touch-icon" href="logo.webp" />
+  <link rel="icon" type="image/png" href="logo.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" /></noscript>
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /></noscript>
+  <link rel="stylesheet" href="style.css" />
+  
+<style>
+.svc-page-hero { position: relative; padding: 120px 0 60px; overflow: hidden; background: var(--card-bg); }
+.svc-page-hero-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.svc-page-icon { width: 90px; height: 90px; border-radius: 22px; display: flex; align-items: center; justify-content: center; font-size: 42px; color: #D4A017; margin-bottom: 24px; border: 2px solid var(--card-border); }
+.svc-page-tag { display: inline-block; font-size: 0.78rem; font-weight: 600; color: var(--primary); border: 1px solid var(--primary); padding: 4px 14px; border-radius: 50px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px; }
+.svc-page-title { font-size: 2.4rem; font-weight: 800; margin-bottom: 16px; line-height: 1.2; }
+.svc-page-desc { font-size: 1.05rem; color: var(--text-muted); line-height: 1.8; max-width: 700px; margin: 0 auto 32px; }
+.svc-page-rating { display: flex; align-items: center; gap: 8px; margin-bottom: 32px; color: var(--text-muted); font-size: 0.9rem; }
+.svc-page-rating i { color: #D4A017; }
+.svc-page-content { max-width: 900px; margin: 0 auto; padding: 0 24px 80px; }
+.svc-page-section-title { font-size: 1.3rem; font-weight: 700; margin: 48px 0 20px; padding-bottom: 10px; border-bottom: 2px solid var(--card-border); }
+.svc-features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.svc-feature-item { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; padding: 10px 14px; border-radius: 12px; background: var(--card-bg); border: 1px solid var(--card-border); transition: all 0.2s; }
+.svc-feature-item:hover { border-color: var(--primary); transform: translateX(4px); }
+.svc-feature-item i { color: var(--primary); font-size: 1.1rem; flex-shrink: 0; }
+.svc-cat-title { font-size: 0.95rem; font-weight: 700; color: var(--primary); margin-top: 28px; margin-bottom: 14px; padding-bottom: 6px; border-bottom: 1px solid var(--card-border); text-transform: uppercase; letter-spacing: 0.5px; }
+.svc-cat-title:first-child { margin-top: 0; }
+.svc-pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 24px; }
+.svc-price-card { background: var(--card-bg); border: 2px solid var(--card-border); border-radius: 18px; padding: 28px 20px; text-align: center; position: relative; transition: all 0.3s; }
+.svc-price-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+.svc-price-card.featured { border-color: var(--primary); background: rgba(212,160,23,0.06); }
+.svc-price-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #D4A017, #FFD700); color: #0A0800; font-size: 0.72rem; font-weight: 700; padding: 3px 14px; border-radius: 50px; white-space: nowrap; }
+.svc-price-name { font-size: 0.85rem; color: var(--text-muted); font-weight: 600; margin-bottom: 8px; }
+.svc-price-amount { font-size: 1.6rem; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
+.svc-price-desc { font-size: 0.82rem; color: var(--text-muted); }
+.svc-cta { max-width: 900px; margin: 0 auto; padding: 0 24px 80px; text-align: center; }
+.svc-cta-box { background: var(--card-bg); border: 2px solid var(--primary); border-radius: 22px; padding: 40px 30px; }
+.svc-cta-box h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; }
+.svc-cta-box p { color: var(--text-muted); margin-bottom: 28px; font-size: 1rem; }
+.svc-cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.svc-cta-buttons .btn { font-size: 1rem; padding: 14px 28px; }
+.svc-back { max-width: 900px; margin: 0 auto; padding: 30px 24px 0; }
+.svc-back a { display: inline-flex; align-items: center; gap: 8px; color: var(--text-muted); font-size: 0.9rem; text-decoration: none; transition: color 0.2s; }
+.svc-back a:hover { color: var(--primary); }
+.svc-related { max-width: 900px; margin: 0 auto; padding: 0 24px 80px; }
+.svc-related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; margin-top: 20px; }
+.svc-related-card { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--card-border); background: var(--card-bg); text-decoration: none; color: var(--text); transition: all 0.2s; font-size: 0.85rem; }
+.svc-related-card:hover { border-color: var(--primary); transform: translateY(-2px); }
+.svc-related-card i { color: var(--primary); font-size: 1.2rem; }
+@media (max-width: 640px) {
+  .svc-features-grid { grid-template-columns: 1fr; }
+  .svc-page-title { font-size: 1.8rem; }
+  .svc-pricing-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+</head>
+<body>
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a href="#home" class="logo" aria-label="DeryCode — Home">
+      <img src="logo.webp" alt="DeryCode logo" class="logo-icon-img" width="38" height="38" />
+      <span class="logo-text">Dery<span class="accent">Code</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks" role="menubar">
+      <li role="none"><a href="#home"     role="menuitem">Home</a></li>
+      <li role="none"><a href="#about"    role="menuitem">About</a></li>
+      <li role="none"><a href="#founder"  role="menuitem">Founder</a></li>
+      <li role="none"><a href="#faq"      role="menuitem">FAQ</a></li>
+      <li role="none"><a href="#services" role="menuitem">Services</a></li>
+      <li role="none"><a href="#portfolio" role="menuitem">Portfolio</a></li>
+      <li role="none"><a href="partners.html" role="menuitem">Partners <span style="background:linear-gradient(135deg,#D4A017,#FFD700);color:#0A0800;font-size:0.72rem;font-weight:800;padding:2px 7px;border-radius:50px;margin-left:3px;">EARN</span></a></li>
+      <li role="none"><a href="blog.html" role="menuitem">Blog</a></li>
+      <li role="none"><a href="docs.html" role="menuitem">Docs</a></li>
+      <li role="none"><a href="#booking"  role="menuitem">Book a Call</a></li>
+      <li role="none"><a href="#contact"  role="menuitem">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch to light mode">
+        <i class="fas fa-sun" id="themeIcon" aria-hidden="true"></i>
+      </button>
+      <a href="#booking" class="btn btn-primary nav-cta">
+        <i class="fas fa-calendar-check" aria-hidden="true"></i> Book a Call
+      </a>
+      <button class="hamburger" id="hamburger"
+              aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+  <main>
+    <div class="svc-back">
+      <a href="/#services"><i class="fas fa-arrow-left"></i> All Services</a>
+    </div>
+
+    <section class="svc-page-hero">
+      <div class="svc-page-hero-inner">
+        <div class="svc-page-icon" style="background:linear-gradient(135deg,#1a3a4a,#0d5c7a);">
+          <i class="fas fa-university"></i>
+        </div>
+        <span class="svc-page-tag">Fintech & Banking</span>
+        <h1 class="svc-page-title">Banking & SACCO Software</h1>
+        <p class="svc-page-desc">We build core banking systems, SACCO platforms, microfinance software, and digital payment infrastructure for Ugandan institutions. MTN MoMo and Airtel Money integration included.</p>
+        <div class="svc-page-rating">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <span>5.0 (17 orders)</span>
+        </div>
+        <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center;">
+          <a href="https://wa.me/256762306675?text=Hi%20DeryCode%2C%20I%27m%20interested%20in%20Banking%20%26%20SACCO%20Software" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            <i class="fab fa-whatsapp"></i> Book on WhatsApp
+          </a>
+          <a href="/#contact" class="btn btn-outline btn-lg">
+            <i class="fas fa-envelope"></i> Get a Quote
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="svc-page-content">
+      <h2 class="svc-page-section-title">What's Included</h2>
+      <div class="svc-features-grid">
+  <div class="svc-feature-item"><i class="fas fa-check-circle"></i> Core banking & ledger systems</div>
+  <div class="svc-feature-item"><i class="fas fa-check-circle"></i> MoMo / Airtel Money API</div>
+  <div class="svc-feature-item"><i class="fas fa-check-circle"></i> Loan & savings management</div>
+  <div class="svc-feature-item"><i class="fas fa-check-circle"></i> SACCO member portal</div>
+  <div class="svc-feature-item"><i class="fas fa-check-circle"></i> SMS alerts & statements</div>
+  <div class="svc-feature-item"><i class="fas fa-check-circle"></i> Regulatory compliance reports</div>
+</div>
+
+    </section>
+
+    <section class="svc-page-content" style="padding-top:0;">
+      <h2 class="svc-page-section-title">Pricing &amp; Packages</h2>
+      <div class="svc-pricing-grid">
+  <div class="svc-price-card"><div class="svc-price-name">SACCO</div><div class="svc-price-amount">UGX 7.4M</div><div class="svc-price-desc">Basic savings & loans</div></div>
+  <div class="svc-price-card featured"><div class="svc-price-badge">⭐ Popular</div><div class="svc-price-name">Fintech</div><div class="svc-price-amount">UGX 18.5M</div><div class="svc-price-desc">MoMo + full banking</div></div>
+  <div class="svc-price-card"><div class="svc-price-name">Enterprise</div><div class="svc-price-amount">UGX 55M+</div><div class="svc-price-desc">Core banking system</div></div>
+</div>
+
+    </section>
+
+    <section class="svc-cta">
+      <div class="svc-cta-box">
+        <h3>Ready to get started?</h3>
+        <p>Chat with us on WhatsApp and let's bring your project to life. Fast response, fair pricing, and world-class quality.</p>
+        <div class="svc-cta-buttons">
+          <a href="https://wa.me/256762306675?text=Hi%20DeryCode%2C%20I%27m%20interested%20in%20Banking%20%26%20SACCO%20Software" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            <i class="fab fa-whatsapp"></i> Book on WhatsApp
+          </a>
+          <a href="https://wa.me/256762306675?text=Hi%20DeryCode%2C%20I%27d%20like%20to%20book%20a%20consultation%20about%20Banking%20%26%20SACCO%20Software" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-lg">
+            <i class="fab fa-whatsapp"></i> Book a Consultation
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="svc-related">
+      <h2 class="svc-page-section-title">Other Services</h2>
+      <div class="svc-related-grid">
+  <a href="business-websites.html" class="svc-related-card"><i class="fas fa-laptop-code"></i> Business Websites</a>
+  <a href="web-applications.html" class="svc-related-card"><i class="fas fa-window-restore"></i> Web Applications & SaaS</a>
+  <a href="mobile-apps.html" class="svc-related-card"><i class="fas fa-mobile-alt"></i> Mobile Apps (iOS & Android)</a>
+  <a href="smart-contracts.html" class="svc-related-card"><i class="fas fa-cubes"></i> Smart Contracts & Blockchain</a>
+  <a href="business-management-erp.html" class="svc-related-card"><i class="fas fa-briefcase"></i> Business Management & ERP</a>
+  <a href="school-digital-libraries.html" class="svc-related-card"><i class="fas fa-graduation-cap"></i> School Digital Libraries & LMS</a>
+  <a href="ai-automation.html" class="svc-related-card"><i class="fas fa-robot"></i> AI & Automation Solutions</a>
+  <a href="digital-marketing.html" class="svc-related-card"><i class="fas fa-bullhorn"></i> Digital & Traditional Marketing</a>
+  <a href="uiux-design-branding.html" class="svc-related-card"><i class="fas fa-paint-brush"></i> UI/UX Design & Branding</a>
+  <a href="token-crypto-development.html" class="svc-related-card"><i class="fas fa-coins"></i> Token & Cryptocurrency Development</a>
+  <a href="api-payment-integrations.html" class="svc-related-card"><i class="fas fa-plug"></i> API & Payment Integrations</a>
+</div>
+
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="logo" aria-label="DeryCode — Back to top">
+          <img src="logo.webp" alt="DeryCode logo" class="logo-icon-img" width="38" height="38" />
+          <span class="logo-text">Dery<span class="accent">Code</span></span>
+        </a>
+        <p>Uganda's leading full-service technology company. Building the future with Software, Blockchain, AI &amp; Web3.</p>
+        <nav class="footer-socials" aria-label="Social media links">
+          <a href="https://wa.me/256772002326" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+          </a>
+          <a href="mailto:info@derycode.com" aria-label="Email DeryCode">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+          </a>
+          <a href="https://github.com/asiimwe3" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i class="fab fa-github" aria-hidden="true"></i>
+          </a>
+          <a href="#" aria-label="LinkedIn (coming soon)">
+            <i class="fab fa-linkedin" aria-hidden="true"></i>
+          </a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="#services">Software Development</a></li>
+          <li><a href="#services">Blockchain &amp; Web3</a></li>
+          <li><a href="#services">AI &amp; Machine Learning</a></li>
+          <li><a href="#services">Mobile Apps</a></li>
+          <li><a href="#services">Fintech Systems</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#founder">Founder</a></li>
+          <li><a href="partners.html">Partner Network</a></li>
+          <li><a href="#community">Community &amp; Training</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#portfolio">Our Work</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="docs.html">Documentation</a></li>
+          <li><a href="#booking">Book a Call</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Get Started</h3>
+        <p>Ready to build something great?</p>
+        <a href="#booking" class="btn btn-primary btn-sm" style="margin-top:12px;">
+          <i class="fas fa-calendar-check" aria-hidden="true"></i> Book Free Call
+        </a>
+        <p style="margin-top:16px; font-size:0.85rem; color:rgba(255,248,231,0.5);">
+          <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Kampala, Uganda
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-newsletter">
+      <p>Get tech tips &amp; DeryCode updates straight to your inbox.</p>
+      <form class="newsletter-form" onsubmit="handleNewsletter(event)" aria-label="Newsletter signup">
+        <label for="newsletterEmail" class="sr-only">Email address</label>
+        <input type="email" id="newsletterEmail" name="email"
+               placeholder="your@email.com" required
+               class="newsletter-input" autocomplete="email" />
+        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+      </form>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="footerYear"></span> DeryCode Ltd. All rights reserved. | Kampala, Uganda</p>
+      <p>
+        Made with <i class="fas fa-heart" aria-label="love" style="color:var(--accent)"></i> in Uganda 🇺🇬
+        &nbsp;|&nbsp;
+        <a href="privacy.html" style="color:rgba(255,248,231,0.5);">Privacy Policy</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+    var navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) { navbar.classList.add('scrolled'); }
+      else { navbar.classList.remove('scrolled'); }
+    });
+    var themeToggle = document.getElementById('themeToggle');
+    var themeIcon = document.getElementById('themeIcon');
+    if (themeToggle) {
+      themeToggle.addEventListener('click', function() {
+        var html = document.documentElement;
+        var current = html.getAttribute('data-theme');
+        var next = current === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        themeIcon.className = next === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+      });
+    }
+    var hamburger = document.getElementById('hamburger');
+    var navLinks = document.getElementById('navLinks');
+    if (hamburger) {
+      hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+      });
+    }
+  </script>
+</body>
+</html>
