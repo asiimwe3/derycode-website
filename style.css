@@ -1359,3 +1359,142 @@ body {
   color: var(--text-muted);
   font-weight: 600;
 }
+
+/* ── Disco Side Lights ── */
+.disco-light-left,
+.disco-light-right {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  z-index: 9998;
+  pointer-events: none;
+  animation: discoPulse 3s ease-in-out infinite;
+}
+
+.disco-light-left {
+  left: 0;
+}
+
+.disco-light-right {
+  right: 0;
+}
+
+.disco-light-left {
+  background: linear-gradient(
+    to bottom,
+    #ff006e 0%,
+    #fb5607 15%,
+    #ffbe0b 30%,
+    #8338ec 45%,
+    #3a86ff 60%,
+    #06ffa5 75%,
+    #ff006e 90%,
+    #fb5607 100%
+  );
+  background-size: 100% 300%;
+  box-shadow: -2px 0 15px rgba(255, 0, 110, 0.4), 2px 0 20px rgba(131, 56, 236, 0.3);
+}
+
+.disco-light-right {
+  background: linear-gradient(
+    to bottom,
+    #06ffa5 0%,
+    #3a86ff 15%,
+    #8338ec 30%,
+    #ffbe0b 45%,
+    #fb5607 60%,
+    #ff006e 75%,
+    #06ffa5 90%,
+    #3a86ff 100%
+  );
+  background-size: 100% 300%;
+  box-shadow: 2px 0 15px rgba(6, 255, 165, 0.4), -2px 0 20px rgba(58, 134, 255, 0.3);
+}
+
+@keyframes discoPulse {
+  0%, 100% {
+    opacity: 0.7;
+    background-position: 0% 0%;
+  }
+  50% {
+    opacity: 1;
+    background-position: 0% 100%;
+  }
+}
+
+/* Disco glow orbs floating on sides */
+.disco-orb {
+  position: fixed;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 9997;
+  animation: orbFloat 8s ease-in-out infinite;
+}
+
+.disco-orb-left {
+  left: -60px;
+  top: 20%;
+  background: radial-gradient(circle, #ff006e, transparent 70%);
+  animation-delay: 0s;
+}
+
+.disco-orb-left-2 {
+  left: -40px;
+  top: 60%;
+  background: radial-gradient(circle, #8338ec, transparent 70%);
+  animation-delay: 2s;
+}
+
+.disco-orb-right {
+  right: -60px;
+  top: 35%;
+  background: radial-gradient(circle, #06ffa5, transparent 70%);
+  animation-delay: 1s;
+}
+
+.disco-orb-right-2 {
+  right: -40px;
+  top: 70%;
+  background: radial-gradient(circle, #3a86ff, transparent 70%);
+  animation-delay: 3s;
+}
+
+@keyframes orbFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-40px) scale(1.3);
+    opacity: 0.35;
+  }
+}
+
+/* Mobile - thinner lights */
+@media (max-width: 768px) {
+  .disco-light-left,
+  .disco-light-right {
+    width: 3px;
+  }
+  .disco-orb {
+    width: 100px;
+    height: 100px;
+    filter: blur(40px);
+    opacity: 0.15;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .disco-light-left,
+  .disco-light-right,
+  .disco-orb {
+    animation: none;
+    opacity: 0.5;
+  }
+}
