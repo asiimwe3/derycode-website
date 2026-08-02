@@ -132,7 +132,7 @@ window.DERYCODE_ARTICLES = {
       <h2>Why Choose DeryCode for Your Website?</h2>
       <p>DeryCode is Uganda's leading website development company. We don't just build websites — we build fast, SEO-optimized, conversion-focused digital experiences that rank on Google and generate leads. Every website we build includes: free SSL certificate, Google Search Console setup, sitemap submission, mobile-responsive design, and 3 months of free support.</p>
       <h2>Ready to Build Your Website?</h2>
-      <p>Contact DeryCode on WhatsApp +256 772 002 326 for a free consultation and quote. We serve clients in Kampala, Entebbe, Jinja, Mukono, Kyenjojo, Fort Portal, Mbarara, and across Uganda.</p>
+      <p>Contact DeryCode on WhatsApp +256 772 002 326 for a free consultation and quote. We serve clients in Kyenjojo, Fort Portal, Kampala, Entebbe, Jinja, Mukono, Mbarara, and across Uganda.</p>
     `
   },
 
@@ -148,7 +148,7 @@ window.DERYCODE_ARTICLES = {
       <h2>#1. DeryCode — Kampala's #1 Full-Service Tech Company</h2>
       <p>DeryCode tops our list for good reason. With 100+ projects delivered, DeryCode offers the widest range of services in Uganda: business websites, web applications, mobile apps, banking & SACCO software, ERP systems, school LMS platforms, blockchain development, AI & automation, digital marketing, UI/UX design, crypto development, and API integrations.</p>
       <ul>
-        <li><strong>Location:</strong> Kampala, Uganda</li>
+        <li><strong>Location:</strong> Kyenjojo, Uganda</li>
         <li><strong>Services:</strong> 12 core services across web, mobile, blockchain, AI, and marketing</li>
         <li><strong>Starting Price:</strong> UGX 750,000</li>
         <li><strong>Contact:</strong> +256 772 002 326 (WhatsApp)</li>
