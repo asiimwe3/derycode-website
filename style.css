@@ -1537,3 +1537,13 @@ body {
     height: 150px !important;
   }
 }
+
+
+/* ── Fix: body overflow-x clips fixed disco lights ── */
+body {
+  overflow-x: visible !important;
+}
+/* Re-clip horizontal scroll without clipping disco lights */
+html {
+  overflow-x: hidden;
+}
