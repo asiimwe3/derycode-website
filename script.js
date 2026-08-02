@@ -134,6 +134,18 @@ document.addEventListener('DOMContentLoaded', () => {
   // Also observe the hero stats wrapper (counter trigger)
   $$('.hero-stats').forEach(el => scrollObserver.observe(el));
 
+  // Fallback: if hero stats are already visible on load, fire counters immediately
+  requestAnimationFrame(() => {
+    $$('.hero-stats').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        $$('.stat-num', el).forEach(num => {
+          if (num.textContent === '0') animateCounter(num);
+        });
+      }
+    });
+  });
+
   /* ─── HERO CANVAS ──────────────────────────────────────────── */
   const canvas = $('#heroCanvas');
   if (canvas) {

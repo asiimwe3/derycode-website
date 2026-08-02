@@ -885,6 +885,7 @@ body {
 .derycoin-text h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.6rem,3vw,2.2rem); font-weight: 800; margin-bottom: var(--sp-sm); }
 .derycoin-text > p { color: var(--text-muted); line-height: 1.8; margin-bottom: var(--sp-md); }
 .coin-stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-sm); margin-bottom: var(--sp-md); }
+  @media (min-width: 768px) { .coin-stats-grid { grid-template-columns: repeat(4, 1fr); } }
 .coin-stat {
   background: var(--card-bg); border: 1px solid var(--card-border);
   border-radius: var(--radius-sm); padding: 18px;
