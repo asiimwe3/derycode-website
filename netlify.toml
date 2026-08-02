@@ -61,6 +61,11 @@
   [headers.values]
     Cache-Control = "public, max-age=86400"
 
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
 # ── Redirects ─────────────────────────────────────────────────
 [[redirects]]
   from   = "/index"
