@@ -4,150 +4,238 @@
 
   <url>
     <loc>https://derycode.publicvm.com/</loc>
-    <lastmod>2026-06-28</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://derycode.publicvm.com/hero.webp</image:loc>
-      <image:title>DeryCode — Software, Blockchain, AI &amp; Web3 Company in Uganda</image:title>
+      <image:title>DeryCode — Software, Blockchain, AI & Web3 Company in Uganda</image:title>
     </image:image>
     <image:image>
       <image:loc>https://derycode.publicvm.com/team.webp</image:loc>
       <image:title>DeryCode Team in Kampala, Uganda</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://media.base44.com/images/public/6a13d9e8c07abf0ac4c23880/45418b73a_generated_image.png</image:loc>
+      <image:title>Business Website Development Uganda</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://media.base44.com/images/public/6a13d9e8c07abf0ac4c23880/2d271cd7d_generated_image.png</image:loc>
+      <image:title>Web Application & SaaS Development Uganda</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://media.base44.com/images/public/6a13d9e8c07abf0ac4c23880/61bc09d39_generated_image.png</image:loc>
+      <image:title>Mobile App Development Uganda</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://media.base44.com/images/public/6a13d9e8c07abf0ac4c23880/30a6bb7bf_generated_image.png</image:loc>
+      <image:title>Banking & SACCO Software Uganda</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://media.base44.com/images/public/6a13d9e8c07abf0ac4c23880/dc7cc90be_generated_image.png</image:loc>
+      <image:title>Blockchain & Smart Contract Development Uganda</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://media.base44.com/images/public/6a13d9e8c07abf0ac4c23880/76e037c95_generated_image.png</image:loc>
+      <image:title>AI & Automation Solutions Uganda</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://media.base44.com/images/public/6a13d9e8c07abf0ac4c23880/c9d69d391_generated_image.png</image:loc>
+      <image:title>Digital Marketing Services Uganda</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://media.base44.com/images/public/6a13d9e8c07abf0ac4c23880/d962779c8_generated_image.png</image:loc>
+      <image:title>UI/UX Design & Branding Uganda</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://media.base44.com/images/public/6a13d9e8c07abf0ac4c23880/80671ed27_generated_image.png</image:loc>
+      <image:title>Token & Crypto Development Uganda</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://media.base44.com/images/public/6a13d9e8c07abf0ac4c23880/e344afa70_generated_image.png</image:loc>
+      <image:title>API & Payment Integration Uganda</image:title>
+    </image:image>
   </url>
 
   <url>
     <loc>https://derycode.publicvm.com/blog.html</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://derycode.publicvm.com/docs.html</loc>
-    <lastmod>2026-06-28</lastmod>
+    <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
+    <loc>https://derycode.publicvm.com/business-websites.html</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://media.base44.com/images/public/6a13d9e8c07abf0ac4c23880/45418b73a_generated_image.png</image:loc>
+      <image:title>Business Website Development in Uganda — DeryCode</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://derycode.publicvm.com/web-applications.html</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://media.base44.com/images/public/6a13d9e8c07abf0ac4c23880/2d271cd7d_generated_image.png</image:loc>
+      <image:title>Web Applications & SaaS Development in Uganda — DeryCode</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://derycode.publicvm.com/mobile-apps.html</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://media.base44.com/images/public/6a13d9e8c07abf0ac4c23880/61bc09d39_generated_image.png</image:loc>
+      <image:title>Mobile App Development in Uganda — DeryCode</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://derycode.publicvm.com/banking-sacco-software.html</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://media.base44.com/images/public/6a13d9e8c07abf0ac4c23880/30a6bb7bf_generated_image.png</image:loc>
+      <image:title>Banking & SACCO Software Development in Uganda — DeryCode</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://derycode.publicvm.com/smart-contracts.html</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://media.base44.com/images/public/6a13d9e8c07abf0ac4c23880/dc7cc90be_generated_image.png</image:loc>
+      <image:title>Smart Contracts & Blockchain Development in Uganda — DeryCode</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://derycode.publicvm.com/business-management-erp.html</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://media.base44.com/images/public/6a13d9e8c07abf0ac4c23880/551443d48_generated_image.png</image:loc>
+      <image:title>Business Management & ERP Software in Uganda — DeryCode</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://derycode.publicvm.com/school-digital-libraries.html</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://media.base44.com/images/public/6a13d9e8c07abf0ac4c23880/754808835_generated_image.png</image:loc>
+      <image:title>School Digital Libraries & LMS in Uganda — DeryCode</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://derycode.publicvm.com/ai-automation.html</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://media.base44.com/images/public/6a13d9e8c07abf0ac4c23880/76e037c95_generated_image.png</image:loc>
+      <image:title>AI & Automation Solutions in Uganda — DeryCode</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://derycode.publicvm.com/digital-marketing.html</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://media.base44.com/images/public/6a13d9e8c07abf0ac4c23880/c9d69d391_generated_image.png</image:loc>
+      <image:title>Digital Marketing Services in Uganda — DeryCode</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://derycode.publicvm.com/uiux-design-branding.html</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://media.base44.com/images/public/6a13d9e8c07abf0ac4c23880/d962779c8_generated_image.png</image:loc>
+      <image:title>UI/UX Design & Branding in Uganda — DeryCode</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://derycode.publicvm.com/token-crypto-development.html</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://media.base44.com/images/public/6a13d9e8c07abf0ac4c23880/80671ed27_generated_image.png</image:loc>
+      <image:title>Token & Crypto Development in Uganda — DeryCode</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://derycode.publicvm.com/api-payment-integrations.html</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://media.base44.com/images/public/6a13d9e8c07abf0ac4c23880/e344afa70_generated_image.png</image:loc>
+      <image:title>API & Payment Integration in Uganda — DeryCode</image:title>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://derycode.publicvm.com/blog-post.html?id=derycoin</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://derycode.publicvm.com/blog-post.html?id=sacco-banking</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://derycode.publicvm.com/blog-post.html?id=pwa-uganda</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://derycode.publicvm.com/blog-post.html?id=momo-integration</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://derycode.publicvm.com/privacy.html</loc>
-    <lastmod>2026-07-03</lastmod>
+    <lastmod>2026-08-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
-
-  <url>
-    <loc>https://derycode.publicvm.com/business-websites.html</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://derycode.publicvm.com/web-applications.html</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://derycode.publicvm.com/mobile-apps.html</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://derycode.publicvm.com/banking-sacco-software.html</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://derycode.publicvm.com/smart-contracts.html</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://derycode.publicvm.com/business-management-erp.html</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://derycode.publicvm.com/school-digital-libraries.html</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://derycode.publicvm.com/ai-automation.html</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://derycode.publicvm.com/digital-marketing.html</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://derycode.publicvm.com/uiux-design-branding.html</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://derycode.publicvm.com/token-crypto-development.html</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://derycode.publicvm.com/api-payment-integrations.html</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
 </urlset>
