@@ -821,6 +821,16 @@ body {
 .svc-modal-body h2  { font-size: 1.38rem; font-weight: 800; margin-bottom: 12px; }
 .svc-modal-desc     { color: var(--text-muted); font-size: 0.88rem; line-height: 1.7; margin-bottom: 20px; }
 .svc-modal-features { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: var(--sp-md); }
+
+/* Marketing modal category titles */
+.svc-modal-cat-title {
+  font-size: 0.82rem; font-weight: 700; color: var(--primary);
+  margin-top: 14px; margin-bottom: 8px; padding-bottom: 4px;
+  border-bottom: 1px solid var(--card-border);
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.svc-modal-cat-title:first-of-type { margin-top: 0; }
+
 .smf { display: flex; align-items: center; gap: var(--sp-xs); font-size: 0.82rem; }
 .smf i { color: var(--primary); font-size: 0.88rem; flex-shrink: 0; }
 .svc-modal-tiers    { display: flex; gap: 12px; margin-bottom: var(--sp-md); flex-wrap: wrap; }
