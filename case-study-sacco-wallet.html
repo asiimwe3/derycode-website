@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SACCO Digital Wallet — Fintech for Farmers Case Study | DeryCode Uganda</title>
+  <meta name="description" content="How DeryCode built the SACCO Digital Wallet — an offline-first fintech platform for Kyenjojo farmers with Firebase, NASA POWER climate API, GPS farm verification, and Shoelace acreage calculation. Full case study." />
+  <meta name="keywords" content="SACCO digital wallet, fintech Uganda, farmer wallet app, SACCO software Uganda, offline-first app Uganda, Firebase fintech, NASA POWER API, GPS farm verification, loan management Uganda, microfinance platform Uganda, DeryCode case study" />
+  <link rel="canonical" href="https://derycode.publicvm.com/case-study-sacco-wallet.html" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://derycode.publicvm.com/case-study-sacco-wallet.html" />
+  <meta property="og:title" content="SACCO Digital Wallet — Fintech for Farmers Case Study | DeryCode" />
+  <meta property="og:description" content="How DeryCode built an offline-first fintech platform for Ugandan farmers with Firebase, NASA climate API, and GPS farm verification." />
+  <meta property="og:site_name" content="DeryCode" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#D4A017" />
+  <link rel="icon" type="image/png" href="logo.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" /></noscript>
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /></noscript>
+  <link rel="stylesheet" href="style.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"CreativeWork","name":"SACCO Digital Wallet — Fintech for Farmers","description":"Offline-first fintech platform for Ugandan farmers with Firebase, NASA POWER climate API, GPS farm verification, and Shoelace acreage calculation. Built by DeryCode.","url":"https://derycode.publicvm.com/case-study-sacco-wallet.html","creator":{"@type":"Organization","name":"DeryCode","url":"https://derycode.publicvm.com"},"about":{"@type":"Thing","name":"Fintech"},"keywords":"SACCO, fintech, Uganda, farmers, Firebase, NASA POWER, GPS verification, offline-first"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the SACCO Digital Wallet?","acceptedAnswer":{"@type":"Answer","text":"The SACCO Digital Wallet is an offline-first fintech platform built by DeryCode for farmers in Kyenjojo, Uganda. It features Firebase authentication, Firestore database, NASA POWER API climate integration, GPS-based farm verification, and Shoelace formula acreage calculation."}},{"@type":"Question","name":"How does GPS farm verification work in the SACCO wallet?","acceptedAnswer":{"@type":"Answer","text":"The platform uses GPS coordinates to map farm boundaries and calculates acreage using the Shoelace formula. Audits flag discrepancies between self-reported acreage and polygon-calculated boundaries that exceed a 15% variance."}},{"@type":"Question","name":"Can DeryCode build SACCO or microfinance software for my institution?","acceptedAnswer":{"@type":"Answer","text":"Yes. DeryCode builds SACCO management systems, microfinance platforms, loan tracking systems, and digital wallets with mobile money integration. Contact us at +256 772 002 326."}}]}
+  </script>
+  <style>
+    .cs-hero{background:linear-gradient(135deg,#1a472a 0%,#2d6a4f 50%,#1b4332 100%);padding:80px 20px 60px;text-align:center}
+    .cs-hero h1{font-size:2.5rem;color:#fff;margin-bottom:12px;font-family:'Space Grotesk',sans-serif}
+    .cs-hero .cs-tag{display:inline-block;background:rgba(212,160,23,0.15);border:1px solid rgba(212,160,23,0.4);color:#D4A017;padding:6px 16px;border-radius:20px;font-size:13px;font-weight:600;margin-bottom:16px}
+    .cs-hero p{color:rgba(255,255,255,0.8);max-width:700px;margin:0 auto;font-size:1.1rem;line-height:1.7}
+    .cs-section{max-width:800px;margin:0 auto;padding:50px 20px}
+    .cs-section h2{font-size:1.8rem;color:#D4A017;margin-bottom:16px;font-family:'Space Grotesk',sans-serif}
+    .cs-section p{color:rgba(255,255,255,0.75);line-height:1.8;margin-bottom:14px}
+    .cs-section ul{list-style:none;padding:0}
+    .cs-section ul li{color:rgba(255,255,255,0.7);padding:8px 0 8px 28px;position:relative}
+    .cs-section ul li::before{content:'\f00c';font-family:'Font Awesome 6 Free';font-weight:900;color:#D4A017;position:absolute;left:0}
+    .cs-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px;max-width:800px;margin:0 auto;padding:40px 20px}
+    .cs-stat{text-align:center;padding:24px 16px;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.06)}
+    .cs-stat .num{font-size:2rem;font-weight:800;color:#D4A017;font-family:'Space Grotesk',sans-serif}
+    .cs-stat .label{font-size:13px;color:rgba(255,255,255,0.6);margin-top:4px}
+    .cs-tech{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+    .cs-tech span{display:inline-block;padding:6px 14px;background:rgba(45,106,79,0.2);border:1px solid rgba(45,106,79,0.4);border-radius:20px;color:#52b788;font-size:13px}
+    .cs-cta{text-align:center;padding:50px 20px;background:rgba(212,160,23,0.05);border-top:1px solid rgba(212,160,23,0.1)}
+    .cs-link{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:#D4A017;color:#1a1a1a;border-radius:50px;font-weight:700;font-size:14px}
+    .cs-chips a{display:inline-block;padding:8px 16px;background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.3);border-radius:24px;color:#D4A017;font-size:13px;text-decoration:none;margin:4px}
+  </style>
+</head>
+<body>
+  <nav id="navbar" class="navbar"><div class="nav-container"><a href="index.html" class="nav-logo"><img src="logo.webp" alt="DeryCode" class="nav-logo-img"/><span>Dery<span style="color:var(--accent)">Code</span></span></a><button id="hamburger" class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button><div id="navLinks" class="nav-links"><ul><li><a href="index.html#services">Services</a></li><li><a href="index.html#portfolio">Portfolio</a></li><li><a href="index.html#about">About</a></li><li><a href="index.html#contact">Contact</a></li><li><a href="https://wa.me/256772002326" target="_blank" rel="noopener" class="btn-nav-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a></li></ul></div></div></nav>
+  <section class="cs-hero"><span class="cs-tag">Fintech / Agriculture</span><h1>SACCO Digital Wallet</h1><p>An offline-first fintech platform for farmers in Kyenjojo, Uganda — with Firebase backend, NASA POWER climate API, GPS farm verification, Shoelace acreage calculation, and multi-language support (Runyoro/Luganda). Built by DeryCode.</p><div style="margin-top:24px"><a href="https://sacco-wallet.vercel.app" target="_blank" rel="noopener" class="cs-link"><i class="fas fa-external-link-alt"></i> Visit Live Site</a></div></section>
+  <div class="cs-stats"><div class="cs-stat"><div class="num">Offline</div><div class="label">First Architecture</div></div><div class="cs-stat"><div class="num">NASA</div><div class="label">Climate API</div></div><div class="cs-stat"><div class="num">GPS</div><div class="label">Farm Verification</div></div><div class="cs-stat"><div class="num">15%</div><div class="label">Acreage Tolerance</div></div></div>
+  <section class="cs-section"><h2>Project Overview</h2><p>The SACCO Digital Wallet is a mobile-first fintech platform designed for farmers in Kyenjojo, Uganda. It enables farmers to register, verify their farms via GPS, access savings and loan services, and get climate intelligence data to improve agricultural decision-making.</p><p>The platform was migrated from Supabase to Firebase for its backend, using Firestore for data storage and Firebase Auth for user management. The offline-first design ensures farmers in areas with poor connectivity can still access core features.</p></section>
+  <section class="cs-section"><h2>Key Features</h2><ul><li>Offline-first architecture optimized for low-end Android devices</li><li>Firebase Authentication and Firestore database</li><li>GPS-based farm boundary mapping and verification</li><li>Shoelace formula geometric acreage calculation</li><li>NASA POWER API integration for climate and weather data</li><li>Agricultural Intelligence module for crop recommendations</li><li>Multi-language support (Runyoro, Luganda, English)</li><li>Admin audit module with vendor verification and financial risk scoring</li><li>Automated PostgreSQL triggers for user registration lifecycle (profiles, wallets, farm_records)</li><li>Wallet and savings management with loan tracking</li></ul></section>
+  <section class="cs-section"><h2>Technology Stack</h2><div class="cs-tech"><span>React (Vite)</span><span>Firebase Auth</span><span>Firestore</span><span>NASA POWER API</span><span>Geolocation API</span><span>Vercel</span><span>Shoelace Algorithm</span><span>PWA</span></div></section>
+  <section class="cs-section"><h2>The Challenge</h2><p>Farmers in rural Uganda needed a financial tool that works on low-end Android devices with intermittent connectivity. Key challenges:</p><ul><li>Building an offline-first app that syncs when connectivity returns</li><li>Integrating NASA POWER climate data for agricultural intelligence</li><li>GPS-based farm verification to prevent fraud in loan applications</li><li>Calculating farm acreage from GPS polygon boundaries</li><li>Supporting local languages (Runyoro/Luganda) for rural farmers</li><li>Admin tools for auditing vendor claims and financial risk assessment</li></ul></section>
+  <section class="cs-section"><h2>The Solution</h2><p>We built the platform with Firebase for real-time data sync and offline persistence. The Shoelace formula calculates acreage from GPS coordinates mapped by farmers walking their boundaries. The NASA POWER API provides climate insights for crop planning.</p><p>The admin audit module flags any farm where self-reported acreage differs from polygon-calculated area by more than 15%, preventing loan fraud. The platform supports three languages and is optimized for devices with as little as 1GB RAM.</p></section>
+  <section class="cs-section"><h2>Results</h2><ul><li>Farmers can register and verify farms entirely from their phones</li><li>Climate data helps farmers make informed planting decisions</li><li>GPS verification reduces loan fraud by validating actual farm sizes</li><li>Offline-first design works in areas with no internet</li><li>Admin dashboard provides real-time financial risk monitoring</li></ul></section>
+  <div class="cs-cta"><h2 style="color:#fff;font-size:1.6rem;margin-bottom:12px;">Need a fintech platform?</h2><p style="color:rgba(255,255,255,0.6);margin-bottom:20px;">DeryCode builds SACCO systems, microfinance platforms, and digital wallets with MoMo integration.</p><a href="https://wa.me/256772002326?text=Hi DeryCode, I need a SACCO or fintech platform" target="_blank" rel="noopener" class="cs-link"><i class="fab fa-whatsapp"></i> Get a Quote on WhatsApp</a></div>
+  <div style="max-width:760px;margin:0 auto;padding:30px 20px 40px;"><h2 style="font-size:1.4rem;color:#fff;margin-bottom:16px;">Explore Other Case Studies</h2><div class="cs-chips"><a href="case-study-sageco-evergreen.html">SAGECO Evergreen</a><a href="case-study-tropical-gardens-hotel.html">Tropical Gardens Hotel</a><a href="case-study-peters-medicare.html">Peters Medicare</a><a href="case-study-derycoin.html">DeryCoin (DRC)</a></div></div>
+<footer class="footer"><div class="container"><div class="footer-top"><div class="footer-brand"><img src="logo.webp" alt="DeryCode" style="width:48px;height:48px;border-radius:50%;margin-bottom:12px;"/><h3>DeryCode</h3><p>Software, Blockchain, AI & Web3 — from Uganda to the world.</p></div><div class="footer-bottom"><p>&copy; <span id="footerYear"></span> DeryCode Ltd. All rights reserved. | Kyenjojo, Uganda</p></div></div></div></footer>
+  <script>document.getElementById('footerYear').textContent=new Date().getFullYear();var navbar=document.getElementById('navbar');window.addEventListener('scroll',function(){if(window.scrollY>50){navbar.classList.add('scrolled')}else{navbar.classList.remove('scrolled')}});var hamburger=document.getElementById('hamburger');var navLinks=document.getElementById('navLinks');if(hamburger){hamburger.addEventListener('click',function(){hamburger.classList.toggle('active');navLinks.classList.toggle('active')})}</script>
+</body>
+</html>
