@@ -351,4 +351,466 @@ window.DERYCODE_ARTICLES = {
       <p>DeryCode offers full-stack digital marketing starting from UGX 1.5M. We handle SEO, Google Ads, social media management, WhatsApp marketing, SMS campaigns, content creation, video production, and community events. Contact us on WhatsApp +256 772 002 326.</p>
     `
   }
+
+  , "best-web-design-company-kampala": {
+    tag: "Web Development",
+    title: "Best Web Design Company in Kampala Uganda (2026) — Why DeryCode Ranks #1",
+    date: "August 5, 2026",
+    readTime: "8 min read",
+    icon: "fa-code",
+    description: "Looking for the best web design company in Kampala? DeryCode offers professional website development, SEO, and digital marketing in Uganda. Compare our services, pricing, and portfolio.",
+    html: `
+      <p>When searching for the best web design company in Kampala, Uganda, you'll find many options. But what sets DeryCode apart from Sadja WebSolutions, Jentroy Uganda, Haclab, and other Kampala web agencies? This article breaks down exactly why DeryCode is the top choice for businesses in Uganda.</p>
+      <h2>Why DeryCode is the Best Web Design Company in Kampala</h2>
+      <p>DeryCode offers something no other web design company in Uganda provides: a complete one-stop tech stack. From business websites and web applications to mobile apps, blockchain development, AI chatbots, digital marketing, and banking software — DeryCode does it all under one roof. No need to hire three different vendors.</p>
+      <h2>How DeryCode Compares to Other Kampala Web Agencies</h2>
+      <h3>DeryCode vs Sadja WebSolutions</h3>
+      <p>Sadja WebSolutions charges $50-99/hour and requires a $1,000+ minimum project. DeryCode offers the same quality at Ugandan-friendly prices, starting from UGX 800,000. Sadja focuses on volume; DeryCode focuses on specialization with blockchain, AI, and fintech capabilities that Sadja doesn't offer.</p>
+      <h3>DeryCode vs Jentroy Uganda</h3>
+      <p>Jentroy is locked into the Odoo ecosystem — if you want ERP, they're fine, but they can't build your mobile app, blockchain, or digital marketing strategy. DeryCode covers all of these plus ERP implementation.</p>
+      <h3>DeryCode vs Haclab</h3>
+      <p>Haclab is a pure software engineering studio. They don't offer digital marketing, blockchain, or mobile app development. DeryCode is a full-service technology partner.</p>
+      <h2>What Makes a Great Web Design Company?</h2>
+      <ul>
+        <li><strong>Responsive design</strong> — every DeryCode website works flawlessly on mobile, tablet, and desktop.</li>
+        <li><strong>SEO-optimized</strong> — we build SEO into the foundation, not as an afterthought.</li>
+        <li><strong>Fast loading</strong> — optimized images, minified code, and CDN delivery for sub-2-second load times.</li>
+        <li><strong>PWA capabilities</strong> — offline support, push notifications, and home-screen installation.</li>
+        <li><strong>Schema markup</strong> — structured data for rich Google search results.</li>
+        <li><strong>Analytics integration</strong> — Google Analytics 4 and Search Console setup included.</li>
+      </ul>
+      <h2>Our Web Design Portfolio in Uganda</h2>
+      <p>DeryCode has built websites for Tropical Gardens Hotel (Kyenjojo), Peters Medicare (Kyenjojo), Sageco Evergreen Company Limited, WorldTech Youth Foundation, and Elite Members platform. Each project includes custom design, SEO optimization, and mobile responsiveness.</p>
+      <h2>How Much Does Web Design Cost in Kampala?</h2>
+      <p>DeryCode offers transparent pricing: business websites from UGX 800,000, web applications from UGX 2,500,000, e-commerce platforms from UGX 1,500,000. No hidden fees, no "request a quote" games.</p>
+      <h2>Get Started Today</h2>
+      <p>Contact DeryCode on WhatsApp +256 772 002 326 or visit derycode.publicvm.com to start your web project. Free consultation, transparent pricing, and delivery in 2-4 weeks.</p>
+    `
+  },
+
+  "blockchain-development-company-uganda": {
+    tag: "Blockchain",
+    title: "Blockchain Development Company in Uganda — DeryCode Leads the Way",
+    date: "August 5, 2026",
+    readTime: "7 min read",
+    icon: "fa-cubes",
+    description: "DeryCode is Uganda's only dedicated blockchain development company. Smart contracts, DeFi, NFT marketplaces, and crypto token development on Polygon, Ethereum, and BSC.",
+    html: `
+      <p>Blockchain technology is transforming finance, supply chain, and governance across Africa — and DeryCode is Uganda's only dedicated blockchain development company. While competitors like Acolyte Technologies, Haclab, and Jentroy focus on traditional software, DeryCode is building the future of Web3 in East Africa.</p>
+      <h2>Why Blockchain Matters for Uganda</h2>
+      <p>Uganda has over 15 million unbanked adults. Blockchain technology can provide decentralized financial services without traditional banks — enabling peer-to-peer lending, micro-insurance, remittances, and digital identity verification at a fraction of the cost.</p>
+      <h2>Blockchain Services DeryCode Offers</h2>
+      <ul>
+        <li><strong>Smart contract development</strong> — Solidity contracts on Polygon, Ethereum, and BNB Smart Chain. Audited, tested, and deployed.</li>
+        <li><strong>Crypto token creation</strong> — ERC-20, BEP-20, and Polygon tokens with custom tokenomics, burn mechanisms, and liquidity pool setup.</li>
+        <li><strong>DeFi development</strong> — Decentralized lending platforms, staking protocols, and yield farming smart contracts.</li>
+        <li><strong>NFT marketplace development</strong> — Custom NFT marketplaces for art, real estate, and digital collectibles.</li>
+        <li><strong>Crypto wallet development</strong> — Web3 wallets with MoMo integration for seamless on/off ramps.</li>
+        <li><strong>Blockchain consulting</strong> — Strategy, architecture, and implementation guidance for businesses exploring blockchain.</li>
+      </ul>
+      <h2>DeryCoin — Uganda's First Community Blockchain Token</h2>
+      <p>DeryCode built DeryCoin (DERY), a Polygon-based ERC-20 token with a fixed supply of 10,000,000 units, zero buy/sell tax, and a burn mechanism. DeryCoin is designed to power digital commerce, rewards, and financial inclusion across Uganda and East Africa.</p>
+      <h2>Why No Other Ugandan Company Competes Here</h2>
+      <p>None of DeryCode's competitors — Acolyte Technologies, Haclab, Jentroy, Sadja WebSolutions, Thinkx Software — offer blockchain development. This isn't a gap; it's a monopoly. DeryCode is the only company in Uganda building smart contracts, DeFi protocols, and crypto tokens.</p>
+      <h2>Get Started with Blockchain</h2>
+      <p>Whether you need a smart contract, a crypto token, or a full DeFi platform, DeryCode can build it. Contact us on WhatsApp +256 772 002 326.</p>
+    `
+  },
+
+  "ai-chatbot-development-uganda": {
+    tag: "AI",
+    title: "AI Chatbot Development in Uganda — DeryCode Pioneers AI Automation",
+    date: "August 5, 2026",
+    readTime: "6 min read",
+    icon: "fa-robot",
+    description: "AI-powered chatbots and workflow automation for Ugandan businesses. DeryCode builds custom AI agents, WhatsApp bots, and business automation systems.",
+    html: `
+      <p>Artificial Intelligence is no longer science fiction — it's a business tool that's transforming how Ugandan companies operate. DeryCode is at the forefront of AI chatbot development and business automation in Uganda, building intelligent systems that save time, reduce costs, and improve customer experience.</p>
+      <h2>What AI Can Do for Your Ugandan Business</h2>
+      <ul>
+        <li><strong>WhatsApp AI chatbots</strong> — answer customer questions 24/7, process orders, and schedule appointments automatically.</li>
+        <li><strong>Business automation</strong> — automate invoices, reminders, reports, and data entry with AI-powered workflows.</li>
+        <li><strong>AI agents</strong> — intelligent agents that handle research, data analysis, and customer support without human intervention.</li>
+        <li><strong>Natural language processing</strong> — understand customer queries in English, Luganda, Runyoro, and other local languages.</li>
+      </ul>
+      <h2>Why DeryCode Leads in AI Development</h2>
+      <p>No other software company in Uganda offers AI development. Acolyte Technologies focuses on ERP. Haclab does web engineering. Jentroy does Odoo implementations. DeryCode is the only company building AI chatbots, automation systems, and intelligent agents for the Ugandan market.</p>
+      <h2>Real-World AI Use Cases in Uganda</h2>
+      <p>Imagine a WhatsApp bot that handles hotel bookings for Tropical Gardens Hotel, answers FAQs, and sends payment reminders automatically. Or an AI agent that analyzes SACCO loan applications and recommends approval based on member history. These aren't future concepts — DeryCode is building them today.</p>
+      <h2>How Much Does AI Development Cost?</h2>
+      <p>AI chatbot development starts from UGX 1,500,000. Business automation systems from UGX 2,500,000. Custom AI agents from UGX 3,500,000. Contact DeryCode on WhatsApp +256 772 002 326.</p>
+    `
+  },
+
+  "mobile-app-development-company-uganda": {
+    tag: "Mobile",
+    title: "Mobile App Development Company in Uganda — DeryCode Builds Apps That Scale",
+    date: "August 5, 2026",
+    readTime: "8 min read",
+    icon: "fa-mobile-screen",
+    description: "Custom mobile app development for iOS and Android in Uganda. React Native, Flutter, and native development by DeryCode — Uganda's leading mobile app company.",
+    html: `
+      <p>Looking for a mobile app development company in Uganda? DeryCode builds custom iOS and Android applications for businesses across East Africa. From fintech wallets to healthcare apps, our mobile solutions are built to scale.</p>
+      <h2>Why Choose DeryCode for Mobile App Development?</h2>
+      <p>Unlike Thinkx Software (2-10 employees) or Jentroy (Odoo-focused), DeryCode offers full-stack mobile development with React Native, Flutter, and native Kotlin. We've built and deployed mobile apps for Sageco Evergreen (real estate), SaccoWallet (fintech), and Property Masters (property management).</p>
+      <h2>Mobile App Development Services</h2>
+      <ul>
+        <li><strong>React Native apps</strong> — cross-platform iOS and Android from a single codebase, cutting development cost by 50%.</li>
+        <li><strong>Flutter apps</strong> — beautiful, fast, native-performance apps with Dart.</li>
+        <li><strong>Native Android (Kotlin)</strong> — high-performance Android apps with MVVM architecture.</li>
+        <li><strong>Progressive Web Apps</strong> — installable web apps that work offline, no app store needed.</li>
+        <li><strong>App Store deployment</strong> — we handle Google Play Store and Apple App Store submission.</li>
+      </ul>
+      <h2>How DeryCode Compares to Other Mobile App Developers in Uganda</h2>
+      <h3>DeryCode vs Movetech Solutions</h3>
+      <p>Movetech positions as "cheapest" mobile app developer — but cheap often means low quality. DeryCode balances affordability with professional-grade architecture, testing, and ongoing support.</p>
+      <h3>DeryCode vs Javanet Systems</h3>
+      <p>Javanet offers mobile apps but lacks fintech, blockchain, and AI capabilities. DeryCode can build your app AND integrate it with mobile money, blockchain, or AI chatbots.</p>
+      <h3>DeryCode vs Sadja WebSolutions</h3>
+      <p>Sadja has a larger team but charges $50-99/hour. DeryCode delivers equivalent quality at Ugandan-friendly prices.</p>
+      <h2>Our Mobile App Portfolio</h2>
+      <p>Sageco Evergreen (React Native real estate app), SaccoWallet (digital wallet for Kyenjojo farmers), Property Masters (native Kotlin real estate app with Firebase). Each app includes authentication, real-time data sync, and offline support.</p>
+      <h2>How Much Does a Mobile App Cost in Uganda?</h2>
+      <p>Cross-platform apps (React Native/Flutter) from UGX 3,500,000. Native Android apps from UGX 4,500,000. PWA development from UGX 1,500,000. Contact DeryCode on WhatsApp +256 772 002 326.</p>
+    `
+  },
+
+  "sacco-software-uganda-comparison": {
+    tag: "Fintech",
+    title: "SACCO Software in Uganda: DeryCode vs Ensibuuko vs Ssentezo vs SaccoWave (2026)",
+    date: "August 5, 2026",
+    readTime: "10 min read",
+    icon: "fa-university",
+    description: "Complete comparison of SACCO software providers in Uganda. Features, pricing, and why DeryCode's SaccoWallet beats Ensibuuko, Ssentezo, and SaccoWave.",
+    html: `
+      <p>Choosing the right SACCO software in Uganda is a critical decision that affects your members' money, your operational efficiency, and your ability to grow. This article compares the top SACCO software providers in Uganda: DeryCode (SaccoWallet), Ensibuuko, Ssentezo, and SaccoWave.</p>
+      <h2>1. DeryCode — SaccoWallet</h2>
+      <p>SaccoWallet is DeryCode's flagship fintech product, built specifically for Ugandan farming communities. It features multilingual support (English, Runyoro, Luganda), offline-first architecture, MTN MoMo and Airtel Money integration, and a marketplace for farmers to sell produce.</p>
+      <ul>
+        <li><strong>Best for:</strong> Rural SACCOs, farmer cooperatives, community savings groups</li>
+        <li><strong>Unique features:</strong> Offline-first, local language support, marketplace integration, GPS farm verification</li>
+        <li><strong>Pricing:</strong> Custom quotes based on SACCO size — affordable for small cooperatives</li>
+        <li><strong>Built by:</strong> DeryCode (Ugandan company, local support)</li>
+      </ul>
+      <h2>2. Ensibuuko</h2>
+      <p>Ensibuuko is a well-funded fintech startup (Google for Startups alum) offering cloud-based SACCO and microfinance software. Their platform is solid for mid-to-large SACCOs but lacks local language support and offline capabilities critical for rural Uganda.</p>
+      <ul>
+        <li><strong>Best for:</strong> Mid-to-large SACCOs with stable internet</li>
+        <li><strong>Pricing:</strong> Opaque — requires quote request. Reportedly 80% cheaper than traditional banking software, but actual pricing not published.</li>
+        <li><strong>Limitations:</strong> No offline support, no local languages, no marketplace features</li>
+      </ul>
+      <h2>3. Ssentezo</h2>
+      <p>Ssentezo focuses on loan management with a one-time fee of UGX 500,000. Good for small lenders but limited in scope — no savings management, no member portal, no mobile money integration out of the box.</p>
+      <ul>
+        <li><strong>Best for:</strong> Small lenders who only need loan tracking</li>
+        <li><strong>Pricing:</strong> UGX 500,000 one-time</li>
+        <li><strong>Limitations:</strong> Only loan management, no full SACCO features</li>
+      </ul>
+      <h2>4. SaccoWave</h2>
+      <p>SaccoWave offers tiered pricing plans for Uganda and East Africa. Decent mid-market option but lacks the offline-first architecture and local language support that rural Ugandan SACCOs need.</p>
+      <ul>
+        <li><strong>Best for:</strong> Urban SACCOs with reliable internet</li>
+        <li><strong>Pricing:</strong> Tiered plans (not publicly listed)</li>
+        <li><strong>Limitations:</strong> No offline support, no local languages</li>
+      </ul>
+      <h2>Why SaccoWallet Wins for Ugandan SACCOs</h2>
+      <p>SaccoWallet is the only SACCO software built specifically for Ugandan farming communities with offline-first architecture, local language support (Runyoro, Luganda, English), and a built-in marketplace. While Ensibuuko targets large urban SACCOs and Ssentezo only handles loans, SaccoWallet serves the full spectrum — from rural farmer cooperatives to urban credit unions.</p>
+      <p>Contact DeryCode on WhatsApp +256 772 002 326 to schedule a demo of SaccoWallet for your SACCO.</p>
+    `
+  },
+
+  "digital-marketing-agency-kampala": {
+    tag: "Marketing",
+    title: "Digital Marketing Agency in Kampala — Why DeryCode Beats Axhela, Prism & Definite Creations",
+    date: "August 5, 2026",
+    readTime: "7 min read",
+    icon: "fa-bullhorn",
+    description: "Compare digital marketing agencies in Kampala Uganda. DeryCode offers SEO, Google Ads, social media marketing, plus software and blockchain — a full-stack advantage.",
+    html: `
+      <p>There are dozens of digital marketing agencies in Kampala — Axhela, Prism Marketing, Definite Creations, Ehany Marketing. But none of them can do what DeryCode does: combine digital marketing with software development, blockchain, and AI. Here's why that matters.</p>
+      <h2>The Problem with Pure Marketing Agencies</h2>
+      <p>Most digital marketing agencies in Uganda can run Facebook ads and write social media posts. But when your business needs a custom web app, a WhatsApp chatbot, or a mobile money integration, they have to outsource — usually to someone like DeryCode. You end up paying two vendors and coordinating between them.</p>
+      <h2>DeryCode's Full-Stack Advantage</h2>
+      <p>DeryCode is the only company in Uganda that handles both marketing AND technology. We can:</p>
+      <ul>
+        <li>Run your Google Ads campaign AND build the landing page it points to.</li>
+        <li>Manage your social media AND build the WhatsApp chatbot that handles leads.</li>
+        <li>Optimize your SEO AND develop the custom CRM that tracks your customers.</li>
+        <li>Build your e-commerce platform AND run the Facebook ads that drive traffic to it.</li>
+      </ul>
+      <h2>DeryCode vs Axhela Digital Agency</h2>
+      <p>Axhela offers web dev, SEO, and social media. But they can't build blockchain apps, AI chatbots, or fintech software. DeryCode does all of that plus everything Axhela offers.</p>
+      <h2>DeryCode vs Prism Marketing</h2>
+      <p>Prism is a 360 marketing agency — they do advertising, web design, and training. But they don't build software, mobile apps, or AI systems. DeryCode is a full technology company that also does marketing.</p>
+      <h2>DeryCode vs Definite Creations</h2>
+      <p>Definite Creations is highly rated for digital marketing in Kampala. But again — no software development, no blockchain, no AI. When your marketing needs a tech solution, you'll need DeryCode anyway.</p>
+      <h2>Transparent Pricing</h2>
+      <p>DeryCode's digital marketing services start from UGX 1,500,000. SEO packages from UGX 800,000/month. Google Ads management from UGX 500,000/month. No "request a quote" — our prices are published on our website.</p>
+      <h2>Get Started</h2>
+      <p>Contact DeryCode on WhatsApp +256 772 002 326 for a free digital marketing consultation.</p>
+    `
+  },
+
+  "erp-software-uganda-comparison": {
+    tag: "Business",
+    title: "ERP Software in Uganda: DeryCode vs Jentroy (Odoo) vs Competitors (2026)",
+    date: "August 5, 2026",
+    readTime: "8 min read",
+    icon: "fa-gears",
+    description: "Compare ERP software providers in Uganda. DeryCode offers custom ERP, Odoo implementation, and business management systems that beat Jentroy and competitors.",
+    html: `
+      <p>Choosing ERP software in Uganda means deciding between custom-built systems and off-the-shelf platforms like Odoo. This guide compares DeryCode's ERP solutions against Jentroy Uganda (official Odoo partner) and other competitors.</p>
+      <h2>1. DeryCode — Custom ERP Development</h2>
+      <p>DeryCode builds custom ERP systems tailored to Ugandan businesses: inventory management, HR & payroll, accounting, POS, and reporting. Unlike Odoo implementations, custom ERP means every feature is built for your specific workflow — no unnecessary modules, no licensing fees per user.</p>
+      <ul>
+        <li>Best for: Businesses with unique workflows that don't fit Odoo's standard modules</li>
+        <li>Includes: Inventory, HR, payroll, accounting, POS, CRM, reporting</li>
+        <li>Pricing: Custom quote based on requirements</li>
+        <li>Advantage: No per-user licensing, full customization, local support</li>
+      </ul>
+      <h2>2. Jentroy Uganda — Odoo Partner</h2>
+      <p>Jentroy is an official Odoo partner, which means they implement and customize Odoo for Ugandan businesses. Odoo is powerful but has per-user licensing costs and a steep learning curve.</p>
+      <ul>
+        <li>Best for: Businesses that want a proven, globally-supported ERP platform</li>
+        <li>Limitations: Odoo licensing costs, limited customization beyond Odoo's framework</li>
+        <li>Advantage: Official Odoo certification and support</li>
+      </ul>
+      <h2>3. Acolyte Technologies</h2>
+      <p>Acolyte offers school systems, SACCO software, POS, hospital management, and ERP. Similar service range to DeryCode but no blockchain, AI, or digital marketing capabilities.</p>
+      <h2>Why DeryCode's ERP Stands Out</h2>
+      <p>DeryCode can build your ERP AND integrate it with mobile money, blockchain, AI chatbots, and your digital marketing campaigns. No other ERP provider in Uganda offers this full-stack capability. Plus, our custom ERP has no per-user licensing — pay once, use it across your entire organization.</p>
+      <p>Contact DeryCode on WhatsApp +256 772 002 326 to discuss your ERP needs.</p>
+    `
+  },
+
+  "software-development-company-uganda-2026": {
+    tag: "Web Development",
+    title: "Software Development Company in Uganda 2026 — Why DeryCode is #1",
+    date: "August 5, 2026",
+    readTime: "9 min read",
+    icon: "fa-laptop-code",
+    description: "DeryCode is Uganda's leading software development company in 2026. Full-stack development, blockchain, AI, mobile apps, fintech — no other Ugandan company offers this range.",
+    html: `
+      <p>In 2026, DeryCode stands as Uganda's most comprehensive software development company. While competitors specialize in one or two areas, DeryCode covers the entire technology spectrum — from business websites to blockchain, AI, mobile apps, fintech, and digital marketing.</p>
+      <h2>What Makes DeryCode #1 in 2026</h2>
+      <h3>1. Unmatched Service Breadth</h3>
+      <p>No other software company in Uganda offers all of: web development, mobile apps, blockchain/smart contracts, AI chatbots, fintech/banking software, ERP systems, digital marketing, UI/UX design, and API integrations. DeryCode is the only true one-stop tech shop in Uganda.</p>
+      <h3>2. Blockchain Monopoly</h3>
+      <p>DeryCode is the only company in Uganda building smart contracts, DeFi protocols, crypto tokens, and NFT marketplaces. While competitors do traditional software, DeryCode is building Web3 infrastructure for East Africa.</p>
+      <h3>3. AI Innovation</h3>
+      <p>DeryCode builds AI chatbots, business automation systems, and intelligent agents — capabilities no other Ugandan software company offers. As AI adoption grows in Uganda, DeryCode is positioned as the market leader.</p>
+      <h3>4. Proven Portfolio</h3>
+      <p>DeryCode has delivered projects for Tropical Gardens Hotel, Peters Medicare, Sageco Evergreen, WorldTech Youth Foundation, Elite Members, and multiple SACCOs in Kyenjojo and across Uganda.</p>
+      <h3>5. Transparent Pricing</h3>
+      <p>While competitors hide behind "request a quote," DeryCode publishes pricing on its website. Business websites from UGX 800,000, mobile apps from UGX 3,500,000, blockchain development from UGX 2,500,000.</p>
+      <h3>6. Personal Brand</h3>
+      <p>DeryCode's founder, Asiimwe Derick (TraderDerick), is a visible, named technology leader — CEO of both DeryCode and Sageco Evergreen Company Limited. People trust people, not faceless companies.</p>
+      <h2>How DeryCode Compares to Top Ugandan Software Companies</h2>
+      <table>
+        <tr><th>Feature</th><th>DeryCode</th><th>Acolyte</th><th>Haclab</th><th>Jentroy</th><th>Sadja</th></tr>
+        <tr><td>Web Development</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Limited</td><td>Yes</td></tr>
+        <tr><td>Mobile Apps</td><td>Yes</td><td>Limited</td><td>No</td><td>No</td><td>Yes</td></tr>
+        <tr><td>Blockchain</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td>No</td></tr>
+        <tr><td>AI & Automation</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td>No</td></tr>
+        <tr><td>Fintech/SACCO</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
+        <tr><td>Digital Marketing</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td>Yes</td></tr>
+        <tr><td>ERP</td><td>Yes</td><td>Yes</td><td>No</td><td>Odoo only</td><td>No</td></tr>
+      </table>
+      <h2>Get Started with DeryCode</h2>
+      <p>Contact us on WhatsApp +256 772 002 326 or visit derycode.publicvm.com. Free consultation, transparent pricing, delivery in 2-4 weeks.</p>
+    `
+  },
+
+  "website-hosting-uganda": {
+    tag: "Web Development",
+    title: "Website Hosting in Uganda — DeryCode vs Thinkx Cloud vs Competitors (2026)",
+    date: "August 5, 2026",
+    readTime: "6 min read",
+    icon: "fa-server",
+    description: "Compare website hosting providers in Uganda. DeryCode offers reliable hosting with CDN, SSL, and managed support — competitive with Thinkx Cloud and others.",
+    html: `
+      <p>Website hosting in Uganda is a growing market, with providers like Thinkx Cloud offering hosting from UGX 60K/year. But hosting is about more than just price — it's about speed, support, security, and integration with your software.</p>
+      <h2>Why Hosting Matters for Ugandan Businesses</h2>
+      <p>Slow websites lose customers. In Uganda, where mobile data is expensive and connections can be unreliable, a fast-loading website hosted on a CDN is critical. Google also ranks faster websites higher in search results.</p>
+      <h2>DeryCode Hosting Services</h2>
+      <p>DeryCode offers managed website hosting with every web project, including:</p>
+      <ul>
+        <li>CDN delivery for fast loading across Uganda and globally</li>
+        <li>Free SSL certificates for security</li>
+        <li>Automated daily backups</li>
+        <li>DDoS protection and security headers</li>
+        <li>99.9% uptime guarantee</li>
+        <li>WordPress, static site, and web app hosting</li>
+      </ul>
+      <h2>DeryCode vs Thinkx Cloud</h2>
+      <p>Thinkx Cloud offers affordable cPanel hosting from UGX 60K/year. It's decent for basic websites. But DeryCode goes further — we host your website AND maintain the code, handle updates, and integrate with your software systems. Thinkx hosts; DeryCode hosts AND builds.</p>
+      <h2>The Full-Stack Hosting Advantage</h2>
+      <p>When DeryCode builds your website, we also host it, maintain it, update it, and integrate it with your CRM, payment systems, and marketing tools. No coordination between hosting provider and developer — it's all one team.</p>
+      <p>Contact DeryCode on WhatsApp +256 772 002 326 for hosting inquiries.</p>
+    `
+  },
+
+  "fintech-software-uganda": {
+    tag: "Fintech",
+    title: "Fintech Software Development in Uganda — DeryCode Builds the Future of Finance",
+    date: "August 5, 2026",
+    readTime: "7 min read",
+    icon: "fa-money-bill-transfer",
+    description: "Fintech software development in Uganda: mobile money integration, loan management, SACCO software, and payment gateways by DeryCode.",
+    html: `
+      <p>Fintech is booming in Uganda. With MTN MoMo processing billions in transactions and Airtel Money growing rapidly, the demand for fintech software has never been higher. DeryCode is at the center of this transformation, building loan management systems, SACCO software, payment integrations, and digital wallets.</p>
+      <h2>Fintech Services DeryCode Offers</h2>
+      <ul>
+        <li><strong>Mobile money integration</strong> — MTN MoMo API, Airtel Money API, and Pesapal payment gateway integration.</li>
+        <li><strong>Loan management systems</strong> — DeryLoan, inspired by OpenCBS, with Supabase backend for client profiles, loan portfolios, savings accounts, and accounting journals.</li>
+        <li><strong>SACCO software</strong> — SaccoWallet with offline-first architecture, local language support, and marketplace features.</li>
+        <li><strong>Digital wallets</strong> — Custom wallet apps with QR payments, peer-to-peer transfers, and MoMo integration.</li>
+        <li><strong>Payment gateways</strong> — Custom payment processing for e-commerce, subscriptions, and bill payments.</li>
+        <li><strong>USSD applications</strong> — USSD-based banking for feature phones, critical for rural Uganda.</li>
+      </ul>
+      <h2>Why DeryCode Leads in Fintech</h2>
+      <p>DeryCode has built more fintech products than most competitors: DeryLoan (loan management), SaccoWallet (digital wallet), and API integrations with MTN MoMo and Airtel Money. We understand the Ugandan fintech landscape — the regulations, the mobile money ecosystem, and the needs of unbanked communities.</p>
+      <h2>DeryCode vs Ensibuuko</h2>
+      <p>Ensibuuko focuses only on SACCO software. DeryCode does SACCO software PLUS loan management, payment gateways, mobile apps, and blockchain-based financial services. DeryCode is the broader fintech partner.</p>
+      <h2>Get Started with Fintech</h2>
+      <p>Contact DeryCode on WhatsApp +256 772 002 326 to discuss your fintech project.</p>
+    `
+  },
+
+  "custom-software-development-uganda": {
+    tag: "Web Development",
+    title: "Custom Software Development in Uganda — DeryCode Builds What Off-the-Shelf Can't",
+    date: "August 5, 2026",
+    readTime: "6 min read",
+    icon: "fa-code",
+    description: "Custom software development in Uganda. DeryCode builds bespoke web apps, mobile apps, and enterprise systems that fit your exact business workflow.",
+    html: `
+      <p>Off-the-shelf software rarely fits your business perfectly. That's why DeryCode specializes in custom software development in Uganda — building web applications, mobile apps, and enterprise systems designed around your exact workflow, not someone else's template.</p>
+      <h2>When You Need Custom Software</h2>
+      <ul>
+        <li>Your business process doesn't fit any standard software package.</li>
+        <li>You're paying for features you don't use in off-the-shelf solutions.</li>
+        <li>You need integration between systems that don't talk to each other.</li>
+        <li>You want to own your software, not rent it per user forever.</li>
+        <li>You need mobile money, blockchain, or AI features that standard software doesn't offer.</li>
+      </ul>
+      <h2>DeryCode's Custom Software Capabilities</h2>
+      <p>From the SaccoWallet digital wallet (Firebase, multilingual, offline-first) to the School Sync Manager (TypeScript monorepo, 135 Ugandan districts, Zod validation) to the Sageco Evergreen platform (Next.js, Supabase, PesaPal) — DeryCode has built complex, production-grade software systems for real Ugandan businesses.</p>
+      <h2>Why Custom Beats Off-the-Shelf in Uganda</h2>
+      <p>In Uganda, many businesses have unique workflows shaped by local conditions — rural connectivity, mobile money payments, local language requirements, and regulatory compliance. Off-the-shelf software built for Western markets doesn't account for these. Custom software from DeryCode does.</p>
+      <p>Contact DeryCode on WhatsApp +256 772 002 326 to discuss your custom software project.</p>
+    `
+  },
+
+  "e-commerce-website-uganda": {
+    tag: "Web Development",
+    title: "E-Commerce Website Development in Uganda — DeryCode Builds Online Stores That Sell",
+    date: "August 5, 2026",
+    readTime: "6 min read",
+    icon: "fa-cart-shopping",
+    description: "E-commerce website development in Uganda. DeryCode builds online stores with MoMo payment, delivery management, and inventory tracking.",
+    html: `
+      <p>E-commerce in Uganda is growing fast, with more consumers shopping online than ever before. DeryCode builds e-commerce websites that accept mobile money, manage inventory, track deliveries, and integrate with social media — everything you need to sell online in Uganda.</p>
+      <h2>What Our E-Commerce Websites Include</h2>
+      <ul>
+        <li>Product catalog with images, variants, and categories</li>
+        <li>Shopping cart and secure checkout</li>
+        <li>MTN MoMo and Airtel Money payment integration</li>
+        <li>Pesapal payment gateway for card payments</li>
+        <li>Order management dashboard</li>
+        <li>Inventory tracking with low-stock alerts</li>
+        <li>Customer accounts and order history</li>
+        <li>WhatsApp order integration</li>
+        <li>SEO optimization for product pages</li>
+        <li>Mobile-first responsive design</li>
+      </ul>
+      <h2>DeryCode vs WooCommerce/Shopify</h2>
+      <p>WooCommerce and Shopify are great platforms, but they lack native mobile money integration and have monthly fees that add up. DeryCode builds custom e-commerce platforms with MoMo built-in — no plugins, no workarounds, no per-transaction fees beyond the payment provider's charges.</p>
+      <h2>How Much Does an E-Commerce Website Cost?</h2>
+      <p>DeryCode e-commerce websites start from UGX 1,500,000. Contact us on WhatsApp +256 772 002 326.</p>
+    `
+  },
+
+  "school-management-system-uganda-comparison": {
+    tag: "Education",
+    title: "School Management System in Uganda — DeryCode's School Sync Manager vs Competitors",
+    date: "August 5, 2026",
+    readTime: "7 min read",
+    icon: "fa-graduation-cap",
+    description: "Compare school management systems in Uganda. DeryCode's School Sync Manager offers features competitors don't: 135 Ugandan districts, Zod validation, and offline support.",
+    html: `
+      <p>School management systems are transforming education in Uganda. But not all systems are built for the Ugandan context. DeryCode's School Sync Manager is built specifically for Ugandan schools, with features no competitor offers.</p>
+      <h2>What Makes School Sync Manager Different</h2>
+      <ul>
+        <li><strong>135 Ugandan districts built-in</strong> — every district in Uganda is pre-loaded for student and staff addresses.</li>
+        <li><strong>Ugandan phone validation</strong> — Zod validation for all Ugandan mobile networks (MTN, Airtel, Uganda Telecom, Africell).</li>
+        <li><strong>School fees payment</strong> — integrated with MTN MoMo and Airtel Money for fee collection.</li>
+        <li><strong>Student portal</strong> — students check grades, timetables, and fee balances online.</li>
+        <li><strong>Examination management</strong> — online exams, grading, and report card generation.</li>
+        <li><strong>Offline support</strong> — works in schools with unreliable internet.</li>
+        <li><strong>Digital library</strong> — e-learning resources and digital books.</li>
+      </ul>
+      <h2>How It Compares to Acolyte Technologies' School System</h2>
+      <p>Acolyte Technologies offers school management systems in Uganda, but theirs is a generic product. School Sync Manager is built with Ugandan-specific validation, local payment integration, and offline architecture designed for rural schools.</p>
+      <h2>How It Compares to Generic LMS Platforms</h2>
+      <p>Platforms like Moodle and Google Classroom don't handle Ugandan school administration — fee collection, Ugandan phone formats, district-specific data, or MoMo integration. School Sync Manager does all of this.</p>
+      <p>Contact DeryCode on WhatsApp +256 772 002 326 for a School Sync Manager demo.</p>
+    `
+  },
+
+  "healthcare-software-uganda": {
+    tag: "Web Development",
+    title: "Healthcare Software Development in Uganda — DeryCode Builds for Peters Medicare & Beyond",
+    date: "August 5, 2026",
+    readTime: "6 min read",
+    icon: "fa-hospital",
+    description: "Healthcare software development in Uganda. DeryCode built Peters Medicare's management system — patient records, appointments, billing, and pharmacy management.",
+    html: `
+      <p>Healthcare in Uganda needs technology. DeryCode is building healthcare management systems that help clinics and hospitals manage patients, appointments, billing, and pharmacy — all in one platform.</p>
+      <h2>DeryCode's Healthcare Software Capabilities</h2>
+      <ul>
+        <li>Patient registration and electronic medical records (EMR)</li>
+        <li>Appointment scheduling and reminders via SMS/WhatsApp</li>
+        <li>Billing and invoicing with MoMo payment integration</li>
+        <li>Pharmacy inventory management</li>
+        <li>Lab test ordering and results management</li>
+        <li>Staff scheduling and shift management</li>
+        <li>Patient portal for booking and results access</li>
+      </ul>
+      <h2>Case Study: Peters Medicare</h2>
+      <p>DeryCode built a complete healthcare management system for Peters Medicare in Kyenjojo, Uganda. The system includes a multi-image hero slider showcasing 10 facility images, patient management, appointment booking, and billing integration. The website is live at petersmedicare.online.</p>
+      <h2>Why DeryCode for Healthcare Software</h2>
+      <p>Most software companies in Uganda focus on generic business systems. DeryCode has real experience building healthcare-specific software with patient privacy, medical workflows, and Ugandan healthcare regulations in mind.</p>
+      <p>Contact DeryCode on WhatsApp +256 772 002 326 for healthcare software development.</p>
+    `
+  },
+
+  "real-estate-software-uganda": {
+    tag: "Web Development",
+    title: "Real Estate Software Development in Uganda — DeryCode Builds for Sageco Evergreen",
+    date: "August 5, 2026",
+    readTime: "6 min read",
+    icon: "fa-building",
+    description: "Real estate software development in Uganda. DeryCode built Sageco Evergreen's platform and Property Masters Android app — the top real estate tech in Uganda.",
+    html: `
+      <p>Real estate in Uganda is growing fast, and technology is key to scaling operations. DeryCode has built more real estate technology than any other Ugandan software company — including the Sageco Evergreen platform and the Property Masters Android app.</p>
+      <h2>Sageco Evergreen — Real Estate Platform</h2>
+      <p>DeryCode built Sageco Evergreen Company Limited's real estate platform using Next.js, Supabase, and PesaPal payment integration. The platform includes property listings, broker registration (UGX 32,000 fee), property management, and a React Native mobile app with custom "App Mode" for Android WebView optimization.</p>
+      <h2>Property Masters — Native Android App</h2>
+      <p>DeryCode built Property Masters as a native Kotlin Android app with MVVM architecture, Firebase authentication, Firestore real-time database, and a teal/green card-based UI. Features include property listings, job boards, and broker profiles — all with automated APK builds via GitHub Actions.</p>
+      <h2>Real Estate Software Features DeryCode Builds</h2>
+      <ul>
+        <li>Property listing management with photos and virtual tours</li>
+        <li>Broker and agent portals with commission tracking</li>
+        <li>Buyer/seller lead management CRM</li>
+        <li>Payment integration (MoMo, PesaPal, bank transfer)</li>
+        <li>Document management for contracts and titles</li>
+        <li>Mobile apps for property browsing on the go</li>
+        <li>Admin dashboard for content management</li>
+      </ul>
+      <h2>Why DeryCode Leads in Real Estate Tech</h2>
+      <p>No other Ugandan software company has built multiple real estate platforms. DeryCode has both web (Sageco Evergreen) and native mobile (Property Masters) experience, plus the fintech integration for payments and blockchain capability for property tokenization.</p>
+      <p>Contact DeryCode on WhatsApp +256 772 002 326 for real estate software development.</p>
+    `
+  }
 };
