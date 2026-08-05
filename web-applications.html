@@ -115,6 +115,18 @@
     "mainEntity": [{"@type":"Question","name":"How much does a web application cost in Uganda?","acceptedAnswer":{"@type":"Answer","text":"Custom web applications start from UGX 2,200,000. SaaS platforms with multi-tenant architecture and advanced features cost more."}},{"@type":"Question","name":"What technologies do you use for web applications?","acceptedAnswer":{"@type":"Answer","text":"We use React, Next.js, Node.js, PostgreSQL, and modern cloud infrastructure for fast, scalable web applications."}}]
   }
   </script>
+  <!-- ── Google Analytics (GA4) ── -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G_PLACEHOLDER"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G_PLACEHOLDER", {
+      page_title: document.title,
+      page_location: window.location.href,
+      send_page_view: true
+    });
+  </script>
 </head>
 <body>
   <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">

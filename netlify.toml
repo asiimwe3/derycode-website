@@ -12,7 +12,7 @@
     Permissions-Policy           = "camera=(), microphone=(), geolocation=()"
     Strict-Transport-Security    = "max-age=31536000; includeSubDomains; preload"
     # Content-Security-Policy (tightened — adjust if you add more CDNs)
-    Content-Security-Policy      = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https: blob:; connect-src 'self'; frame-ancestors 'none';"
+    Content-Security-Policy      = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https: blob: https://www.google-analytics.com https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://region1.google-analytics.com; frame-ancestors 'none';"
 
 # ── Asset cache headers ───────────────────────────────────────
 [[headers]]

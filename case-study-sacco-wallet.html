@@ -51,6 +51,18 @@
     .cs-link{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:#D4A017;color:#1a1a1a;border-radius:50px;font-weight:700;font-size:14px}
     .cs-chips a{display:inline-block;padding:8px 16px;background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.3);border-radius:24px;color:#D4A017;font-size:13px;text-decoration:none;margin:4px}
   </style>
+  <!-- ── Google Analytics (GA4) ── -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G_PLACEHOLDER"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G_PLACEHOLDER", {
+      page_title: document.title,
+      page_location: window.location.href,
+      send_page_view: true
+    });
+  </script>
 </head>
 <body>
   <nav id="navbar" class="navbar"><div class="nav-container"><a href="index.html" class="nav-logo"><img src="logo.webp" alt="DeryCode" class="nav-logo-img"/><span>Dery<span style="color:var(--accent)">Code</span></span></a><button id="hamburger" class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button><div id="navLinks" class="nav-links"><ul><li><a href="index.html#services">Services</a></li><li><a href="index.html#portfolio">Portfolio</a></li><li><a href="index.html#about">About</a></li><li><a href="index.html#contact">Contact</a></li><li><a href="https://wa.me/256772002326" target="_blank" rel="noopener" class="btn-nav-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a></li></ul></div></div></nav>

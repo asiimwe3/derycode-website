@@ -115,6 +115,18 @@
     "mainEntity": [{"@type":"Question","name":"How much does a mobile app cost in Uganda?","acceptedAnswer":{"@type":"Answer","text":"Mobile app development starts from UGX 4,400,000. Cross-platform apps using React Native or Flutter are cost-effective."}},{"@type":"Question","name":"Do you deploy apps to the Play Store?","acceptedAnswer":{"@type":"Answer","text":"Yes, we handle the full deployment process including Play Store and App Store submission, listing optimization, and review management."}}]
   }
   </script>
+  <!-- ── Google Analytics (GA4) ── -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G_PLACEHOLDER"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G_PLACEHOLDER", {
+      page_title: document.title,
+      page_location: window.location.href,
+      send_page_view: true
+    });
+  </script>
 </head>
 <body>
   <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
