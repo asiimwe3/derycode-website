@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-08-06",
+  "totalKeywords": 150,
+  "clusters": {
+    "Core Software Development": { "priority": "P0", "pages": 8 },
+    "Web Development": { "priority": "P0", "pages": 9 },
+    "Mobile Applications": { "priority": "P0", "pages": 7 },
+    "AI & Automation": { "priority": "P0", "pages": 12 },
+    "Blockchain & Web3": { "priority": "P1", "pages": 7 },
+    "Fintech": { "priority": "P0", "pages": 14 },
+    "SACCO Technology": { "priority": "P0", "pages": 17 },
+    "ERP & Business Software": { "priority": "P0", "pages": 12 },
+    "Education Technology": { "priority": "P0", "pages": 12 },
+    "Digital Marketing": { "priority": "P1", "pages": 10 },
+    "UI/UX & Design": { "priority": "P1", "pages": 6 },
+    "Cloud, Security & DevOps": { "priority": "P2", "pages": 8 },
+    "EFRIS / Tax Integration": { "priority": "P2", "pages": 1 },
+    "Industry Solutions": { "priority": "P1", "pages": 14 },
+    "Location SEO": { "priority": "P1", "pages": 8 },
+    "Comparison Content": { "priority": "P1", "pages": 9 },
+    "Pricing Content": { "priority": "P1", "pages": 7 },
+    "Product SEO": { "priority": "P1", "pages": 4 },
+    "Brand Authority": { "priority": "P0", "pages": 3 }
+  },
+  "notes": "Full keyword master map with 150 mapped keywords across 19 clusters. Targeting 300-500 indexable URLs with related keywords sharing authoritative pages."
+}
