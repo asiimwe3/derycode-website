@@ -705,4 +705,11 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+  <!-- External: DeryCode AI Search Engine -->
+  <url>
+    <loc>https://derycode-search-c.vercel.app/</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>
