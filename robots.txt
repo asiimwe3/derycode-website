@@ -70,3 +70,6 @@ User-agent: OAI-SearchBot
 Allow: /
 
 Sitemap: https://derycode.publicvm.com/sitemap.xml
+
+# IndexNow key for fast indexing
+# https://derycode.publicvm.com/97a81478ab3ae0ed7da6690535bd9ad0.txt
