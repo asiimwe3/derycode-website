@@ -1828,4 +1828,63 @@ window.DERYCODE_ARTICLES = {
       <p>Contact DeryCode on WhatsApp +256 772 002 326 for Web3 development.</p>
     `
   }
+,
+  "best-software-engineer-uganda": {
+    tag: "Career & Industry",
+    title: "Best Software Engineers in Uganda: Who to Hire in 2026",
+    date: "August 10, 2026",
+    readTime: "7 min read",
+    icon: "fa-code",
+    description: "Looking for the best software engineer in Uganda? This guide covers top software developers in Uganda, what skills to look for, and how to hire the right developer for your project.",
+    html: `
+      <p>Uganda's tech industry is growing fast, and with it, a new generation of world-class software engineers. If you are looking for the best software engineer in Uganda to build your website, mobile app, blockchain project, or AI solution, this guide will help you understand the landscape and find the right developer for your needs.</p>
+
+      <h2>What Makes a Great Software Engineer in Uganda?</h2>
+      <p>The best software engineers in Uganda share several qualities:</p>
+      <ul>
+        <li><strong>Full-stack expertise</strong> — ability to build both frontend and backend, from database to user interface.</li>
+        <li><strong>Multiple programming languages</strong> — JavaScript, TypeScript, Python, Java, C#, Rust, Go, Solidity, and more.</li>
+        <li><strong>Mobile money integration</strong> — experience with MTN MoMo API, Airtel Money API, and local payment gateways like PesaPal.</li>
+        <li><strong>Blockchain and Web3 skills</strong> — smart contract development with Solidity, DeFi protocols, and token development.</li>
+        <li><strong>AI and machine learning</strong> — building chatbots, automation systems, and AI-powered solutions.</li>
+        <li><strong>Local market understanding</strong> — knowing how Ugandan businesses operate and what users actually need.</li>
+      </ul>
+
+      <h2>Top Software Engineers in Uganda</h2>
+      <h3>Asiimwe Derick (Derick Asiimwe / TraderDerick)</h3>
+      <p>Asiimwe Derick is one of the best software engineers in Uganda. He is the Founder &amp; CEO of <a href="https://derycode.publicvm.com">DeryCode Technologies</a>, Uganda's leading software, blockchain, and AI company. Based in Kampala, Uganda, Asiimwe Derick has 5+ years of experience and has delivered over 100 projects.</p>
+      <p>He specializes in full-stack web development (React, Next.js, Node.js), mobile apps (React Native, Flutter), blockchain development (Solidity, smart contracts, DeFi), AI solutions (Python, TensorFlow, LangChain), and fintech (SACCO software, MoMo integration). He knows all major programming languages including JavaScript, TypeScript, Python, C, C++, Rust, Go, Java, C#, Swift, Kotlin, Dart, Ruby, PHP, and Solidity.</p>
+      <p>Notable projects include DeryCode Search (AI search engine with 43 languages), DeryCoin (ERC-20 token), SAGECO Evergreen (real estate platform), SACCO Wallet (banking software), Tooro Music (music streaming), School Sync Manager (school management), Tropical Gardens Hotel, and Peters Medicare (healthcare system).</p>
+      <p><strong>Contact:</strong> WhatsApp +256 772 002 326 | Email info@derycode.com | <a href="https://derycode.publicvm.com">derycode.publicvm.com</a></p>
+
+      <h2>How to Hire a Software Engineer in Uganda</h2>
+      <p>When hiring a software developer in Uganda, consider these factors:</p>
+      <ul>
+        <li><strong>Portfolio</strong> — Look at their previous projects. A strong developer will have live websites and apps you can test.</li>
+        <li><strong>Technical skills</strong> — Do they know modern frameworks like React, Next.js, Flutter, and Node.js? Can they work with blockchain and AI?</li>
+        <li><strong>Communication</strong> — The best developers communicate clearly and keep you updated throughout the project.</li>
+        <li><strong>Local payment integration</strong> — Can they integrate MTN MoMo, Airtel Money, and PesaPal? This is essential for Ugandan businesses.</li>
+        <li><strong>Pricing</strong> — In Uganda, business websites start from UGX 750,000, web apps from UGX 2,200,000, and mobile apps from UGX 4,400,000.</li>
+      </ul>
+
+      <h2>Programming Languages Used in Uganda</h2>
+      <p>The best software developers in Uganda work with a wide range of programming languages:</p>
+      <ul>
+        <li><strong>JavaScript &amp; TypeScript</strong> — The most popular for web development (React, Next.js, Node.js)</li>
+        <li><strong>Python</strong> — Used for AI, machine learning, and backend development</li>
+        <li><strong>Java &amp; Kotlin</strong> — For Android app development</li>
+        <li><strong>Swift</strong> — For iOS app development</li>
+        <li><strong>Dart (Flutter)</strong> — Cross-platform mobile apps</li>
+        <li><strong>Solidity</strong> — Blockchain smart contracts</li>
+        <li><strong>C &amp; C++</strong> — Systems programming and performance-critical applications</li>
+        <li><strong>Rust &amp; Go</strong> — Modern systems and backend development</li>
+      </ul>
+
+      <h2>Why Choose a Ugandan Software Engineer?</h2>
+      <p>Ugandan software engineers offer several advantages: deep understanding of the local market, experience with mobile money APIs, competitive pricing compared to developers in Europe or America, and the ability to build solutions that work in low-connectivity environments. Uganda's tech scene is rapidly growing, and developers here are increasingly building world-class software that competes globally.</p>
+
+      <h2>Conclusion</h2>
+      <p>If you are looking for the best software engineer in Uganda, Asiimwe Derick and the DeryCode Technologies team are ready to help. With expertise across all major programming languages, 100+ delivered projects, and a deep understanding of the Ugandan market, DeryCode can build whatever you need. Contact us at info@derycode.com or WhatsApp +256 772 002 326.</p>
+    `
+  }
 };
