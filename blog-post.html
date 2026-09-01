@@ -105,7 +105,22 @@
     </div>
   </div>
 </nav>
-<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+<div class="mobile-nav-overlay" id="mobileNav" aria-hidden="true">
+  <div class="mobile-nav-inner">
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+      <i class="fas fa-times" aria-hidden="true"></i>
+    </button>
+    <nav class="mobile-nav-links" role="navigation" aria-label="Mobile navigation">
+      <a href="index.html#solutions">Solutions</a>
+      <a href="index.html#industries">Industries</a>
+      <a href="index.html#technology">Technology</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#company">Company</a>
+      <a href="blog.html">Insights</a>
+      <a href="index.html#contact" class="mobile-nav-cta">Let's Talk &rarr;</a>
+    </nav>
+  </div>
+</div>
 
 <div class="article-wrap" id="articleWrap">
   <a href="blog.html" class="article-back"><i class="fas fa-arrow-left"></i> Back to Blog</a>
@@ -181,6 +196,50 @@
 
 <script src="articles.js"></script>
 <script>
+  // === Article Rendering ===
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var articleId = params.get('id') || 'derycoin';
+    var articles = window.DERYCODE_ARTICLES || {};
+    var article = articles[articleId];
+    var container = document.getElementById('articleContent');
+    var wrap = document.getElementById('articleWrap');
+    
+    if (!article) {
+      wrap.innerHTML = '<div class="article-not-found"><i class="fas fa-newspaper"></i><h2>Article not found</h2><p>This article may have been moved or deleted.</p><a href="blog.html" class="btn btn-primary" style="margin-top:24px;">Back to Blog</a></div>';
+      return;
+    }
+    
+    // Update page meta
+    document.title = article.title + ' | DeryCode';
+    document.getElementById('pageDesc').setAttribute('content', article.description);
+    document.getElementById('pageCanonical').setAttribute('href', 'https://derycode.publicvm.com/blog-post.html?id=' + articleId);
+    
+    // Build article HTML
+    container.innerHTML = 
+      '<div class="article-hero-img"><i class="fas ' + (article.icon || 'fa-newspaper') + '"></i></div>' +
+      '<span style="display:inline-block;font-size:0.72rem;font-weight:700;color:var(--primary);border:1px solid var(--border-light);padding:4px 14px;border-radius:50px;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.1em;">' + article.tag + '</span>' +
+      '<h1>' + article.title + '</h1>' +
+      '<div class="article-meta">' +
+        '<span><i class="fas fa-calendar"></i> ' + article.date + '</span>' +
+        '<span><i class="fas fa-clock"></i> ' + article.readTime + '</span>' +
+        '<span><i class="fas fa-user"></i> Asiimwe Derick</span>' +
+      '</div>' +
+      article.html +
+      '<div class="article-cta">' +
+        '<h3>Need help with your project?</h3>' +
+        '<p>DeryCode builds enterprise software, AI systems, blockchain infrastructure, and digital platforms.</p>' +
+        '<a href="index.html#contact" class="btn btn-primary" style="margin-top:8px;">Start a Conversation &rarr;</a>' +
+      '</div>' +
+      '<div style="margin-top:24px;"><a href="blog.html" style="color:var(--primary);font-weight:600;">&larr; Back to all articles</a></div>';
+    
+    // Update og tags
+    var ogTitle = document.querySelector('meta[property="og:title"]');
+    var ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogTitle) ogTitle.setAttribute('content', article.title);
+    if (ogDesc) ogDesc.setAttribute('content', article.description);
+  })();
+  
   document.getElementById('footerYear').textContent = new Date().getFullYear();
   var navbar = document.getElementById('navbar');
   window.addEventListener('scroll', function() {
