@@ -147,10 +147,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ─── HERO CANVAS ──────────────────────────────────────────── */
-  const canvas = $('#heroCanvas');
+  const canvas = null;
   if (canvas) {
     canvas.setAttribute('aria-hidden', 'true');   // decorative
-    const ctx = canvas.getContext('2d');
+    const ctx = null;
     let particles = [];
     let animId;
     let paused = false;
