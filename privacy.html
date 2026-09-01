@@ -40,6 +40,9 @@
     .legal-wrap ul { margin: 0 0 16px 20px; }
     .legal-wrap ul li { margin-bottom: 6px; }
     .legal-back { display:inline-flex; align-items:center; gap:8px; color: var(--primary); font-weight:600; text-decoration:none; margin-bottom: 24px; }
+    .legal-nav { display:flex; gap:16px; margin-bottom:32px; flex-wrap:wrap; }
+    .legal-nav a { font-size:0.85rem; color:var(--text-muted); text-decoration:none; padding:4px 12px; border-radius:20px; border:1px solid rgba(255,255,255,0.1); transition:all 0.2s; }
+    .legal-nav a:hover, .legal-nav a.active { color:var(--primary); border-color:var(--primary); }
   </style>
   <!-- ── Google Analytics (GA4) ── -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VY99K5XN58"></script>
@@ -114,8 +117,9 @@
 
 <div class="legal-wrap">
   <a href="index.html" class="legal-back"><i class="fas fa-arrow-left"></i> Back to Home</a>
+  <div class="legal-nav"><a href="privacy.html" class="active">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a></div>
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: July 3, 2026</p>
+  <p class="updated">Last updated: September 1, 2026</p>
 
   <p>DeryCode ("we", "us", "our") builds websites, mobile apps, and software platforms for clients across Uganda and East Africa. This Privacy Policy explains how we collect, use, store, and protect information when you visit our website, use our applications, or engage us for services.</p>
 
@@ -211,7 +215,7 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; <span id="footerYear"></span> DeryCode Technologies. All rights reserved.</p>
-      <p>Built in Uganda &middot; Africa &rarr; Global &nbsp;|&nbsp; <a href="privacy.html">Privacy Policy</a></p>
+      <p>Built in Uganda &middot; Africa &rarr; Global &nbsp;|&nbsp; <a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms.html">Terms &amp; Conditions</a></p>
     </div>
   </div>
 </footer>

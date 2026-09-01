@@ -111,6 +111,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://derycode.publicvm.com/terms.html</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://derycode.publicvm.com/school-digital-libraries.html</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
