@@ -94,7 +94,28 @@
   </script>
 </head>
 <body>
-  <nav id="navbar" class="navbar"><div class="nav-container"><a href="index.html" class="nav-logo"><img loading="lazy" decoding="async" src="logo.webp" alt="DeryCode" class="nav-logo-img"/><span>Dery<span style="color:var(--accent)">Code</span></span></a><button id="hamburger" class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button><div id="navLinks" class="nav-links"><ul><li><a href="index.html#services">Services</a></li><li><a href="index.html#portfolio">Portfolio</a></li><li><a href="index.html#about">About</a></li><li><a href="index.html#contact">Contact</a></li><li><a href="https://wa.me/256772002326" target="_blank" rel="noopener" class="btn-nav-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a></li></ul></div></div></nav>
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a href="index.html" class="logo" aria-label="DeryCode Technologies - Home">
+      <img src="logo.webp" alt="DeryCode Technologies logo" class="logo-icon-img" width="32" height="32" />
+      <span class="logo-text">DERY<span class="logo-accent">CODE</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks" role="menubar">
+      <li role="none"><a href="index.html#solutions" role="menuitem">Solutions</a></li>
+      <li role="none"><a href="index.html#industries" role="menuitem">Industries</a></li>
+      <li role="none"><a href="index.html#technology" role="menuitem">Technology</a></li>
+      <li role="none"><a href="index.html#projects" role="menuitem">Projects</a></li>
+      <li role="none"><a href="index.html#company" role="menuitem">Company</a></li>
+      <li role="none"><a href="blog.html" role="menuitem">Insights</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="index.html#contact" class="btn btn-primary nav-cta">Let's Talk &rarr;</a>
+      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</nav>
 
 <div class="mobile-nav-overlay" id="mobileNav" aria-hidden="true">
   <div class="mobile-nav-inner">
@@ -116,7 +137,7 @@
   <section class="cs-hero">
     <div class="cs-breadcrumb">
       <a href="index.html">Home</a> <i class="fas fa-chevron-right"></i>
-      <a href="index.html#portfolio">Portfolio</a> <i class="fas fa-chevron-right"></i>
+      <a href="index.html#projects">Projects</a> <i class="fas fa-chevron-right"></i>
       <span style="color:#4F7CFF;">SAGECO EVERGREEN</span>
     </div>
     <span class="cs-tag">Real Estate Technology</span>
