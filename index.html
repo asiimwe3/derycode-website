@@ -23,18 +23,26 @@
   <meta property="og:title" content="DeryCode Technologies | Enterprise Software, AI & Blockchain">
   <meta property="og:description" content="DeryCode Technologies builds enterprise software, AI, blockchain, Web3 and digital infrastructure for organizations in Africa and global markets.">
   <meta property="og:url" content="https://derycode.publicvm.com/">
-  <meta property="og:image" content="https://derycode.publicvm.com/hero.webp">
+  <meta property="og:image" content="https://derycode.publicvm.com/logo.webp">
+  <meta property="og:image:type" content="image/webp" />
+  <meta property="og:image:width" content="512" />
+  <meta property="og:image:height" content="512" />
+  <meta property="og:image:alt" content="DeryCode Technologies Logo" />
   <meta property="og:locale" content="en_US">
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://derycode.publicvm.com/logo.webp">
   <meta name="twitter:title" content="DeryCode Technologies | Enterprise Software, AI & Blockchain">
   <meta name="twitter:description" content="DeryCode Technologies builds enterprise software, AI, blockchain, Web3 and digital infrastructure for organizations in Africa and global markets.">
   <meta name="twitter:image" content="https://derycode.publicvm.com/hero.webp">
 
   <!-- PWA -->
   <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="icon" type="image/webp" href="logo.webp" />
+  <link rel="apple-touch-icon" href="icons/icon-192x192.png" />
+  <link rel="mask-icon" href="favicon.png" color="#4F7CFF" />
 
   <!-- Performance hints -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,7 +70,7 @@
     "@id": "https://derycode.publicvm.com/#organization",
     "name": "DeryCode Technologies",
     "url": "https://derycode.publicvm.com/",
-    "logo": "https://derycode.publicvm.com/logo.webp",
+    "logo": {"@type": "ImageObject", "url": "https://derycode.publicvm.com/logo.webp", "width": {"@type": "QuantitativeValue", "value": 512}, "height": {"@type": "QuantitativeValue", "value": 512}},
     "description": "DeryCode Technologies builds enterprise software, AI, blockchain, Web3 and digital infrastructure for organizations in Africa and global markets.",
     "foundingDate": "2021",
     "founder": { "@type": "Person", "name": "Asiimwe Derick" },
