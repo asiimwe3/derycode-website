@@ -180,7 +180,7 @@
   </script>
 
   <style>
-    .about-hero { background: linear-gradient(135deg, #0a0800 0%, #1a1500 50%, #0a0800 100%); padding: 80px 20px 60px; text-align: center; }
+    .about-hero { background: linear-gradient(135deg, #070B14 0%, #0d1424 50%, #070B14 100%); padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; }
     .about-hero h1 { font-family: 'Inter Tight', sans-serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; margin-bottom: 16px; }
     .about-hero p { color: #aaa; font-size: 18px; max-width: 700px; margin: 0 auto 20px; }
     .about-content { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
@@ -240,7 +240,10 @@
 </div>
 
 <div class="about-hero">
-  <h1>About DeryCode Technologies</h1>
+  <div style="margin: 0 auto 24px; width: clamp(120px, 22vw, 200px); height: clamp(120px, 22vw, 200px); border-radius: 50%; overflow: hidden; box-shadow: 0 0 40px rgba(79,124,255,0.15), 0 8px 32px rgba(0,0,0,0.4); border: 2px solid rgba(79,124,255,0.2);">
+    <img src="badge-full.webp" alt="DeryCode Technologies Official Badge" style="width:100%;height:100%;object-fit:cover;" />
+  </div>
+  <h1 style="color:#fff;">About DeryCode Technologies</h1>
   <p>Uganda's #1 Technology Company for Software Development, Blockchain, AI, and Digital Transformation</p>
 </div>
 
