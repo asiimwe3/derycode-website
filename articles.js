@@ -1887,4 +1887,256 @@ window.DERYCODE_ARTICLES = {
       <p>If you are looking for the best software engineer in Uganda, Asiimwe Derick and the DeryCode Technologies team are ready to help. With expertise across all major programming languages, 100+ delivered projects, and a deep understanding of the Ugandan market, DeryCode can build whatever you need. Contact us at info@derycode.com or WhatsApp +256 772 002 326.</p>
     `
   }
+
+  "sageco-architecture": {
+    tag: "⭐ Featured · Engineering",
+    title: "Building SAGECO Evergreen: How We Architected a Real Estate Platform for Uganda",
+    date: "September 1, 2026",
+    readTime: "8 min read",
+    icon: "fa-building",
+    description: "A deep dive into the architecture behind SAGECO Evergreen — a real estate platform built with Next.js, Supabase, and PesaPal, featuring drone verification, programmable escrow, and AI-powered property matching.",
+    html: `
+      <p>SAGECO Evergreen is a real estate platform we built for the Ugandan market. It handles property listings, verified broker dashboards, drone survey verification, programmable escrow payments, fractional land investment, and an AI broker for WhatsApp. This article walks through the actual architecture decisions we made, the trade-offs we accepted, and what we learned deploying it.</p>
+
+      <h2>The Problem We Were Solving</h2>
+      <p>Land transactions in Uganda are opaque. Buyers can't easily verify property boundaries, brokers operate without standardized tools, and payments happen through informal channels that offer no protection. SAGECO Evergreen was designed to bring transparency, verification, and programmable trust to the entire process.</p>
+
+      <h2>Technology Stack</h2>
+      <ul>
+        <li><strong>Frontend:</strong> Next.js 14 with App Router, Tailwind CSS for styling, deployed on Vercel</li>
+        <li><strong>Database:</strong> Supabase (PostgreSQL) with Row Level Security policies</li>
+        <li><strong>Mobile:</strong> React Native with Expo for the Android app</li>
+        <li><strong>Payments:</strong> PesaPal integration for MTN MoMo, Airtel Money, and card payments</li>
+        <li><strong>AI:</strong> OpenAI API for natural-language property search and broker assistance</li>
+        <li><strong>Backend Functions:</strong> Base44 serverless functions for business logic</li>
+      </ul>
+
+      <h2>Architecture Decision: Next.js + Supabase vs. Traditional Backend</h2>
+      <p>We chose Next.js with Supabase instead of building a traditional Node.js + Express + PostgreSQL backend. The reasoning was practical: Supabase gives us PostgreSQL with auto-generated REST APIs, real-time subscriptions, and authentication out of the box. Next.js gives us server-side rendering for SEO-critical property listing pages and API routes for server-side business logic that shouldn't live in the client bundle.</p>
+      <p>The trade-off: we gave up some control over the backend infrastructure. The benefit: we shipped in weeks instead of months, and the client could see working features early in the process. For an early-stage platform, that speed-to-market advantage mattered more than infrastructure flexibility.</p>
+
+      <h2>Programmable Escrow: The Core Feature</h2>
+      <p>The escrow system is what makes SAGECO different from a standard property listing site. When a buyer initiates a transaction, the payment is held in escrow via PesaPal. The funds are only released when both parties confirm — or automatically after a timeout period if no dispute is raised. We implemented this using serverless functions that handle the PesaPal IPN (Instant Payment Notification) callbacks and update transaction status in Supabase.</p>
+      <p>The key technical challenge was handling IPN callbacks reliably. PesaPal sends payment notifications asynchronously, and our function needs to update the transaction state atomically. We use Supabase's built-in row-level locking to prevent race conditions when multiple IPN notifications arrive for the same transaction.</p>
+
+      <h2>Drone Survey Verification</h2>
+      <p>Every property on SAGECO can have a drone survey attached. A certified surveyor uploads GPS coordinates and boundary data, which is stored as a JSON document in Supabase. The frontend renders property boundaries on an interactive map. This creates a verifiable, timestamped record of the property's physical boundaries — reducing boundary disputes, which are one of the most common issues in Ugandan land transactions.</p>
+
+      <h2>AI Broker for WhatsApp</h2>
+      <p>We built a natural-language property search interface that works through WhatsApp. Users describe what they're looking for in plain English ("I need a 3-bedroom house in Kyenjojo under 150 million"), and the AI broker parses intent, queries the Supabase database, and returns matching listings with images and broker contact details. The AI also creates follow-up tasks for human brokers when a lead shows serious intent.</p>
+
+      <h2>What We Learned</h2>
+      <p>Building for the Ugandan market taught us several things. First, offline resilience matters even for a web platform — brokers frequently work in areas with spotty connectivity, so we implemented optimistic UI updates that don't block on network round-trips. Second, the PesaPal integration was more complex than expected due to the variety of payment methods (MoMo, Airtel Money, cards) each with different callback behaviors. Third, Supabase's Row Level Security is powerful but requires careful planning — we ended up with 15+ RLS policies that needed to be tested as a unit.</p>
+
+      <h2>Result</h2>
+      <p>SAGECO Evergreen is live and serving real property listings. The platform handles the full transaction lifecycle from discovery to verified purchase. The custom domain (sagecoevergreen.publicvm.com) is deployed, the Android app is in testing, and the AI broker is processing WhatsApp queries from real users.</p>
+    `
+  },
+
+  "pesapal-integration-guide": {
+    tag: "Engineering · Fintech",
+    title: "Integrating PesaPal Payments in Uganda: A Developer's Practical Guide",
+    date: "August 28, 2026",
+    readTime: "7 min read",
+    icon: "fa-credit-card",
+    description: "A practical, code-level guide to integrating PesaPal for MTN MoMo, Airtel Money, and card payments in Uganda. Covers the IPN callback flow, common pitfalls, and production-tested patterns.",
+    html: `
+      <p>PesaPal is one of the most widely used payment aggregators in East Africa. It provides a single API to accept MTN Mobile Money, Airtel Money, Visa, and Mastercard payments. After integrating PesaPal across multiple client projects — including SAGECO Evergreen, Property Masters, and Tropical Gardens Hotel — here's a practical guide based on what actually works in production.</p>
+
+      <h2>How PesaPal Works</h2>
+      <p>The payment flow has three stages: First, you register an order with PesaPal to get a payment URL. Second, the user is redirected to PesaPal's payment page (or an iframe is embedded) where they choose their payment method and complete payment. Third, PesaPal sends an IPN (Instant Payment Notification) to your backend callback URL — this is how you know the payment actually succeeded.</p>
+
+      <h2>Getting Started: Authentication</h2>
+      <p>You need a PesaPal merchant account. Once approved, you receive a Consumer Key and Consumer Secret. You'll use these to generate a bearer token, which is required for all API calls. The token expires, so you need to fetch it fresh when needed rather than hardcoding it.</p>
+
+      <h2>Registering an Order</h2>
+      <p>To create a payment, you register an order with PesaPal's API. You send the amount, currency (UGX), description, and a unique order ID from your system. PesaPal returns a payment URL that you redirect the user to. The order ID is your anchor — PesaPal uses it in the IPN callback so you can match the payment back to your internal transaction record.</p>
+
+      <h2>The IPN Callback: Where Most Bugs Live</h2>
+      <p>The IPN callback is the most critical and most error-prone part of the integration. When a payment completes (or fails), PesaPal sends a POST request to your callback URL with the payment status. Your backend must handle this request and update your database accordingly.</p>
+      <p>Common issues we've encountered:</p>
+      <ul>
+        <li><strong>Double IPN notifications:</strong> PesaPal sometimes sends the same IPN twice. Your handler must be idempotent — processing the same notification twice should not create a duplicate transaction record.</li>
+        <li><strong>Delayed notifications:</strong> MoMo payments can take 10-30 seconds to process. Your UI should show a pending state, not assume failure.</li>
+        <li><strong>Test vs. Live mode:</strong> PesaPal has a sandbox environment. Always test in sandbox first, then switch the base URL for production. The credentials are different for each environment.</li>
+        <li><strong>HTTPS requirement:</strong> PesaPal requires your IPN callback URL to be HTTPS. This means you need an SSL certificate even in development.</li>
+      </ul>
+
+      <h2>Production Pattern: Service-Role Updates</h2>
+      <p>In one project (Property Masters), we initially updated subscription status from the client side after receiving the IPN callback. This was unreliable — if the user's browser was closed or the network dropped, the subscription wouldn't activate even though payment succeeded. The fix: move the IPN handler to a serverless function that uses service-role credentials to update the database directly, independent of any browser session. This ensures payments are always processed, even if the user navigates away.</p>
+
+      <h2>Transaction Limits</h2>
+      <p>One thing to watch for: PesaPal merchant accounts have transaction limits that depend on your verification status. New or unverified accounts may be capped at low amounts (we've seen UGX 30,000 limits). You need to work with PesaPal support to increase these limits as your business grows. Build your system to handle payment failures gracefully and display meaningful error messages to users.</p>
+
+      <h2>Supported Payment Methods in Uganda</h2>
+      <ul>
+        <li><strong>MTN Mobile Money (MoMo):</strong> The most popular payment method in Uganda. Users receive a USSD prompt on their phone to confirm payment.</li>
+        <li><strong>Airtel Money:</strong> Similar to MoMo but on the Airtel network. Slightly different callback timing.</li>
+        <li><strong>Visa / Mastercard:</strong> Card payments through PesaPal's PCI-compliant infrastructure. Less common for small transactions but important for larger payments.</li>
+      </ul>
+
+      <h2>Conclusion</h2>
+      <p>PesaPal is a solid payment aggregator for the Ugandan market, but the IPN callback flow requires careful engineering. The key principles: make your handler idempotent, use service-role updates for database changes, handle the pending state in your UI, and always test in sandbox before going live. We've integrated PesaPal across three production projects and these patterns have held up reliably.</p>
+    `
+  },
+
+  "tropical-gardens-pwa": {
+    tag: "Engineering · Case Study",
+    title: "Why We Built a PWA Instead of a Native App for Tropical Gardens Hotel",
+    date: "August 25, 2026",
+    readTime: "6 min read",
+    icon: "fa-mobile-screen",
+    description: "A real architecture decision: why DeryCode chose a Progressive Web App over a native mobile app for a hotel in rural Uganda, and what happened after launch.",
+    html: `
+      <p>Tropical Gardens Hotel is a 25-room hotel in Kyenjojo, western Uganda. When they approached us, they needed a digital presence — online booking, room management, and a way to compete with larger hotels on Google. The question was: native app or web app? We chose a Progressive Web App. Here's why, and what we learned.</p>
+
+      <h2>The Context</h2>
+      <p>Most of Tropical Gardens' guests are domestic travelers, NGO workers, and tourists visiting western Uganda. They discover the hotel through Google searches like "hotels in Kyenjojo" or through Booking.com. The hotel's main competitors — Tooro Royal Cottages and Panorama Kyenjojo — had basic websites or Facebook pages but no custom booking system.</p>
+      <p>The hotel needed: a fast, mobile-friendly website that ranks on Google, a booking system that doesn't depend on OTA commissions, room management for 4 room categories (Standard, Deluxe, Executive, Family Suite), and integration with mobile money for deposits.</p>
+
+      <h2>Why Not a Native App?</h2>
+      <p>A native Android app would have cost 2-3x more to build and maintain. More importantly, the discovery problem remains: a hotel guest from Kampala searching "hotels in Kyenjojo" on Google will never find a native app. They'll find a website. Google indexes websites; it doesn't index apps (unless they're already installed). For a hotel, the primary acquisition channel is search — and search lives on the web.</p>
+      <p>Additionally, app store distribution adds friction. A guest planning a last-minute stopover in Kyenjojo won't download an app. They'll tap a link from Google and expect to book in under 60 seconds. A PWA loads instantly in the browser, works on any device, and can be "installed" to the home screen if the user chooses — without app store approval.</p>
+
+      <h2>What We Built</h2>
+      <p>The Tropical Gardens Hotel PWA includes:</p>
+      <ul>
+        <li><strong>Custom booking engine</strong> — room selection, date availability, and booking confirmation without third-party commission</li>
+        <li><strong>Node/Express backend</strong> — PostgreSQL database for room inventory, bookings, and guest records</li>
+        <li><strong>Admin dashboard</strong> — JWT-authenticated management interface for room availability, pricing, and booking management</li>
+        <li><strong>PWA installation</strong> — guests can add the hotel to their home screen for one-tap access on return visits</li>
+        <li><strong>Offline-capable</strong> — service workers cache the shell so the site loads even with poor connectivity in rural areas</li>
+        <li><strong>PesaPal integration</strong> — mobile money deposits for booking confirmations</li>
+        <li><strong>Verified Google reviews</strong> — integrated real 5-star Google reviews for social proof and local SEO</li>
+      </ul>
+
+      <h2>Technical Architecture</h2>
+      <p>The frontend is a static site served via GitHub Pages with a Node/Express backend hosted separately. The backend handles booking logic, payment processing, and the admin API. The admin dashboard uses JWT authentication to restrict access to authorized staff.</p>
+      <p>For SEO, every room category page has structured data (JSON-LD schema markup) including room types, pricing, and availability. This helps Google understand the content and display rich snippets in search results — giving Tropical Gardens a visible advantage over competitors who only have a Facebook page.</p>
+
+      <h2>The Result</h2>
+      <p>The PWA is live on two domains (tropicalgardenshotel.com and tropicalgardenshotelkyenjojo.com). It handles real bookings, manages 25 rooms across 4 categories, and the admin dashboard lets hotel staff manage availability in real time. The hotel now appears in Google search results for "hotels in Kyenjojo" — competing directly with hotels that have been online for years.</p>
+      <p>The maintenance cost is low: static hosting is free, the backend runs on a small server, and updates deploy automatically from GitHub. Total monthly cost including domains and backend hosting is under UGX 812,000.</p>
+
+      <h2>When You Should Choose Native Instead</h2>
+      <p>A PWA isn't always the right choice. We'd recommend native if: you need deep device integration (Bluetooth, NFC, background location), you're building a gaming app, or your users access the app frequently and benefit from native notifications and offline data. For a hotel booking system where the primary goal is Google discoverability and fast booking, a PWA was the right call.</p>
+    `
+  },
+
+  "sacco-wallet-marketplace": {
+    tag: "Engineering · Case Study",
+    title: "From Paper to Digital: Building a Multi-Vendor Agricultural Marketplace",
+    date: "August 20, 2026",
+    readTime: "7 min read",
+    icon: "fa-seedling",
+    description: "How DeryCode transformed a SACCO wallet app into a multi-vendor agricultural marketplace supporting farmers, traders, and vendors — with GPS land measurement, AI crop recommendations, and marketplace trading.",
+    html: `
+      <p>The SACCO Wallet project started as a simple digital wallet for a rural savings cooperative in Kyenjojo. It evolved into something much bigger: a multi-vendor agricultural marketplace where farmers can sell produce, traders can source goods, and SACCOs can manage member finances — all from a single app. This is the story of how we built it and the technical decisions along the way.</p>
+
+      <h2>Phase 1: The Digital Wallet</h2>
+      <p>The initial requirement was straightforward: digitize the SACCO's paper-based savings and loan records. Members needed to check their balance, see transaction history, and make deposits via mobile money. We built this as a PWA with a Supabase backend — lightweight, mobile-first, and offline-capable for rural users with unreliable connectivity.</p>
+
+      <h2>Phase 2: The Pivot to Marketplace</h2>
+      <p>After launching the wallet, the SACCO members asked a question that changed the project's direction: "Can we also sell our produce through this app?" The cooperative's members were farmers — maize, beans, coffee, bananas — and they were selling through middlemen who took significant margins. If we could connect farmers directly to buyers, the economics improved for everyone.</p>
+      <p>We redesigned the app into a multi-vendor platform with four user roles:</p>
+      <ul>
+        <li><strong>Farmers:</strong> List produce for sale, set prices, manage inventory</li>
+        <li><strong>Traders:</strong> Browse and purchase produce in bulk, arrange transport</li>
+        <li><strong>Vendors:</strong> Set up digital storefronts for retail sales</li>
+        <li><strong>Stores:</strong> Larger outlets with inventory management and sales tracking</li>
+      </ul>
+
+      <h2>GPS-Based Land Measurement</h2>
+      <p>One of the more technically interesting features: farmers can measure their land size using GPS directly in the app. They walk the perimeter of their field holding the phone, and the app records GPS coordinates and calculates the area. This data feeds into the AI crop recommendation engine — knowing the exact land size lets the system suggest crops that are viable for that specific parcel.</p>
+      <p>The implementation uses the browser's Geolocation API with a custom path-tracing algorithm that records points at intervals, filters GPS noise, and computes the enclosed area using the shoelace formula. The accuracy isn't surveyor-grade, but it's good enough for crop planning and gives farmers a number they can reference when applying for SACCO loans.</p>
+
+      <h2>AI Crop Recommendations</h2>
+      <p>We integrated NASA's satellite climate data API to pull real-time precipitation, temperature, and soil moisture data for the Kyenjojo region. The AI recommendation engine combines this climate data with the farmer's land size, historical crop performance, and current market prices to suggest the most profitable crops to plant. It's not a perfect prediction — agriculture has too many variables for that — but it gives farmers a data-informed starting point instead of guesswork.</p>
+
+      <h2>The Market Page</h2>
+      <p>We designed the marketplace page (accessible at /market in the app) as a Jumia-inspired mobile marketplace. Farmers list produce with photos, prices, and availability. Buyers can filter by crop type, price range, and location. Transactions are settled through the SACCO wallet — the same account members use for savings and loans. This integration means the SACCO can offer financing for purchases, and the marketplace transactions are visible to the cooperative for transparency.</p>
+
+      <h2>Design Language</h2>
+      <p>The visual design evolved from a generic fintech aesthetic to a warm, agricultural identity. We chose a cream background (#FAF8F4) with dark forest green (#1a4731) as the primary accent. Navigation uses pill-shaped components — a design choice that feels approachable and non-technical for users who may be using a digital marketplace for the first time.</p>
+
+      <h2>What We Learned</h2>
+      <p>Building software for farmers in rural Uganda taught us that feature complexity is the enemy of adoption. Every feature we added had to pass a simple test: could a farmer who has never used a smartphone before understand this within two minutes? We removed features that failed this test, even when they were technically impressive. The GPS land measurement stayed because it's immediately useful and requires only walking around a field. The AI recommendations stayed because they answer a direct question: "What should I plant?"</p>
+    `
+  },
+
+  "derycode-search-engine": {
+    tag: "Engineering · Systems",
+    title: "Building the DeryCode Search Engine in C",
+    date: "August 15, 2026",
+    readTime: "6 min read",
+    icon: "fa-magnifying-glass",
+    description: "Why we built a search engine in C instead of using Elasticsearch or Algolia — and what we learned about performance, simplicity, and the trade-offs of rolling your own.",
+    html: `
+      <p>The DeryCode Search engine is a web-based search tool deployed at derycode-search-c.vercel.app. It provides answers about DeryCode's services, projects, and technical capabilities. What makes it unusual is that the core search logic is written in C — not Python, not JavaScript, not Go. Here's why we made that choice and how it works.</p>
+
+      <h2>The Problem</h2>
+      <p>We needed a search interface for the DeryCode knowledge base — information about our 20+ projects, service offerings, pricing, and technical expertise. The search needed to be fast, accurate, and deployable on Vercel's serverless platform. The obvious choices were Algolia, Elasticsearch, or a simple full-text search in a database. We chose to build our own — in C.</p>
+
+      <h2>Why C?</h2>
+      <p>Two reasons. First, performance. C gives us predictable, minimal-latency text processing with zero garbage collection overhead. For a search engine where every millisecond matters, this matters. Second, learning. Building a search engine from scratch in a systems language forces you to understand every detail: how text is tokenized, how relevance is scored, how memory is managed. Using a pre-built search library would have been faster to ship, but we'd have learned less about how search actually works under the hood.</p>
+
+      <h2>How It Works</h2>
+      <p>The search engine maintains an in-memory index of 21 documented projects. Each project entry contains structured data: name, description, technologies used, client, deployment URL, and category. When a query comes in, the C code tokenizes the search terms, builds a relevance score for each project entry, and returns ranked results.</p>
+      <p>The scoring algorithm is a custom variant of TF-IDF (Term Frequency - Inverse Document Frequency). It weights matches in the project name higher than matches in the description, and gives bonus weight to technology keyword matches. The result is a ranked list that surfaces the most relevant project for any given query.</p>
+
+      <h2>Deployment Architecture</h2>
+      <p>Deploying C on Vercel is unconventional. Vercel is designed for JavaScript/TypeScript serverless functions. We compile the C code to a standalone binary and wrap it in a thin Node.js serverless function that handles HTTP requests, passes the query to the C binary via stdin, and returns the JSON output. The C binary does the heavy lifting; Node.js handles the HTTP layer.</p>
+      <p>This architecture means cold starts include a process spawn, which adds latency on the first request. For subsequent requests, the binary stays warm. The trade-off is acceptable for our use case — the search engine serves a knowledge base, not a high-traffic consumer product.</p>
+
+      <h2>What We Learned</h2>
+      <p>Building a search engine in C taught us three things. First, most "search" problems are simpler than they look. A well-tuned TF-IDF implementation on a small, curated dataset outperforms many heavyweight search engines that are optimized for billions of documents. Second, deployment constraints drive architecture. If we'd used AWS EC2 instead of Vercel, we'd have deployed differently. The serverless constraint forced a creative solution. Third, rolling your own infrastructure is educational but not always the right business decision. For a client project, we'd use Algolia or Typesense. For our own learning and a controlled dataset, building from scratch was the right call.</p>
+
+      <h2>PWA Features</h2>
+      <p>The search engine frontend is also a PWA — installable on mobile, with voice input support using the Web Speech API. Users can speak their query instead of typing, which is useful for mobile users and accessibility. The results include confidence indicators so users know how reliable the answer is.</p>
+
+      <h2>Current State</h2>
+      <p>The search engine is live and handles queries about DeryCode's 21 projects and service categories. It's not a general-purpose search engine — it's a specialized tool for our knowledge base. But it's fast, it works, and it was built from first principles in a language most web developers would never choose for this task. Sometimes that's the point.</p>
+    `
+  },
+
+  "mobile-first-enterprise-ui": {
+    tag: "Engineering · Design Systems",
+    title: "Mobile-First Enterprise UI: Redesigning the DeryCode Website",
+    date: "September 1, 2026",
+    readTime: "5 min read",
+    icon: "fa-paintbrush",
+    description: "A walkthrough of the DeryCode website redesign — from a decorative aesthetic to a mobile-first enterprise design system with navy/blue tokens, Inter typography, and progressive enhancement.",
+    html: `
+      <p>We just completed a full redesign of the DeryCode website. The previous version had visual effects — animated light bars, floating orbs, a code editor hero — that looked impressive on desktop but hurt performance and readability on mobile. The new design strips everything back to a mobile-first enterprise system. Here's what we did and why.</p>
+
+      <h2>The Starting Point</h2>
+      <p>The old site was built desktop-first. It used gold and purple colors with elaborate animations — gradient shifts, aurora text effects, and a glassmorphism code panel in the hero. On desktop, it looked distinctive. On mobile, the animations caused jank, the text was hard to read, and the hero panel consumed most of the viewport without conveying useful information. More importantly, the design didn't communicate "enterprise technology company" — it communicated "creative portfolio."</p>
+
+      <h2>Design Principles for the Redesign</h2>
+      <ul>
+        <li><strong>Mobile-first:</strong> Base CSS targets mobile screens. min-width media queries progressively enhance for tablet, desktop, and large displays. No more "shrink the desktop version for mobile."</li>
+        <li><strong>Enterprise palette:</strong> Deep navy background (#070B14), blue primary (#4F7CFF), cyan accent (#22D3EE). The same visual language used by enterprise technology companies globally.</li>
+        <li><strong>Typography:</strong> Inter for body text, Inter Tight for display headings. Two weights of the same family — consistent, legible, and fast-loading.</li>
+        <li><strong>Performance over decoration:</strong> Removed all CSS animations that don't serve function. The hero has a lightweight Canvas network visualization instead of multiple animated blobs.</li>
+        <li><strong>Touch targets:</strong> All interactive elements have a minimum 44-48px touch target, meeting WCAG guidelines for mobile accessibility.</li>
+      </ul>
+
+      <h2>The Mobile-First CSS Architecture</h2>
+      <p>The key change: base styles target mobile, and media queries use min-width to scale up. This means the default CSS is already mobile-optimized. At 640px (tablet), grids go two-column. At 1024px (desktop), the full nav appears, the hero splits into a side-by-side layout, and grids expand to 3-4 columns. At 1440px+ and 1920px+, the container width and font sizes scale further.</p>
+      <p>This approach is opposite to the old method (desktop-first with max-width breakpoints to reduce for mobile). Mobile-first means the mobile experience is intentional and designed, not a degraded version of desktop.</p>
+
+      <h2>Navigation Redesign</h2>
+      <p>The old site had 11 navigation items — Home, About, Founder, FAQ, Services, Portfolio, Partners, Blog, Docs, Book a Call, Contact. That's too many for a desktop nav and impossible on mobile. The new nav has six items: Solutions, Industries, Technology, Projects, Company, Insights — plus a "Let's Talk" CTA button. On mobile, a hamburger opens a full-screen overlay with large touch targets.</p>
+
+      <h2>The Hero</h2>
+      <p>Instead of a glassmorphism code panel, the new hero uses a Canvas-based network visualization — interconnected nodes representing AI, Software, Blockchain, Data, Cloud, and Web3. On mobile, the visual stacks below the headline. On desktop, it sits side-by-side. The visualization is lightweight (a single Canvas element with a few dozen animated nodes) and communicates "connected systems" without text.</p>
+
+      <h2>Design Tokens</h2>
+      <p>Everything runs through CSS custom properties — colors, spacing, typography, radii, transitions. This makes it trivial to maintain consistency across the homepage and all 26 sub-pages. The same tokens are defined in two CSS files: style.css for the homepage and style.min.css for sub-pages, with identical variable names.</p>
+
+      <h2>Results</h2>
+      <p>The new site loads faster (fewer animations, smaller CSS), reads better on mobile (larger text, proper touch targets), and looks like what it is — an enterprise technology company. The total CSS for the homepage is under 1,000 lines, and the sub-page CSS is 257 lines. Every page passes the "would a CTO trust this company" test.</p>
+    `
+  }
+
 };
