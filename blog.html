@@ -2,7 +2,7 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0" />
   <title>DeryCode Blog — Tech Insights Uganda | Software, Blockchain, AI</title>
   <meta name="description" content="Read the latest insights on software development, blockchain, AI, and fintech in Uganda from DeryCode's expert team." />
   <meta name="robots" content="index, follow" />
@@ -13,11 +13,11 @@
   <link rel="alternate" hreflang="x-default" href="https://derycode.publicvm.com/blog.html" />
   <link rel="icon" type="image/png" href="https://media.base44.com/images/public/69f8f20192eecc9587b7eca6/1eb2e552d_generated_image.png" />
   <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#6C63FF" />
+  <meta name="theme-color" content="#070B14" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.min.css?v=20260807a202606191851" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.min.css?v=20260901" />
   <link rel="stylesheet" href="blog.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <!-- SEO -->
@@ -116,30 +116,24 @@
 <body>
 
 <!-- NAV -->
-<nav class="navbar" id="navbar">
+<nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
   <div class="nav-container">
-    <a href="index.html" class="logo">
-      <div class="logo-icon">D</div>
-      <span class="logo-text">Dery<span class="accent">Code</span></span>
+    <a href="index.html" class="logo" aria-label="DeryCode Technologies - Home">
+      <img src="logo.webp" alt="DeryCode Technologies logo" class="logo-icon-img" width="32" height="32" />
+      <span class="logo-text">DERY<span class="logo-accent">CODE</span></span>
     </a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#services">Services</a></li>
-      <li><a href="index.html#portfolio">Portfolio</a></li>
-      <li><a href="blog.html" class="nav-active">Blog</a></li>
-      <li><a href="docs.html">Docs</a></li>
-      <li><a href="index.html#booking">Book a Call</a></li>
+    <ul class="nav-links" id="navLinks" role="menubar">
+      <li role="none"><a href="index.html#solutions" role="menuitem">Solutions</a></li>
+      <li role="none"><a href="index.html#industries" role="menuitem">Industries</a></li>
+      <li role="none"><a href="index.html#technology" role="menuitem">Technology</a></li>
+      <li role="none"><a href="index.html#projects" role="menuitem">Projects</a></li>
+      <li role="none"><a href="index.html#company" role="menuitem">Company</a></li>
+      <li role="none"><a href="blog.html" role="menuitem">Insights</a></li>
     </ul>
     <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <i class="fas fa-moon" id="themeIcon"></i>
-      </button>
-      <a href="index.html#booking" class="btn btn-primary nav-cta">
-        <i class="fas fa-calendar-check"></i> Book a Call
-      </a>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
+      <a href="index.html#contact" class="btn btn-primary nav-cta">Let's Talk &rarr;</a>
+      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
       </button>
     </div>
   </div>
@@ -200,7 +194,7 @@
     <div class="blog-posts-grid" id="blogPostsGrid">
 
       <article class="blog-card" data-category="career" data-title="best software engineers in uganda who to hire in 2026">
-        <div class="blog-img" style="background:linear-gradient(135deg,#0a0800 40%,#D4A017);"><span class="blog-tag">Career &amp; Industry</span></div>
+        <div class="blog-img" style="background:linear-gradient(135deg,#0a0800 40%,#4F7CFF);"><span class="blog-tag">Career &amp; Industry</span></div>
         <div class="blog-body">
           <div class="blog-meta"><span><i class="fas fa-calendar"></i> Aug 10, 2026</span><span><i class="fas fa-clock"></i> 7 min</span></div>
           <h3>Best Software Engineers in Uganda: Who to Hire in 2026</h3>
@@ -1072,56 +1066,65 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
+<footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="index.html" class="logo">
-          <div class="logo-icon">D</div>
-          <span class="logo-text">Dery<span class="accent">Code</span></span>
+          <img src="logo.webp" alt="DeryCode Technologies logo" class="logo-icon-img" width="32" height="32" />
+          <span class="logo-text">DERY<span class="logo-accent">CODE</span></span>
         </a>
-        <p>Uganda's leading full-service technology company. Building the future with Software, Blockchain, AI & Web3.</p>
-        <div class="footer-socials">
-          <a href="https://wa.me/256772002326" target="_blank"><i class="fab fa-whatsapp"></i></a>
-          <a href="mailto:info@derycode.com"><i class="fas fa-envelope"></i></a>
-          <a href="#"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
-        </div>
+        <p>Enterprise Software &middot; AI &middot; Blockchain &middot; Web3 &middot; Digital Infrastructure</p>
+        <nav class="footer-socials" aria-label="Social media links">
+          <a href="https://wa.me/256772002326" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+          <a href="mailto:info@derycode.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+          <a href="https://github.com/asiimwe3" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+        </nav>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
+        <h3>Solutions</h3>
         <ul>
-          <li><a href="index.html#services">Software Development</a></li>
-          <li><a href="index.html#services">Blockchain & Web3</a></li>
-          <li><a href="index.html#services">AI & Machine Learning</a></li>
-          <li><a href="index.html#services">Mobile Apps</a></li>
-          <li><a href="index.html#services">Fintech Systems</a></li>
+          <li><a href="business-websites.html">Enterprise Software</a></li>
+          <li><a href="ai-automation.html">Artificial Intelligence</a></li>
+          <li><a href="smart-contracts.html">Blockchain</a></li>
+          <li><a href="token-crypto-development.html">Web3</a></li>
+          <li><a href="web-applications.html">Cloud &amp; Infrastructure</a></li>
+          <li><a href="business-management-erp.html">Digital Transformation</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Company</h4>
+        <h3>Industries</h3>
         <ul>
-          <li><a href="index.html#about">About Us</a></li>
-          <li><a href="index.html#portfolio">Our Work</a></li>
-          <li><a href="blog.html">Blog</a></li>
+          <li><a href="banking-sacco-software.html">Financial Services</a></li>
+          <li><a href="case-study-sageco-evergreen.html">Real Estate</a></li>
+          <li><a href="school-digital-libraries.html">Education</a></li>
+          <li><a href="case-study-peters-medicare.html">Healthcare</a></li>
+          <li><a href="case-study-sacco-wallet.html">Agriculture</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="index.html#company">About</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="blog.html">Insights</a></li>
           <li><a href="docs.html">Documentation</a></li>
-          <li><a href="index.html#booking">Book a Call</a></li>
+          <li><a href="partners.html">Partners</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
         </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Get Started</h4>
-        <p>Ready to build something great?</p>
-        <a href="index.html#booking" class="btn btn-primary btn-sm" style="margin-top:12px;">
-          <i class="fas fa-calendar-check"></i> Book Free Call
-        </a>
-        <p style="margin-top:16px;font-size:0.85rem;color:var(--text-muted);">
-          <i class="fas fa-map-marker-alt"></i> Kyenjojo, Uganda
-        </p>
       </div>
     </div>
+    <div class="footer-newsletter">
+      <p>Get engineering insights and DeryCode updates.</p>
+      <form class="newsletter-form" onsubmit="handleNewsletter(event)" aria-label="Newsletter signup">
+        <label for="newsletterEmail" class="sr-only">Email address</label>
+        <input type="email" id="newsletterEmail" name="email" placeholder="your@email.com" required class="newsletter-input" autocomplete="email" />
+        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+      </form>
+    </div>
     <div class="footer-bottom">
-      <p>&copy; <span id="footerYear"></span> DeryCode. All rights reserved.</p>
-      <p>Made with <i class="fas fa-heart" style="color:var(--accent)"></i> in Uganda 🇺🇬</p>
+      <p>&copy; <span id="footerYear"></span> DeryCode Technologies. All rights reserved.</p>
+      <p>Built in Uganda &middot; Africa &rarr; Global &nbsp;|&nbsp; <a href="privacy.html">Privacy Policy</a></p>
     </div>
   </div>
 </footer>

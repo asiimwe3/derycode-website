@@ -2,7 +2,7 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0" />
   <title>SAGECO EVERGREEN Case Study | Real Estate Tech Uganda | DeryCode</title>
   <meta name="description" content="How DeryCode built SAGECO EVERGREEN — Uganda's AI-powered real estate platform with 10 backend functions, drone verification, escrow payments, fractional investment, and a React Native mobile app on Supabase." />
   <meta name="keywords" content="SAGECO EVERGREEN, real estate platform Uganda, property website Uganda, real estate software development Uganda, PesaPal integration Uganda, Next.js real estate, React Native property app Uganda, land for sale platform Uganda, DeryCode case study, real estate tech Uganda, drone verification, AI fraud detection, tokenized land investment, programmable escrow" />
@@ -21,15 +21,15 @@
   <meta name="twitter:description" content="Uganda's AI-powered real estate platform with drone verification, escrow, fractional investment, AI broker, and a mobile app." />
   <meta name="twitter:image" content="https://base44.app/api/apps/6a68fbca751e586b1ee9e64b/files/mp/public/6a68fbca751e586b1ee9e64b/ddb5f05ef_sageco-home.jpg" />
   <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#D4A017" />
+  <meta name="theme-color" content="#070B14" />
   <link rel="icon" type="image/png" href="logo.webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" /></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&display=swap" /></noscript>
   <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /></noscript>
-  <link rel="stylesheet" href="style.min.css?v=20260807a" />
+  <link rel="stylesheet" href="style.min.css?v=20260901" />
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"CreativeWork","name":"SAGECO EVERGREEN — Real Estate Platform","description":"AI-powered real estate platform in Uganda with drone verification, programmable escrow, fractional land investment, AI broker, and property matching. Built by DeryCode.","url":"https://derycode.publicvm.com/case-study-sageco-evergreen.html","creator":{"@type":"Organization","name":"DeryCode","url":"https://derycode.publicvm.com"},"about":{"@type":"Thing","name":"Real Estate Technology"},"keywords":"real estate platform, Uganda, drone verification, escrow, fractional investment, AI broker, Next.js, React Native, Supabase, Base44"}
   </script>
@@ -41,30 +41,30 @@
   </script>
   <style>
     .cs-hero{background:linear-gradient(135deg,#0a2e26 0%,#0f766e 50%,#064e3b 100%);padding:80px 20px 60px;text-align:center}
-    .cs-hero h1{font-size:2.5rem;color:#fff;margin-bottom:12px;font-family:'Space Grotesk',sans-serif}
-    .cs-hero .cs-tag{display:inline-block;background:rgba(212,160,23,0.15);border:1px solid rgba(212,160,23,0.4);color:#D4A017;padding:6px 16px;border-radius:20px;font-size:13px;font-weight:600;margin-bottom:16px}
+    .cs-hero h1{font-size:2.5rem;color:#fff;margin-bottom:12px;font-family:'Inter Tight',sans-serif}
+    .cs-hero .cs-tag{display:inline-block;background:rgba(212,160,23,0.15);border:1px solid rgba(212,160,23,0.4);color:#4F7CFF;padding:6px 16px;border-radius:20px;font-size:13px;font-weight:600;margin-bottom:16px}
     .cs-hero p{color:rgba(255,255,255,0.8);max-width:700px;margin:0 auto;font-size:1.1rem;line-height:1.7}
     .cs-breadcrumb{max-width:800px;margin:0 auto;padding:16px 20px 0;display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,0.5)}
     .cs-breadcrumb a{color:rgba(255,255,255,0.5);text-decoration:none;transition:color .2s}
-    .cs-breadcrumb a:hover{color:#D4A017}
+    .cs-breadcrumb a:hover{color:#4F7CFF}
     .cs-breadcrumb i{font-size:10px}
     .cs-section{max-width:800px;margin:0 auto;padding:50px 20px}
-    .cs-section h2{font-size:1.8rem;color:#D4A017;margin-bottom:16px;font-family:'Space Grotesk',sans-serif}
+    .cs-section h2{font-size:1.8rem;color:#4F7CFF;margin-bottom:16px;font-family:'Inter Tight',sans-serif}
     .cs-section p{color:rgba(255,255,255,0.75);line-height:1.8;margin-bottom:14px}
     .cs-section ul{list-style:none;padding:0}
     .cs-section ul li{color:rgba(255,255,255,0.7);padding:8px 0 8px 28px;position:relative}
-    .cs-section ul li::before{content:'\f00c';font-family:'Font Awesome 6 Free';font-weight:900;color:#D4A017;position:absolute;left:0}
+    .cs-section ul li::before{content:'\f00c';font-family:'Font Awesome 6 Free';font-weight:900;color:#4F7CFF;position:absolute;left:0}
     .cs-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px;max-width:800px;margin:0 auto;padding:40px 20px}
     .cs-stat{text-align:center;padding:24px 16px;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.06)}
-    .cs-stat .num{font-size:2rem;font-weight:800;color:#D4A017;font-family:'Space Grotesk',sans-serif}
+    .cs-stat .num{font-size:2rem;font-weight:800;color:#4F7CFF;font-family:'Inter Tight',sans-serif}
     .cs-stat .label{font-size:13px;color:rgba(255,255,255,0.6);margin-top:4px}
     .cs-tech{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
     .cs-tech span{display:inline-block;padding:6px 14px;background:rgba(15,118,110,0.15);border:1px solid rgba(15,118,110,0.3);border-radius:20px;color:#34d399;font-size:13px}
     .cs-cta{text-align:center;padding:50px 20px;background:rgba(212,160,23,0.05);border-top:1px solid rgba(212,160,23,0.1)}
-    .cs-cta a{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:#D4A017;color:#1a1a1a;border-radius:50px;font-weight:700;font-size:15px;transition:all 0.3s}
+    .cs-cta a{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:#4F7CFF;color:#1a1a1a;border-radius:50px;font-weight:700;font-size:15px;transition:all 0.3s}
     .cs-cta a:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(212,160,23,0.3)}
-    .cs-link{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:#D4A017;color:#1a1a1a;border-radius:50px;font-weight:700;font-size:14px}
-    .cs-chips a{display:inline-block;padding:8px 16px;background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.3);border-radius:24px;color:#D4A017;font-size:13px;text-decoration:none;margin:4px}
+    .cs-link{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:#4F7CFF;color:#1a1a1a;border-radius:50px;font-weight:700;font-size:14px}
+    .cs-chips a{display:inline-block;padding:8px 16px;background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.3);border-radius:24px;color:#4F7CFF;font-size:13px;text-decoration:none;margin:4px}
     .cs-screenshots{max-width:900px;margin:0 auto;padding:40px 20px}
     .cs-screenshot{margin-bottom:32px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.08)}
     .cs-screenshot img{width:100%;display:block}
@@ -72,10 +72,10 @@
     .cs-features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:24px}
     .cs-feature-card{padding:20px;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.06)}
     .cs-feature-card .cs-feature-icon{width:40px;height:40px;border-radius:10px;background:rgba(212,160,23,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
-    .cs-feature-card .cs-feature-icon i{color:#D4A017;font-size:18px}
+    .cs-feature-card .cs-feature-icon i{color:#4F7CFF;font-size:18px}
     .cs-feature-card h3{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
     .cs-feature-card p{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.6;margin:0}
-    .cs-v3-badge{display:inline-block;background:rgba(212,160,23,0.15);border:1px solid rgba(212,160,23,0.4);color:#D4A017;padding:4px 12px;border-radius:16px;font-size:12px;font-weight:600;margin-left:8px;vertical-align:middle}
+    .cs-v3-badge{display:inline-block;background:rgba(212,160,23,0.15);border:1px solid rgba(212,160,23,0.4);color:#4F7CFF;padding:4px 12px;border-radius:16px;font-size:12px;font-weight:600;margin-left:8px;vertical-align:middle}
     @media(max-width:768px){
       .cs-hero h1{font-size:1.8rem}
       .cs-hero p{font-size:1rem}
@@ -96,11 +96,28 @@
 <body>
   <nav id="navbar" class="navbar"><div class="nav-container"><a href="index.html" class="nav-logo"><img loading="lazy" decoding="async" src="logo.webp" alt="DeryCode" class="nav-logo-img"/><span>Dery<span style="color:var(--accent)">Code</span></span></a><button id="hamburger" class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button><div id="navLinks" class="nav-links"><ul><li><a href="index.html#services">Services</a></li><li><a href="index.html#portfolio">Portfolio</a></li><li><a href="index.html#about">About</a></li><li><a href="index.html#contact">Contact</a></li><li><a href="https://wa.me/256772002326" target="_blank" rel="noopener" class="btn-nav-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a></li></ul></div></div></nav>
 
+<div class="mobile-nav-overlay" id="mobileNav" aria-hidden="true">
+  <div class="mobile-nav-inner">
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+      <i class="fas fa-times" aria-hidden="true"></i>
+    </button>
+    <nav class="mobile-nav-links" role="navigation" aria-label="Mobile navigation">
+      <a href="index.html#solutions">Solutions</a>
+      <a href="index.html#industries">Industries</a>
+      <a href="index.html#technology">Technology</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#company">Company</a>
+      <a href="blog.html">Insights</a>
+      <a href="index.html#contact" class="mobile-nav-cta">Let's Talk &rarr;</a>
+    </nav>
+  </div>
+</div>
+
   <section class="cs-hero">
     <div class="cs-breadcrumb">
       <a href="index.html">Home</a> <i class="fas fa-chevron-right"></i>
       <a href="index.html#portfolio">Portfolio</a> <i class="fas fa-chevron-right"></i>
-      <span style="color:#D4A017;">SAGECO EVERGREEN</span>
+      <span style="color:#4F7CFF;">SAGECO EVERGREEN</span>
     </div>
     <span class="cs-tag">Real Estate Technology</span>
     <h1>SAGECO EVERGREEN</h1>
@@ -256,62 +273,110 @@
     </div>
   </div>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <img loading="lazy" decoding="async" src="logo.webp" alt="DeryCode" style="width:48px;height:48px;border-radius:50%;margin-bottom:12px;"/>
-          <h3>DeryCode</h3>
-          <p>Software, Blockchain, AI &amp; Web3 — from Uganda to the world.</p>
-        </div>
-        <div class="footer-links">
-          <div class="footer-col">
-            <h4>Services</h4>
-            <a href="index.html#services">Web Development</a>
-            <a href="mobile-apps.html">Mobile Apps</a>
-            <a href="smart-contracts.html">Blockchain</a>
-            <a href="ai-automation.html">AI &amp; Automation</a>
-            <a href="digital-marketing.html">Digital Marketing</a>
-          </div>
-          <div class="footer-col">
-            <h4>Company</h4>
-            <a href="about.html">About Us</a>
-            <a href="index.html#portfolio">Portfolio</a>
-            <a href="blog.html">Blog</a>
-            <a href="testimonials.html">Testimonials</a>
-            <a href="partners.html">Partners</a>
-          </div>
-          <div class="footer-col">
-            <h4>Case Studies</h4>
-            <a href="case-study-sageco-evergreen.html">SAGECO EVERGREEN</a>
-            <a href="case-study-tropical-gardens-hotel.html">Tropical Gardens</a>
-            <a href="case-study-sacco-wallet.html">SACCO Wallet</a>
-            <a href="case-study-peters-medicare.html">Peters Medicare</a>
-            <a href="case-study-derycoin.html">DeryCoin</a>
-          </div>
-          <div class="footer-col">
-            <h4>Contact</h4>
-            <a href="https://wa.me/256772002326" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> +256 772 002 326</a>
-            <a href="https://wa.me/256762306675" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> +256 762 306 675</a>
-            <a href="mailto:info@derycode.com"><i class="fas fa-envelope"></i> info@derycode.com</a>
-            <a href="https://github.com/asiimwe3" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-          </div>
-        </div>
+  <footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <img src="logo.webp" alt="DeryCode Technologies logo" class="logo-icon-img" width="32" height="32" />
+          <span class="logo-text">DERY<span class="logo-accent">CODE</span></span>
+        </a>
+        <p>Enterprise Software &middot; AI &middot; Blockchain &middot; Web3 &middot; Digital Infrastructure</p>
+        <nav class="footer-socials" aria-label="Social media links">
+          <a href="https://wa.me/256772002326" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+          <a href="mailto:info@derycode.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+          <a href="https://github.com/asiimwe3" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+        </nav>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; <span id="footerYear"></span> DeryCode Ltd. All rights reserved. | Kyenjojo, Uganda</p>
+      <div class="footer-col">
+        <h3>Solutions</h3>
+        <ul>
+          <li><a href="business-websites.html">Enterprise Software</a></li>
+          <li><a href="ai-automation.html">Artificial Intelligence</a></li>
+          <li><a href="smart-contracts.html">Blockchain</a></li>
+          <li><a href="token-crypto-development.html">Web3</a></li>
+          <li><a href="web-applications.html">Cloud &amp; Infrastructure</a></li>
+          <li><a href="business-management-erp.html">Digital Transformation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Industries</h3>
+        <ul>
+          <li><a href="banking-sacco-software.html">Financial Services</a></li>
+          <li><a href="case-study-sageco-evergreen.html">Real Estate</a></li>
+          <li><a href="school-digital-libraries.html">Education</a></li>
+          <li><a href="case-study-peters-medicare.html">Healthcare</a></li>
+          <li><a href="case-study-sacco-wallet.html">Agriculture</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="index.html#company">About</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="blog.html">Insights</a></li>
+          <li><a href="docs.html">Documentation</a></li>
+          <li><a href="partners.html">Partners</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
       </div>
     </div>
-  </footer>
+    <div class="footer-newsletter">
+      <p>Get engineering insights and DeryCode updates.</p>
+      <form class="newsletter-form" onsubmit="handleNewsletter(event)" aria-label="Newsletter signup">
+        <label for="newsletterEmail" class="sr-only">Email address</label>
+        <input type="email" id="newsletterEmail" name="email" placeholder="your@email.com" required class="newsletter-input" autocomplete="email" />
+        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+      </form>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="footerYear"></span> DeryCode Technologies. All rights reserved.</p>
+      <p>Built in Uganda &middot; Africa &rarr; Global &nbsp;|&nbsp; <a href="privacy.html">Privacy Policy</a></p>
+    </div>
+  </div>
+</footer>
 
   <script>
-    document.getElementById('footerYear').textContent=new Date().getFullYear();
-    var navbar=document.getElementById('navbar');
-    window.addEventListener('scroll',function(){if(window.scrollY>50){navbar.classList.add('scrolled')}else{navbar.classList.remove('scrolled')}});
-    var hamburger=document.getElementById('hamburger');
-    var navLinks=document.getElementById('navLinks');
-    if(hamburger){hamburger.addEventListener('click',function(){hamburger.classList.toggle('active');navLinks.classList.toggle('active')})}
-  </script>
+  document.getElementById('footerYear').textContent = new Date().getFullYear();
+  var navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 40) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+  var hamburger = document.getElementById('hamburger');
+  var mobileNav = document.getElementById('mobileNav');
+  var mobileNavClose = document.getElementById('mobileNavClose');
+  if (hamburger) hamburger.addEventListener('click', function() {
+    mobileNav.classList.add('active');
+    mobileNav.setAttribute('aria-hidden','false');
+    hamburger.setAttribute('aria-expanded','true');
+    document.body.style.overflow = 'hidden';
+  });
+  if (mobileNavClose) mobileNavClose.addEventListener('click', function() {
+    mobileNav.classList.remove('active');
+    mobileNav.setAttribute('aria-hidden','true');
+    hamburger.setAttribute('aria-expanded','false');
+    document.body.style.overflow = '';
+  });
+  document.querySelectorAll('.mobile-nav-links a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      mobileNav.classList.remove('active');
+      mobileNav.setAttribute('aria-hidden','true');
+      hamburger.setAttribute('aria-expanded','false');
+      document.body.style.overflow = '';
+    });
+  });
+  window.handleNewsletter = function(e) {
+    e.preventDefault();
+    var input = e.target.querySelector('input[type="email"]');
+    var btn = e.target.querySelector('button');
+    if (!input.value) return;
+    btn.textContent = '✓ Subscribed';
+    btn.style.background = '#22C55E';
+    input.value = '';
+    setTimeout(function() { btn.textContent = 'Subscribe'; btn.style.background = ''; }, 3000);
+  };
+</script>
 
   <!-- ── SEO Internal Links ── -->
   <div style="position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden" aria-hidden="true">

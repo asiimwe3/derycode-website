@@ -2,7 +2,7 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0" />
   <title>Editorial Methodology | DeryCode Content Standards</title>
   <meta name="description" content="How DeryCode researches, writes, and maintains technical content. Our editorial standards for accuracy, relevance, and quality." />
   <meta name="keywords" content="DeryCode editorial methodology, DeryCode content methodology, editorial standards DeryCode, how DeryCode researches content" />
@@ -22,7 +22,7 @@
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
   <link rel="icon" type="image/png" href="/logo.webp" />
   <link rel="manifest" href="/manifest.json" />
-  <meta name="theme-color" content="#D4A017" />
+  <meta name="theme-color" content="#070B14" />
   <meta name="google-site-verification" content="dqp0OsklAjL-bQeqgt3qKwux3KpJExxaTLXoZQuIY2I" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://derycode.publicvm.com/editorial-methodology.html" />
@@ -38,11 +38,11 @@
   <meta name="twitter:image" content="https://derycode.publicvm.com/og-image.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" /></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&display=swap" /></noscript>
   <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /></noscript>
-  <link rel="stylesheet" href="/style.min.css?v=20260807a20260806a" />
+  <link rel="stylesheet" href="/style.min.css?v=20260901" />
   <script type="application/ld+json">
   {
   "@context": "https://schema.org",
@@ -112,19 +112,45 @@
 
 <body>
 
-  <nav class="navbar">
-    <a href="/" class="nav-logo"><img loading="lazy" decoding="async" src="/logo.webp" alt="DeryCode" width="40" height="40" /><span>DeryCode</span></a>
-    <button class="nav-toggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
-    <ul class="nav-menu">
-      <li><a href="/">Home</a></li>
-      <li><a href="/services/software-development.html">Services</a></li>
-      <li><a href="/industries/saccos.html">Industries</a></li>
-      <li><a href="/pricing/website-cost-uganda.html">Pricing</a></li>
-      <li><a href="/blog.html">Blog</a></li>
-      <li><a href="/about.html">About</a></li>
-      <li><a href="https://wa.me/256772002326" class="nav-cta">Get Quote</a></li>
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a href="index.html" class="logo" aria-label="DeryCode Technologies - Home">
+      <img src="logo.webp" alt="DeryCode Technologies logo" class="logo-icon-img" width="32" height="32" />
+      <span class="logo-text">DERY<span class="logo-accent">CODE</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks" role="menubar">
+      <li role="none"><a href="index.html#solutions" role="menuitem">Solutions</a></li>
+      <li role="none"><a href="index.html#industries" role="menuitem">Industries</a></li>
+      <li role="none"><a href="index.html#technology" role="menuitem">Technology</a></li>
+      <li role="none"><a href="index.html#projects" role="menuitem">Projects</a></li>
+      <li role="none"><a href="index.html#company" role="menuitem">Company</a></li>
+      <li role="none"><a href="blog.html" role="menuitem">Insights</a></li>
     </ul>
-  </nav>
+    <div class="nav-actions">
+      <a href="index.html#contact" class="btn btn-primary nav-cta">Let's Talk &rarr;</a>
+      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-nav-overlay" id="mobileNav" aria-hidden="true">
+  <div class="mobile-nav-inner">
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+      <i class="fas fa-times" aria-hidden="true"></i>
+    </button>
+    <nav class="mobile-nav-links" role="navigation" aria-label="Mobile navigation">
+      <a href="index.html#solutions">Solutions</a>
+      <a href="index.html#industries">Industries</a>
+      <a href="index.html#technology">Technology</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#company">Company</a>
+      <a href="blog.html">Insights</a>
+      <a href="index.html#contact" class="mobile-nav-cta">Let's Talk &rarr;</a>
+    </nav>
+  </div>
+</div>
 <main class="page-content">
   <div class="container">
     <nav class="breadcrumbs" aria-label="Breadcrumb"><ol itemscope itemtype="https://schema.org/BreadcrumbList"><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="https://derycode.publicvm.com/" itemprop="item"><span itemprop="name">Home</span></a><meta itemprop="position" content="1" /></li><li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span itemprop="name">Editorial Methodology</span><meta itemprop="position" content="2" /></li></ol></nav>
@@ -141,16 +167,68 @@
   </div>
 </main>
 
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-col"><h4>DeryCode</h4><p>Uganda's leading software development company.</p><p><i class="fas fa-map-marker-alt"></i> Kampala, Uganda</p><p><i class="fas fa-phone"></i> +256 772 002 326</p><p><i class="fas fa-envelope"></i> info@derycode.com</p></div>
-      <div class="footer-col"><h4>Services</h4><a href="/services/software-development.html">Software Development</a><a href="/services/web-development.html">Web Development</a><a href="/services/mobile-app-development.html">Mobile Apps</a><a href="/services/ai-development.html">AI & Automation</a><a href="/services/sacco-software.html">SACCO Software</a><a href="/services/erp-software.html">ERP Software</a></div>
-      <div class="footer-col"><h4>Products</h4><a href="/products/deryloan.html">DeryLoan</a><a href="/products/sacco-wallet.html">SaccoWallet</a><a href="/products/school-sync-manager.html">School Sync Manager</a><a href="/products/derycoin.html">DeryCoin</a></div>
-      <div class="footer-col"><h4>Resources</h4><a href="/blog.html">Blog</a><a href="/pricing/website-cost-uganda.html">Pricing</a><a href="/comparisons/best-sacco-software-uganda.html">Comparisons</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a></div>
-      <div class="footer-col"><h4>Connect</h4><a href="https://wa.me/256772002326"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="https://github.com/asiimwe3"><i class="fab fa-github"></i> GitHub</a><a href="https://ug.linkedin.com/in/asiimwe-derick-501755313"><i class="fab fa-linkedin"></i> LinkedIn</a><a href="https://www.facebook.com/p/Dery-Code-61590735268937/"><i class="fab fa-facebook"></i> Facebook</a></div>
+  <footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <img src="logo.webp" alt="DeryCode Technologies logo" class="logo-icon-img" width="32" height="32" />
+          <span class="logo-text">DERY<span class="logo-accent">CODE</span></span>
+        </a>
+        <p>Enterprise Software &middot; AI &middot; Blockchain &middot; Web3 &middot; Digital Infrastructure</p>
+        <nav class="footer-socials" aria-label="Social media links">
+          <a href="https://wa.me/256772002326" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+          <a href="mailto:info@derycode.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+          <a href="https://github.com/asiimwe3" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h3>Solutions</h3>
+        <ul>
+          <li><a href="business-websites.html">Enterprise Software</a></li>
+          <li><a href="ai-automation.html">Artificial Intelligence</a></li>
+          <li><a href="smart-contracts.html">Blockchain</a></li>
+          <li><a href="token-crypto-development.html">Web3</a></li>
+          <li><a href="web-applications.html">Cloud &amp; Infrastructure</a></li>
+          <li><a href="business-management-erp.html">Digital Transformation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Industries</h3>
+        <ul>
+          <li><a href="banking-sacco-software.html">Financial Services</a></li>
+          <li><a href="case-study-sageco-evergreen.html">Real Estate</a></li>
+          <li><a href="school-digital-libraries.html">Education</a></li>
+          <li><a href="case-study-peters-medicare.html">Healthcare</a></li>
+          <li><a href="case-study-sacco-wallet.html">Agriculture</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="index.html#company">About</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="blog.html">Insights</a></li>
+          <li><a href="docs.html">Documentation</a></li>
+          <li><a href="partners.html">Partners</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-bottom"><p>&copy; 2021–2026 DeryCode Technologies. Founded by Asiimwe Derick.</p></div>
-  </footer>
+    <div class="footer-newsletter">
+      <p>Get engineering insights and DeryCode updates.</p>
+      <form class="newsletter-form" onsubmit="handleNewsletter(event)" aria-label="Newsletter signup">
+        <label for="newsletterEmail" class="sr-only">Email address</label>
+        <input type="email" id="newsletterEmail" name="email" placeholder="your@email.com" required class="newsletter-input" autocomplete="email" />
+        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+      </form>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="footerYear"></span> DeryCode Technologies. All rights reserved.</p>
+      <p>Built in Uganda &middot; Africa &rarr; Global &nbsp;|&nbsp; <a href="privacy.html">Privacy Policy</a></p>
+    </div>
+  </div>
+</footer>
   <a href="https://wa.me/256772002326" class="whatsapp-float" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
 <script src="/script.min.js?v=20260807a20260806a"></script>
   <!-- GA4 -->

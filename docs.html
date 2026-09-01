@@ -2,15 +2,15 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0" />
   <title>DeryCode Documentation — API & Developer Guides</title>
   <meta name="description" content="Developer documentation for DeryCode's software, blockchain, and API services in Uganda." />
   <link rel="icon" type="image/png" href="https://media.base44.com/images/public/69f8f20192eecc9587b7eca6/1eb2e552d_generated_image.png" />
-  <meta name="theme-color" content="#6C63FF" />
+  <meta name="theme-color" content="#070B14" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.min.css?v=20260807a202606191851" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.min.css?v=20260901" />
   <link rel="stylesheet" href="docs.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <!-- SEO -->
@@ -92,28 +92,24 @@
 <body>
 
 <!-- NAV -->
-<nav class="navbar" id="navbar">
+<nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
   <div class="nav-container">
-    <a href="index.html" class="logo">
-      <div class="logo-icon">D</div>
-      <span class="logo-text">Dery<span class="accent">Code</span></span>
+    <a href="index.html" class="logo" aria-label="DeryCode Technologies - Home">
+      <img src="logo.webp" alt="DeryCode Technologies logo" class="logo-icon-img" width="32" height="32" />
+      <span class="logo-text">DERY<span class="logo-accent">CODE</span></span>
     </a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#services">Services</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="docs.html" class="nav-active">Docs</a></li>
-      <li><a href="index.html#booking">Book a Call</a></li>
+    <ul class="nav-links" id="navLinks" role="menubar">
+      <li role="none"><a href="index.html#solutions" role="menuitem">Solutions</a></li>
+      <li role="none"><a href="index.html#industries" role="menuitem">Industries</a></li>
+      <li role="none"><a href="index.html#technology" role="menuitem">Technology</a></li>
+      <li role="none"><a href="index.html#projects" role="menuitem">Projects</a></li>
+      <li role="none"><a href="index.html#company" role="menuitem">Company</a></li>
+      <li role="none"><a href="blog.html" role="menuitem">Insights</a></li>
     </ul>
     <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <i class="fas fa-moon" id="themeIcon"></i>
-      </button>
-      <a href="index.html#booking" class="btn btn-primary nav-cta">
-        <i class="fas fa-calendar-check"></i> Book a Call
-      </a>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
+      <a href="index.html#contact" class="btn btn-primary nav-cta">Let's Talk &rarr;</a>
+      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
       </button>
     </div>
   </div>
@@ -314,7 +310,7 @@
       <p class="docs-lead">DeryCoin is designed with a sustainable tokenomics model that rewards early adopters and ecosystem participants.</p>
       <h2>Token Distribution</h2>
       <div class="tokenomics-grid">
-        <div class="tokenomics-item" style="--pct-color:#6C63FF"><div class="token-pct">40%</div><div class="token-label">Public Sale</div><div class="token-amount">40,000,000 DRC</div></div>
+        <div class="tokenomics-item" style="--pct-color:#070B14"><div class="token-pct">40%</div><div class="token-label">Public Sale</div><div class="token-amount">40,000,000 DRC</div></div>
         <div class="tokenomics-item" style="--pct-color:#7B73FF"><div class="token-pct">20%</div><div class="token-label">Team & Founders</div><div class="token-amount">20,000,000 DRC</div></div>
         <div class="tokenomics-item" style="--pct-color:#F59E0B"><div class="token-pct">15%</div><div class="token-label">Ecosystem & Rewards</div><div class="token-amount">15,000,000 DRC</div></div>
         <div class="tokenomics-item" style="--pct-color:#4facfe"><div class="token-pct">15%</div><div class="token-label">Liquidity Pool</div><div class="token-amount">15,000,000 DRC</div></div>
@@ -538,11 +534,11 @@ const response = await axios.post(
       <h2>Who Can Join?</h2>
       <p>The program is open to anyone in Uganda and East Africa. You do not need:</p>
       <ul style="list-style:none; margin-left:0;">
-        <li style="padding:8px 0; border-bottom:1px solid var(--card-border);"><i class="fas fa-times" style="color:#E63E6D; margin-right:10px;"></i> Programming or coding skills</li>
-        <li style="padding:8px 0; border-bottom:1px solid var(--card-border);"><i class="fas fa-times" style="color:#E63E6D; margin-right:10px;"></i> A registered company or business</li>
-        <li style="padding:8px 0; border-bottom:1px solid var(--card-border);"><i class="fas fa-times" style="color:#E63E6D; margin-right:10px;"></i> Prior technology experience</li>
-        <li style="padding:8px 0; border-bottom:1px solid var(--card-border);"><i class="fas fa-times" style="color:#E63E6D; margin-right:10px;"></i> Office space or equipment</li>
-        <li style="padding:8px 0;"><i class="fas fa-times" style="color:#E63E6D; margin-right:10px;"></i> Large upfront investment</li>
+        <li style="padding:8px 0; border-bottom:1px solid var(--card-border);"><i class="fas fa-times" style="color:#4F7CFF; margin-right:10px;"></i> Programming or coding skills</li>
+        <li style="padding:8px 0; border-bottom:1px solid var(--card-border);"><i class="fas fa-times" style="color:#4F7CFF; margin-right:10px;"></i> A registered company or business</li>
+        <li style="padding:8px 0; border-bottom:1px solid var(--card-border);"><i class="fas fa-times" style="color:#4F7CFF; margin-right:10px;"></i> Prior technology experience</li>
+        <li style="padding:8px 0; border-bottom:1px solid var(--card-border);"><i class="fas fa-times" style="color:#4F7CFF; margin-right:10px;"></i> Office space or equipment</li>
+        <li style="padding:8px 0;"><i class="fas fa-times" style="color:#4F7CFF; margin-right:10px;"></i> Large upfront investment</li>
       </ul>
       <p>You only need a smartphone, willingness to learn about our services, and the ability to connect with people and businesses.</p>
       <div class="docs-callout docs-callout--success">

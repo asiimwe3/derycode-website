@@ -2,7 +2,7 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0" />
   <title>About DeryCode — Uganda's #1 Software, Blockchain & AI Company</title>
   <meta name="description" content="DeryCode Technologies is a technology company founded in 2021 by Asiimwe Derick in Uganda. It provides software development, blockchain, AI, mobile apps, banking systems, ERP, and digital marketing services. DeryCode has delivered 100+ projects across 6 countries and is recognized as Uganda's leading tech company." />
   <meta name="keywords" content="DeryCode Technologies, about DeryCode, DeryCode Uganda, software company Uganda, blockchain company Uganda, AI company Uganda, Asiimwe Derick, Derick Asiimwe, TraderDerick, DeryCode founder, DeryCode history, DeryCode services, technology company Kampala, software development Uganda" />
@@ -14,7 +14,7 @@
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
   <link rel="icon" type="image/png" href="/logo.webp" />
   <link rel="manifest" href="/manifest.json" />
-  <meta name="theme-color" content="#D4A017" />
+  <meta name="theme-color" content="#070B14" />
   <meta name="google-site-verification" content="dqp0OsklAjL-bQeqgt3qKwux3KpJExxaTLXoZQuIY2I" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://derycode.publicvm.com/about.html" />
@@ -31,7 +31,7 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" /></noscript>
   <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.min.css?v=20260901" />
 
   <!-- Structured Data: Organization (encyclopedic) -->
   <script type="application/ld+json">
@@ -181,40 +181,63 @@
 
   <style>
     .about-hero { background: linear-gradient(135deg, #0a0800 0%, #1a1500 50%, #0a0800 100%); padding: 80px 20px 60px; text-align: center; }
-    .about-hero h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; margin-bottom: 16px; }
+    .about-hero h1 { font-family: 'Inter Tight', sans-serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; margin-bottom: 16px; }
     .about-hero p { color: #aaa; font-size: 18px; max-width: 700px; margin: 0 auto 20px; }
     .about-content { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-    .about-content h2 { font-family: 'Space Grotesk', sans-serif; font-size: 24px; color: #D4A017; margin: 40px 0 16px; }
+    .about-content h2 { font-family: 'Inter Tight', sans-serif; font-size: 24px; color: #4F7CFF; margin: 40px 0 16px; }
     .about-content p { color: #ccc; line-height: 1.9; font-size: 16px; margin-bottom: 16px; }
     .about-content ul { color: #ccc; margin: 0 0 16px 20px; line-height: 1.9; }
     .about-content li { margin-bottom: 6px; }
     .info-box { background: #18181f; border: 1px solid #2a2a3a; border-radius: 16px; padding: 24px; margin: 24px 0; }
-    .info-box h3 { color: #D4A017; font-size: 18px; margin-bottom: 12px; }
+    .info-box h3 { color: #4F7CFF; font-size: 18px; margin-bottom: 12px; }
     .quick-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; margin: 30px 0; }
     .fact { text-align: center; padding: 20px; background: #18181f; border: 1px solid #2a2a3a; border-radius: 12px; }
-    .fact .num { font-size: 28px; font-weight: 800; color: #D4A017; }
+    .fact .num { font-size: 28px; font-weight: 800; color: #4F7CFF; }
     .fact .label { font-size: 12px; color: #888; margin-top: 4px; }
   </style>
 </head>
 <body>
 
 <!-- Navbar -->
-<nav class="navbar" id="navbar">
-  <div class="container nav-container">
-    <a href="/" class="navbar-brand" aria-label="DeryCode home">
-      <img src="logo.webp" alt="DeryCode" class="navbar-logo" loading="eager" width="36" height="36" />
+<nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a href="index.html" class="logo" aria-label="DeryCode Technologies - Home">
+      <img src="logo.webp" alt="DeryCode Technologies logo" class="logo-icon-img" width="32" height="32" />
+      <span class="logo-text">DERY<span class="logo-accent">CODE</span></span>
     </a>
     <ul class="nav-links" id="navLinks" role="menubar">
-      <li role="none"><a href="/" role="menuitem">Home</a></li>
-      <li role="none"><a href="about.html" role="menuitem" class="nav-active">About</a></li>
-      <li role="none"><a href="partners.html" role="menuitem">Partners</a></li>
-      <li role="none"><a href="testimonials.html" role="menuitem">Reviews</a></li>
-      <li role="none"><a href="blog.html" role="menuitem">Blog</a></li>
-      <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+      <li role="none"><a href="index.html#solutions" role="menuitem">Solutions</a></li>
+      <li role="none"><a href="index.html#industries" role="menuitem">Industries</a></li>
+      <li role="none"><a href="index.html#technology" role="menuitem">Technology</a></li>
+      <li role="none"><a href="index.html#projects" role="menuitem">Projects</a></li>
+      <li role="none"><a href="index.html#company" role="menuitem">Company</a></li>
+      <li role="none"><a href="blog.html" role="menuitem">Insights</a></li>
     </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false"></button>
+    <div class="nav-actions">
+      <a href="index.html#contact" class="btn btn-primary nav-cta">Let's Talk &rarr;</a>
+      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
   </div>
 </nav>
+
+<div class="mobile-nav-overlay" id="mobileNav" aria-hidden="true">
+  <div class="mobile-nav-inner">
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+      <i class="fas fa-times" aria-hidden="true"></i>
+    </button>
+    <nav class="mobile-nav-links" role="navigation" aria-label="Mobile navigation">
+      <a href="index.html#solutions">Solutions</a>
+      <a href="index.html#industries">Industries</a>
+      <a href="index.html#technology">Technology</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#company">Company</a>
+      <a href="blog.html">Insights</a>
+      <a href="index.html#contact" class="mobile-nav-cta">Let's Talk &rarr;</a>
+    </nav>
+  </div>
+</div>
 
 <div class="about-hero">
   <h1>About DeryCode Technologies</h1>
@@ -319,9 +342,64 @@
 
 <footer class="footer" role="contentinfo">
   <div class="container">
-    <p style="text-align:center;color:#555;font-size:13px;">
-      &copy; 2021-2026 DeryCode Technologies &middot; Uganda's #1 Tech & Blockchain Company &middot; Kampala, Uganda &#x1F1FA;&#x1F1EC;
-    </p>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <img src="logo.webp" alt="DeryCode Technologies logo" class="logo-icon-img" width="32" height="32" />
+          <span class="logo-text">DERY<span class="logo-accent">CODE</span></span>
+        </a>
+        <p>Enterprise Software &middot; AI &middot; Blockchain &middot; Web3 &middot; Digital Infrastructure</p>
+        <nav class="footer-socials" aria-label="Social media links">
+          <a href="https://wa.me/256772002326" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+          <a href="mailto:info@derycode.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+          <a href="https://github.com/asiimwe3" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h3>Solutions</h3>
+        <ul>
+          <li><a href="business-websites.html">Enterprise Software</a></li>
+          <li><a href="ai-automation.html">Artificial Intelligence</a></li>
+          <li><a href="smart-contracts.html">Blockchain</a></li>
+          <li><a href="token-crypto-development.html">Web3</a></li>
+          <li><a href="web-applications.html">Cloud &amp; Infrastructure</a></li>
+          <li><a href="business-management-erp.html">Digital Transformation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Industries</h3>
+        <ul>
+          <li><a href="banking-sacco-software.html">Financial Services</a></li>
+          <li><a href="case-study-sageco-evergreen.html">Real Estate</a></li>
+          <li><a href="school-digital-libraries.html">Education</a></li>
+          <li><a href="case-study-peters-medicare.html">Healthcare</a></li>
+          <li><a href="case-study-sacco-wallet.html">Agriculture</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="index.html#company">About</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="blog.html">Insights</a></li>
+          <li><a href="docs.html">Documentation</a></li>
+          <li><a href="partners.html">Partners</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-newsletter">
+      <p>Get engineering insights and DeryCode updates.</p>
+      <form class="newsletter-form" onsubmit="handleNewsletter(event)" aria-label="Newsletter signup">
+        <label for="newsletterEmail" class="sr-only">Email address</label>
+        <input type="email" id="newsletterEmail" name="email" placeholder="your@email.com" required class="newsletter-input" autocomplete="email" />
+        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+      </form>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="footerYear"></span> DeryCode Technologies. All rights reserved.</p>
+      <p>Built in Uganda &middot; Africa &rarr; Global &nbsp;|&nbsp; <a href="privacy.html">Privacy Policy</a></p>
+    </div>
   </div>
 </footer>
 

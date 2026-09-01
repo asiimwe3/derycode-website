@@ -2,7 +2,7 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0" />
   <title>Tropical Gardens Hotel Case Study | Hotel Website Uganda</title>
   <meta name="description" content="How DeryCode built a luxury hotel website for Tropical Gardens Hotel in Kyenjojo with booking system and Supabase." />
   <meta name="keywords" content="Tropical Gardens Hotel, hotel website Uganda, hotel booking system Uganda, Kyenjojo hotel, hotel web design Uganda, Vercel hotel website, Supabase hotel, WhatsApp booking integration, DeryCode case study, hotel technology Uganda" />
@@ -15,15 +15,15 @@
   <meta property="og:site_name" content="DeryCode" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#D4A017" />
+  <meta name="theme-color" content="#070B14" />
   <link rel="icon" type="image/png" href="logo.webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" /></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&display=swap" /></noscript>
   <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /></noscript>
-  <link rel="stylesheet" href="style.min.css?v=20260807a" />
+  <link rel="stylesheet" href="style.min.css?v=20260901" />
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"CreativeWork","name":"Tropical Gardens Hotel — Hotel Website","description":"Hotel website in Kyenjojo, Uganda with dynamic room galleries, WhatsApp booking, Google Maps, and sub-second performance. Built by DeryCode.","url":"https://derycode.publicvm.com/case-study-tropical-gardens-hotel.html","creator":{"@type":"Organization","name":"DeryCode","url":"https://derycode.publicvm.com"},"about":{"@type":"Thing","name":"Hotel Technology"},"keywords":"hotel website, Uganda, Kyenjojo, WhatsApp booking, Vercel, Supabase"}
   </script>
@@ -32,24 +32,24 @@
   </script>
   <style>
     .cs-hero{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);padding:80px 20px 60px;text-align:center}
-    .cs-hero h1{font-size:2.5rem;color:#fff;margin-bottom:12px;font-family:'Space Grotesk',sans-serif}
-    .cs-hero .cs-tag{display:inline-block;background:rgba(212,160,23,0.15);border:1px solid rgba(212,160,23,0.4);color:#D4A017;padding:6px 16px;border-radius:20px;font-size:13px;font-weight:600;margin-bottom:16px}
+    .cs-hero h1{font-size:2.5rem;color:#fff;margin-bottom:12px;font-family:'Inter Tight',sans-serif}
+    .cs-hero .cs-tag{display:inline-block;background:rgba(212,160,23,0.15);border:1px solid rgba(212,160,23,0.4);color:#4F7CFF;padding:6px 16px;border-radius:20px;font-size:13px;font-weight:600;margin-bottom:16px}
     .cs-hero p{color:rgba(255,255,255,0.8);max-width:700px;margin:0 auto;font-size:1.1rem;line-height:1.7}
     .cs-section{max-width:800px;margin:0 auto;padding:50px 20px}
-    .cs-section h2{font-size:1.8rem;color:#D4A017;margin-bottom:16px;font-family:'Space Grotesk',sans-serif}
+    .cs-section h2{font-size:1.8rem;color:#4F7CFF;margin-bottom:16px;font-family:'Inter Tight',sans-serif}
     .cs-section p{color:rgba(255,255,255,0.75);line-height:1.8;margin-bottom:14px}
     .cs-section ul{list-style:none;padding:0}
     .cs-section ul li{color:rgba(255,255,255,0.7);padding:8px 0 8px 28px;position:relative}
-    .cs-section ul li::before{content:'\f00c';font-family:'Font Awesome 6 Free';font-weight:900;color:#D4A017;position:absolute;left:0}
+    .cs-section ul li::before{content:'\f00c';font-family:'Font Awesome 6 Free';font-weight:900;color:#4F7CFF;position:absolute;left:0}
     .cs-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px;max-width:800px;margin:0 auto;padding:40px 20px}
     .cs-stat{text-align:center;padding:24px 16px;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.06)}
-    .cs-stat .num{font-size:2rem;font-weight:800;color:#D4A017;font-family:'Space Grotesk',sans-serif}
+    .cs-stat .num{font-size:2rem;font-weight:800;color:#4F7CFF;font-family:'Inter Tight',sans-serif}
     .cs-stat .label{font-size:13px;color:rgba(255,255,255,0.6);margin-top:4px}
     .cs-tech{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
     .cs-tech span{display:inline-block;padding:6px 14px;background:rgba(15,52,96,0.3);border:1px solid rgba(15,52,96,0.5);border-radius:20px;color:#60a5fa;font-size:13px}
     .cs-cta{text-align:center;padding:50px 20px;background:rgba(212,160,23,0.05);border-top:1px solid rgba(212,160,23,0.1)}
-    .cs-link{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:#D4A017;color:#1a1a1a;border-radius:50px;font-weight:700;font-size:14px}
-    .cs-chips a{display:inline-block;padding:8px 16px;background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.3);border-radius:24px;color:#D4A017;font-size:13px;text-decoration:none;margin:4px}
+    .cs-link{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:#4F7CFF;color:#1a1a1a;border-radius:50px;font-weight:700;font-size:14px}
+    .cs-chips a{display:inline-block;padding:8px 16px;background:rgba(212,160,23,0.1);border:1px solid rgba(212,160,23,0.3);border-radius:24px;color:#4F7CFF;font-size:13px;text-decoration:none;margin:4px}
   </style>
   <!-- ── Google Analytics (GA4) ── -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VY99K5XN58"></script>
@@ -90,6 +90,23 @@
 </head>
 <body>
   <nav id="navbar" class="navbar"><div class="nav-container"><a href="index.html" class="nav-logo"><img loading="lazy" decoding="async" src="logo.webp" alt="DeryCode" class="nav-logo-img"/><span>Dery<span style="color:var(--accent)">Code</span></span></a><button id="hamburger" class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button><div id="navLinks" class="nav-links"><ul><li><a href="index.html#services">Services</a></li><li><a href="index.html#portfolio">Portfolio</a></li><li><a href="index.html#about">About</a></li><li><a href="index.html#contact">Contact</a></li><li><a href="https://wa.me/256772002326" target="_blank" rel="noopener" class="btn-nav-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a></li></ul></div></div></nav>
+
+<div class="mobile-nav-overlay" id="mobileNav" aria-hidden="true">
+  <div class="mobile-nav-inner">
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+      <i class="fas fa-times" aria-hidden="true"></i>
+    </button>
+    <nav class="mobile-nav-links" role="navigation" aria-label="Mobile navigation">
+      <a href="index.html#solutions">Solutions</a>
+      <a href="index.html#industries">Industries</a>
+      <a href="index.html#technology">Technology</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#company">Company</a>
+      <a href="blog.html">Insights</a>
+      <a href="index.html#contact" class="mobile-nav-cta">Let's Talk &rarr;</a>
+    </nav>
+  </div>
+</div>
   <section class="cs-hero"><span class="cs-tag">Hospitality Technology</span><h1>Tropical Gardens Hotel</h1><p>A premium hotel website in Kyenjojo, Uganda — with dynamic room galleries, WhatsApp booking, Ken Burns hero slider, Google AdSense, and sub-second page loads. Built by DeryCode.</p><div style="margin-top:24px"><a href="https://tropicalgardenshotelkyenjojo.com" target="_blank" rel="noopener" class="cs-link"><i class="fas fa-external-link-alt"></i> Visit Live Site</a></div></section>
   <div class="cs-stats"><div class="cs-stat"><div class="num">&lt;1s</div><div class="label">Page Load Time</div></div><div class="cs-stat"><div class="num">4</div><div class="label">Hero Slides</div></div><div class="cs-stat"><div class="num">100%</div><div class="label">Mobile-First</div></div><div class="cs-stat"><div class="num">WebP</div><div class="label">Image Optimized</div></div></div>
   <section class="cs-section"><h2>Project Overview</h2><p>Tropical Gardens Hotel is a hospitality establishment in Kyenjojo, Western Uganda. DeryCode built a complete website that showcases the hotel's rooms, amenities, and location while enabling direct bookings through WhatsApp integration.</p><p>The site features a cinematic hero slider with Ken Burns zoom effects, animated gold progress bars, and dynamic room galleries powered by Supabase — allowing hotel staff to update room images and details without touching code.</p></section>
@@ -100,8 +117,109 @@
   <section class="cs-section"><h2>Results</h2><ul><li>Sub-second page load times on 3G networks</li><li>Direct WhatsApp bookings replacing phone-only reservations</li><li>Hotel staff can update rooms and images without developer help</li><li>Google AdSense generating passive revenue from site traffic</li><li>Improved search visibility with SEO-optimized room pages</li></ul></section>
   <div class="cs-cta"><h2 style="color:#fff;font-size:1.6rem;margin-bottom:12px;">Need a hotel website?</h2><p style="color:rgba(255,255,255,0.6);margin-bottom:20px;">DeryCode builds hotel websites with booking systems, room galleries, and WhatsApp integration.</p><a href="https://wa.me/256772002326?text=Hi DeryCode, I need a hotel website like Tropical Gardens" target="_blank" rel="noopener" class="cs-link"><i class="fab fa-whatsapp"></i> Get a Quote on WhatsApp</a></div>
   <div style="max-width:760px;margin:0 auto;padding:30px 20px 40px;"><h2 style="font-size:1.4rem;color:#fff;margin-bottom:16px;">Explore Other Case Studies</h2><div class="cs-chips"><a href="case-study-sageco-evergreen.html">SAGECO Evergreen</a><a href="case-study-sacco-wallet.html">SACCO Digital Wallet</a><a href="case-study-peters-medicare.html">Peters Medicare</a><a href="case-study-derycoin.html">DeryCoin (DRC)</a></div></div>
-<footer class="footer"><div class="container"><div class="footer-top"><div class="footer-brand"><img loading="lazy" decoding="async" src="logo.webp" alt="DeryCode" style="width:48px;height:48px;border-radius:50%;margin-bottom:12px;"/><h3>DeryCode</h3><p>Software, Blockchain, AI & Web3 — from Uganda to the world.</p></div><div class="footer-bottom"><p>&copy; <span id="footerYear"></span> DeryCode Ltd. All rights reserved. | Kyenjojo, Uganda</p></div></div></div></footer>
-  <script>document.getElementById('footerYear').textContent=new Date().getFullYear();var navbar=document.getElementById('navbar');window.addEventListener('scroll',function(){if(window.scrollY>50){navbar.classList.add('scrolled')}else{navbar.classList.remove('scrolled')}});var hamburger=document.getElementById('hamburger');var navLinks=document.getElementById('navLinks');if(hamburger){hamburger.addEventListener('click',function(){hamburger.classList.toggle('active');navLinks.classList.toggle('active')})}</script>
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <img src="logo.webp" alt="DeryCode Technologies logo" class="logo-icon-img" width="32" height="32" />
+          <span class="logo-text">DERY<span class="logo-accent">CODE</span></span>
+        </a>
+        <p>Enterprise Software &middot; AI &middot; Blockchain &middot; Web3 &middot; Digital Infrastructure</p>
+        <nav class="footer-socials" aria-label="Social media links">
+          <a href="https://wa.me/256772002326" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+          <a href="mailto:info@derycode.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+          <a href="https://github.com/asiimwe3" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h3>Solutions</h3>
+        <ul>
+          <li><a href="business-websites.html">Enterprise Software</a></li>
+          <li><a href="ai-automation.html">Artificial Intelligence</a></li>
+          <li><a href="smart-contracts.html">Blockchain</a></li>
+          <li><a href="token-crypto-development.html">Web3</a></li>
+          <li><a href="web-applications.html">Cloud &amp; Infrastructure</a></li>
+          <li><a href="business-management-erp.html">Digital Transformation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Industries</h3>
+        <ul>
+          <li><a href="banking-sacco-software.html">Financial Services</a></li>
+          <li><a href="case-study-sageco-evergreen.html">Real Estate</a></li>
+          <li><a href="school-digital-libraries.html">Education</a></li>
+          <li><a href="case-study-peters-medicare.html">Healthcare</a></li>
+          <li><a href="case-study-sacco-wallet.html">Agriculture</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="index.html#company">About</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="blog.html">Insights</a></li>
+          <li><a href="docs.html">Documentation</a></li>
+          <li><a href="partners.html">Partners</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-newsletter">
+      <p>Get engineering insights and DeryCode updates.</p>
+      <form class="newsletter-form" onsubmit="handleNewsletter(event)" aria-label="Newsletter signup">
+        <label for="newsletterEmail" class="sr-only">Email address</label>
+        <input type="email" id="newsletterEmail" name="email" placeholder="your@email.com" required class="newsletter-input" autocomplete="email" />
+        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+      </form>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="footerYear"></span> DeryCode Technologies. All rights reserved.</p>
+      <p>Built in Uganda &middot; Africa &rarr; Global &nbsp;|&nbsp; <a href="privacy.html">Privacy Policy</a></p>
+    </div>
+  </div>
+</footer>
+  <script>
+  document.getElementById('footerYear').textContent = new Date().getFullYear();
+  var navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 40) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+  var hamburger = document.getElementById('hamburger');
+  var mobileNav = document.getElementById('mobileNav');
+  var mobileNavClose = document.getElementById('mobileNavClose');
+  if (hamburger) hamburger.addEventListener('click', function() {
+    mobileNav.classList.add('active');
+    mobileNav.setAttribute('aria-hidden','false');
+    hamburger.setAttribute('aria-expanded','true');
+    document.body.style.overflow = 'hidden';
+  });
+  if (mobileNavClose) mobileNavClose.addEventListener('click', function() {
+    mobileNav.classList.remove('active');
+    mobileNav.setAttribute('aria-hidden','true');
+    hamburger.setAttribute('aria-expanded','false');
+    document.body.style.overflow = '';
+  });
+  document.querySelectorAll('.mobile-nav-links a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      mobileNav.classList.remove('active');
+      mobileNav.setAttribute('aria-hidden','true');
+      hamburger.setAttribute('aria-expanded','false');
+      document.body.style.overflow = '';
+    });
+  });
+  window.handleNewsletter = function(e) {
+    e.preventDefault();
+    var input = e.target.querySelector('input[type="email"]');
+    var btn = e.target.querySelector('button');
+    if (!input.value) return;
+    btn.textContent = '✓ Subscribed';
+    btn.style.background = '#22C55E';
+    input.value = '';
+    setTimeout(function() { btn.textContent = 'Subscribe'; btn.style.background = ''; }, 3000);
+  };
+</script>
 
   <!-- ── SEO Internal Links ── -->
   <div style="position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden" aria-hidden="true">
