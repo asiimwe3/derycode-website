@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0" />
-  <title id="pageTitle">DeryCode Blog Article — Tech Insights Uganda</title>
-  <meta id="pageDesc" name="description" content="In-depth technical articles on software development, blockchain, AI, fintech, and digital transformation in Uganda. Practical insights from DeryCode engineers." />
+  <title id="pageTitle">MTN MoMo API Integration: A Developer&#x27;s Complete Guide | DeryCode</title>
+  <meta id="pageDesc" name="description" content="Complete developer guide to integrating MTN MoMo API in Uganda: Sandbox setup, Collections, Disbursements, Remittances, security, and best practices." />
   <meta name="robots" content="index, follow" />
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-  <link rel="canonical" id="pageCanonical" href="https://derycode.publicvm.com/blog-post.html" />
+  <link rel="canonical" id="pageCanonical" href="https://derycode.publicvm.com/blog/mtn-momo-api-integration-a-developers-complete-guide.html" />
   <link rel="icon" type="image/png" href="logo.webp" />
   <link rel="apple-touch-icon" href="icons/icon-192x192.png" />
   <link rel="manifest" href="manifest.json" />
@@ -56,9 +56,9 @@
       send_page_view: true
     });
   </script>
-  <meta property="og:title" content="DeryCode Blog Article — Tech Insights Uganda" />
-    <meta property="og:description" content="Expert insights on software development, blockchain, AI, and fintech in Uganda from DeryCode." />
-    <meta property="og:url" content="https://derycode.publicvm.com/blog-post.html" />
+  <meta property="og:title" content="MTN MoMo API Integration: A Developer&#x27;s Complete Guide | DeryCode" />
+    <meta property="og:description" content="Complete developer guide to integrating MTN MoMo API in Uganda: Sandbox setup, Collections, Disbursements, Remittances, security, and best practices." />
+    <meta property="og:url" content="https://derycode.publicvm.com/blog/mtn-momo-api-integration-a-developers-complete-guide.html" />
   
   <script type="application/ld+json">
 {
@@ -80,6 +80,63 @@
   ]
 }
   </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "MTN MoMo API Integration: A Developer's Complete Guide",
+  "description": "Complete developer guide to integrating MTN MoMo API in Uganda: Sandbox setup, Collections, Disbursements, Remittances, security, and best practices.",
+  "datePublished": "2026-05-26",
+  "dateModified": "2026-09-08",
+  "author": {
+    "@type": "Person",
+    "name": "Asiimwe Derick",
+    "url": "https://derycode.publicvm.com/",
+    "jobTitle": "Founder & CEO"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DeryCode",
+    "url": "https://derycode.publicvm.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://derycode.publicvm.com/og-image.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://derycode.publicvm.com/blog/mtn-momo-api-integration-a-developers-complete-guide.html"
+  },
+  "image": "https://derycode.publicvm.com/og-image.png",
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://derycode.publicvm.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://derycode.publicvm.com/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "MTN MoMo API Integration: A Developer's Complete Guide",
+      "item": "https://derycode.publicvm.com/blog/mtn-momo-api-integration-a-developers-complete-guide.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -125,9 +182,91 @@
 
 <div class="article-wrap" id="articleWrap">
   <a href="blog.html" class="article-back"><i class="fas fa-arrow-left"></i> Back to Blog</a>
-  <div id="articleContent">
-    <!-- filled by JS -->
-  </div>
+  <div id="articleContent"><div class="article-hero-img"><i class="fas fa-mobile-screen-button"></i></div><span style="display:inline-block;font-size:0.72rem;font-weight:700;color:var(--primary);border:1px solid var(--border-light);padding:4px 14px;border-radius:50px;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.1em;">Banking Tech</span><h1>MTN MoMo API Integration: A Developer&#x27;s Complete Guide</h1><div class="article-meta"><span><i class="fas fa-calendar"></i> May 26, 2026</span><span><i class="fas fa-clock"></i> 7 min read</span><span><i class="fas fa-user"></i> Asiimwe Derick</span></div>
+      <p>MTN Mobile Money (MoMo) is the dominant digital financial services platform in Uganda, driving billions of Ugandan Shillings in daily commerce across retail checkout, utility payments, micro-loan disbursements, and peer-to-peer money transfers. For software developers, fintech innovators, and enterprise backend engineers, building seamless MTN MoMo API integrations into mobile and web applications is critical for capturing consumer demand and offering frictionless digital experiences. This complete developer guide provides an end-to-end technical breakdown of the MTN MoMo Open API ecosystem in Uganda—covering sandbox provisioning, OAuth authentication, collection payments, disbursement workflows, asynchronous webhook handling, security standards, and production onboarding requirements.</p>
+
+      <h2>Understanding the MTN MoMo API Product Architecture</h2>
+      <p>The MTN MoMo API suite is organized into distinct functional products optimized for specific financial workflows:</p>
+      <ul>
+        <li><strong>Collections API (Request to Pay):</strong> Allows businesses to initiate customer payment prompts directly on a user's mobile device. The customer receives an instant USSD popup on their phone prompting them to authorize payment with their MoMo PIN (C2B transaction).</li>
+        <li><strong>Disbursements API:</strong> Enables businesses to send funds programmatically from a corporate escrow wallet directly to individual mobile wallets. This is ideal for paying contractor salaries, processing loan disbursements, and distributing insurance claims (B2C transaction).</li>
+        <li><strong>Remittances API:</strong> Designed for international money transfer operators (MTOs) to deposit cross-border funds directly into local MTN MoMo subscriber accounts in Uganda.</li>
+      </ul>
+
+      <h2>Step 1: Sandbox Environment Provisioning and API Keys</h2>
+      <p>Before launching live transactions on MTN Uganda's production network, developers must construct and validate their application within the official MTN MoMo Developer Sandbox environment:</p>
+
+      <h3>1. Developer Account and API Product Subscription</h3>
+      <p>Create an account on the MTN MoMo Developer Portal and subscribe to your target API product (e.g., Collections). Upon subscription approval, the portal issues a primary and secondary <code>Ocp-Apim-Subscription-Key</code> header key.</p>
+
+      <h3>2. Programmatic API User and API Key Generation</h3>
+      <p>Unlike standard OAuth flows that use static client secrets, MTN MoMo requires developers to generate a unique <code>API User</code> (a UUID v4 formatted string) and <code>API Key</code> programmatically:</p>
+
+      <ul>
+        <li>Generate a valid UUID v4 string (for example, <code>f3b2a890-4c12-11ee-be56-0242ac120002</code>) to serve as your <code>X-Reference-Id</code>.</li>
+        <li>Send a POST request to <code>/v1_0/apiuser</code> specifying your callback host domain and subscription key in the headers.</li>
+        <li>Send a POST request to <code>/v1_0/apiuser/{X-Reference-Id}/apikey</code> to retrieve your secret <code>apiKey</code> string.</li>
+      </ul>
+
+      <h2>Step 2: Authentication and OAuth Bearer Token Request</h2>
+      <p>With your <code>API User</code> UUID and generated <code>apiKey</code>, you can request an OAuth 2.0 Bearer Access Token. Combine the credentials into a colon-separated string (<code>API_USER:API_KEY</code>), encode it in Base64 format, and post it to the token endpoint:</p>
+
+      <p><strong>Endpoint:</strong> <code>POST https://sandbox.momodeveloper.mtn.com/collection/token/</code><br />
+      <strong>Headers:</strong><br />
+      <code>Authorization: Basic {Base64_Encoded_Credentials}</code><br />
+      <code>Ocp-Apim-Subscription-Key: {Subscription_Key}</code></p>
+
+      <p>The API responds with an <code>access_token</code> string valid for 3600 seconds (1 hour) alongside token type <code>Bearer</code>, which must be attached to the <code>Authorization</code> header of all subsequent API interactions.</p>
+
+      <h2>Step 3: Executing a Collection Payment Request (Request to Pay)</h2>
+      <p>To initiate a collection payment request from an MTN MoMo customer in Uganda, invoke the <code>/requesttopay</code> endpoint with the user's phone number formatted in international standard (e.g., <code>256770000000</code>):</p>
+
+      <p><strong>Endpoint:</strong> <code>POST /collection/v1_0/requesttopay</code><br />
+      <strong>Headers:</strong><br />
+      <code>Authorization: Bearer {Access_Token}</code><br />
+      <code>X-Reference-Id: {Unique_UUID_v4_Per_Transaction}</code><br />
+      <code>X-Target-Environment: sandbox</code> (use <code>mtnuganda</code> in production)<br />
+      <code>Ocp-Apim-Subscription-Key: {Subscription_Key}</code><br />
+      <code>Content-Type: application/json</code></p>
+
+      <h3>Request JSON Payload Example</h3>
+      <p><code>{<br />
+      &nbsp;&nbsp;"amount": "50000",<br />
+      &nbsp;&nbsp;"currency": "UGX",<br />
+      &nbsp;&nbsp;"externalId": "INV-2026-9912",<br />
+      &nbsp;&nbsp;"payer": {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;"partyIdType": "MSISDN",<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;"partyId": "256771234567"<br />
+      &nbsp;&nbsp;},<br />
+      &nbsp;&nbsp;"payerMessage": "Payment for Course Fee",<br />
+      &nbsp;&nbsp;"payeeNote": "DeryCode Web Store"<br />
+      }</code></p>
+
+      <p>Upon receipt, the gateway responds immediately with HTTP status <code>202 Accepted</code>, and pushes a USSD PIN prompt directly to the customer's phone screen to authorize transaction settlement.</p>
+
+      <h2>Step 4: Managing Asynchronous Callbacks and Status Verification</h2>
+      <p>Because mobile money user interactions are inherently asynchronous and dependent on mobile network availability, system architectures must handle transaction status updates reliably:</p>
+
+      <ul>
+        <li><strong>Webhook Callbacks:</strong> Configure a secure HTTP POST callback endpoint on your web server. When the user enters their PIN or cancels the prompt, MTN posts a status payload (<code>SUCCESSFUL</code>, <code>FAILED</code>, or <code>REJECTED</code>) to your server.</li>
+        <li><strong>Transaction Status Polling:</strong> As a fail-safe, query <code>GET /collection/v1_0/requesttopay/{X-Reference-Id}</code> using the transaction's unique UUID to confirm payment status before fulfilling orders.</li>
+      </ul>
+
+      <h2>Security Standards and Production Readiness in Uganda</h2>
+      <p>Transitioning from the sandbox to live production with MTN Uganda requires strict compliance with cybersecurity and financial operational standards:</p>
+
+      <ol>
+        <li><strong>TLS Encryption and IP Whitelisting:</strong> All production webhooks must operate over TLS 1.3 HTTPS connections, with server firewalls restricting incoming callback traffic strictly to official MTN gateway IP addresses.</li>
+        <li><strong>Strict Transaction Idempotency:</strong> Store every transaction <code>X-Reference-Id</code> in a persistent database table to prevent duplicate charges or double order fulfillment during temporary network retries.</li>
+        <li><strong>Secure Key and Secret Management:</strong> Never hardcode API keys or subscription tokens inside front-end applications or public git repositories. Use secure environment variables or vault hardware security modules.</li>
+        <li><strong>Automated Ledger Reconciliation:</strong> Implement nightly automated reconciliation scripts that compare internal database transaction logs against official MTN merchant balance reports to identify discrepancies.</li>
+      </ol>
+
+      <h2>Build Enterprise Payment Infrastructure with DeryCode Tech</h2>
+      <p>Engineering resilient, high-volume payment processing backends requires expertise in distributed system architecture, financial cryptography, and failover network mechanics. <strong>DeryCode Tech</strong>, based in Kampala, Uganda and founded by senior software architect <strong>Asiimwe Derick</strong>, specializes in enterprise mobile money API integrations, custom payment gateways, and scalable fintech software across East Africa.</p>
+
+      <p>Do you need expert engineers to build or optimize your mobile money payment backend? <strong>Contact the engineering team at DeryCode Tech today</strong> to discuss your project requirements.</p>
+    <div class="article-cta"><h3>Need help with your project?</h3><p>DeryCode builds enterprise software, AI systems, blockchain infrastructure, and digital platforms.</p><a href="/index.html#contact" class="btn btn-primary" style="margin-top:8px;">Start a Conversation &rarr;</a></div><div style="margin-top:40px;padding:24px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);"><h2 style="margin-top:0;font-size:1.2rem;">Related reading</h2><ul style="list-style:none;padding:0;margin:0;"><li style="margin-bottom:10px;"><a href="/blog/sacco-banking.html" style="color:var(--primary);font-weight:600;">How Digital Banking Software is Transforming SACCOs in Uganda</a><span style="color:var(--text-muted);font-size:0.85rem;"> — Banking Tech</span></li><li style="margin-bottom:10px;"><a href="/blog/sacco-software-how-to-modernize-your-savings-group-in-uganda.html" style="color:var(--primary);font-weight:600;">SACCO Software: How to Modernize Your Savings Group in Uganda</a><span style="color:var(--text-muted);font-size:0.85rem;"> — Banking Tech</span></li><li style="margin-bottom:10px;"><a href="/blog/building-a-digital-loan-management-system-for-uganda-mfis.html" style="color:var(--primary);font-weight:600;">Building a Digital Loan Management System for Uganda MFIs</a><span style="color:var(--text-muted);font-size:0.85rem;"> — Banking Tech</span></li></ul></div><div style="margin-top:24px;"><a href="/blog.html" style="color:var(--primary);font-weight:600;">&larr; Back to all articles</a></div></div>
 </div>
 
 <footer class="footer" role="contentinfo">
@@ -196,13 +335,6 @@
 <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
 
 <script>
-  // === Redirect legacy ?id= article URLs to static pages ===
-  (function() {
-    var id = new URLSearchParams(window.location.search).get('id');
-    if (id) { location.replace('/blog/' + encodeURIComponent(id) + '.html'); return; }
-    var wrap = document.getElementById('articleWrap');
-    if (wrap) wrap.innerHTML = '<div class="article-not-found"><i class="fas fa-newspaper"></i><h2>Visit our blog</h2><p>This page has moved. Browse all DeryCode articles.</p><a href="/blog.html" class="btn btn-primary" style="margin-top:24px;">Go to Blog</a></div>';
-  })();
   
   document.getElementById('footerYear').textContent = new Date().getFullYear();
   var navbar = document.getElementById('navbar');

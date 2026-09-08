@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0" />
-  <title id="pageTitle">DeryCode Blog Article — Tech Insights Uganda</title>
-  <meta id="pageDesc" name="description" content="In-depth technical articles on software development, blockchain, AI, fintech, and digital transformation in Uganda. Practical insights from DeryCode engineers." />
+  <title id="pageTitle">Integrating PesaPal Payments in Uganda: A Developer&#x27;s Practical Guide | DeryCode</title>
+  <meta id="pageDesc" name="description" content="A practical, code-level guide to integrating PesaPal for MTN MoMo, Airtel Money, and card payments in Uganda. Covers the IPN callback flow, common pitfalls" />
   <meta name="robots" content="index, follow" />
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-  <link rel="canonical" id="pageCanonical" href="https://derycode.publicvm.com/blog-post.html" />
+  <link rel="canonical" id="pageCanonical" href="https://derycode.publicvm.com/blog/pesapal-integration-guide.html" />
   <link rel="icon" type="image/png" href="logo.webp" />
   <link rel="apple-touch-icon" href="icons/icon-192x192.png" />
   <link rel="manifest" href="manifest.json" />
@@ -56,9 +56,9 @@
       send_page_view: true
     });
   </script>
-  <meta property="og:title" content="DeryCode Blog Article — Tech Insights Uganda" />
-    <meta property="og:description" content="Expert insights on software development, blockchain, AI, and fintech in Uganda from DeryCode." />
-    <meta property="og:url" content="https://derycode.publicvm.com/blog-post.html" />
+  <meta property="og:title" content="Integrating PesaPal Payments in Uganda: A Developer&#x27;s Practical Guide | DeryCode" />
+    <meta property="og:description" content="A practical, code-level guide to integrating PesaPal for MTN MoMo, Airtel Money, and card payments in Uganda. Covers the IPN callback flow, common pitfalls" />
+    <meta property="og:url" content="https://derycode.publicvm.com/blog/pesapal-integration-guide.html" />
   
   <script type="application/ld+json">
 {
@@ -80,6 +80,63 @@
   ]
 }
   </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Integrating PesaPal Payments in Uganda: A Developer's Practical Guide",
+  "description": "A practical, code-level guide to integrating PesaPal for MTN MoMo, Airtel Money, and card payments in Uganda. Covers the IPN callback flow, common pitfalls, and production-tested patterns.",
+  "datePublished": "2026-08-28",
+  "dateModified": "2026-09-08",
+  "author": {
+    "@type": "Person",
+    "name": "Asiimwe Derick",
+    "url": "https://derycode.publicvm.com/",
+    "jobTitle": "Founder & CEO"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DeryCode",
+    "url": "https://derycode.publicvm.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://derycode.publicvm.com/og-image.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://derycode.publicvm.com/blog/pesapal-integration-guide.html"
+  },
+  "image": "https://derycode.publicvm.com/og-image.png",
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://derycode.publicvm.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://derycode.publicvm.com/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Integrating PesaPal Payments in Uganda: A Developer's Practical Guide",
+      "item": "https://derycode.publicvm.com/blog/pesapal-integration-guide.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -125,9 +182,44 @@
 
 <div class="article-wrap" id="articleWrap">
   <a href="blog.html" class="article-back"><i class="fas fa-arrow-left"></i> Back to Blog</a>
-  <div id="articleContent">
-    <!-- filled by JS -->
-  </div>
+  <div id="articleContent"><div class="article-hero-img"><i class="fas fa-credit-card"></i></div><span style="display:inline-block;font-size:0.72rem;font-weight:700;color:var(--primary);border:1px solid var(--border-light);padding:4px 14px;border-radius:50px;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.1em;">Engineering · Fintech</span><h1>Integrating PesaPal Payments in Uganda: A Developer&#x27;s Practical Guide</h1><div class="article-meta"><span><i class="fas fa-calendar"></i> August 28, 2026</span><span><i class="fas fa-clock"></i> 7 min read</span><span><i class="fas fa-user"></i> Asiimwe Derick</span></div>
+      <p>PesaPal is one of the most widely used payment aggregators in East Africa. It provides a single API to accept MTN Mobile Money, Airtel Money, Visa, and Mastercard payments. After integrating PesaPal across multiple client projects — including SAGECO Evergreen, Property Masters, and Tropical Gardens Hotel — here's a practical guide based on what actually works in production.</p>
+
+      <h2>How PesaPal Works</h2>
+      <p>The payment flow has three stages: First, you register an order with PesaPal to get a payment URL. Second, the user is redirected to PesaPal's payment page (or an iframe is embedded) where they choose their payment method and complete payment. Third, PesaPal sends an IPN (Instant Payment Notification) to your backend callback URL — this is how you know the payment actually succeeded.</p>
+
+      <h2>Getting Started: Authentication</h2>
+      <p>You need a PesaPal merchant account. Once approved, you receive a Consumer Key and Consumer Secret. You'll use these to generate a bearer token, which is required for all API calls. The token expires, so you need to fetch it fresh when needed rather than hardcoding it.</p>
+
+      <h2>Registering an Order</h2>
+      <p>To create a payment, you register an order with PesaPal's API. You send the amount, currency (UGX), description, and a unique order ID from your system. PesaPal returns a payment URL that you redirect the user to. The order ID is your anchor — PesaPal uses it in the IPN callback so you can match the payment back to your internal transaction record.</p>
+
+      <h2>The IPN Callback: Where Most Bugs Live</h2>
+      <p>The IPN callback is the most critical and most error-prone part of the integration. When a payment completes (or fails), PesaPal sends a POST request to your callback URL with the payment status. Your backend must handle this request and update your database accordingly.</p>
+      <p>Common issues we've encountered:</p>
+      <ul>
+        <li><strong>Double IPN notifications:</strong> PesaPal sometimes sends the same IPN twice. Your handler must be idempotent — processing the same notification twice should not create a duplicate transaction record.</li>
+        <li><strong>Delayed notifications:</strong> MoMo payments can take 10-30 seconds to process. Your UI should show a pending state, not assume failure.</li>
+        <li><strong>Test vs. Live mode:</strong> PesaPal has a sandbox environment. Always test in sandbox first, then switch the base URL for production. The credentials are different for each environment.</li>
+        <li><strong>HTTPS requirement:</strong> PesaPal requires your IPN callback URL to be HTTPS. This means you need an SSL certificate even in development.</li>
+      </ul>
+
+      <h2>Production Pattern: Service-Role Updates</h2>
+      <p>In one project (Property Masters), we initially updated subscription status from the client side after receiving the IPN callback. This was unreliable — if the user's browser was closed or the network dropped, the subscription wouldn't activate even though payment succeeded. The fix: move the IPN handler to a serverless function that uses service-role credentials to update the database directly, independent of any browser session. This ensures payments are always processed, even if the user navigates away.</p>
+
+      <h2>Transaction Limits</h2>
+      <p>One thing to watch for: PesaPal merchant accounts have transaction limits that depend on your verification status. New or unverified accounts may be capped at low amounts (we've seen UGX 30,000 limits). You need to work with PesaPal support to increase these limits as your business grows. Build your system to handle payment failures gracefully and display meaningful error messages to users.</p>
+
+      <h2>Supported Payment Methods in Uganda</h2>
+      <ul>
+        <li><strong>MTN Mobile Money (MoMo):</strong> The most popular payment method in Uganda. Users receive a USSD prompt on their phone to confirm payment.</li>
+        <li><strong>Airtel Money:</strong> Similar to MoMo but on the Airtel network. Slightly different callback timing.</li>
+        <li><strong>Visa / Mastercard:</strong> Card payments through PesaPal's PCI-compliant infrastructure. Less common for small transactions but important for larger payments.</li>
+      </ul>
+
+      <h2>Conclusion</h2>
+      <p>PesaPal is a solid payment aggregator for the Ugandan market, but the IPN callback flow requires careful engineering. The key principles: make your handler idempotent, use service-role updates for database changes, handle the pending state in your UI, and always test in sandbox before going live. We've integrated PesaPal across three production projects and these patterns have held up reliably.</p>
+    <div class="article-cta"><h3>Need help with your project?</h3><p>DeryCode builds enterprise software, AI systems, blockchain infrastructure, and digital platforms.</p><a href="/index.html#contact" class="btn btn-primary" style="margin-top:8px;">Start a Conversation &rarr;</a></div><div style="margin-top:40px;padding:24px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);"><h2 style="margin-top:0;font-size:1.2rem;">Related reading</h2><ul style="list-style:none;padding:0;margin:0;"><li style="margin-bottom:10px;"><a href="/blog/derycoin.html" style="color:var(--primary);font-weight:600;">What is DeryCoin? Uganda&#x27;s First Community Blockchain Token</a><span style="color:var(--text-muted);font-size:0.85rem;"> — ⭐ Featured · Blockchain</span></li><li style="margin-bottom:10px;"><a href="/blog/sacco-banking.html" style="color:var(--primary);font-weight:600;">How Digital Banking Software is Transforming SACCOs in Uganda</a><span style="color:var(--text-muted);font-size:0.85rem;"> — Banking Tech</span></li><li style="margin-bottom:10px;"><a href="/blog/pwa-uganda.html" style="color:var(--primary);font-weight:600;">Building a PWA: Why Progressive Web Apps Are Perfect for Uganda</a><span style="color:var(--text-muted);font-size:0.85rem;"> — Web Development</span></li></ul></div><div style="margin-top:24px;"><a href="/blog.html" style="color:var(--primary);font-weight:600;">&larr; Back to all articles</a></div></div>
 </div>
 
 <footer class="footer" role="contentinfo">
@@ -196,13 +288,6 @@
 <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
 
 <script>
-  // === Redirect legacy ?id= article URLs to static pages ===
-  (function() {
-    var id = new URLSearchParams(window.location.search).get('id');
-    if (id) { location.replace('/blog/' + encodeURIComponent(id) + '.html'); return; }
-    var wrap = document.getElementById('articleWrap');
-    if (wrap) wrap.innerHTML = '<div class="article-not-found"><i class="fas fa-newspaper"></i><h2>Visit our blog</h2><p>This page has moved. Browse all DeryCode articles.</p><a href="/blog.html" class="btn btn-primary" style="margin-top:24px;">Go to Blog</a></div>';
-  })();
   
   document.getElementById('footerYear').textContent = new Date().getFullYear();
   var navbar = document.getElementById('navbar');

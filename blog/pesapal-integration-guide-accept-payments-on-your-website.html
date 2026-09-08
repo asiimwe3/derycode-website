@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0" />
-  <title id="pageTitle">DeryCode Blog Article — Tech Insights Uganda</title>
-  <meta id="pageDesc" name="description" content="In-depth technical articles on software development, blockchain, AI, fintech, and digital transformation in Uganda. Practical insights from DeryCode engineers." />
+  <title id="pageTitle">PesaPal Integration Guide: Accept Payments on Your Website | DeryCode</title>
+  <meta id="pageDesc" name="description" content="Step-by-step developer guide for integrating PesaPal V3 API into your web application to accept Visa, Mastercard, MTN MoMo, and Airtel Money in East Africa" />
   <meta name="robots" content="index, follow" />
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-  <link rel="canonical" id="pageCanonical" href="https://derycode.publicvm.com/blog-post.html" />
+  <link rel="canonical" id="pageCanonical" href="https://derycode.publicvm.com/blog/pesapal-integration-guide-accept-payments-on-your-website.html" />
   <link rel="icon" type="image/png" href="logo.webp" />
   <link rel="apple-touch-icon" href="icons/icon-192x192.png" />
   <link rel="manifest" href="manifest.json" />
@@ -56,9 +56,9 @@
       send_page_view: true
     });
   </script>
-  <meta property="og:title" content="DeryCode Blog Article — Tech Insights Uganda" />
-    <meta property="og:description" content="Expert insights on software development, blockchain, AI, and fintech in Uganda from DeryCode." />
-    <meta property="og:url" content="https://derycode.publicvm.com/blog-post.html" />
+  <meta property="og:title" content="PesaPal Integration Guide: Accept Payments on Your Website | DeryCode" />
+    <meta property="og:description" content="Step-by-step developer guide for integrating PesaPal V3 API into your web application to accept Visa, Mastercard, MTN MoMo, and Airtel Money in East Africa" />
+    <meta property="og:url" content="https://derycode.publicvm.com/blog/pesapal-integration-guide-accept-payments-on-your-website.html" />
   
   <script type="application/ld+json">
 {
@@ -80,6 +80,63 @@
   ]
 }
   </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "PesaPal Integration Guide: Accept Payments on Your Website",
+  "description": "Step-by-step developer guide for integrating PesaPal V3 API into your web application to accept Visa, Mastercard, MTN MoMo, and Airtel Money in East Africa.",
+  "datePublished": "2026-05-18",
+  "dateModified": "2026-09-08",
+  "author": {
+    "@type": "Person",
+    "name": "Asiimwe Derick",
+    "url": "https://derycode.publicvm.com/",
+    "jobTitle": "Founder & CEO"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DeryCode",
+    "url": "https://derycode.publicvm.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://derycode.publicvm.com/og-image.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://derycode.publicvm.com/blog/pesapal-integration-guide-accept-payments-on-your-website.html"
+  },
+  "image": "https://derycode.publicvm.com/og-image.png",
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://derycode.publicvm.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://derycode.publicvm.com/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "PesaPal Integration Guide: Accept Payments on Your Website",
+      "item": "https://derycode.publicvm.com/blog/pesapal-integration-guide-accept-payments-on-your-website.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -125,9 +182,97 @@
 
 <div class="article-wrap" id="articleWrap">
   <a href="blog.html" class="article-back"><i class="fas fa-arrow-left"></i> Back to Blog</a>
-  <div id="articleContent">
-    <!-- filled by JS -->
-  </div>
+  <div id="articleContent"><div class="article-hero-img"><i class="fas fa-credit-card"></i></div><span style="display:inline-block;font-size:0.72rem;font-weight:700;color:var(--primary);border:1px solid var(--border-light);padding:4px 14px;border-radius:50px;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.1em;">Banking Tech</span><h1>PesaPal Integration Guide: Accept Payments on Your Website</h1><div class="article-meta"><span><i class="fas fa-calendar"></i> May 18, 2026</span><span><i class="fas fa-clock"></i> 5 min read</span><span><i class="fas fa-user"></i> Asiimwe Derick</span></div>
+      <p>E-commerce retailers, SaaS application providers, digital media platforms, and educational institutions operating in Uganda and across East Africa require payment processing solutions capable of accepting diverse payment options through a single, unified checkout experience. PesaPal is a leading payment aggregator in the region, enabling merchants across Uganda, Kenya, Tanzania, and Rwanda to accept Visa, Mastercard, American Express, MTN Mobile Money, and Airtel Money seamlessly. This complete developer integration guide demonstrates how to implement the PesaPal V3 REST API into your web application to accept online payments securely.</p>
+
+      <h2>Architecture Overview of PesaPal V3 REST API</h2>
+      <p>The PesaPal V3 API is built on a modern RESTful architecture utilizing JSON payloads and OAuth 2.0 authentication. A complete payment transaction integration follows five structured engineering steps:</p>
+
+      <ol>
+        <li><strong>Merchant Authentication:</strong> Exchange your merchant Consumer Key and Consumer Secret for a short-lived OAuth Bearer Token.</li>
+        <li><strong>IPN Listener Registration:</strong> Register a Instant Payment Notification (IPN) webhook URL on your server where PesaPal posts real-time payment status updates.</li>
+        <li><strong>Order Request Submission:</strong> Post order details (amount, currency, customer info) to PesaPal to generate an order tracking ID and payment iframe URL.</li>
+        <li><strong>User Payment Execution:</strong> Redirect the customer to PesaPal's hosted payment gateway page where they select their preferred payment channel (Card or Mobile Money).</li>
+        <li><strong>IPN Verification & Order Fulfillment:</strong> Handle incoming PesaPal IPN webhooks on your server and execute server-to-server status queries before fulfilling customer orders.</li>
+      </ol>
+
+      <h2>Step 1: Merchant Authentication and Token Generation</h2>
+      <p>First, retrieve your <code>Consumer Key</code> and <code>Consumer Secret</code> from your PesaPal Merchant Dashboard. Request an OAuth access token by issuing an HTTP POST request to the authentication endpoint:</p>
+
+      <p><strong>Endpoint (Sandbox):</strong> <code>POST https://cyb3rwr34k.pesapal.com/api/Auth/RequestToken</code><br />
+      <strong>Endpoint (Production):</strong> <code>POST https://pay.pesapal.com/v3/api/Auth/RequestToken</code></p>
+
+      <h3>Request JSON Payload</h3>
+      <p><code>{<br />
+      &nbsp;&nbsp;"consumer_key": "YOUR_CONSUMER_KEY",<br />
+      &nbsp;&nbsp;"consumer_secret": "YOUR_CONSUMER_SECRET"<br />
+      }</code></p>
+
+      <p>The API responds with an OAuth <code>token</code> string valid for 5 minutes. Implement automated caching logic on your web server to refresh tokens as needed during user checkout sessions.</p>
+
+      <h2>Step 2: Registering Your IPN Webhook Listener</h2>
+      <p>PesaPal notifies your server when transactions are processed via Instant Payment Notifications (IPN). You must register your webhook listener URL before submitting customer orders:</p>
+
+      <p><strong>Endpoint:</strong> <code>POST /api/URLSetup/RegisterIPN</code><br />
+      <strong>Headers:</strong> <code>Authorization: Bearer {token}</code></p>
+
+      <h3>Request JSON Body</h3>
+      <p><code>{<br />
+      &nbsp;&nbsp;"url": "https://yourdomain.com/api/pesapal-ipn",<br />
+      &nbsp;&nbsp;"ipn_notification_type": "POST"<br />
+      }</code></p>
+
+      <p>PesaPal returns a unique <code>ipn_id</code> string. Store this <code>ipn_id</code> in your application's environment configuration, as it must be attached to every subsequent order submission payload.</p>
+
+      <h2>Step 3: Submitting an Order and Rendering Checkout</h2>
+      <p>When a customer clicks the checkout button on your web application, submit the order details to PesaPal's order submission endpoint:</p>
+
+      <p><strong>Endpoint:</strong> <code>POST /api/Transactions/SubmitOrderRequest</code><br />
+      <strong>Headers:</strong> <code>Authorization: Bearer {token}</code></p>
+
+      <h3>Order Submission Payload Example</h3>
+      <p><code>{<br />
+      &nbsp;&nbsp;"id": "ORD-UG-2026-8812",<br />
+      &nbsp;&nbsp;"currency": "UGX",<br />
+      &nbsp;&nbsp;"amount": 150000,<br />
+      &nbsp;&nbsp;"description": "Payment for Software License",<br />
+      &nbsp;&nbsp;"callback_url": "https://yourdomain.com/checkout/success",<br />
+      &nbsp;&nbsp;"notification_id": "YOUR_REGISTERED_IPN_ID",<br />
+      &nbsp;&nbsp;"billing_address": {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;"email_address": "buyer@example.com",<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;"phone_number": "256782000111",<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;"first_name": "Derick",<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;"last_name": "Asiimwe",<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;"line_1": "Kampala Road",<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;"city": "Kampala",<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;"country_code": "UG"<br />
+      &nbsp;&nbsp;}<br />
+      }</code></p>
+
+      <p>The response contains an <code>order_tracking_id</code> and a <code>redirect_url</code>. Redirect the user's browser window to this URL to display the secure payment interface where they can select Card or Mobile Money.</p>
+
+      <h2>Step 4: Handling IPN Notifications & Verifying Status</h2>
+      <p>Upon payment completion or cancellation, PesaPal issues a POST request to your registered IPN URL containing the <code>OrderTrackingId</code> and <code>OrderNotificationType</code>.</p>
+
+      <p>Always execute a server-to-server status query to verify transaction integrity before updating order status in your database:</p>
+      <ul>
+        <li>Issue a GET request to <code>/api/Transactions/GetTransactionStatus?orderTrackingId={OrderTrackingId}</code>.</li>
+        <li>Verify that the status field equals <code>COMPLETED</code>. Other possible states include <code>FAILED</code> or <code>REVERSED</code>.</li>
+        <li>When status equals <code>COMPLETED</code>, mark the invoice as paid in your database, emit customer receipts, and respond to PesaPal with an HTTP 200 OK JSON payload.</li>
+      </ul>
+
+      <h2>Best Practices for East African E-Commerce Platforms</h2>
+      <ul>
+        <li><strong>Multi-Currency Pricing Support:</strong> Display prices in local currency (UGX, KES) for East African buyers while offering USD billing for international clients.</li>
+        <li><strong>Cart Abandonment Follow-up:</strong> Save pending transaction draft records in your database prior to gateway redirect so customer support can assist failed sessions.</li>
+        <li><strong>Security and SSL Encryption:</strong> Enforce HTTPS TLS 1.3 across all payment endpoints and validate transaction amounts server-side to prevent payload manipulation.</li>
+      </ul>
+
+      <h2>Build Custom E-Commerce Solutions with DeryCode Tech</h2>
+      <p>Integrating online payment gateways demands robust software engineering to eliminate dropped orders, transaction double-counting, and security vulnerabilities. <strong>DeryCode Tech</strong>, founded by technology leader <strong>Asiimwe Derick</strong> in Kampala, Uganda, builds enterprise e-commerce web applications, SaaS platforms, and custom payment middleware across East Africa.</p>
+
+      <p>Need expert developers to integrate PesaPal, card gateways, or mobile money payments into your app? <strong>Get in touch with DeryCode Tech today</strong> for world-class development services.</p>
+    <div class="article-cta"><h3>Need help with your project?</h3><p>DeryCode builds enterprise software, AI systems, blockchain infrastructure, and digital platforms.</p><a href="/index.html#contact" class="btn btn-primary" style="margin-top:8px;">Start a Conversation &rarr;</a></div><div style="margin-top:40px;padding:24px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);"><h2 style="margin-top:0;font-size:1.2rem;">Related reading</h2><ul style="list-style:none;padding:0;margin:0;"><li style="margin-bottom:10px;"><a href="/blog/sacco-banking.html" style="color:var(--primary);font-weight:600;">How Digital Banking Software is Transforming SACCOs in Uganda</a><span style="color:var(--text-muted);font-size:0.85rem;"> — Banking Tech</span></li><li style="margin-bottom:10px;"><a href="/blog/sacco-software-how-to-modernize-your-savings-group-in-uganda.html" style="color:var(--primary);font-weight:600;">SACCO Software: How to Modernize Your Savings Group in Uganda</a><span style="color:var(--text-muted);font-size:0.85rem;"> — Banking Tech</span></li><li style="margin-bottom:10px;"><a href="/blog/mtn-momo-api-integration-a-developers-complete-guide.html" style="color:var(--primary);font-weight:600;">MTN MoMo API Integration: A Developer&#x27;s Complete Guide</a><span style="color:var(--text-muted);font-size:0.85rem;"> — Banking Tech</span></li></ul></div><div style="margin-top:24px;"><a href="/blog.html" style="color:var(--primary);font-weight:600;">&larr; Back to all articles</a></div></div>
 </div>
 
 <footer class="footer" role="contentinfo">
@@ -196,13 +341,6 @@
 <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
 
 <script>
-  // === Redirect legacy ?id= article URLs to static pages ===
-  (function() {
-    var id = new URLSearchParams(window.location.search).get('id');
-    if (id) { location.replace('/blog/' + encodeURIComponent(id) + '.html'); return; }
-    var wrap = document.getElementById('articleWrap');
-    if (wrap) wrap.innerHTML = '<div class="article-not-found"><i class="fas fa-newspaper"></i><h2>Visit our blog</h2><p>This page has moved. Browse all DeryCode articles.</p><a href="/blog.html" class="btn btn-primary" style="margin-top:24px;">Go to Blog</a></div>';
-  })();
   
   document.getElementById('footerYear').textContent = new Date().getFullYear();
   var navbar = document.getElementById('navbar');

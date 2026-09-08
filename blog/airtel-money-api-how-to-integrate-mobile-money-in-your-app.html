@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0" />
-  <title id="pageTitle">DeryCode Blog Article — Tech Insights Uganda</title>
-  <meta id="pageDesc" name="description" content="In-depth technical articles on software development, blockchain, AI, fintech, and digital transformation in Uganda. Practical insights from DeryCode engineers." />
+  <title id="pageTitle">Airtel Money API: How to Integrate Mobile Money in Your App | DeryCode</title>
+  <meta id="pageDesc" name="description" content="Developer guide to integrating Airtel Money API in Uganda: OAuth authentication, C2B payments, B2C disbursements, webhooks, and error handling." />
   <meta name="robots" content="index, follow" />
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-  <link rel="canonical" id="pageCanonical" href="https://derycode.publicvm.com/blog-post.html" />
+  <link rel="canonical" id="pageCanonical" href="https://derycode.publicvm.com/blog/airtel-money-api-how-to-integrate-mobile-money-in-your-app.html" />
   <link rel="icon" type="image/png" href="logo.webp" />
   <link rel="apple-touch-icon" href="icons/icon-192x192.png" />
   <link rel="manifest" href="manifest.json" />
@@ -56,9 +56,9 @@
       send_page_view: true
     });
   </script>
-  <meta property="og:title" content="DeryCode Blog Article — Tech Insights Uganda" />
-    <meta property="og:description" content="Expert insights on software development, blockchain, AI, and fintech in Uganda from DeryCode." />
-    <meta property="og:url" content="https://derycode.publicvm.com/blog-post.html" />
+  <meta property="og:title" content="Airtel Money API: How to Integrate Mobile Money in Your App | DeryCode" />
+    <meta property="og:description" content="Developer guide to integrating Airtel Money API in Uganda: OAuth authentication, C2B payments, B2C disbursements, webhooks, and error handling." />
+    <meta property="og:url" content="https://derycode.publicvm.com/blog/airtel-money-api-how-to-integrate-mobile-money-in-your-app.html" />
   
   <script type="application/ld+json">
 {
@@ -80,6 +80,63 @@
   ]
 }
   </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Airtel Money API: How to Integrate Mobile Money in Your App",
+  "description": "Developer guide to integrating Airtel Money API in Uganda: OAuth authentication, C2B payments, B2C disbursements, webhooks, and error handling.",
+  "datePublished": "2026-05-09",
+  "dateModified": "2026-09-08",
+  "author": {
+    "@type": "Person",
+    "name": "Asiimwe Derick",
+    "url": "https://derycode.publicvm.com/",
+    "jobTitle": "Founder & CEO"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DeryCode",
+    "url": "https://derycode.publicvm.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://derycode.publicvm.com/og-image.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://derycode.publicvm.com/blog/airtel-money-api-how-to-integrate-mobile-money-in-your-app.html"
+  },
+  "image": "https://derycode.publicvm.com/og-image.png",
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://derycode.publicvm.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://derycode.publicvm.com/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Airtel Money API: How to Integrate Mobile Money in Your App",
+      "item": "https://derycode.publicvm.com/blog/airtel-money-api-how-to-integrate-mobile-money-in-your-app.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -125,9 +182,87 @@
 
 <div class="article-wrap" id="articleWrap">
   <a href="blog.html" class="article-back"><i class="fas fa-arrow-left"></i> Back to Blog</a>
-  <div id="articleContent">
-    <!-- filled by JS -->
-  </div>
+  <div id="articleContent"><div class="article-hero-img"><i class="fas fa-money-bill-transfer"></i></div><span style="display:inline-block;font-size:0.72rem;font-weight:700;color:var(--primary);border:1px solid var(--border-light);padding:4px 14px;border-radius:50px;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.1em;">Banking Tech</span><h1>Airtel Money API: How to Integrate Mobile Money in Your App</h1><div class="article-meta"><span><i class="fas fa-calendar"></i> May 9, 2026</span><span><i class="fas fa-clock"></i> 5 min read</span><span><i class="fas fa-user"></i> Asiimwe Derick</span></div>
+      <p>Airtel Money is one of the fastest-growing mobile financial services platforms in Uganda and across East Africa, commanding millions of active subscribers who use the network daily for peer-to-peer transfers, merchant retail checkout, utility bills, and micro-loan settlements. For software developers, e-commerce platforms, and enterprise engineering teams building applications in Uganda, integrating Airtel Money API alongside MTN MoMo is essential to capture 100% of the mobile payment market. This comprehensive developer guide provides a step-by-step technical tutorial for integrating the Airtel Money OpenAPI suite into your application backend.</p>
+
+      <h2>Core Functional Interfaces of Airtel Money OpenAPI</h2>
+      <p>The Airtel Money developer ecosystem offers three primary API interfaces engineered for enterprise business transactions:</p>
+
+      <ul>
+        <li><strong>Customer to Business (C2B / Collections):</strong> Initiates a push notification to a customer's mobile phone, prompting them to enter their Airtel Money PIN to authorize a merchant payment.</li>
+        <li><strong>Business to Customer (B2C / Disbursements):</strong> Programmatically transfers funds directly from a corporate escrow account to an individual customer's Airtel Money account (ideal for loan payouts, payroll, or vendor disbursements).</li>
+        <li><strong>Transaction Status Inquiry & Balance APIs:</strong> Enables systems to check real-time account balances and verify the execution status of specific transaction IDs.</li>
+      </ul>
+
+      <h2>Step 1: Merchant Account Setup and OAuth Token Generation</h2>
+      <p>Accessing the Airtel Money API requires registering on the official Airtel Developer Portal to obtain your <code>Client ID</code> and <code>Client Secret</code>. Authentication uses OAuth 2.0 Client Credentials flow:</p>
+
+      <p><strong>Endpoint:</strong> <code>POST https://openapi.airtel.africa/auth/oauth2/token</code><br />
+      <strong>Headers:</strong> <code>Content-Type: application/json</code></p>
+
+      <h3>Request Body Payload</h3>
+      <p><code>{<br />
+      &nbsp;&nbsp;"client_id": "YOUR_AIRTEL_CLIENT_ID",<br />
+      &nbsp;&nbsp;"client_secret": "YOUR_AIRTEL_CLIENT_SECRET",<br />
+      &nbsp;&nbsp;"grant_type": "client_credentials"<br />
+      }</code></p>
+
+      <p>The API responds with an <code>access_token</code> string, token expiration period, and token type. Attach this token as a Bearer string in the HTTP Authorization header of all API calls.</p>
+
+      <h2>Step 2: Mandatory HTTP Request Header Parameters</h2>
+      <p>Airtel Money API requests require specific header metadata specifying target country codes and currency formats:</p>
+      <ul>
+        <li><code>Authorization: Bearer {access_token}</code></li>
+        <li><code>X-Country: UG</code> (for Uganda)</li>
+        <li><code>X-Currency: UGX</code> (for Ugandan Shillings)</li>
+        <li><code>Content-Type: application/json</code></li>
+      </ul>
+
+      <h2>Step 3: Executing a C2B Payment Collection Request</h2>
+      <p>To prompt a customer to make a payment from their Airtel Money wallet, issue a POST request to the merchant payment collection endpoint:</p>
+
+      <p><strong>Endpoint:</strong> <code>POST https://openapi.airtel.africa/merchant/v1/payments/</code></p>
+
+      <h3>Request Payload Example</h3>
+      <p><code>{<br />
+      &nbsp;&nbsp;"reference": "Ref-INV-2026-9011",<br />
+      &nbsp;&nbsp;"subscriber": {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;"country": "UG",<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;"currency": "UGX",<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;"msisdn": 750000111<br />
+      &nbsp;&nbsp;},<br />
+      &nbsp;&nbsp;"transaction": {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;"amount": 35000,<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;"country": "UG",<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;"currency": "UGX",<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;"id": "TXN-DC-2026-0088"<br />
+      &nbsp;&nbsp;}<br />
+      }</code></p>
+
+      <p>Note: Pass the subscriber phone number (<code>msisdn</code>) as an integer or string without leading zeroes or plus signs (e.g., <code>750000111</code> for 0750000111).</p>
+
+      <h2>Step 4: Handling Webhooks and Status Verification</h2>
+      <p>Once the payment request is submitted, Airtel pushes a USSD prompt to the customer's phone screen. Upon completion, Airtel dispatches an HTTP POST webhook payload to your registered callback server endpoint:</p>
+
+      <ul>
+        <li>Inspect the response status object inside the incoming webhook body. A status code <code>200</code> and result code <code>DP00080000</code> indicates payment success.</li>
+        <li>If webhooks are delayed due to telecom network maintenance, poll the status endpoint using <code>GET https://openapi.airtel.africa/standard/v1/payments/{transaction_id}</code>.</li>
+      </ul>
+
+      <h2>Error Handling and Production Readiness Best Practices</h2>
+      <p>Deploying live Airtel Money payment integrations in Uganda requires engineering robust error handling routines:</p>
+
+      <ol>
+        <li><strong>Map Gateway Error Codes Accurately:</strong> Handle specific error codes such as insufficient subscriber funds, incorrect PIN attempts, locked account states, or network timeouts.</li>
+        <li><strong>Implement Exponential Backoff Polling:</strong> When querying pending transaction states, employ exponential backoff retry algorithms to avoid triggering API rate limit throttles.</li>
+        <li><strong>Secure Webhook Endpoints:</strong> Validate incoming callback request headers and restrict webhook endpoints to official Airtel server IP address ranges to prevent spoofing.</li>
+      </ol>
+
+      <h2>Build High-Uptime Payment Platforms with DeryCode Tech</h2>
+      <p>Building high-uptime payment infrastructure requires engineering software that seamlessly manages multi-carrier mobile money integrations, automated retries, and real-time ledger synchronization. <strong>DeryCode Tech</strong>, based in Kampala, Uganda and founded by lead software engineer <strong>Asiimwe Derick</strong>, specializes in enterprise mobile money API integrations, custom payment gateways, and full-stack software development.</p>
+
+      <p>Looking to integrate Airtel Money, MTN MoMo, or multi-carrier payment solutions into your mobile or web app? <strong>Contact DeryCode Tech today</strong> to work with seasoned Ugandan software engineers.</p>
+    <div class="article-cta"><h3>Need help with your project?</h3><p>DeryCode builds enterprise software, AI systems, blockchain infrastructure, and digital platforms.</p><a href="/index.html#contact" class="btn btn-primary" style="margin-top:8px;">Start a Conversation &rarr;</a></div><div style="margin-top:40px;padding:24px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);"><h2 style="margin-top:0;font-size:1.2rem;">Related reading</h2><ul style="list-style:none;padding:0;margin:0;"><li style="margin-bottom:10px;"><a href="/blog/sacco-banking.html" style="color:var(--primary);font-weight:600;">How Digital Banking Software is Transforming SACCOs in Uganda</a><span style="color:var(--text-muted);font-size:0.85rem;"> — Banking Tech</span></li><li style="margin-bottom:10px;"><a href="/blog/sacco-software-how-to-modernize-your-savings-group-in-uganda.html" style="color:var(--primary);font-weight:600;">SACCO Software: How to Modernize Your Savings Group in Uganda</a><span style="color:var(--text-muted);font-size:0.85rem;"> — Banking Tech</span></li><li style="margin-bottom:10px;"><a href="/blog/mtn-momo-api-integration-a-developers-complete-guide.html" style="color:var(--primary);font-weight:600;">MTN MoMo API Integration: A Developer&#x27;s Complete Guide</a><span style="color:var(--text-muted);font-size:0.85rem;"> — Banking Tech</span></li></ul></div><div style="margin-top:24px;"><a href="/blog.html" style="color:var(--primary);font-weight:600;">&larr; Back to all articles</a></div></div>
 </div>
 
 <footer class="footer" role="contentinfo">
@@ -196,13 +331,6 @@
 <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
 
 <script>
-  // === Redirect legacy ?id= article URLs to static pages ===
-  (function() {
-    var id = new URLSearchParams(window.location.search).get('id');
-    if (id) { location.replace('/blog/' + encodeURIComponent(id) + '.html'); return; }
-    var wrap = document.getElementById('articleWrap');
-    if (wrap) wrap.innerHTML = '<div class="article-not-found"><i class="fas fa-newspaper"></i><h2>Visit our blog</h2><p>This page has moved. Browse all DeryCode articles.</p><a href="/blog.html" class="btn btn-primary" style="margin-top:24px;">Go to Blog</a></div>';
-  })();
   
   document.getElementById('footerYear').textContent = new Date().getFullYear();
   var navbar = document.getElementById('navbar');
