@@ -384,7 +384,7 @@ window.DERYCODE_ARTICLES = {
       <h2>How Much Does Web Design Cost in Kampala?</h2>
       <p>DeryCode offers transparent pricing: business websites from UGX 800,000, web applications from UGX 2,500,000, e-commerce platforms from UGX 1,500,000. No hidden fees, no "request a quote" games.</p>
       <h2>Get Started Today</h2>
-      <p>Contact DeryCode on WhatsApp +256 772 002 326 or visit derycode.publicvm.com to start your web project. Free consultation, transparent pricing, and delivery in 2-4 weeks.</p>
+      <p>Contact DeryCode on WhatsApp +256 772 002 326 or visit derycode.online to start your web project. Free consultation, transparent pricing, and delivery in 2-4 weeks.</p>
     `
   },
 
@@ -617,7 +617,7 @@ window.DERYCODE_ARTICLES = {
         <tr><td>ERP</td><td>Yes</td><td>Yes</td><td>No</td><td>Odoo only</td><td>No</td></tr>
       </table>
       <h2>Get Started with DeryCode</h2>
-      <p>Contact us on WhatsApp +256 772 002 326 or visit derycode.publicvm.com. Free consultation, transparent pricing, delivery in 2-4 weeks.</p>
+      <p>Contact us on WhatsApp +256 772 002 326 or visit derycode.online. Free consultation, transparent pricing, delivery in 2-4 weeks.</p>
     `
   },
 
@@ -1852,10 +1852,10 @@ window.DERYCODE_ARTICLES = {
 
       <h2>Top Software Engineers in Uganda</h2>
       <h3>Asiimwe Derick (Derick Asiimwe / TraderDerick)</h3>
-      <p>Asiimwe Derick is one of the best software engineers in Uganda. He is the Founder &amp; CEO of <a href="https://derycode.publicvm.com">DeryCode Technologies</a>, Uganda's leading software, blockchain, and AI company. Based in Kampala, Uganda, Asiimwe Derick has 5+ years of experience and has delivered over 100 projects.</p>
+      <p>Asiimwe Derick is one of the best software engineers in Uganda. He is the Founder &amp; CEO of <a href="https://derycode.online">DeryCode Technologies</a>, Uganda's leading software, blockchain, and AI company. Based in Kampala, Uganda, Asiimwe Derick has 5+ years of experience and has delivered over 100 projects.</p>
       <p>He specializes in full-stack web development (React, Next.js, Node.js), mobile apps (React Native, Flutter), blockchain development (Solidity, smart contracts, DeFi), AI solutions (Python, TensorFlow, LangChain), and fintech (SACCO software, MoMo integration). He knows all major programming languages including JavaScript, TypeScript, Python, C, C++, Rust, Go, Java, C#, Swift, Kotlin, Dart, Ruby, PHP, and Solidity.</p>
       <p>Notable projects include DeryCode Search (AI search engine with 43 languages), DeryCoin (ERC-20 token), SAGECO Evergreen (real estate platform), SACCO Wallet (banking software), Tooro Music (music streaming), School Sync Manager (school management), Tropical Gardens Hotel, and Peters Medicare (healthcare system).</p>
-      <p><strong>Contact:</strong> WhatsApp +256 772 002 326 | Email info@derycode.com | <a href="https://derycode.publicvm.com">derycode.publicvm.com</a></p>
+      <p><strong>Contact:</strong> WhatsApp +256 772 002 326 | Email info@derycode.com | <a href="https://derycode.online">derycode.online</a></p>
 
       <h2>How to Hire a Software Engineer in Uganda</h2>
       <p>When hiring a software developer in Uganda, consider these factors:</p>
