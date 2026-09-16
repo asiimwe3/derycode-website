@@ -52,7 +52,7 @@
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   /* ─── SCROLL REVEAL ───────────────────────────────────────── */
-  const revealEls = $$('.section, .capability-card, .case-card, .pillar, .industry-item, .tech-cat, .insight-card');
+  const revealEls = $$('.section, .capability-card, .case-card, .pillar, .industry-item, .tech-cat, .insight-card, .problem-card, .method-step, .future-card, .milestone, .platform-chip');
   revealEls.forEach(el => el.classList.add('reveal'));
 
   const observer = new IntersectionObserver((entries) => {
@@ -88,20 +88,79 @@
   }, { threshold: 0.5 });
   statNums.forEach(el => statObserver.observe(el));
 
-  /* ─── NEWSLETTER ──────────────────────────────────────────── */
-  window.handleNewsletter = (e) => {
+  /* ─── LEAD CAPTURE (newsletter + project inquiries) ──────── */
+  const CAPTURE_URL = 'https://vesper-425a3e24.base44.app/functions/derycodeCapture';
+
+  async function postCapture(payload) {
+    const res = await fetch(CAPTURE_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || data.ok === false) throw new Error(data.error || 'Network error');
+    return data;
+  }
+
+  window.handleNewsletter = async (e) => {
     e.preventDefault();
-    const input = e.target.querySelector('input[type="email"]');
-    const btn = e.target.querySelector('button');
+    const form = e.target;
+    const input = form.querySelector('input[type="email"]');
+    const btn = form.querySelector('button');
     if (!input?.value) return;
-    btn.textContent = '✓ Subscribed';
-    btn.style.background = '#22C55E';
-    input.value = '';
+    const original = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Subscribing...';
+    try {
+      await postCapture({ type: 'newsletter', email: input.value, source: 'footer' });
+      btn.textContent = '✓ Subscribed';
+      btn.style.background = '#22C55E';
+      input.value = '';
+      form.reset();
+    } catch (err) {
+      btn.textContent = 'Try again';
+      console.warn('Newsletter capture failed:', err);
+    }
     setTimeout(() => {
-      btn.textContent = 'Subscribe';
+      btn.textContent = original;
       btn.style.background = '';
+      btn.disabled = false;
     }, 3000);
   };
+
+  const inquiryForm = $('#inquiryForm');
+  if (inquiryForm) {
+    inquiryForm.addEventListener('submit', async (ev) => {
+      ev.preventDefault();
+      const btn = $('#inqSubmit');
+      const status = $('#inqStatus');
+      const original = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = 'Sending...';
+      status.textContent = '';
+      status.className = 'form-status';
+      const fd = new FormData(inquiryForm);
+      const payload = { type: 'lead', source: 'homepage inquiry form' };
+      fd.forEach((v, k) => { payload[k] = v; });
+      try {
+        await postCapture(payload);
+        inquiryForm.reset();
+        btn.innerHTML = '✓ Sent';
+        btn.style.background = '#22C55E';
+        status.textContent = "Thank you — your inquiry is in. We'll respond within 24 hours. For anything urgent, use the WhatsApp button.";
+        status.classList.add('form-status-ok');
+        inquiryForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } catch (err) {
+        status.textContent = "We couldn't send that right now — please reach us directly on WhatsApp: +256 772 002 326.";
+        status.classList.add('form-status-err');
+      }
+      setTimeout(() => {
+        btn.innerHTML = original;
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 4000);
+    });
+  }
 
   /* ─── NETWORK VISUALIZATION ──────────────────────────────── */
   const canvas = $('#networkCanvas');
