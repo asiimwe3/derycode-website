@@ -181,13 +181,17 @@
       <i class="fas fa-times" aria-hidden="true"></i>
     </button>
     <nav class="mobile-nav-links" role="navigation" aria-label="Mobile navigation">
+      <span class="mobile-nav-group-label">Products</span>
+      <a href="projects/deryaccount.html"><i class="fas fa-calculator" aria-hidden="true"></i> DeryAccount</a>
+      <a href="projects/school-report-maker.html"><i class="fas fa-graduation-cap" aria-hidden="true"></i> School Report Maker</a>
+      <span class="mobile-nav-group-label">Solutions</span>
       <a href="#solutions">Solutions</a>
       <a href="#industries">Industries</a>
       <a href="#technology">Technology</a>
-      <a href="#products">Products</a>
-      <a href="#projects">Projects</a>
+      <span class="mobile-nav-group-label">Company</span>
+      <a href="#projects">Our Work</a>
       <a href="#pricing">Pricing</a>
-      <a href="#company">Company</a>
+      <a href="#company">About Us</a>
       <a href="blog.html">Insights</a>
       <a href="#contact" class="mobile-nav-cta">Let's Talk &rarr;</a>
     </nav>
@@ -202,14 +206,36 @@
       <span class="logo-text">DERY<span class="logo-accent">CODE</span></span>
     </a>
     <ul class="nav-links" id="navLinks" role="menubar">
-      <li role="none"><a href="#solutions" role="menuitem">Solutions</a></li>
-      <li role="none"><a href="#industries" role="menuitem">Industries</a></li>
-      <li role="none"><a href="#technology" role="menuitem">Technology</a></li>
-      <li role="none"><a href="#products" role="menuitem">Products</a></li>
-      <li role="none"><a href="#projects" role="menuitem">Projects</a></li>
+      <li role="none" class="nav-dropdown">
+        <a href="#products" role="menuitem" aria-haspopup="true">Products <i class="fas fa-chevron-down nav-caret" aria-hidden="true"></i></a>
+        <div class="nav-mega-panel" role="menu">
+          <a href="projects/deryaccount.html" class="nav-mega-item" role="menuitem">
+            <div class="nav-mega-icon"><i class="fas fa-calculator" aria-hidden="true"></i></div>
+            <div><span class="nav-mega-title">DeryAccount</span><span class="nav-mega-desc">Accounting, inventory &amp; POS for SMEs</span></div>
+          </a>
+          <a href="projects/school-report-maker.html" class="nav-mega-item" role="menuitem">
+            <div class="nav-mega-icon"><i class="fas fa-graduation-cap" aria-hidden="true"></i></div>
+            <div><span class="nav-mega-title">School Report Maker</span><span class="nav-mega-desc">Report cards for schools, made simple</span></div>
+          </a>
+        </div>
+      </li>
+      <li role="none" class="nav-dropdown">
+        <a href="#solutions" role="menuitem" aria-haspopup="true">Solutions <i class="fas fa-chevron-down nav-caret" aria-hidden="true"></i></a>
+        <div class="nav-simple-panel" role="menu">
+          <a href="#solutions" role="menuitem">Solutions Overview</a>
+          <a href="#industries" role="menuitem">Industries</a>
+          <a href="#technology" role="menuitem">Technology</a>
+        </div>
+      </li>
+      <li role="none"><a href="#projects" role="menuitem">Work</a></li>
       <li role="none"><a href="#pricing" role="menuitem">Pricing</a></li>
-      <li role="none"><a href="#company" role="menuitem">Company</a></li>
-      <li role="none"><a href="blog.html" role="menuitem">Insights</a></li>
+      <li role="none" class="nav-dropdown">
+        <a href="#company" role="menuitem" aria-haspopup="true">Company <i class="fas fa-chevron-down nav-caret" aria-hidden="true"></i></a>
+        <div class="nav-simple-panel" role="menu">
+          <a href="#company" role="menuitem">About Us</a>
+          <a href="blog.html" role="menuitem">Insights</a>
+        </div>
+      </li>
     </ul>
     <div class="nav-actions">
       <a href="#contact" class="btn btn-primary nav-cta">Let's Talk &rarr;</a>
@@ -847,7 +873,7 @@
   </div>
 </section>
 
-<section class="section section-alt" id="projects" aria-labelledby="projects-heading">
+<section class="section section-alt" id="products" aria-labelledby="products-heading">
   <div class="container">
     <div class="section-header">
       <span class="section-label">OUR PRODUCTS</span>
@@ -876,9 +902,11 @@
         </div>
       </a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section" aria-labelledby="projects-heading">
+<section class="section" id="projects" aria-labelledby="projects-heading">
+  <div class="container">
     <div class="section-header">
       <span class="section-label">SELECTED WORK</span>
       <h2 class="section-heading" id="projects-heading">Projects we've built.</h2>
