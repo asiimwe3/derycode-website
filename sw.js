@@ -13,7 +13,7 @@
  * - Added error handling so a cache miss doesn't throw
  */
 
-const VERSION    = 'derycode-v12';
+const VERSION    = 'derycode-v13';
 const HTML_CACHE = VERSION + '-html';
 const ASSET_CACHE = VERSION + '-assets';
 
@@ -23,6 +23,13 @@ const PRECACHE_ASSETS = [
   '/script.js',
   '/manifest.json',
   '/hero.webp',
+  '/problem-paperwork.webp',
+  '/headteacher-after.webp',
+  '/engineering-code.webp',
+  '/dena-mockup.webp',
+  '/africa-network.webp',
+  '/kampala-future.webp',
+  '/team-night.webp',
   '/about.webp',
   '/team.webp',
   '/derycoin.webp',

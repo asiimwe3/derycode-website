@@ -1556,3 +1556,148 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .problem-card, .method-step, .future-card, .platform-chip { transition: none; }
 }
+
+/* =============================================================
+   VISUAL UPGRADE — Sept 2026 v2 (images + engagement)
+============================================================= */
+
+/* ─── Scroll progress bar ─── */
+#scrollProgress {
+  position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+  background: linear-gradient(90deg, var(--primary), var(--cyan));
+  z-index: 10001; pointer-events: none;
+  box-shadow: 0 0 10px rgba(79,124,255,0.6);
+}
+
+/* ─── Image bands (shared) ─── */
+.image-band {
+  position: relative; margin: var(--sp-lg) 0 var(--sp-md);
+  border-radius: var(--radius); overflow: hidden;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-lg);
+  height: 280px;
+}
+.image-band img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 6s ease-out;
+}
+.image-band:hover img { transform: scale(1.06); }
+.image-band::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(7,11,20,0.55));
+  pointer-events: none;
+}
+.image-band-caption {
+  position: absolute; left: 20px; bottom: 14px; z-index: 2;
+  color: var(--text); font-size: 0.92rem; font-weight: 500;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+  max-width: 70%;
+}
+
+/* ─── Before / After (problem section) ─── */
+.before-after {
+  display: grid; grid-template-columns: 1fr 56px 1fr; align-items: center;
+  gap: var(--sp-sm); margin-top: var(--sp-lg);
+}
+.ba-frame {
+  position: relative; margin: 0; border-radius: var(--radius);
+  overflow: hidden; border: 1px solid var(--card-border);
+  box-shadow: var(--shadow);
+}
+.ba-frame img {
+  width: 100%; height: 300px; object-fit: cover; display: block;
+  transition: var(--transition);
+}
+.ba-frame:hover img { transform: scale(1.04); }
+.ba-frame::before {
+  content: ''; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg, transparent 55%, rgba(7,11,20,0.85));
+}
+.ba-frame figcaption {
+  position: absolute; left: 14px; right: 14px; bottom: 12px; z-index: 2;
+  color: var(--text); font-size: 0.85rem; line-height: 1.4;
+}
+.ba-tag {
+  display: inline-block; padding: 2px 9px; margin-right: 6px;
+  border-radius: 999px; font-size: 0.68rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.05em; vertical-align: 1px;
+}
+.ba-tag-before { background: rgba(248,113,113,0.16); color: #F87171; border: 1px solid rgba(248,113,113,0.35); }
+.ba-tag-after { background: rgba(34,197,94,0.16); color: var(--success); border: 1px solid rgba(34,197,94,0.35); }
+.ba-arrow {
+  display: flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; margin: 0 auto;
+  border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--cyan));
+  color: #fff; font-size: 1rem; box-shadow: 0 0 24px rgba(79,124,255,0.45);
+  animation: baPulse 2.4s ease-in-out infinite;
+}
+@keyframes baPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 16px rgba(79,124,255,0.35); }
+  50% { transform: scale(1.1); box-shadow: 0 0 30px rgba(34,211,238,0.55); }
+}
+
+/* ─── Global section image ─── */
+.global-image {
+  margin: var(--sp-lg) 0 0; border-radius: var(--radius);
+  overflow: hidden; border: 1px solid var(--card-border);
+  position: relative; box-shadow: var(--shadow-lg);
+}
+.global-image img { width: 100%; height: 420px; object-fit: cover; display: block; transition: transform 6s ease-out; }
+.global-image:hover img { transform: scale(1.05); }
+.global-image::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(7,11,20,0.75));
+}
+.global-image figcaption {
+  position: absolute; left: 20px; bottom: 16px; z-index: 2;
+  color: var(--text); font-size: 0.95rem; font-weight: 600;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+}
+
+/* ─── Future banner ─── */
+.future-banner {
+  position: relative; margin: var(--sp-md) 0 var(--sp-lg);
+  border-radius: var(--radius); overflow: hidden;
+  border: 1px solid var(--card-border); box-shadow: var(--shadow-lg);
+  height: 340px;
+}
+.future-banner img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  animation: kenburns 20s ease-in-out infinite alternate;
+}
+@keyframes kenburns {
+  from { transform: scale(1) translateX(0); }
+  to { transform: scale(1.12) translateX(-1.5%); }
+}
+.future-banner::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(7,11,20,0.82) 0%, rgba(7,11,20,0.25) 60%, transparent);
+}
+.future-banner-overlay {
+  position: absolute; left: 32px; top: 50%; transform: translateY(-50%); z-index: 2;
+  max-width: 420px;
+}
+.future-banner-overlay span {
+  color: var(--cyan); font-size: 0.75rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.14em;
+}
+.future-banner-overlay p {
+  margin: 6px 0 0; color: var(--text); font-size: 1.5rem;
+  font-weight: 700; line-height: 1.25; font-family: var(--font-display);
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 900px) {
+  .before-after { grid-template-columns: 1fr; gap: var(--sp-sm); }
+  .ba-arrow { transform: rotate(90deg); }
+  .ba-frame img { height: 240px; }
+  .future-banner { height: 260px; }
+  .future-banner-overlay { left: 20px; max-width: 85%; }
+  .future-banner-overlay p { font-size: 1.15rem; }
+  .global-image img { height: 280px; }
+  .image-band { height: 200px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .future-banner img, .ba-arrow { animation: none; }
+  .image-band img, .ba-frame img, .global-image img { transition: none; }
+}

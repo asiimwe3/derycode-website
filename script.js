@@ -21,6 +21,20 @@
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll();
 
+
+  /* ─── SCROLL PROGRESS BAR ──────────────────────────────────── */
+  const progressBar = $('#scrollProgress');
+  if (progressBar) {
+    const updateProgress = () => {
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - doc.clientHeight;
+      const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+      progressBar.style.width = pct + '%';
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  }
+
   /* ─── BACK TO TOP ─────────────────────────────────────────── */
   backToTop?.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
