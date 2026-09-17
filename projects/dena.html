@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0" />
+  <title>Dena — Microfinance & Loan Management Software Uganda | DeryCode</title>
+  <meta name="description" content="Dena is offline-first microfinance and loan management software for Ugandan lenders — full loan lifecycle, savings, accounting and portfolio-at-risk reports, built for UGX and Ugandan districts. Get early access." />
+  <meta name="keywords" content="microfinance software Uganda, loan management software Uganda, SACCO software Uganda, money lending software Uganda, loan tracking system, PAR reports, UGX loan software, Dena, DeryCode" />
+  <link rel="canonical" href="https://derycode.online/projects/dena.html" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://derycode.online/projects/dena.html" />
+  <meta property="og:title" content="Dena — Microfinance & Loan Management Software Uganda | DeryCode" />
+  <meta property="og:description" content="Offline-first microfinance and loan management for Ugandan lenders — full loan lifecycle, savings, accounting and portfolio-at-risk reporting, built for UGX and Ugandan districts." />
+  <meta property="og:site_name" content="DeryCode" />
+  <meta property="og:image" content="https://derycode.online/dena-mockup.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dena — Microfinance & Loan Management Software Uganda | DeryCode" />
+  <meta name="twitter:description" content="Offline-first microfinance and loan management for Ugandan lenders — full loan lifecycle, savings, accounting and portfolio-at-risk reporting, built for UGX." />
+  <meta name="twitter:image" content="https://derycode.online/dena-mockup.webp" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#070B14" />
+  <link rel="apple-touch-icon" href="/logo.webp" />
+  <link rel="icon" type="image/png" href="/logo.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&display=swap" /></noscript>
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /></noscript>
+  <link rel="stylesheet" href="/style.min.css?v=20260916" />
+<style>
+.svc-page-hero { position: relative; padding: 120px 0 60px; overflow: hidden; background: var(--card-bg); }
+.svc-page-hero-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.svc-page-icon { width: 90px; height: 90px; border-radius: 22px; display: flex; align-items: center; justify-content: center; font-size: 42px; color: #070B14; margin-bottom: 24px; border: 2px solid var(--card-border); }
+.svc-page-tag { display: inline-block; font-size: 0.78rem; font-weight: 600; color: var(--primary); border: 1px solid var(--primary); padding: 4px 14px; border-radius: 50px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px; }
+.svc-page-title { font-size: 2.4rem; font-weight: 800; margin-bottom: 16px; line-height: 1.2; }
+.svc-page-desc { font-size: 1.05rem; color: var(--text-muted); line-height: 1.8; max-width: 700px; margin: 0 auto 32px; }
+.svc-page-rating { display: flex; align-items: center; gap: 8px; margin-bottom: 32px; color: var(--text-muted); font-size: 0.9rem; }
+.svc-page-content { max-width: 900px; margin: 0 auto; padding: 0 24px 80px; }
+.svc-page-section-title { font-size: 1.3rem; font-weight: 700; margin: 48px 0 20px; padding-bottom: 10px; border-bottom: 2px solid var(--card-border); }
+.svc-features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.svc-feature-item { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; padding: 10px 14px; border-radius: 12px; background: var(--card-bg); border: 1px solid var(--card-border); transition: all 0.2s; }
+.svc-feature-item:hover { border-color: var(--primary); transform: translateX(4px); }
+.svc-feature-item i { color: var(--primary); font-size: 1.1rem; flex-shrink: 0; }
+.svc-cat-title { font-size: 0.95rem; font-weight: 700; color: var(--primary); margin-top: 28px; margin-bottom: 14px; padding-bottom: 6px; border-bottom: 1px solid var(--card-border); text-transform: uppercase; letter-spacing: 0.5px; }
+.svc-cat-title:first-child { margin-top: 0; }
+.svc-roadmap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+.svc-roadmap-step { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 14px; padding: 20px 16px; text-align: left; }
+.svc-roadmap-step .step-num { font-size: 0.75rem; font-weight: 700; color: var(--primary); letter-spacing: 1px; margin-bottom: 8px; }
+.svc-roadmap-step h4 { font-size: 1rem; margin-bottom: 8px; }
+.svc-roadmap-step p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+.svc-cta { max-width: 900px; margin: 0 auto; padding: 0 24px 80px; text-align: center; }
+.svc-cta-box { background: var(--card-bg); border: 2px solid var(--primary); border-radius: 22px; padding: 40px 30px; }
+.svc-cta-box h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; }
+.svc-cta-box p { color: var(--text-muted); margin-bottom: 28px; font-size: 1rem; }
+.svc-cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.svc-cta-buttons .btn { font-size: 1rem; padding: 14px 28px; }
+.svc-back { max-width: 900px; margin: 0 auto; padding: 30px 24px 0; }
+.svc-back a { display: inline-flex; align-items: center; gap: 8px; color: var(--text-muted); font-size: 0.9rem; text-decoration: none; transition: color 0.2s; }
+.svc-back a:hover { color: var(--primary); }
+.svc-related { max-width: 900px; margin: 0 auto; padding: 0 24px 80px; }
+.svc-related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; margin-top: 20px; }
+.svc-related-card { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--card-border); background: var(--card-bg); text-decoration: none; color: var(--text); transition: all 0.2s; font-size: 0.85rem; }
+.svc-related-card:hover { border-color: var(--primary); transform: translateY(-2px); }
+.svc-related-card i { color: var(--primary); font-size: 1.2rem; }
+.badge-dev-hero { display: inline-block; background: linear-gradient(135deg, #070B14, #7B9BFF); color: #fff; font-size: 0.72rem; font-weight: 700; padding: 4px 14px; border-radius: 50px; margin-left: 10px; vertical-align: middle; }
+@media (max-width: 640px) {
+  .svc-features-grid { grid-template-columns: 1fr; }
+  .svc-page-title { font-size: 1.8rem; }
+  .svc-roadmap { grid-template-columns: 1fr; }
+}
+</style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Dena",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web, Android, Windows",
+    "url": "https://derycode.online/projects/dena.html",
+    "description": "Offline-first microfinance and loan management software for Ugandan lenders: full loan lifecycle, savings, accounting and portfolio-at-risk reporting, built for UGX and Ugandan districts.",
+    "isAccessibleForFree": false,
+    "publisher": { "@type": "Organization", "name": "DeryCode Technologies", "url": "https://derycode.online/" }
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VY99K5XN58"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VY99K5XN58');
+  </script>
+  </head>
+<body>
+<nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a href="index.html" class="logo" aria-label="DeryCode Technologies - Home">
+      <img src="logo.webp" alt="DeryCode Technologies logo" class="logo-icon-img" width="32" height="32" />
+      <span class="logo-text">DERY<span class="logo-accent">CODE</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks" role="menubar">
+      <li role="none"><a href="index.html#solutions" role="menuitem">Solutions</a></li>
+      <li role="none"><a href="index.html#industries" role="menuitem">Industries</a></li>
+      <li role="none"><a href="index.html#technology" role="menuitem">Technology</a></li>
+      <li role="none"><a href="index.html#projects" role="menuitem">Projects</a></li>
+      <li role="none"><a href="index.html#company" role="menuitem">Company</a></li>
+      <li role="none"><a href="blog.html" role="menuitem">Insights</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="index.html#contact" class="btn btn-primary nav-cta">Let's Talk &rarr;</a>
+      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-nav-overlay" id="mobileNav" aria-hidden="true">
+  <div class="mobile-nav-inner">
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+      <i class="fas fa-times" aria-hidden="true"></i>
+    </button>
+    <nav class="mobile-nav-links" role="navigation" aria-label="Mobile navigation">
+      <a href="index.html#solutions">Solutions</a>
+      <a href="index.html#industries">Industries</a>
+      <a href="index.html#technology">Technology</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#company">Company</a>
+      <a href="blog.html">Insights</a>
+      <a href="index.html#contact" class="mobile-nav-cta">Let's Talk &rarr;</a>
+    </nav>
+  </div>
+</div>
+
+  
+  
+  <main>
+
+    <div class="svc-back">
+      <a href="/#products"><i class="fas fa-arrow-left"></i> All Products</a>
+    </div>
+
+    <section class="svc-page-hero">
+      <div class="svc-page-hero-inner">
+        <div class="svc-page-icon" style="background:linear-gradient(135deg,#2b230d,#c9962b);">
+          <i class="fas fa-coins"></i>
+        </div>
+        <span class="svc-page-tag">Microfinance Suite &middot; In Development</span>
+        <h1 class="svc-page-title">Dena <span class="badge-dev-hero">Early Access 2026</span></h1>
+        <p class="svc-page-desc">Microfinance and loan management for Ugandan lenders — the full loan lifecycle from application to final collection, savings and share accounts, bookkeeping, and portfolio-at-risk reporting. Built for UGX, Ugandan districts and patchy internet.</p>
+        <div class="svc-page-rating">
+          <i class="fas fa-hourglass-half"></i>
+          <span>Now onboarding pilot lenders &middot; Launching 2026</span>
+        </div>
+        <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center;">
+          <a href="https://wa.me/256762306675?text=Hi%20DeryCode%2C%20I%27m%20interested%20in%20early%20access%20to%20Dena" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            <i class="fab fa-whatsapp"></i> Get Early Access
+          </a>
+          <a href="/index.html#contact" class="btn btn-outline btn-lg">
+            <i class="fas fa-envelope"></i> Talk to Us
+          </a>
+        </div>
+        <img src="/dena-mockup.webp" alt="Dena microfinance loan management app showing a loan portfolio dashboard on a phone" loading="lazy" style="max-width:720px;width:100%;border-radius:18px;margin-top:36px;box-shadow:0 20px 60px rgba(0,0,0,0.45);" />
+      </div>
+    </section>
+
+    <section class="svc-page-content">
+      <h2 class="svc-page-section-title">Built for real Ugandan lenders</h2>
+      <h3 class="svc-cat-title">The Full Loan Lifecycle</h3>
+    <div class="svc-features-grid">
+      <div class="svc-feature-item"><i class="fas fa-check-circle"></i> Loan applications with client profiles, KYC and next-of-kin</div>
+      <div class="svc-feature-item"><i class="fas fa-check-circle"></i> Flexible loan products — amounts, interest, fees, instalments</div>
+      <div class="svc-feature-item"><i class="fas fa-check-circle"></i> Approval workflows with guarantors and collateral tracking</div>
+      <div class="svc-feature-item"><i class="fas fa-check-circle"></i> Disbursement and collection schedules in UGX</div>
+      <div class="svc-feature-item"><i class="fas fa-check-circle"></i> Penalties, restructuring and write-offs handled properly</div>
+    </div>
+      <h3 class="svc-cat-title">Savings &amp; Bookkeeping</h3>
+    <div class="svc-features-grid">
+      <div class="svc-feature-item"><i class="fas fa-check-circle"></i> Savings, share and fixed-deposit accounts</div>
+      <div class="svc-feature-item"><i class="fas fa-check-circle"></i> Double-entry accounting with ledgers and journals</div>
+      <div class="svc-feature-item"><i class="fas fa-check-circle"></i> Balance sheet, income statement and cash-flow views</div>
+      <div class="svc-feature-item"><i class="fas fa-check-circle"></i> Collection sheets and receipts for loan officers</div>
+    </div>
+      <h3 class="svc-cat-title">Portfolio &amp; Compliance</h3>
+    <div class="svc-features-grid">
+      <div class="svc-feature-item"><i class="fas fa-check-circle"></i> Portfolio-at-Risk (PAR 30/60/90) reports out of the box</div>
+      <div class="svc-feature-item"><i class="fas fa-check-circle"></i> Arrears aging and defaulter watchlists</div>
+      <div class="svc-feature-item"><i class="fas fa-check-circle"></i> Branch and loan-officer performance dashboards</div>
+      <div class="svc-feature-item"><i class="fas fa-check-circle"></i> Built-in Ugandan districts, sub-counties and parishes</div>
+      <div class="svc-feature-item"><i class="fas fa-check-circle"></i> Offline-first — field work continues without internet</div>
+    </div>
+      <h2 class="svc-page-section-title">How it works</h2>
+      <p style="color:var(--text-muted);line-height:1.8;">1. Register your institution and set up your loan products. 2. Loan officers capture clients and applications from the field — online or offline. 3. Managers approve, disburse and monitor the portfolio. 4. Dena keeps the books, flags arrears and produces the reports your board and regulators ask for.</p>
+      <h2 class="svc-page-section-title">Roadmap to launch</h2>
+      <div class="svc-roadmap">
+        <div class="svc-roadmap-step"><div class="step-num">PHASE 1</div><h4>Core engine</h4><p>Loan products, client records, disbursements, collections and the accounting core.</p></div>
+        <div class="svc-roadmap-step"><div class="step-num">PHASE 2</div><h4>Field operations</h4><p>Loan-officer app with offline collection, savings accounts and mobile money reconciliation.</p></div>
+        <div class="svc-roadmap-step"><div class="step-num">PHASE 3</div><h4>Pilot &amp; launch</h4><p>Pilot with Ugandan SACCOs and money lenders, then general availability with subscriptions.</p></div>
+      </div>
+      <h2 class="svc-page-section-title">Pricing</h2>
+      <p style="color:var(--text-muted);line-height:1.8;">Subscription pricing will be announced at launch, sized for Ugandan SACCOs, microfinance institutions and money lenders. Pilot partners join free and shape the product. Contact us on WhatsApp to be part of the pilot.</p>
+    </section>
+
+    <section class="svc-cta">
+      <div class="svc-cta-box">
+        <h3>Shape Dena with your institution</h3>
+        <p>We are onboarding pilot SACCOs and lenders now. Tell us how your loan process works today — you get early access, free pilot pricing and direct influence on the roadmap.</p>
+        <div class="svc-cta-buttons">
+          <a href="https://wa.me/256762306675?text=Hi%20DeryCode%2C%20I%27d%20like%20to%20join%20the%20Dena%20pilot" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg"><i class="fab fa-whatsapp"></i> Join the Pilot</a>
+          <a href="/index.html#contact" class="btn btn-outline btn-lg"><i class="fas fa-envelope"></i> Contact Us</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="svc-related">
+      <h2 class="svc-page-section-title" style="margin-top:0;">Explore more</h2>
+      <div class="svc-related-grid">
+        <a href="deryaccount.html" class="svc-related-card"><i class="fas fa-chart-line"></i> DeryAccount</a>
+        <a href="school-report-maker.html" class="svc-related-card"><i class="fas fa-graduation-cap"></i> School Report Maker</a>
+        <a href="/banking-sacco-software.html" class="svc-related-card"><i class="fas fa-landmark"></i> Banking &amp; SACCO Software</a>
+        <a href="/pricing.html" class="svc-related-card"><i class="fas fa-tags"></i> Pricing</a>
+      </div>
+    </section>
+
+  </main>
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <img src="logo.webp" alt="DeryCode Technologies logo" class="logo-icon-img" width="32" height="32" />
+          <span class="logo-text">DERY<span class="logo-accent">CODE</span></span>
+        </a>
+        <p>Enterprise Software &middot; AI &middot; Blockchain &middot; Web3 &middot; Digital Infrastructure</p>
+        <nav class="footer-socials" aria-label="Social media links">
+          <a href="https://wa.me/256772002326" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+          <a href="mailto:info@derycode.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+          <a href="https://github.com/asiimwe3" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h3>Solutions</h3>
+        <ul>
+          <li><a href="business-websites.html">Enterprise Software</a></li>
+          <li><a href="ai-automation.html">Artificial Intelligence</a></li>
+          <li><a href="smart-contracts.html">Blockchain</a></li>
+          <li><a href="token-crypto-development.html">Web3</a></li>
+          <li><a href="web-applications.html">Cloud &amp; Infrastructure</a></li>
+          <li><a href="business-management-erp.html">Digital Transformation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Industries</h3>
+        <ul>
+          <li><a href="banking-sacco-software.html">Financial Services</a></li>
+          <li><a href="case-study-sageco-evergreen.html">Real Estate</a></li>
+          <li><a href="school-digital-libraries.html">Education</a></li>
+          <li><a href="case-study-peters-medicare.html">Healthcare</a></li>
+          <li><a href="case-study-sacco-wallet.html">Agriculture</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="index.html#company">About</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="blog.html">Insights</a></li>
+          <li><a href="docs.html">Documentation</a></li>
+          <li><a href="partners.html">Partners</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-newsletter">
+      <p>Get engineering insights and DeryCode updates.</p>
+      <form class="newsletter-form" onsubmit="handleNewsletter(event)" aria-label="Newsletter signup">
+        <label for="newsletterEmail" class="sr-only">Email address</label>
+        <input type="email" id="newsletterEmail" name="email" placeholder="your@email.com" required class="newsletter-input" autocomplete="email" />
+        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+      </form>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="footerYear"></span> DeryCode Technologies. All rights reserved.</p>
+      <p>Built in Uganda &middot; Africa &rarr; Global &nbsp;|&nbsp; <a href="privacy.html">Privacy Policy</a></p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+  document.getElementById('footerYear').textContent = new Date().getFullYear();
+  var navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 40) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+  var hamburger = document.getElementById('hamburger');
+  var mobileNav = document.getElementById('mobileNav');
+  var mobileNavClose = document.getElementById('mobileNavClose');
+  if (hamburger) hamburger.addEventListener('click', function() {
+    mobileNav.classList.add('active');
+    mobileNav.setAttribute('aria-hidden','false');
+    hamburger.setAttribute('aria-expanded','true');
+    document.body.style.overflow = 'hidden';
+  });
+  if (mobileNavClose) mobileNavClose.addEventListener('click', function() {
+    mobileNav.classList.remove('active');
+    mobileNav.setAttribute('aria-hidden','true');
+    hamburger.setAttribute('aria-expanded','false');
+    document.body.style.overflow = '';
+  });
+  document.querySelectorAll('.mobile-nav-links a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      mobileNav.classList.remove('active');
+      mobileNav.setAttribute('aria-hidden','true');
+      hamburger.setAttribute('aria-expanded','false');
+      document.body.style.overflow = '';
+    });
+  });
+  window.handleNewsletter = function(e) {
+    e.preventDefault();
+    var input = e.target.querySelector('input[type="email"]');
+    var btn = e.target.querySelector('button');
+    if (!input.value) return;
+    btn.textContent = '✓ Subscribed';
+    btn.style.background = '#22C55E';
+    input.value = '';
+    setTimeout(function() { btn.textContent = 'Subscribe'; btn.style.background = ''; }, 3000);
+  };
+</script>
+<div class="faq-section" style="max-width:760px;margin:0 auto;padding:40px 20px;">
+<h2 style="font-size:1.6rem;color:#fff;margin-bottom:20px;">Frequently Asked Questions</h2>
+<div style="margin-bottom:16px;padding:16px;background:rgba(255,255,255,0.03);border-radius:8px;border:1px solid rgba(255,255,255,0.05);">
+<h3 style="font-size:1rem;color:#070B14;margin-bottom:8px;">How much does SACCO software cost in Uganda?</h3>
+<p style="color:#aaa;font-size:14px;line-height:1.7;">SACCO management software starts from UGX 3,800,000. Core banking systems with advanced features cost more.</p>
+</div>
+<div style="margin-bottom:16px;padding:16px;background:rgba(255,255,255,0.03);border-radius:8px;border:1px solid rgba(255,255,255,0.05);">
+<h3 style="font-size:1rem;color:#070B14;margin-bottom:8px;">Can you integrate mobile money into SACCO software?</h3>
+<p style="color:#aaa;font-size:14px;line-height:1.7;">Yes, we integrate MTN MoMo, Airtel Money, and Pesapal for seamless payment processing in SACCO systems.</p>
+</div>
+</div>
+
+<div style="max-width:760px;margin:0 auto;padding:30px 20px 40px;">
+  <h2 style="font-size:1.4rem;color:#fff;margin-bottom:16px;">Explore Our Other Services</h2>
+  <div style="display:flex;flex-wrap:wrap;gap:4px;">
+    <a href="business-websites.html" style="display:inline-block;padding:8px 16px;background:rgba(108,99,255,0.1);border:1px solid rgba(108,99,255,0.3);border-radius:24px;color:#070B14;font-size:13px;text-decoration:none;margin:4px;transition:all 0.3s;" onmouseover="this.style.background='rgba(108,99,255,0.2)'" onmouseout="this.style.background='rgba(108,99,255,0.1)'">Business Websites</a>
+<a href="web-applications.html" style="display:inline-block;padding:8px 16px;background:rgba(108,99,255,0.1);border:1px solid rgba(108,99,255,0.3);border-radius:24px;color:#070B14;font-size:13px;text-decoration:none;margin:4px;transition:all 0.3s;" onmouseover="this.style.background='rgba(108,99,255,0.2)'" onmouseout="this.style.background='rgba(108,99,255,0.1)'">Web Applications</a>
+<a href="mobile-apps.html" style="display:inline-block;padding:8px 16px;background:rgba(108,99,255,0.1);border:1px solid rgba(108,99,255,0.3);border-radius:24px;color:#070B14;font-size:13px;text-decoration:none;margin:4px;transition:all 0.3s;" onmouseover="this.style.background='rgba(108,99,255,0.2)'" onmouseout="this.style.background='rgba(108,99,255,0.1)'">Mobile Apps</a>
+<a href="smart-contracts.html" style="display:inline-block;padding:8px 16px;background:rgba(108,99,255,0.1);border:1px solid rgba(108,99,255,0.3);border-radius:24px;color:#070B14;font-size:13px;text-decoration:none;margin:4px;transition:all 0.3s;" onmouseover="this.style.background='rgba(108,99,255,0.2)'" onmouseout="this.style.background='rgba(108,99,255,0.1)'">Smart Contracts & Blockchain</a>
+<a href="business-management-erp.html" style="display:inline-block;padding:8px 16px;background:rgba(108,99,255,0.1);border:1px solid rgba(108,99,255,0.3);border-radius:24px;color:#070B14;font-size:13px;text-decoration:none;margin:4px;transition:all 0.3s;" onmouseover="this.style.background='rgba(108,99,255,0.2)'" onmouseout="this.style.background='rgba(108,99,255,0.1)'">Business Management & ERP</a>
+<a href="school-digital-libraries.html" style="display:inline-block;padding:8px 16px;background:rgba(108,99,255,0.1);border:1px solid rgba(108,99,255,0.3);border-radius:24px;color:#070B14;font-size:13px;text-decoration:none;margin:4px;transition:all 0.3s;" onmouseover="this.style.background='rgba(108,99,255,0.2)'" onmouseout="this.style.background='rgba(108,99,255,0.1)'">School Digital Libraries & LMS</a>
+<a href="ai-automation.html" style="display:inline-block;padding:8px 16px;background:rgba(108,99,255,0.1);border:1px solid rgba(108,99,255,0.3);border-radius:24px;color:#070B14;font-size:13px;text-decoration:none;margin:4px;transition:all 0.3s;" onmouseover="this.style.background='rgba(108,99,255,0.2)'" onmouseout="this.style.background='rgba(108,99,255,0.1)'">AI & Automation</a>
+<a href="digital-marketing.html" style="display:inline-block;padding:8px 16px;background:rgba(108,99,255,0.1);border:1px solid rgba(108,99,255,0.3);border-radius:24px;color:#070B14;font-size:13px;text-decoration:none;margin:4px;transition:all 0.3s;" onmouseover="this.style.background='rgba(108,99,255,0.2)'" onmouseout="this.style.background='rgba(108,99,255,0.1)'">Digital Marketing</a>
+<a href="uiux-design-branding.html" style="display:inline-block;padding:8px 16px;background:rgba(108,99,255,0.1);border:1px solid rgba(108,99,255,0.3);border-radius:24px;color:#070B14;font-size:13px;text-decoration:none;margin:4px;transition:all 0.3s;" onmouseover="this.style.background='rgba(108,99,255,0.2)'" onmouseout="this.style.background='rgba(108,99,255,0.1)'">UI/UX Design & Branding</a>
+<a href="token-crypto-development.html" style="display:inline-block;padding:8px 16px;background:rgba(108,99,255,0.1);border:1px solid rgba(108,99,255,0.3);border-radius:24px;color:#070B14;font-size:13px;text-decoration:none;margin:4px;transition:all 0.3s;" onmouseover="this.style.background='rgba(108,99,255,0.2)'" onmouseout="this.style.background='rgba(108,99,255,0.1)'">Token & Crypto Development</a>
+<a href="api-payment-integrations.html" style="display:inline-block;padding:8px 16px;background:rgba(108,99,255,0.1);border:1px solid rgba(108,99,255,0.3);border-radius:24px;color:#070B14;font-size:13px;text-decoration:none;margin:4px;transition:all 0.3s;" onmouseover="this.style.background='rgba(108,99,255,0.2)'" onmouseout="this.style.background='rgba(108,99,255,0.1)'">API & Payment Integrations</a>
+
+  </div>
+</div>
+
+
+  <!-- ── SEO Internal Links ── -->
+  <div style="position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden" aria-hidden="true">
+    <a href="/">DeryCode Home</a>
+    <a href="/business-websites.html">Business Website Development Uganda</a>
+    <a href="/web-applications.html">Web Application Development Uganda</a>
+    <a href="/mobile-apps.html">Mobile App Development Uganda</a>
+    <a href="/banking-sacco-software.html">Banking & SACCO Software Uganda</a>
+    <a href="/smart-contracts.html">Smart Contract Development Uganda</a>
+    <a href="/token-crypto-development.html">Token & Crypto Development Uganda</a>
+    <a href="/ai-automation.html">AI & Automation Uganda</a>
+    <a href="/digital-marketing.html">Digital Marketing Uganda</a>
+    <a href="/uiux-design-branding.html">UI/UX Design Uganda</a>
+    <a href="/school-digital-libraries.html">School Digital Libraries Uganda</a>
+    <a href="/business-management-erp.html">ERP Software Uganda</a>
+    <a href="/api-payment-integrations.html">API & Payment Integration Uganda</a>
+    <a href="/blog.html">DeryCode Blog</a>
+    <a href="/partners.html">DeryCode Clients & Partners</a>
+    <a href="/case-study-derycoin.html">DeryCoin Case Study</a>
+    <a href="/case-study-tropical-gardens-hotel.html">Tropical Gardens Hotel Case Study</a>
+    <a href="/case-study-sageco-evergreen.html">Sageco Evergreen Case Study</a>
+    <a href="/case-study-peters-medicare.html">Peters Medicare Case Study</a>
+    <a href="/case-study-sacco-wallet.html">SaccoWallet Case Study</a>
+  </div>
+
+</body>
+</html>
