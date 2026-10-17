@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0" />
+  <title id="pageTitle">Airtel Money API: How to Integrate Mobile Money in Your App | DeryCode</title>
+  <meta id="pageDesc" name="description" content="Developer guide to integrating Airtel Money API in Uganda: OAuth authentication, C2B payments, B2C disbursements, webhooks, and error handling." />
+  <meta name="robots" content="index, follow" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  <link rel="canonical" id="pageCanonical" href="https://derycode.online/blog/airtel-money-api-how-to-integrate-mobile-money-in-your-app.html" />
+  <link rel="icon" type="image/png" href="/logo.webp" />
+  <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#070B14" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="/style.min.css?v=20260901" />
+  <link rel="stylesheet" href="/blog.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://derycode.online/og-image.png" />
+  <meta property="og:locale" content="en_UG" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 60px 20px 40px; }
+    .article-wrap h1 { font-family:'Inter Tight',sans-serif; font-size: clamp(1.8rem,4vw,2.6rem); margin-bottom: 16px; line-height:1.25; }
+    .article-wrap h2 { font-family:'Inter Tight',sans-serif; font-size: 1.4rem; margin: 36px 0 14px; color: var(--primary); }
+    .article-wrap p { color: var(--text-muted); line-height: 1.85; font-size: 1rem; margin-bottom: 16px; }
+    .article-wrap ul { margin: 0 0 16px 20px; color: var(--text-muted); line-height: 1.85; }
+    .article-wrap ul li { margin-bottom: 6px; }
+    .article-hero-img { width:100%; height:320px; border-radius: var(--radius-sm); background: linear-gradient(135deg,#070B14 30%,#1a3a6e 70%,#4F7CFF); display:flex; align-items:center; justify-content:center; margin-bottom: 28px; overflow:hidden; }
+    .article-hero-img i { font-size: 4rem; color: rgba(79,124,255,0.25); }
+    .article-back { display:inline-flex; align-items:center; gap:8px; color: var(--primary); font-weight:600; text-decoration:none; margin-bottom: 24px; }
+    .article-meta { display:flex; gap:18px; flex-wrap:wrap; color: var(--text-muted); font-size:0.85rem; margin-bottom: 24px; }
+    .article-cta { background: var(--card-bg); border:1px solid var(--card-border); border-radius: var(--radius-sm); padding: 28px; text-align:center; margin-top: 40px; }
+    .article-cta h3 { font-family:'Inter Tight',sans-serif; margin-bottom: 10px; }
+    .article-cta p { margin-bottom: 18px; }
+    .article-share { display:flex; gap:12px; margin: 24px 0; }
+    .article-share a { width:40px; height:40px; border-radius:50%; background:var(--card-bg); border:1px solid var(--card-border); display:flex; align-items:center; justify-content:center; color:var(--text); text-decoration:none; transition:var(--transition); }
+    .article-share a:hover { background: var(--primary); color:#070B14; }
+    .article-not-found { text-align:center; padding: 60px 20px; }
+    .article-not-found i { font-size: 3rem; color: var(--primary); margin-bottom: 16px; }
+  </style>
+  <!-- ── Google Analytics (GA4) ── -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VY99K5XN58"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-VY99K5XN58", {
+      page_title: document.title,
+      page_location: window.location.href,
+      send_page_view: true
+    });
+  </script>
+  <meta property="og:title" content="Airtel Money API: How to Integrate Mobile Money in Your App | DeryCode" />
+    <meta property="og:description" content="Developer guide to integrating Airtel Money API in Uganda: OAuth authentication, C2B payments, B2C disbursements, webhooks, and error handling." />
+    <meta property="og:url" content="https://derycode.online/blog/airtel-money-api-how-to-integrate-mobile-money-in-your-app.html" />
+  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://derycode.online/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog Article",
+      "item": "https://derycode.online/blog-post.html"
+    }
+  ]
+}
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Airtel Money API: How to Integrate Mobile Money in Your App",
+  "description": "Developer guide to integrating Airtel Money API in Uganda: OAuth authentication, C2B payments, B2C disbursements, webhooks, and error handling.",
+  "datePublished": "2026-05-09",
+  "dateModified": "2026-09-08",
+  "author": {
+    "@type": "Person",
+    "name": "Asiimwe Derick",
+    "url": "https://derycode.online/",
+    "jobTitle": "Founder & CEO"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DeryCode",
+    "url": "https://derycode.online/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://derycode.online/og-image.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://derycode.online/blog/airtel-money-api-how-to-integrate-mobile-money-in-your-app.html"
+  },
+  "image": "https://derycode.online/og-image.png",
+  "inLanguage": "en"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://derycode.online/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://derycode.online/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Airtel Money API: How to Integrate Mobile Money in Your App",
+      "item": "https://derycode.online/blog/airtel-money-api-how-to-integrate-mobile-money-in-your-app.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <a href="/index.html" class="logo" aria-label="DeryCode Technologies - Home">
+      <img src="/logo.webp" alt="DeryCode Technologies logo" class="logo-icon-img" width="32" height="32" />
+      <span class="logo-text">DERY<span class="logo-accent">CODE</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks" role="menubar">
+      <li role="none"><a href="/index.html#solutions" role="menuitem">Solutions</a></li>
+      <li role="none"><a href="/index.html#industries" role="menuitem">Industries</a></li>
+      <li role="none"><a href="/index.html#technology" role="menuitem">Technology</a></li>
+      <li role="none"><a href="/index.html#projects" role="menuitem">Projects</a></li>
+      <li role="none"><a href="/index.html#company" role="menuitem">Company</a></li>
+      <li role="none"><a href="/blog.html" role="menuitem">Insights</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="/index.html#contact" class="btn btn-primary nav-cta">Let's Talk &rarr;</a>
+      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-nav-overlay" id="mobileNav" aria-hidden="true">
+  <div class="mobile-nav-inner">
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+      <i class="fas fa-times" aria-hidden="true"></i>
+    </button>
+    <nav class="mobile-nav-links" role="navigation" aria-label="Mobile navigation">
+      <a href="/index.html#solutions">Solutions</a>
+      <a href="/index.html#industries">Industries</a>
+      <a href="/index.html#technology">Technology</a>
+      <a href="/index.html#projects">Projects</a>
+      <a href="/index.html#company">Company</a>
+      <a href="/blog.html">Insights</a>
+      <a href="/index.html#contact" class="mobile-nav-cta">Let's Talk &rarr;</a>
+    </nav>
+  </div>
+</div>
+
+<div class="article-wrap" id="articleWrap">
+  <a href="/blog.html" class="article-back"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+  <div id="articleContent"><div class="article-hero-img"><i class="fas fa-money-bill-transfer"></i></div><span style="display:inline-block;font-size:0.72rem;font-weight:700;color:var(--primary);border:1px solid var(--border-light);padding:4px 14px;border-radius:50px;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.1em;">Banking Tech</span><h1>Airtel Money API: How to Integrate Mobile Money in Your App</h1><div class="article-meta"><span><i class="fas fa-calendar"></i> May 9, 2026</span><span><i class="fas fa-clock"></i> 5 min read</span><span><i class="fas fa-user"></i> Asiimwe Derick</span></div>
+      <p>Airtel Money is one of the fastest-growing mobile financial services platforms in Uganda and across East Africa, commanding millions of active subscribers who use the network daily for peer-to-peer transfers, merchant retail checkout, utility bills, and micro-loan settlements. For software developers, e-commerce platforms, and enterprise engineering teams building applications in Uganda, integrating Airtel Money API alongside MTN MoMo is essential to capture 100% of the mobile payment market. This comprehensive developer guide provides a step-by-step technical tutorial for integrating the Airtel Money OpenAPI suite into your application backend.</p>
+
+      <h2>Core Functional Interfaces of Airtel Money OpenAPI</h2>
+      <p>The Airtel Money developer ecosystem offers three primary API interfaces engineered for enterprise business transactions:</p>
+
+      <ul>
+        <li><strong>Customer to Business (C2B / Collections):</strong> Initiates a push notification to a customer's mobile phone, prompting them to enter their Airtel Money PIN to authorize a merchant payment.</li>
+        <li><strong>Business to Customer (B2C / Disbursements):</strong> Programmatically transfers funds directly from a corporate escrow account to an individual customer's Airtel Money account (ideal for loan payouts, payroll, or vendor disbursements).</li>
+        <li><strong>Transaction Status Inquiry & Balance APIs:</strong> Enables systems to check real-time account balances and verify the execution status of specific transaction IDs.</li>
+      </ul>
+
+      <h2>Step 1: Merchant Account Setup and OAuth Token Generation</h2>
+      <p>Accessing the Airtel Money API requires registering on the official Airtel Developer Portal to obtain your <code>Client ID</code> and <code>Client Secret</code>. Authentication uses OAuth 2.0 Client Credentials flow:</p>
+
+      <p><strong>Endpoint:</strong> <code>POST https://openapi.airtel.africa/auth/oauth2/token</code><br />
+      <strong>Headers:</strong> <code>Content-Type: application/json</code></p>
+
+      <h3>Request Body Payload</h3>
+      <p><code>{<br />
+      &nbsp;&nbsp;"client_id": "YOUR_AIRTEL_CLIENT_ID",<br />
+      &nbsp;&nbsp;"client_secret": "YOUR_AIRTEL_CLIENT_SECRET",<br />
+      &nbsp;&nbsp;"grant_type": "client_credentials"<br />
+      }</code></p>
+
+      <p>The API responds with an <code>access_token</code> string, token expiration period, and token type. Attach this token as a Bearer string in the HTTP Authorization header of all API calls.</p>
+
+      <h2>Step 2: Mandatory HTTP Request Header Parameters</h2>
+      <p>Airtel Money API requests require specific header metadata specifying target country codes and currency formats:</p>
+      <ul>
+        <li><code>Authorization: Bearer {access_token}</code></li>
+        <li><code>X-Country: UG</code> (for Uganda)</li>
+        <li><code>X-Currency: UGX</code> (for Ugandan Shillings)</li>
+        <li><code>Content-Type: application/json</code></li>
+      </ul>
+
+      <h2>Step 3: Executing a C2B Payment Collection Request</h2>
+      <p>To prompt a customer to make a payment from their Airtel Money wallet, issue a POST request to the merchant payment collection endpoint:</p>
+
+      <p><strong>Endpoint:</strong> <code>POST https://openapi.airtel.africa/merchant/v1/payments/</code></p>
+
+      <h3>Request Payload Example</h3>
+      <p><code>{<br />
+      &nbsp;&nbsp;"reference": "Ref-INV-2026-9011",<br />
+      &nbsp;&nbsp;"subscriber": {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;"country": "UG",<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;"currency": "UGX",<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;"msisdn": 750000111<br />
+      &nbsp;&nbsp;},<br />
+      &nbsp;&nbsp;"transaction": {<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;"amount": 35000,<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;"country": "UG",<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;"currency": "UGX",<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;"id": "TXN-DC-2026-0088"<br />
+      &nbsp;&nbsp;}<br />
+      }</code></p>
+
+      <p>Note: Pass the subscriber phone number (<code>msisdn</code>) as an integer or string without leading zeroes or plus signs (e.g., <code>750000111</code> for 0750000111).</p>
+
+      <h2>Step 4: Handling Webhooks and Status Verification</h2>
+      <p>Once the payment request is submitted, Airtel pushes a USSD prompt to the customer's phone screen. Upon completion, Airtel dispatches an HTTP POST webhook payload to your registered callback server endpoint:</p>
+
+      <ul>
+        <li>Inspect the response status object inside the incoming webhook body. A status code <code>200</code> and result code <code>DP00080000</code> indicates payment success.</li>
+        <li>If webhooks are delayed due to telecom network maintenance, poll the status endpoint using <code>GET https://openapi.airtel.africa/standard/v1/payments/{transaction_id}</code>.</li>
+      </ul>
+
+      <h2>Error Handling and Production Readiness Best Practices</h2>
+      <p>Deploying live Airtel Money payment integrations in Uganda requires engineering robust error handling routines:</p>
+
+      <ol>
+        <li><strong>Map Gateway Error Codes Accurately:</strong> Handle specific error codes such as insufficient subscriber funds, incorrect PIN attempts, locked account states, or network timeouts.</li>
+        <li><strong>Implement Exponential Backoff Polling:</strong> When querying pending transaction states, employ exponential backoff retry algorithms to avoid triggering API rate limit throttles.</li>
+        <li><strong>Secure Webhook Endpoints:</strong> Validate incoming callback request headers and restrict webhook endpoints to official Airtel server IP address ranges to prevent spoofing.</li>
+      </ol>
+
+      <h2>Build High-Uptime Payment Platforms with DeryCode Tech</h2>
+      <p>Building high-uptime payment infrastructure requires engineering software that seamlessly manages multi-carrier mobile money integrations, automated retries, and real-time ledger synchronization. <strong>DeryCode Tech</strong>, based in Kampala, Uganda and founded by lead software engineer <strong>Asiimwe Derick</strong>, specializes in enterprise mobile money API integrations, custom payment gateways, and full-stack software development.</p>
+
+      <p>Looking to integrate Airtel Money, MTN MoMo, or multi-carrier payment solutions into your mobile or web app? <strong>Contact DeryCode Tech today</strong> to work with seasoned Ugandan software engineers.</p>
+    <div class="article-cta"><h3>Need help with your project?</h3><p>DeryCode builds enterprise software, AI systems, blockchain infrastructure, and digital platforms.</p><a href="/index.html#contact" class="btn btn-primary" style="margin-top:8px;">Start a Conversation &rarr;</a></div><div style="margin-top:40px;padding:24px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);"><h2 style="margin-top:0;font-size:1.2rem;">Related reading</h2><ul style="list-style:none;padding:0;margin:0;"><li style="margin-bottom:10px;"><a href="/blog/sacco-banking.html" style="color:var(--primary);font-weight:600;">How Digital Banking Software is Transforming SACCOs in Uganda</a><span style="color:var(--text-muted);font-size:0.85rem;"> — Banking Tech</span></li><li style="margin-bottom:10px;"><a href="/blog/sacco-software-how-to-modernize-your-savings-group-in-uganda.html" style="color:var(--primary);font-weight:600;">SACCO Software: How to Modernize Your Savings Group in Uganda</a><span style="color:var(--text-muted);font-size:0.85rem;"> — Banking Tech</span></li><li style="margin-bottom:10px;"><a href="/blog/mtn-momo-api-integration-a-developers-complete-guide.html" style="color:var(--primary);font-weight:600;">MTN MoMo API Integration: A Developer&#x27;s Complete Guide</a><span style="color:var(--text-muted);font-size:0.85rem;"> — Banking Tech</span></li></ul></div><div style="margin-top:24px;"><a href="/blog.html" style="color:var(--primary);font-weight:600;">&larr; Back to all articles</a></div></div>
+</div>
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/index.html" class="logo">
+          <img src="/logo.webp" alt="DeryCode Technologies logo" class="logo-icon-img" width="32" height="32" />
+          <span class="logo-text">DERY<span class="logo-accent">CODE</span></span>
+        </a>
+        <p>Enterprise Software &middot; AI &middot; Blockchain &middot; Web3 &middot; Digital Infrastructure</p>
+        <nav class="footer-socials" aria-label="Social media links">
+          <a href="https://wa.me/256772002326" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp — Main"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+          <a href="https://wa.me/256762306675" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp — Bookings"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+          <a href="https://github.com/asiimwe3" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+          <a href="https://ug.linkedin.com/in/asiimwe-derick-501755313" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+          <a href="https://x.com/TraderDerick" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="https://www.facebook.com/p/Dery-Code-61590735268937/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/derycode" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://www.youtube.com/@derycode" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h3>Solutions</h3>
+        <ul>
+          <li><a href="/business-websites.html">Enterprise Software</a></li>
+          <li><a href="/ai-automation.html">Artificial Intelligence</a></li>
+          <li><a href="/smart-contracts.html">Blockchain</a></li>
+          <li><a href="/token-crypto-development.html">Web3</a></li>
+          <li><a href="/web-applications.html">Cloud &amp; Infrastructure</a></li>
+          <li><a href="/business-management-erp.html">Digital Transformation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Industries</h3>
+        <ul>
+          <li><a href="/banking-sacco-software.html">Financial Services</a></li>
+          <li><a href="/case-study-sageco-evergreen.html">Real Estate</a></li>
+          <li><a href="/school-digital-libraries.html">Education</a></li>
+          <li><a href="/case-study-peters-medicare.html">Healthcare</a></li>
+          <li><a href="/case-study-sacco-wallet.html">Agriculture</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="/index.html#company">About</a></li>
+          <li><a href="/index.html#projects">Projects</a></li>
+          <li><a href="/blog.html">Insights</a></li>
+          <li><a href="/docs.html">Documentation</a></li>
+          <li><a href="/partners.html">Partners</a></li>
+          <li><a href="/index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-newsletter">
+      <p>Get engineering insights and DeryCode updates.</p>
+      <form class="newsletter-form" onsubmit="handleNewsletter(event)" aria-label="Newsletter signup">
+        <label for="newsletterEmail" class="sr-only">Email address</label>
+        <input type="email" id="newsletterEmail" name="email" placeholder="your@email.com" required class="newsletter-input" autocomplete="email" />
+        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+      </form>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="footerYear"></span> DeryCode Technologies. All rights reserved.</p>
+      <p>Built in Uganda &middot; Africa &rarr; Global &nbsp;|&nbsp; <a href="/privacy.html">Privacy Policy</a></p>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+<script>
+  
+  document.getElementById('footerYear').textContent = new Date().getFullYear();
+  var navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 40) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+  var hamburger = document.getElementById('hamburger');
+  var mobileNav = document.getElementById('mobileNav');
+  var mobileNavClose = document.getElementById('mobileNavClose');
+  if (hamburger) hamburger.addEventListener('click', function() {
+    mobileNav.classList.add('active');
+    mobileNav.setAttribute('aria-hidden','false');
+    hamburger.setAttribute('aria-expanded','true');
+    document.body.style.overflow = 'hidden';
+  });
+  if (mobileNavClose) mobileNavClose.addEventListener('click', function() {
+    mobileNav.classList.remove('active');
+    mobileNav.setAttribute('aria-hidden','true');
+    hamburger.setAttribute('aria-expanded','false');
+    document.body.style.overflow = '';
+  });
+  document.querySelectorAll('.mobile-nav-links a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      mobileNav.classList.remove('active');
+      mobileNav.setAttribute('aria-hidden','true');
+      hamburger.setAttribute('aria-expanded','false');
+      document.body.style.overflow = '';
+    });
+  });
+  window.handleNewsletter = function(e) {
+    e.preventDefault();
+    var input = e.target.querySelector('input[type="email"]');
+    var btn = e.target.querySelector('button');
+    if (!input.value) return;
+    btn.textContent = '✓ Subscribed';
+    btn.style.background = '#22C55E';
+    input.value = '';
+    setTimeout(function() { btn.textContent = 'Subscribe'; btn.style.background = ''; }, 3000);
+  };
+</script>
+<script src="/script.min.js?v=20260807a20260703" defer></script>
+
+  <!-- ── SEO Internal Links ── -->
+  <div style="position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden" aria-hidden="true">
+    <a href="/">DeryCode Home</a>
+    <a href="/business-websites.html">Business Website Development Uganda</a>
+    <a href="/web-applications.html">Web Application Development Uganda</a>
+    <a href="/mobile-apps.html">Mobile App Development Uganda</a>
+    <a href="/banking-sacco-software.html">Banking & SACCO Software Uganda</a>
+    <a href="/smart-contracts.html">Smart Contract Development Uganda</a>
+    <a href="/token-crypto-development.html">Token & Crypto Development Uganda</a>
+    <a href="/ai-automation.html">AI & Automation Uganda</a>
+    <a href="/digital-marketing.html">Digital Marketing Uganda</a>
+    <a href="/uiux-design-branding.html">UI/UX Design Uganda</a>
+    <a href="/school-digital-libraries.html">School Digital Libraries Uganda</a>
+    <a href="/business-management-erp.html">ERP Software Uganda</a>
+    <a href="/api-payment-integrations.html">API & Payment Integration Uganda</a>
+    <a href="/blog.html">DeryCode Blog</a>
+    <a href="/partners.html">DeryCode Clients & Partners</a>
+    <a href="/case-study-derycoin.html">DeryCoin Case Study</a>
+    <a href="/case-study-tropical-gardens-hotel.html">Tropical Gardens Hotel Case Study</a>
+    <a href="/case-study-sageco-evergreen.html">Sageco Evergreen Case Study</a>
+    <a href="/case-study-peters-medicare.html">Peters Medicare Case Study</a>
+    <a href="/case-study-sacco-wallet.html">SaccoWallet Case Study</a>
+  </div>
+
+</body>
+</html>

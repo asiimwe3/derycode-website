@@ -10,7 +10,7 @@
   <meta name="theme-color" content="#070B14" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Inter+Tight:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   <link rel="stylesheet" href="style.min.css?v=20260901" />
   <link rel="stylesheet" href="docs.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -18,15 +18,15 @@
   <meta name="keywords" content="DeryCode documentation, DeryCoin API, blockchain API Uganda, MoMo payment integration, smart contract tutorial Uganda, developer resources Uganda, REST API Uganda, software integration guide Uganda, fintech API Uganda" />
   <meta name="author" content="DeryCode" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://derycode.publicvm.com/docs.html" />
-  <link rel="alternate" hreflang="en-ug" href="https://derycode.publicvm.com/docs.html" />
-  <link rel="alternate" hreflang="en" href="https://derycode.publicvm.com/docs.html" />
-  <link rel="alternate" hreflang="x-default" href="https://derycode.publicvm.com/docs.html" />
+  <link rel="canonical" href="https://derycode.online/docs.html" />
+  <link rel="alternate" hreflang="en-ug" href="https://derycode.online/docs.html" />
+  <link rel="alternate" hreflang="en" href="https://derycode.online/docs.html" />
+  <link rel="alternate" hreflang="x-default" href="https://derycode.online/docs.html" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://derycode.publicvm.com/docs.html" />
+  <meta property="og:url" content="https://derycode.online/docs.html" />
   <meta property="og:title" content="DeryCode Documentation — API & Developer Guides" />
   <meta property="og:description" content="Developer documentation for DeryCode's software, blockchain, and API services in Uganda." />
-  <meta property="og:image" content="https://derycode.publicvm.com/og-image.png" />
+  <meta property="og:image" content="https://derycode.online/og-image.png" />
   <meta property="og:image:alt" content="DeryCode Developer Documentation" />
   <meta property="og:locale" content="en_UG" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -43,7 +43,7 @@
     "@type": "TechArticle",
     "headline": "DeryCode Developer Documentation",
     "description": "Guides, API references, DeryCoin docs, and tutorials for developers and clients.",
-    "url": "https://derycode.publicvm.com/docs.html",
+    "url": "https://derycode.online/docs.html",
     "author": {"@type": "Organization", "name": "DeryCode"},
     "publisher": {
       "@type": "Organization",
@@ -58,6 +58,7 @@
   </script>
   <!-- ── Google Analytics (GA4) ── -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VY99K5XN58"></script>
+  <script src="/cookies.js" defer></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -78,13 +79,13 @@
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://derycode.publicvm.com/"
+      "item": "https://derycode.online/"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Documentation",
-      "item": "https://derycode.publicvm.com/docs.html"
+      "item": "https://derycode.online/docs.html"
     }
   ]
 }
@@ -230,7 +231,7 @@
 
     <!-- HOW TO REQUEST A PROJECT -->
     <article class="docs-article" id="request-project">
-      <h2h1>How to Request a Project</h2>
+      <h2>How to Request a Project</h2>
       <p class="docs-lead">Starting a project with DeryCode is simple. Follow these steps to get from idea to kick-off.</p>
       <div class="docs-steps">
         <div class="docs-step"><div class="docs-step-num">1</div><div><h4>Book a Free Consultation</h4><p>Use our <a href="index.html#booking">booking form</a> or WhatsApp us directly. Tell us your idea, goals, and budget range.</p></div></div>
@@ -348,7 +349,7 @@
     <hr class="docs-divider" />
 
     <!-- API OVERVIEW -->
-    <article class="docs-article" id="api-overv<h2ew">
+    <article class="docs-article" id="api-overview">
       <h2>REST API Overview</h2>
       <p class="docs-lead">The DeryCode API lets you integrate our services and DeryCoin functionality into your own applications.</p>
       <div class="docs-code-block">
@@ -370,7 +371,7 @@
     <hr class="docs-divider" />
 
     <!-- AUTHENTICATION -->
-    <article class="docs-article" id="api<h2auth">
+    <article class="docs-article" id="api-auth">
       <h2>Authentication</h2>
       <p class="docs-lead">All API requests must be authenticated using an API key passed in the request header.</p>
       <div class="docs-code-block">
@@ -387,7 +388,7 @@ Content-Type: application/json</code></pre>
     <hr class="docs-divider" />
 
     <!-- ENDPOINTS -->
-    <article class="docs-article" id="api-en<h2points">
+    <article class="docs-article" id="api-endpoints">
       <h2>API Endpoints</h2>
       <p class="docs-lead">Available endpoints for the DeryCoin integration API.</p>
       <div class="endpoint-card">
@@ -420,7 +421,7 @@ Content-Type: application/json</code></pre>
     <hr class="docs-divider" />
 
     <!-- WEBHOOKS -->
-    <article class="docs-article" id="api<h2webhooks">
+    <article class="docs-article" id="api-webhooks">
       <h2>Webhooks & Events</h2>
       <p class="docs-lead">DeryCode can send real-time event notifications to your server when key actions occur.</p>
       <h2>Available Events</h2>
@@ -448,7 +449,7 @@ Content-Type: application/json</code></pre>
     <hr class="docs-divider" />
 
     <!-- TUTORIAL: SMART CONTRACT -->
-    <article class="docs-article" id="tut-sm<h2rtcontract">
+    <article class="docs-article" id="tut-smartcontract">
       <h2>Tutorial: Deploy Your First Smart Contract</h2>
       <p class="docs-lead">A beginner-friendly guide to writing and deploying a Solidity smart contract on Ethereum.</p>
       <h2>Prerequisites</h2>
@@ -492,7 +493,7 @@ npx hardhat run scripts/deploy.js --network sepolia</code></pre>
     <hr class="docs-divider" />
 
     <!-- TUTORIAL: MOMO -->
-    <article class="docs-article"<h2id="tut-momo">
+    <article class="docs-article"id="tut-momo">
       <h2>Tutorial: Integrate MoMo Mobile Money</h2>
       <p class="docs-lead">Accept MTN Mobile Money payments in your web or mobile app using the MTN MoMo API.</p>
       <h2>Step 1 — Get API Credentials</h2>
@@ -529,7 +530,7 @@ const response = await axios.post(
     <!-- FAQ -->
     <!-- PARTNER PROGRAM OVERVIEW -->
     <article class="docs-article" id="partner-overview">
-      <div class="docs-breadcrumb"><a href="index.html">DeryCode</a> <i class="fas fa-chevron-right"></i> <a href="partners.html">Partners</a> <i class="fas fa-chevron-right"></i> <span>Program Over<h2iew</span></div>
+      <div class="docs-breadcrumb"><a href="index.html">DeryCode</a> <i class="fas fa-chevron-right"></i> <a href="partners.html">Partners</a> <i class="fas fa-chevron-right"></i> <span>Program Overview</span></div>
       <h2>DeryCode Partner Network</h2>
       <div class="docs-callout docs-callout--info">
         <i class="fas fa-handshake"></i>
@@ -552,13 +553,13 @@ const response = await axios.post(
       <p>You only need a smartphone, willingness to learn about our services, and the ability to connect with people and businesses.</p>
       <div class="docs-callout docs-callout--success">
         <i class="fas fa-arrow-right"></i>
-        <div>Ready to join? Visit <a href="partners.html">derycode.publicvm.com/partners.html</a> to apply — approvals within 24 hours.</div>
+        <div>Ready to join? Visit <a href="partners.html">derycode.online/partners.html</a> to apply — approvals within 24 hours.</div>
       </div>
     </article>
 
     <!-- PARTNER HOW IT WORKS -->
     <article class="docs-article" id="partner-how">
-      <div class="docs-breadcrumb"><a href="index.html">DeryCode</a> <i class="fas fa-chevron-right"></i> <a href="partners.html">Partners</a> <i class="fas fa-chevron-right"></i> <span>How It<h2Works</span></div>
+      <div class="docs-breadcrumb"><a href="index.html">DeryCode</a> <i class="fas fa-chevron-right"></i> <a href="partners.html">Partners</a> <i class="fas fa-chevron-right"></i> <span>How ItWorks</span></div>
       <h2>How the Partner Program Works</h2>
 
       <h2>Step 1 — Register as a Partner</h2>
@@ -591,7 +592,7 @@ const response = await axios.post(
 
     <!-- COMMISSION STRUCTURE -->
     <article class="docs-article" id="partner-commission">
-      <div class="docs-breadcrumb"><a href="index.html">DeryCode</a> <i class="fas fa-chevron-right"></i> <a href="partners.html">Partners</a> <i class="fas fa-chevron-right"></i> <span>Commission S<h2ructure</span></div>
+      <div class="docs-breadcrumb"><a href="index.html">DeryCode</a> <i class="fas fa-chevron-right"></i> <a href="partners.html">Partners</a> <i class="fas fa-chevron-right"></i> <span>Commission Sructure</span></div>
       <h2>Commission Structure</h2>
 
       <h2>Standard Commission Rate</h2>
@@ -648,7 +649,7 @@ const response = await axios.post(
 
     <!-- PROMOTABLE SERVICES -->
     <article class="docs-article" id="partner-services">
-      <div class="docs-breadcrumb"><a href="index.html">DeryCode</a> <i class="fas fa-chevron-right"></i> <a href="partners.html">Partners</a> <i class="fas fa-chevron-right"></i> <span>Promotabl<h2 Services</span></div>
+      <div class="docs-breadcrumb"><a href="index.html">DeryCode</a> <i class="fas fa-chevron-right"></i> <a href="partners.html">Partners</a> <i class="fas fa-chevron-right"></i> <span>Promotabl Services</span></div>
       <h2>DeryCode Services You Can Promote</h2>
       <p>All six DeryCode service categories are eligible for partner commissions. Here is a brief overview of each to help you identify the right clients in your network.</p>
 
@@ -679,12 +680,12 @@ const response = await axios.post(
 
     <!-- HOW TO APPLY -->
     <article class="docs-article" id="partner-apply">
-      <div class="docs-breadcrumb"><a href="index.html">DeryCode</a> <i class="fas fa-chevron-right"></i> <a href="partners.html">Partners</a> <i class="fas fa-chevron-right"></i> <span><h2ow to Apply</span></div>
+      <div class="docs-breadcrumb"><a href="index.html">DeryCode</a> <i class="fas fa-chevron-right"></i> <a href="partners.html">Partners</a> <i class="fas fa-chevron-right"></i> <span>ow to Apply</span></div>
       <h2>How to Apply as a DeryCode Partner</h2>
 
       <h2>Option 1 — Online Application (Recommended)</h2>
       <p>Visit the partner page and complete the application form:</p>
-      <p><strong>https://derycode.publicvm.com/partners.html#apply</strong></p>
+      <p><strong>https://derycode.online/partners.html#apply</strong></p>
       <p>You will need to provide:</p>
       <ul style="margin-left:1.5rem;">
         <li>Full name and WhatsApp number</li>
@@ -710,7 +711,7 @@ const response = await axios.post(
       </div>
     </article>
 
-    <article cla<h2s="docs-article" id="faq">
+    <article clas="docs-article" id="faq">
       <h2>Frequently Asked Questions</h2>
       <div class="faq-list">
         <div class="faq-item">
@@ -739,7 +740,7 @@ const response = await axios.post(
     <hr class="docs-divider" />
 
     <!-- CONTACT SUPPORT -->
-    <article class="docs-a<h2ticle" id="contact-support">
+    <article class="docs-aticle" id="contact-support">
       <h2>Contact Support</h2>
       <p class="docs-lead">Our team is available 7 days a week to help with any technical questions.</p>
       <div class="support-grid">
@@ -767,7 +768,7 @@ const response = await axios.post(
     <!-- LEGAL -->
     <article class="docs-article" id="legal">
       <div class="docs-breadcrumb"><a href="index.html">DeryCode</a> <i class="fas fa-chevron-right"></i> <span>Legal</span></div>
-      <h1>Legal Documents</h1>
+      <h2>Legal Documents</h2>
       <p class="docs-lead">Our legal documents outline how we handle your data, the terms of using our services, and our commitments to you as a client.</p>
       <div class="docs-cards-mini">
         <a href="privacy.html" class="docs-card-mini">
@@ -895,6 +896,43 @@ document.getElementById('docsSearch').addEventListener('input', function() {
     <a href="/case-study-peters-medicare.html">Peters Medicare Case Study</a>
     <a href="/case-study-sacco-wallet.html">SaccoWallet Case Study</a>
   </div>
+
+
+
+<section id="derycode-network" aria-label="Websites like this">
+<style>
+#derycode-network{all:initial;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;box-sizing:border-box}
+#derycode-network *,#derycode-network *::before,#derycode-network *::after{box-sizing:border-box}
+#derycode-network{display:block;background:#0b1220;color:#e8edf6;padding:40px 16px 28px;margin:0}
+#derycode-network .dcw{max-width:1100px;margin:0 auto}
+#derycode-network h2{font-size:clamp(18px,3vw,26px);margin:0 0 6px;color:#fff;font-weight:700}
+#derycode-network .dcsub{margin:0 0 22px;font-size:15px;color:#aab7cc;line-height:1.5}
+#derycode-network .dcsub a{color:#00d4ff;font-weight:700;text-decoration:none}
+#derycode-network .dcsub a:hover{text-decoration:underline}
+#derycode-network .dcgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+#derycode-network .dcsite{display:block;background:#121c31;border:1px solid #22314e;border-radius:12px;padding:14px 16px;text-decoration:none;transition:transform .15s ease,border-color .15s ease}
+#derycode-network .dcsite:hover{transform:translateY(-2px);border-color:#0a84ff}
+#derycode-network .dcsite b{display:block;color:#fff;font-size:15px;margin-bottom:4px;text-decoration:none}
+#derycode-network .dcsite span{color:#93a3bd;font-size:13px;line-height:1.4;text-decoration:none}
+#derycode-network .dcfoot{margin-top:22px;padding-top:14px;border-top:1px solid #22314e;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center}
+#derycode-network .dcbrand{color:#66788f;font-size:13px}
+#derycode-network .dcbrand a{color:#0a84ff;font-weight:600;text-decoration:none}
+#derycode-network .dcwa{background:#0a84ff;color:#fff;border-radius:999px;padding:10px 18px;font-size:14px;font-weight:700;text-decoration:none}
+#derycode-network .dcwa:hover{background:#0090ff}
+@media(max-width:520px){#derycode-network .dcfoot{flex-direction:column;align-items:flex-start}}
+</style>
+<div class="dcw">
+<h2>Websites Like This</h2>
+<p class="dcsub">Want a professional website like DeryCode Technologies's for your business? Built by DeryCode. WhatsApp <a href="https://wa.me/256762306675" target="_blank" rel="noopener">0762306675</a></p>
+<div class="dcgrid">
+<a class="dcsite" href="https://tropicalgardenshotelkyenjojo.com" target="_blank" rel="noopener"><b>Tropical Gardens Hotel Kyenjojo</b><span>Rooms, restaurant, conferences & wedding gardens</span></a><a class="dcsite" href="https://nuwe-rugaba.vercel.app" target="_blank" rel="noopener"><b>Nuwe Rugaba Machinery</b><span>Water pumps, generators & construction equipment</span></a><a class="dcsite" href="https://sageco-evergreen.vercel.app" target="_blank" rel="noopener"><b>Sageco Evergreen</b><span>Real estate & investment company, Uganda</span></a><a class="dcsite" href="https://deryaccount.vercel.app" target="_blank" rel="noopener"><b>DeryAccount</b><span>Simple offline-first business accounting</span></a><a class="dcsite" href="https://steadycompanyltd.com" target="_blank" rel="noopener"><b>Steady Company (U) Ltd</b><span>Phone distributor & electronics, Fort Portal</span></a><a class="dcsite" href="https://bagulegacyhomes.online" target="_blank" rel="noopener"><b>Bagu Legacy Homes</b><span>Comfortable homestay accommodation, Fort Portal</span></a><a class="dcsite" href="https://school-sync-manager.vercel.app" target="_blank" rel="noopener"><b>School Sync Manager</b><span>School fees & student records system, Uganda</span></a><a class="dcsite" href="https://asiimwe3.github.io/buildcalc-ug/" target="_blank" rel="noopener"><b>BuildCalc UG</b><span>Construction materials calculator for Uganda</span></a><a class="dcsite" href="https://western-youth-tech-foundation.vercel.app" target="_blank" rel="noopener"><b>Western Youth Tech Foundation</b><span>Youth tech skills & innovation nonprofit</span></a>
+</div>
+<div class="dcfoot">
+<div class="dcbrand">Websites built by <a href="https://derycode.online" target="_blank" rel="noopener">DeryCode Technologies</a></div>
+<a class="dcwa" href="https://wa.me/256762306675" target="_blank" rel="noopener">WhatsApp 0762306675 to get yours</a>
+</div>
+</div>
+</section>
 
 </body>
 </html>
