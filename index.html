@@ -208,7 +208,7 @@
       <li role="none"><a href="blog.html" role="menuitem">Insights</a></li>
     </ul>
     <div class="nav-actions">
-      <a href="#contact" class="btn btn-primary nav-cta">Let's Talk &rarr;</a>
+      <a href="#contact" class="btn btn-primary nav-cta">Get in touch</a>
       <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
         <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
       </button>
@@ -230,44 +230,65 @@
         SOFTWARE &middot; AI &middot; BLOCKCHAIN &middot; WEB3
       </div>
       <h1 class="hero-title animate-fade-up delay-1" id="hero-heading">
-        Uganda's <span class="hero-gradient">Digital Future</span>,<br>Engineered.
+        Software that keeps your business running, even when the internet doesn't.
       </h1>
       <p class="hero-description animate-fade-up delay-2">
-        DeryCode builds enterprise software, AI systems, blockchain infrastructure and digital
-        platforms. Founded by software engineer Asiimwe Derick in Kampala, Uganda.
+        Websites, business systems and payment integrations for real Ugandan companies.
+        Founded by software engineer Asiimwe Derick. Based in Uganda, working anywhere.
       </p>
       <div class="hero-actions animate-fade-up delay-3">
-        <a href="#contact" class="btn btn-primary btn-lg">Talk to DeryCode &rarr;</a>
-        <a href="#solutions" class="btn btn-ghost btn-lg">Explore Solutions &rarr;</a>
+        <a href="#contact" class="btn btn-primary btn-lg">Get in touch</a>
+        <a href="#solutions" class="btn btn-ghost btn-lg">See what we build</a>
       </div>
     </div>
-    <div class="hero-visual animate-fade-up delay-2" aria-hidden="true">
-      <canvas id="networkCanvas" class="network-canvas"></canvas>
-      <div class="network-labels">
-        <span class="net-label" data-node="0">AI</span>
-        <span class="net-label" data-node="1">Software</span>
-        <span class="net-label" data-node="2">Blockchain</span>
-        <span class="net-label" data-node="3">Data</span>
-        <span class="net-label" data-node="4">Cloud</span>
-        <span class="net-label" data-node="5">Web3</span>
+    <div class="hero-visual animate-fade-up delay-2">
+      <div class="code-window" aria-hidden="true">
+        <div class="code-titlebar"><span></span><span></span><span></span><em>orders/webhook.ts</em></div>
+        <pre><code><span class="c-com">// when a customer orders on WhatsApp, save it and reply</span>
+<span class="c-kw">export async function</span> <span class="c-fn">onOrder</span>(msg: OrderMessage) {
+  <span class="c-kw">const</span> order = <span class="c-kw">await</span> db.orders.create({
+    customer: msg.from,
+    items: msg.items,
+    status: <span class="c-str">"received"</span>
+  });
+
+  <span class="c-kw">if</span> (!order.items.length) {
+    <span class="c-kw">return</span> reply(msg, <span class="c-str">"Send us what you need and we'll quote you."</span>);
+  }
+
+  <span class="c-kw">await</span> notifyShop(order); <span class="c-com">// phone buzzes in Fort Portal</span>
+  <span class="c-kw">return</span> reply(msg, <span class="c-str">"Got it. We're on it."</span>);
+}</code></pre>
       </div>
     </div>
-  </div>
-  <div class="hero-scroll" aria-hidden="true">
-    <span>Scroll</span><div class="scroll-line"></div>
   </div>
 </section>
 
 <!-- TRUST / FOOTPRINT -->
 <section class="trust-section" aria-label="Geographic footprint">
   <div class="container">
-    <p class="trust-heading">Built for organizations ready to scale.</p>
+    <p class="trust-heading">Worked with clients in Uganda, Kenya, Nigeria, the UAE and the UK.</p>
     <div class="trust-countries">
-      <span class="trust-country">UGANDA</span><span class="trust-divider"></span>
-      <span class="trust-country">KENYA</span><span class="trust-divider"></span>
-      <span class="trust-country">NIGERIA</span><span class="trust-divider"></span>
+      <span class="trust-country">Uganda</span><span class="trust-divider"></span>
+      <span class="trust-country">Kenya</span><span class="trust-divider"></span>
+      <span class="trust-country">Nigeria</span><span class="trust-divider"></span>
       <span class="trust-country">UAE</span><span class="trust-divider"></span>
       <span class="trust-country">UK</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER NOTE -->
+<section class="section founder-note" aria-label="Note from the founder">
+  <div class="container">
+    <div class="founder-card">
+      <img src="assets/asiimwe-derick-photo.webp" alt="Asiimwe Derick, founder of DeryCode" class="founder-photo" loading="lazy">
+      <div class="founder-text">
+        <h2 class="founder-title">A quick note from Derick</h2>
+        <p>I started DeryCode because good businesses in Uganda were paying too much for software that didn't fit how they actually work. I'd rather build you the boring system that never goes down than the fancy one that does.</p>
+        <p>When you hire us, you talk to the person writing your code. No account managers, no ticket queues. You can reach me directly on WhatsApp, and if something breaks, we fix it.</p>
+        <p class="founder-sign">Asiimwe Derick, founder</p>
+      </div>
     </div>
   </div>
 </section>

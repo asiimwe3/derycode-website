@@ -105,7 +105,7 @@
 
   /* ─── NETWORK VISUALIZATION ──────────────────────────────── */
   const canvas = $('#networkCanvas');
-  if (!canvas) return;
+  if (canvas) {
 
   const ctx = canvas.getContext('2d');
   const labels = $$('.net-label');
@@ -271,7 +271,7 @@
     }
   });
 
-  start();
+  } /* end canvas visual */
 
   /* ─── SERVICE WORKER ──────────────────────────────────────── */
   if ('serviceWorker' in navigator) {
