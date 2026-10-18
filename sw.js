@@ -13,7 +13,7 @@
  * - Added error handling so a cache miss doesn't throw
  */
 
-const VERSION    = 'derycode-v19-premium-20261018';
+const VERSION    = 'derycode-v20-showcase-20261018';
 const HTML_CACHE = VERSION + '-html';
 const ASSET_CACHE = VERSION + '-assets';
 

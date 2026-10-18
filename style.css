@@ -2132,3 +2132,33 @@ footer a:hover { color: var(--violet-light); }
 .nav-links a:hover { color: #E2E8F0; }
 .nav-links a:hover::after { background: var(--grad-accent); }
 
+/* ─── Hero product showcase (real screenshots) ─── */
+.product-showcase { position: relative; }
+.showcase-frame {
+  background: #0D1424; border: 1px solid rgba(139,92,246,0.30);
+  border-radius: 18px; overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.55), 0 0 60px rgba(59,130,246,0.15), 0 0 30px rgba(139,92,246,0.12);
+}
+.showcase-titlebar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 12px 16px; border-bottom: 1px solid #1E293B; background: #0A101F;
+}
+.showcase-titlebar span { width: 11px; height: 11px; border-radius: 50%; }
+.showcase-titlebar span:nth-child(1) { background: #FF5F57; }
+.showcase-titlebar span:nth-child(2) { background: #FEBC2E; }
+.showcase-titlebar span:nth-child(3) { background: #28C840; }
+.showcase-titlebar em {
+  font-style: normal; font-size: 0.72rem; color: #94A3B8; margin-left: 8px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.showcase-slide {
+  width: 100%; display: block; aspect-ratio: 1.05 / 1; object-fit: cover; object-position: top;
+  opacity: 0; transition: opacity 0.9s ease;
+}
+.showcase-slide.active { opacity: 1; }
+.showcase-dots { display: flex; gap: 8px; justify-content: center; margin-top: 14px; }
+.showcase-dots .dot {
+  width: 8px; height: 8px; border-radius: 99px; background: #334155; transition: all 0.4s;
+}
+.showcase-dots .dot.active { width: 26px; background: var(--grad-accent); }
+@media (prefers-reduced-motion: reduce) { .showcase-slide { transition: none; } }

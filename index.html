@@ -354,23 +354,17 @@
       </div>
     </div>
     <div class="hero-visual animate-fade-up delay-2">
-      <div class="code-window" aria-hidden="true">
-        <div class="code-titlebar"><span></span><span></span><span></span><em>orders/webhook.ts</em></div>
-        <pre><code><span class="c-com">// when a customer orders on WhatsApp, save it and reply</span>
-<span class="c-kw">export async function</span> <span class="c-fn">onOrder</span>(msg: OrderMessage) {
-  <span class="c-kw">const</span> order = <span class="c-kw">await</span> db.orders.create({
-    customer: msg.from,
-    items: msg.items,
-    status: <span class="c-str">"received"</span>
-  });
-
-  <span class="c-kw">if</span> (!order.items.length) {
-    <span class="c-kw">return</span> reply(msg, <span class="c-str">"Send us what you need and we'll quote you."</span>);
-  }
-
-  <span class="c-kw">await</span> notifyShop(order); <span class="c-com">// phone buzzes in Fort Portal</span>
-  <span class="c-kw">return</span> reply(msg, <span class="c-str">"Got it. We're on it."</span>);
-}</code></pre>
+      <div class="product-showcase" aria-label="Live DeryCode products">
+        <div class="showcase-frame">
+          <div class="showcase-titlebar"><span></span><span></span><span></span><em id="showcaseLabel">DeryAccount — offline POS &amp; accounting</em></div>
+          <img src="showcase-deryaccount.png" alt="DeryAccount app — offline point of sale and accounting" class="showcase-slide active" data-label="DeryAccount — offline POS &amp; accounting">
+          <img src="showcase-srm.png" alt="School Report Maker — report cards for schools" class="showcase-slide" data-label="School Report Maker — report cards for schools">
+          <img src="showcase-derycare.png" alt="DeryCare — healthcare platform" class="showcase-slide" data-label="DeryCare — healthcare platform">
+          <img src="showcase-sageco.png" alt="Sageco Evergreen — real estate platform" class="showcase-slide" data-label="Sageco Evergreen — real estate platform">
+        </div>
+        <div class="showcase-dots" aria-hidden="true">
+          <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        </div>
       </div>
     </div>
   </div>
