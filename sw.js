@@ -13,7 +13,7 @@
  * - Added error handling so a cache miss doesn't throw
  */
 
-const VERSION    = 'derycode-v16-navfix-20261018';
+const VERSION    = 'derycode-v17-clients-20261018';
 const HTML_CACHE = VERSION + '-html';
 const ASSET_CACHE = VERSION + '-assets';
 
