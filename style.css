@@ -2183,12 +2183,3 @@ footer a:hover { color: var(--violet-light); }
 .cap-number { position: absolute; z-index: 2; top: 12px; left: 16px; }
 .capability-card { position: relative; }
 @media (max-width: 640px) { .cap-image img { aspect-ratio: 16/9; } }
-
-/* hero visual: auto height for product showcase (was fixed for old code window) */
-.hero-visual { height: auto !important; }
-
-/* showcase: single static image, guaranteed paint */
-.product-showcase img {
-  width: 100%; height: auto; display: block;
-}
-.showcase-frame { overflow: hidden; }
