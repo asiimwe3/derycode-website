@@ -2186,3 +2186,9 @@ footer a:hover { color: var(--violet-light); }
 
 /* hero visual: auto height for product showcase (was fixed for old code window) */
 .hero-visual { height: auto !important; }
+
+/* showcase: single static image, guaranteed paint */
+.product-showcase img {
+  width: 100%; height: auto; display: block;
+}
+.showcase-frame { overflow: hidden; }

@@ -355,18 +355,3 @@
 
 })();
 
-// hero product showcase rotation
-(function(){
-  const slides=[...document.querySelectorAll('.showcase-slide')];
-  const dots=[...document.querySelectorAll('.showcase-dots .dot')];
-  const label=document.getElementById('showcaseLabel');
-  if(!slides.length)return;
-  let i=0;
-  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const show=n=>{slides.forEach((s,x)=>s.classList.toggle('active',x===n));dots.forEach((d,x)=>d.classList.toggle('active',x===n));if(label&&slides[n].dataset.label)label.textContent=slides[n].dataset.label;i=n};
-  dots.forEach((d,x)=>d.addEventListener('click',()=>{show(x);if(!reduce)restart()}));
-  let t=null;
-  const restart=()=>{if(t)clearInterval(t);if(!reduce)t=setInterval(()=>show((i+1)%slides.length),4200)};
-  restart();
-})();
-
