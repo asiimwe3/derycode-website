@@ -88,6 +88,8 @@
   </url>
   <url>
     <loc>https://derycode.online/</loc>
+    <image:image><image:loc>https://derycode.online/derycode-banner.jpg</image:loc><image:title>DeryCode Technologies - Smart Solutions for a Digital Tomorrow</image:title></image:image>
+    <image:image><image:loc>https://derycode.online/derycode-thumb.jpg</image:loc><image:title>DeryCode Technologies logo and services</image:title></image:image>
     <lastmod>2026-10-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
