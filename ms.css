@@ -138,3 +138,8 @@ body.dc{background:#fff;color:var(--ms-ink)}
   .dc .sec{padding:44px 0}
   .dc .nav-in{height:52px}
 }
+
+/* ── Product card calls to action ───────────────────────────── */
+.card .cta-row{margin-top:16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.card .cta-row .btn{font-size:14px;padding:9px 16px;line-height:1.2}
+.card .cta-row .go{margin-top:0}
