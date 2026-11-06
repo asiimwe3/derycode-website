@@ -281,8 +281,8 @@
     </div>
     <div class="footer-newsletter">
       <p>Get engineering insights and DeryCode updates.</p>
-      <form class="newsletter-form" onsubmit="handleNewsletter(event)" aria-label="Newsletter signup">
-        <label for="newsletterEmail" class="sr-only">Email address</label>
+      <form class="newsletter-form" data-subscribe aria-label="Newsletter signup">
+        <input type="text" name="company" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" /><label for="newsletterEmail" class="sr-only">Email address</label>
         <input type="email" id="newsletterEmail" name="email" placeholder="your@email.com" required class="newsletter-input" autocomplete="email" />
         <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
       </form>
@@ -324,16 +324,6 @@
       document.body.style.overflow = '';
     });
   });
-  window.handleNewsletter = function(e) {
-    e.preventDefault();
-    var input = e.target.querySelector('input[type="email"]');
-    var btn = e.target.querySelector('button');
-    if (!input.value) return;
-    btn.textContent = '✓ Subscribed';
-    btn.style.background = '#22C55E';
-    input.value = '';
-    setTimeout(function() { btn.textContent = 'Subscribe'; btn.style.background = ''; }, 3000);
-  };
 </script>
 <div class="faq-section" style="max-width:760px;margin:0 auto;padding:40px 20px;">
 <h2 style="font-size:1.6rem;color:#fff;margin-bottom:20px;">Frequently Asked Questions</h2>
@@ -392,5 +382,6 @@
 
 <script src="../dcp.js" data-site="derycode" data-key="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVtbGRianFlZ2Z0cm5neHlwZWNhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgzMjQzNTIsImV4cCI6MjA5MzkwMDM1Mn0.cofNEj5g3n9ls2HTXFXQG1_IXPUdLINDtYr820u2MtM" defer></script>
   <script src="/assets/affiliate.js" defer></script>
+  <script src="/subscribe.js?v=20261106" defer></script>
 </body>
 </html>

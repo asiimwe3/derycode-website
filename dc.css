@@ -374,3 +374,35 @@ strong,b{color:var(--navy);font-weight:650}
   .f-follow a{padding:7px 12px 7px 10px;font-size:.8rem}
 }
 @media (prefers-reduced-motion: reduce){.f-follow a:hover{transform:none}}
+
+/* ── footer subscribe ──────────────────────────────────────── */
+.f-sub{
+  margin-top:34px;padding:24px 26px;border-radius:16px;
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.11);
+  max-width:640px;
+}
+.f-sub h3{margin:0 0 6px;font-size:1.06rem;color:#fff;letter-spacing:-.01em}
+.f-sub p{margin:0 0 14px;color:#9fb0c9;font-size:.9rem;line-height:1.5}
+.f-sub-form{display:flex;gap:10px;flex-wrap:wrap;position:relative}
+.f-sub-form input[type=email]{
+  flex:1 1 220px;min-width:0;padding:12px 14px;border-radius:10px;
+  border:1px solid rgba(255,255,255,.18);background:rgba(9,17,32,.55);
+  color:#fff;font-size:.94rem;font-family:inherit;
+}
+.f-sub-form input[type=email]::placeholder{color:#7c8ea9}
+.f-sub-form input[type=email]:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:transparent}
+.f-sub-form button{
+  padding:12px 20px;border-radius:10px;border:1px solid var(--blue);background:var(--blue);
+  color:#fff;font-weight:700;font-size:.9rem;cursor:pointer;font-family:inherit;
+  transition:background .18s var(--ease),transform .18s var(--ease);
+}
+.f-sub-form button:hover{background:var(--blue-d);transform:translateY(-1px)}
+.f-sub-fine{margin:12px 0 0!important;font-size:.82rem!important;color:#8194b0!important}
+.f-sub-fine a{color:#c7d5ea}
+.f-sub .subscribe-note{color:#22C55E;font-size:.86rem;margin:10px 0 0;flex-basis:100%}
+.f-sub .subscribe-note.is-error{color:#fca5a5}
+.f-sub .subscribe-note a{color:inherit}
+@media (max-width:560px){
+  .f-sub{padding:20px 18px}
+  .f-sub-form button{flex:1 1 100%}
+}
