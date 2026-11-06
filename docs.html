@@ -105,8 +105,10 @@
       <li role="none"><a href="index.html#technology" role="menuitem">Technology</a></li>
       <li role="none"><a href="index.html#projects" role="menuitem">Projects</a></li>
       <li role="none"><a href="index.html#company" role="menuitem">Company</a></li>
+      <li role="none"><a href="docs.html" role="menuitem" aria-current="page">Documentation</a></li>
       <li role="none"><a href="answers.html" role="menuitem">Answers</a></li>
       <li role="none"><a href="blog.html" role="menuitem">Insights</a></li>
+      <li role="none"><a href="https://elite-members-six.vercel.app" role="menuitem">Elite Community</a></li>
     </ul>
     <div class="nav-actions">
       <a href="index.html#contact" class="btn btn-primary nav-cta">Let's Talk &rarr;</a>
@@ -790,26 +792,31 @@ const response = await axios.post(
 <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
 
 <script>
-// Theme
-const themeToggle = document.getElementById('themeToggle');
-const themeIcon = document.getElementById('themeIcon');
-const html = document.documentElement;
-const savedTheme = localStorage.getItem('derycode-theme') || 'dark';
-html.setAttribute('data-theme', savedTheme);
-themeIcon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-themeToggle.addEventListener('click', () => {
-  const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-  html.setAttribute('data-theme', next);
-  localStorage.setItem('derycode-theme', next);
-  themeIcon.className = next === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-});
+// Theme (this page ships without the toggle, so every step is optional)
+(function () {
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon = document.getElementById('themeIcon');
+  const html = document.documentElement;
+  const savedTheme = localStorage.getItem('derycode-theme') || 'dark';
+  html.setAttribute('data-theme', savedTheme);
+  if (!themeToggle || !themeIcon) return;
+  themeIcon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+  themeToggle.addEventListener('click', () => {
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('derycode-theme', next);
+    themeIcon.className = next === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+  });
+})();
 
 // Hamburger
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 const overlay = document.getElementById('mobileNavOverlay');
-function closeNav() { navLinks.classList.remove('open'); hamburger.classList.remove('active'); overlay.classList.remove('active'); document.body.style.overflow=''; }
-hamburger.addEventListener('click', () => { navLinks.classList.contains('open') ? closeNav() : (navLinks.classList.add('open'), hamburger.classList.add('active'), overlay.classList.add('active'), document.body.style.overflow='hidden'); });
+function closeNav() { if(!navLinks||!hamburger||!overlay) return; navLinks.classList.remove('open'); hamburger.classList.remove('active'); overlay.classList.remove('active'); document.body.style.overflow=''; }
+if (hamburger && navLinks && overlay) {
+  hamburger.addEventListener('click', () => { navLinks.classList.contains('open') ? closeNav() : (navLinks.classList.add('open'), hamburger.classList.add('active'), overlay.classList.add('active'), document.body.style.overflow='hidden'); });
+}
 overlay.addEventListener('click', closeNav);
 document.querySelectorAll('.nav-links a').forEach(l => l.addEventListener('click', closeNav));
 
