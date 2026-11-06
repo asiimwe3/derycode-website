@@ -91,7 +91,8 @@ strong,b{color:var(--navy);font-weight:650}
 .head-in{display:flex;align-items:center;gap:14px;height:72px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:6px}
 .brand:hover{text-decoration:none}
-.brand-mark{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:var(--navy);color:#fff;font-weight:800;font-size:.95rem;letter-spacing:-.04em;box-shadow:0 6px 14px -8px rgba(16,29,53,.7)}
+.brand-logo{width:34px;height:34px;border-radius:9px;object-fit:cover;display:block;background:var(--navy);box-shadow:0 6px 14px -8px rgba(16,29,53,.7)}
+.site-foot .brand-logo{width:36px;height:36px;box-shadow:0 0 0 1px rgba(255,255,255,.14)}
 .brand-word{font-weight:750;font-size:1.09rem;letter-spacing:-.03em;color:var(--navy)}
 .brand-word span{color:var(--blue)}
 .nav{margin-left:auto;display:flex;align-items:center;gap:4px}
