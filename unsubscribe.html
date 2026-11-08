@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unsubscribe | DeryCode</title>
+<meta name="robots" content="noindex,nofollow">
+<style>
+  body{background:#070B14;color:#E6EDF7;font-family:system-ui,-apple-system,Segoe UI,sans-serif;margin:0;min-height:100vh;display:grid;place-items:center;padding:24px}
+  .card{max-width:520px;width:100%;background:#0d1424;border:1px solid #22304a;border-radius:16px;padding:28px}
+  h1{font-size:1.35rem;margin:0 0 10px}
+  p{color:#9FB4D8;line-height:1.6;font-size:.95rem}
+  a.btn{display:inline-block;margin-top:14px;padding:11px 18px;border-radius:10px;background:#4F7CFF;color:#fff;text-decoration:none;font-weight:600}
+  .ok{color:#43E97B}.err{color:#FF8A8A}
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1 id="title">Unsubscribing…</h1>
+    <p id="message">One moment.</p>
+    <a class="btn" href="/blog.html">Back to the blog</a>
+  </div>
+<script>
+(function () {
+  var p = new URLSearchParams(location.search);
+  var email = p.get('e') || '';
+  var token = p.get('t') || '';
+  var title = document.getElementById('title');
+  var message = document.getElementById('message');
+
+  if (!token) {
+    title.textContent = 'This link is missing its code';
+    message.className = 'err';
+    message.textContent = 'Open the unsubscribe link straight from the email, or write to derycode50@gmail.com and we will take you off the list.';
+    return;
+  }
+
+  fetch('https://hejyndudxtinigbvzolj.supabase.co/rest/v1/rpc/unsubscribe', {
+    method: 'POST',
+    headers: {
+      'apikey': 'sb_publishable_AqC-q3-23JiE6VyyCGvNCA_FZ1ZmAd_',
+      'Authorization': 'Bearer sb_publishable_AqC-q3-23JiE6VyyCGvNCA_FZ1ZmAd_',
+      'Content-Type': 'application/json',
+      'Content-Profile': 'dery'
+    },
+    body: JSON.stringify({ p_token: token })
+  }).then(function (r) { return r.json(); }).then(function (n) {
+    title.textContent = n > 0 ? 'You are off the list' : 'You were already off the list';
+    message.className = 'ok';
+    message.textContent = (email ? email + ' will ' : 'You will ') + 'not get the newsletter again. If this was a mistake, subscribe on any page of the site.';
+  }).catch(function () {
+    title.textContent = 'That did not go through';
+    message.className = 'err';
+    message.textContent = 'Write to derycode50@gmail.com and we will remove you by hand.';
+  });
+})();
+</script>
+</body>
+</html>
