@@ -197,6 +197,7 @@
   ]
 }
   </script>
+<script src="/assets/js/leads.js" defer></script>
 </head>
 <body>
   <div id="scrollProgress" aria-hidden="true"></div>
@@ -489,6 +490,47 @@
 </section>
 
 </main>
+
+<section class="section" id="order" aria-labelledby="order-heading" style="padding-top:0">
+  <div class="container" style="max-width:760px">
+    <h2 id="order-heading">Send your request</h2>
+    <p>Fill this in and it comes straight to our inbox. We reply within one working day with a quote, or a WhatsApp message if you prefer.</p>
+    <form data-lead-form data-lead-source="pricing-page" data-lead-topic="Quote request" novalidate
+          style="display:grid;gap:12px;margin-top:18px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <label style="display:grid;gap:6px;font-size:.9rem">Your name
+          <input name="name" type="text" autocomplete="name" required style="padding:12px;border-radius:10px;border:1px solid #24304a;background:#0d1424;color:#E6EDF7">
+        </label>
+        <label style="display:grid;gap:6px;font-size:.9rem">Phone or WhatsApp
+          <input name="phone" type="tel" autocomplete="tel" required placeholder="+256..." style="padding:12px;border-radius:10px;border:1px solid #24304a;background:#0d1424;color:#E6EDF7">
+        </label>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <label style="display:grid;gap:6px;font-size:.9rem">Email
+          <input name="email" type="email" autocomplete="email" style="padding:12px;border-radius:10px;border:1px solid #24304a;background:#0d1424;color:#E6EDF7">
+        </label>
+        <label style="display:grid;gap:6px;font-size:.9rem">What do you need?
+          <select name="topic" style="padding:12px;border-radius:10px;border:1px solid #24304a;background:#0d1424;color:#E6EDF7">
+            <option>School management system</option>
+            <option>SACCO or loan system</option>
+            <option>Shop, POS or inventory</option>
+            <option>Business website</option>
+            <option>Mobile app</option>
+            <option>Something else</option>
+          </select>
+        </label>
+      </div>
+      <label style="display:grid;gap:6px;font-size:.9rem">Budget in UGX
+        <input name="budget" type="text" placeholder="e.g. 3,000,000" style="padding:12px;border-radius:10px;border:1px solid #24304a;background:#0d1424;color:#E6EDF7">
+      </label>
+      <label style="display:grid;gap:6px;font-size:.9rem">Tell us about it
+        <textarea name="message" rows="4" required placeholder="What should the system do, and when do you need it?" style="padding:12px;border-radius:10px;border:1px solid #24304a;background:#0d1424;color:#E6EDF7;resize:vertical"></textarea>
+      </label>
+      <button class="btn btn-primary btn-lg" type="submit" style="justify-self:start">Send request</button>
+      <p style="margin:0;font-size:.82rem;color:#8ea3c4">We use your details only to answer this request.</p>
+    </form>
+  </div>
+</section>
 
 <footer class="footer" role="contentinfo">
   <div class="container">

@@ -490,6 +490,7 @@
   ]
 }
   </script>
+<script src="/assets/js/leads.js" defer></script>
 </head>
 
 <body>
@@ -830,7 +831,7 @@
       <!-- Quick enquiry form -->
       <div style="max-width:560px; margin:0 auto; background:var(--card-bg); border:1px solid var(--card-border); border-radius:var(--radius); padding:var(--sp-lg); text-align:left;">
         <h3 style="font-family:'Inter Tight',sans-serif; font-weight:700; margin-bottom:var(--sp-md); font-size:1rem;">Quick Service Enquiry</h3>
-        <form id="clientEnquiryForm" action="https://formspree.io/f/derycode" method="POST" novalidate>
+        <form id="clientEnquiryForm" action="#" data-lead-topic="Client enquiry" method="POST" novalidate>
           <div class="form-group" style="margin-bottom:var(--sp-sm);">
             <label for="client-name">Your Name</label>
             <input type="text" id="client-name" name="name" placeholder="John Kagabo" required />
@@ -877,7 +878,7 @@
       <p class="section-subtitle">Applications are reviewed within 24 hours. Approved partners receive training materials and their referral link immediately.</p>
     </div>
     <div class="partner-form animate-on-scroll">
-      <form id="partnerApplicationForm" action="https://formspree.io/f/derycode-partner" method="POST" novalidate>
+      <form id="partnerApplicationForm" action="#" data-lead-topic="Partner application" method="POST" novalidate>
         <input type="hidden" name="_subject" value="New DeryCode Partner Application" />
         <div class="form-grid">
           <div class="form-group">
@@ -962,7 +963,7 @@
         <p>Enterprise Software &middot; AI &middot; Blockchain &middot; Web3 &middot; Digital Infrastructure</p>
         <nav class="footer-socials" aria-label="Social media links">
           <a href="https://wa.me/256772002326" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-          <a href="mailto:info@derycode.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+          <a href="mailto:derycode50@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
           <a href="https://github.com/asiimwe3" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
         </nav>
       </div>
@@ -1070,18 +1071,16 @@
       btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
       btn.disabled = true;
       try {
-        const res = await fetch(partnerForm.action, {
-          method: 'POST',
-          body: new FormData(partnerForm),
-          headers: { 'Accept': 'application/json' }
-        });
-        if (res.ok) {
-          btn.innerHTML = '<i class="fas fa-check"></i> Application Sent! We\'ll contact you within 24h';
-          btn.style.background = 'linear-gradient(135deg,#43E97B,#6FFBA0)';
-          partnerForm.reset();
-        } else {
-          throw new Error('Server error');
-        }
+        const fd = Object.fromEntries(new FormData(partnerForm).entries());
+        await window.DCLead.send(Object.assign({}, fd, {
+          name: [fd.first_name, fd.last_name].filter(Boolean).join(' '),
+          topic: 'Partner application',
+          source: 'partners-page',
+          message: [fd.experience || '', fd.why || '', fd.district ? 'District: ' + fd.district : ''].filter(Boolean).join('\n')
+        }));
+        btn.innerHTML = '<i class="fas fa-check"></i> Application Sent! We\'ll contact you within 24h';
+        btn.style.background = 'linear-gradient(135deg,#43E97B,#6FFBA0)';
+        partnerForm.reset();
       } catch {
         btn.innerHTML = '<i class="fas fa-times"></i> Error — please WhatsApp us directly';
         btn.style.background = '#4F7CFF';
@@ -1104,16 +1103,15 @@
       btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
       btn.disabled = true;
       try {
-        const res = await fetch(clientForm.action, {
-          method: 'POST',
-          body: new FormData(clientForm),
-          headers: { 'Accept': 'application/json' }
-        });
-        if (res.ok) {
-          btn.innerHTML = '<i class="fas fa-check"></i> Sent! We\'ll contact you soon';
-          btn.style.background = 'linear-gradient(135deg,#43E97B,#6FFBA0)';
-          clientForm.reset();
-        } else { throw new Error(); }
+        const cd = Object.fromEntries(new FormData(clientForm).entries());
+        await window.DCLead.send(Object.assign({}, cd, {
+          name: cd.name, phone: cd.phone, email: cd.email,
+          topic: cd.service || 'Client enquiry',
+          source: 'partners-page'
+        }));
+        btn.innerHTML = '<i class="fas fa-check"></i> Sent! We\'ll contact you soon';
+        btn.style.background = 'linear-gradient(135deg,#43E97B,#6FFBA0)';
+        clientForm.reset();
       } catch {
         btn.innerHTML = '<i class="fas fa-times"></i> Error — chat us on WhatsApp';
         btn.style.background = '#4F7CFF';

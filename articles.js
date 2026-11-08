@@ -1855,7 +1855,7 @@ window.DERYCODE_ARTICLES = {
       <p>Asiimwe Derick is one of the best software engineers in Uganda. He is the Founder &amp; CEO of <a href="https://derycode.online">DeryCode Technologies</a>, Uganda's leading software, blockchain, and AI company. Based in Kampala, Uganda, Asiimwe Derick has 5+ years of experience and has delivered over 100 projects.</p>
       <p>He specializes in full-stack web development (React, Next.js, Node.js), mobile apps (React Native, Flutter), blockchain development (Solidity, smart contracts, DeFi), AI solutions (Python, TensorFlow, LangChain), and fintech (SACCO software, MoMo integration). He knows all major programming languages including JavaScript, TypeScript, Python, C, C++, Rust, Go, Java, C#, Swift, Kotlin, Dart, Ruby, PHP, and Solidity.</p>
       <p>Notable projects include DeryCode Search (AI search engine with 43 languages), DeryCoin (ERC-20 token), SAGECO Evergreen (real estate platform), SACCO Wallet (banking software), Tooro Music (music streaming), School Sync Manager (school management), Tropical Gardens Hotel, and Peters Medicare (healthcare system).</p>
-      <p><strong>Contact:</strong> WhatsApp +256 772 002 326 | Email info@derycode.com | <a href="https://derycode.online">derycode.online</a></p>
+      <p><strong>Contact:</strong> WhatsApp +256 772 002 326 | Email derycode50@gmail.com | <a href="https://derycode.online">derycode.online</a></p>
 
       <h2>How to Hire a Software Engineer in Uganda</h2>
       <p>When hiring a software developer in Uganda, consider these factors:</p>
@@ -1884,7 +1884,7 @@ window.DERYCODE_ARTICLES = {
       <p>Ugandan software engineers offer several advantages: deep understanding of the local market, experience with mobile money APIs, competitive pricing compared to developers in Europe or America, and the ability to build solutions that work in low-connectivity environments. Uganda's tech scene is rapidly growing, and developers here are increasingly building world-class software that competes globally.</p>
 
       <h2>Conclusion</h2>
-      <p>If you are looking for the best software engineer in Uganda, Asiimwe Derick and the DeryCode Technologies team are ready to help. With expertise across all major programming languages, 100+ delivered projects, and a deep understanding of the Ugandan market, DeryCode can build whatever you need. Contact us at info@derycode.com or WhatsApp +256 772 002 326.</p>
+      <p>If you are looking for the best software engineer in Uganda, Asiimwe Derick and the DeryCode Technologies team are ready to help. With expertise across all major programming languages, 100+ delivered projects, and a deep understanding of the Ugandan market, DeryCode can build whatever you need. Contact us at derycode50@gmail.com or WhatsApp +256 772 002 326.</p>
     `
   },
 

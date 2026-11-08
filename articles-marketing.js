@@ -61,7 +61,7 @@
 
 <p>Our multidisciplinary team builds custom high-performance websites, engineers specialized e-commerce and mobile money software, and executes data-driven SEO, Google Ads, and social media marketing campaigns tailored specifically for the East African market. Our full-service marketing packages start from <strong>UGX 500,000 per month</strong>, offering complete transparency, monthly ROI analytics, and dedicated strategy management.</p>
 
-<p><strong>Ready to transform your business and dominate the digital landscape in 2026?</strong> Contact DeryCode Tech today at <strong>+256 772 002 326</strong> (Call or WhatsApp), send an email to <strong>info@derycode.com</strong>, or visit our Kampala technology center to schedule a free strategy consultation.</p>
+<p><strong>Ready to transform your business and dominate the digital landscape in 2026?</strong> Contact DeryCode Tech today at <strong>+256 772 002 326</strong> (Call or WhatsApp), send an email to <strong>derycode50@gmail.com</strong>, or visit our Kampala technology center to schedule a free strategy consultation.</p>
 `
   },
 
@@ -124,7 +124,7 @@
 
 <p>Rather than treating marketing as isolated posts on social media, DeryCode builds end-to-end growth engines. We build ultra-fast, custom websites, implement precision SEO architectures, manage targeted Google and Meta advertising campaigns, and integrate automated mobile money payment processing directly into your sales funnels. Our transparent service packages start from <strong>UGX 500,000 per month</strong>, designed to deliver maximum return on investment for African businesses.</p>
 
-<p><strong>Take your business to the next level with Uganda's top tech-driven marketing partner.</strong> Call or WhatsApp DeryCode Tech today at <strong>+256 772 002 326</strong>, email <strong>info@derycode.com</strong>, or visit our technology headquarters in Kampala for a comprehensive digital audit and growth consultation.</p>
+<p><strong>Take your business to the next level with Uganda's top tech-driven marketing partner.</strong> Call or WhatsApp DeryCode Tech today at <strong>+256 772 002 326</strong>, email <strong>derycode50@gmail.com</strong>, or visit our technology headquarters in Kampala for a comprehensive digital audit and growth consultation.</p>
 `
   },
 
@@ -190,7 +190,7 @@
 
 <p>At DeryCode Tech, we don't rely on temporary tricks or black-hat shortcuts. We build high-speed, mobile-optimized Web Applications, implement rigorous schema markup, optimize local search listings, and create compelling content that positions your company as the unquestioned market authority. Our specialized SEO packages start from <strong>UGX 500,000 per month</strong>, complete with keyword tracking, technical audits, and monthly performance reports.</p>
 
-<p><strong>Ready to claim the #1 spot on Google in Uganda?</strong> Contact DeryCode Tech today at <strong>+256 772 002 326</strong> (Call or WhatsApp), email us at <strong>info@derycode.com</strong>, or visit our Kampala office to request a free, comprehensive SEO website audit.</p>
+<p><strong>Ready to claim the #1 spot on Google in Uganda?</strong> Contact DeryCode Tech today at <strong>+256 772 002 326</strong> (Call or WhatsApp), email us at <strong>derycode50@gmail.com</strong>, or visit our Kampala office to request a free, comprehensive SEO website audit.</p>
 `
   },
 
@@ -253,7 +253,7 @@
 
 <p>DeryCode combines technical expertise with creative ad strategies to deliver outstanding social media growth. We handle end-to-end content creation, high-converting Meta ad campaigns, WhatsApp sales automation, custom landing page engineering, and mobile money payment integrations. Our dedicated social media management packages start from <strong>UGX 500,000 per month</strong>.</p>
 
-<p><strong>Ready to turn social media followers into paying clients?</strong> Contact DeryCode Tech today at <strong>+256 772 002 326</strong> (Call or WhatsApp), email us at <strong>info@derycode.com</strong>, or visit our Kampala office to discuss your tailored social media strategy.</p>
+<p><strong>Ready to turn social media followers into paying clients?</strong> Contact DeryCode Tech today at <strong>+256 772 002 326</strong> (Call or WhatsApp), email us at <strong>derycode50@gmail.com</strong>, or visit our Kampala office to discuss your tailored social media strategy.</p>
 `
   },
 
@@ -313,6 +313,6 @@
 
 <p>DeryCode specializes in managing high-ROI PPC campaigns tailored specifically for the East African market. We build fast, mobile-friendly landing pages, implement advanced conversion tracking, optimize Google Search and Meta Ads, and integrate direct WhatsApp and mobile money checkouts. Our managed PPC ad packages start from <strong>UGX 500,000 per month</strong> (ad spend billed separately).</p>
 
-<p><strong>Unsure whether Google Ads or Facebook Ads is right for your business?</strong> Contact DeryCode Tech today at <strong>+256 772 002 326</strong> (Call or WhatsApp), email <strong>info@derycode.com</strong>, or visit our Kampala technology center to claim a free advertising strategy review.</p>
+<p><strong>Unsure whether Google Ads or Facebook Ads is right for your business?</strong> Contact DeryCode Tech today at <strong>+256 772 002 326</strong> (Call or WhatsApp), email <strong>derycode50@gmail.com</strong>, or visit our Kampala technology center to claim a free advertising strategy review.</p>
 `
   }
