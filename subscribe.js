@@ -215,6 +215,11 @@
   function init() {
     var forms = document.querySelectorAll('form.newsletter-form, form[data-subscribe]');
     for (var i = 0; i < forms.length; i++) bind(forms[i]);
+    promptStyles();
+    articleCard();
+    scrollBar();
+    var late = document.querySelectorAll('form[data-subscribe]:not([data-subscribe-bound])');
+    for (var j = 0; j < late.length; j++) bind(late[j]);
   }
 
   if (document.readyState === 'loading') {
