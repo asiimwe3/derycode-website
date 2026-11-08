@@ -1,0 +1,16 @@
+# GitGuardian configuration
+#
+# The Supabase "publishable" key below (prefix sb_publishable_) is a public,
+# browser-shipped identifier, not a secret. Supabase designed it for client-side
+# use so websites can talk to the database; every visitor can read it in the
+# page source. It carries no privileges of its own: row level security in the
+# database decides what it may touch, and for the DeryCode tables that is
+# insert-only (leads and subscribers), with no read, update or delete access.
+#
+# Real credentials (service role keys, management tokens, SMTP passwords) are
+# never committed; they live in the sandbox environment.
+version: 2
+secret:
+  ignored-matches:
+    - name: Supabase publishable key (public by design)
+      match: sb_publishable_AqC-q3-23JiE6VyyCGvNCA_FZ1ZmAd_
