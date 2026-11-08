@@ -20,10 +20,13 @@
         'Authorization': 'Bearer ' + SB.key,
         'Content-Type': 'application/json',
         'Content-Profile': 'dery',
-        'Prefer': 'resolution=merge-duplicates,return=minimal'
+        'Prefer': 'return=minimal'
       },
       body: JSON.stringify({ email: email, source: source, page: location.pathname })
-    }).catch(function () {});
+    }).then(function (res) {
+      // 409 means this address is already on the list, which is fine
+      return res.ok || res.status === 409;
+    }).catch(function () { return false; });
   }
 
   /* a quiet ask at the end of an article, and a bar once someone is clearly reading */
