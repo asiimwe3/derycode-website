@@ -9,17 +9,19 @@
   'use strict';
 
   var ZONES = {
-    'derycode.online': null,
-    'reliemotel.com': null,
-    'nuwerugabamachinary.com': null,
-    'brazilplumbingcenter.online': null,
-    'petersmedicare.online': null,
-    'sageco-evergreen.vercel.app': null,
-    'school-sync-manager.vercel.app': null,
-    'derycode-search-c.vercel.app': null,
-    'tooro-music.vercel.app': null,
-    'elite-members-six.vercel.app': null,
-    'western-youth-tech-foundation.vercel.app': null
+    'derycode.online': 308339,
+    'bagulegacyhomes.online': 308339,
+    'reliemotel.com': 308339,
+    'steadycompanyltd.com': 308339,
+    'nuwerugabamachinary.com': 308339,
+    'brazilplumbingcenter.online': 308339,
+    'petersmedicare.online': 308339,
+    'tooro-music.vercel.app': 308339,
+    'sageco-evergreen.vercel.app': 308339,
+    'derycare.vercel.app': 308339,
+    'deryaccount.vercel.app': 308339,
+    'yezu-amala-motel.vercel.app': 308339,
+    'gomery.vercel.app': 308339
   };
 
   var host = location.hostname.replace(/^www\./, '');
@@ -31,9 +33,9 @@
   if (/\/(admin|login|register|account|pricing|checkout|order)(\.html)?$/i.test(location.pathname)) return;
 
   var s = document.createElement('script');
-  s.src = '//libtl.com/sdk.js';
+  s.src = 'https://quge5.com/88/tag.min.js';
   s.setAttribute('data-zone', String(zone));
-  s.setAttribute('data-sdk', 'show_' + zone);
+  s.setAttribute('data-cfasync', 'false');
   s.async = true;
   document.head.appendChild(s);
 })();
