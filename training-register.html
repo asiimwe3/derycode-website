@@ -319,17 +319,23 @@ function save(extra) {
     page: location.pathname
   };
   if (extra) Object.assign(row, extra);
+  // the id is made here so the browser never needs read access to the table
+  row.id = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() :
+           'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (ch) {
+             var r = Math.random() * 16 | 0, v = ch === 'x' ? r : (r & 3 | 8);
+             return v.toString(16);
+           });
   return fetch(SB.url + '/rest/v1/training_registrations', {
     method: 'POST',
     headers: {
       'apikey': SB.key, 'Authorization': 'Bearer ' + SB.key,
       'Content-Type': 'application/json', 'Content-Profile': SB.schema,
-      'Prefer': 'return=representation'
+      'Prefer': 'return=minimal'
     },
     body: JSON.stringify(row)
   }).then(function (r) {
     if (!r.ok) throw new Error('HTTP ' + r.status);
-    return r.json();
+    return [row];
   });
 }
 
