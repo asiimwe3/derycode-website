@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#050A18">
+<title>DeryOS Prototype | DERYCODE POWERED</title>
+<meta name="description" content="DeryOS is the Derycode Technologies operating system. This is the Phase 1 interactive interface prototype: home screen, launcher, notification centre, quick settings, app market, DeryAI and Derycode ID.">
+<meta name="monetag" content="e6f7f1c4e8b94f0d9a2c5b7e3d1a8f60">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23050A18'/%3E%3Cpath d='M10 8h6a8 8 0 0 1 0 16h-6z' fill='%232F6BFF'/%3E%3C/svg%3E">
+<style>
+:root{
+  --navy:#050A18; --navy-2:#0A1229; --panel:rgba(12,20,40,.82);
+  --blue:#2F6BFF; --blue-2:#4F8CFF; --silver:#C7D2E5; --white:#F7FAFF;
+  --dim:#8497B8; --line:rgba(120,150,210,.18); --ok:#2FD98A; --warn:#FFB020;
+  --radius:22px; --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{
+  margin:0;background:#02040B;color:var(--white);
+  font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  display:grid;place-items:center;overflow:hidden;
+}
+/* ── device frame ─────────────────────────────────────────────── */
+#device{
+  position:relative;width:min(420px,100vw);height:min(880px,100vh);
+  max-height:100vh;background:var(--navy);overflow:hidden;
+  display:flex;flex-direction:column;isolation:isolate;
+}
+@media(min-width:520px) and (min-height:900px){
+  #device{border-radius:38px;border:1px solid #1b2745;box-shadow:0 40px 120px rgba(0,0,0,.75),0 0 0 10px #0a0f1d}
+}
+/* ── boot ─────────────────────────────────────────────────────── */
+#boot{
+  position:absolute;inset:0;z-index:60;background:radial-gradient(120% 90% at 50% 40%,#0B1734 0%,#03060F 70%);
+  display:grid;place-items:center;text-align:center;transition:opacity .6s var(--ease),visibility .6s;
+}
+#boot.gone{opacity:0;visibility:hidden}
+.boot-mark{
+  width:74px;height:74px;border-radius:22px;margin:0 auto 22px;
+  background:linear-gradient(145deg,var(--blue),#1B3FA8);
+  display:grid;place-items:center;font-weight:800;font-size:30px;color:#fff;
+  box-shadow:0 0 0 1px rgba(120,160,255,.35),0 18px 46px rgba(47,107,255,.45);
+  animation:pulse 2.4s var(--ease) infinite;
+}
+@keyframes pulse{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-6px) scale(1.04)}}
+.boot-title{font-size:1.35rem;letter-spacing:.34em;font-weight:800;margin:0}
+.boot-sub{margin:10px 0 0;font-size:.72rem;letter-spacing:.28em;color:var(--silver);opacity:.75}
+.boot-bar{width:140px;height:3px;border-radius:9px;background:rgba(120,150,210,.22);margin:30px auto 0;overflow:hidden}
+.boot-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--blue-2));animation:fill 2.6s var(--ease) forwards}
+@keyframes fill{to{width:100%}}
+.boot-skip{position:absolute;bottom:28px;left:0;right:0;font-size:.72rem;color:var(--dim);letter-spacing:.18em}
+/* ── lock ─────────────────────────────────────────────────────── */
+#lock{
+  position:absolute;inset:0;z-index:50;display:flex;flex-direction:column;justify-content:space-between;
+  align-items:center;padding:56px 22px 34px;text-align:center;
+  background:radial-gradient(120% 80% at 50% 0%,#12224A 0%,#060B1A 60%);
+  transition:transform .5s var(--ease),opacity .4s;cursor:pointer;
+}
+#lock.up{transform:translateY(-100%);opacity:0;pointer-events:none}
+.lock-time{font-size:4.1rem;font-weight:200;letter-spacing:-.02em;line-height:1;margin:0}
+.lock-date{margin:8px 0 0;color:var(--silver);font-size:.86rem;letter-spacing:.16em;text-transform:uppercase}
+.lock-pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);
+  background:rgba(10,18,40,.6);padding:7px 14px;border-radius:99px;font-size:.72rem;color:var(--silver);backdrop-filter:blur(12px)}
+.lock-id{font-size:.78rem;color:var(--dim);letter-spacing:.14em}
+.lock-hint{font-size:.74rem;color:var(--dim);letter-spacing:.2em;animation:bob 2.2s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0);opacity:.55}50%{transform:translateY(-7px);opacity:1}}
+/* ── shell ────────────────────────────────────────────────────── */
+#shell{position:absolute;inset:0;display:flex;flex-direction:column;opacity:0;pointer-events:none;transition:opacity .4s}
+#shell.on{opacity:1;pointer-events:auto}
+#statusbar{
+  height:42px;flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;
+  padding:0 18px;font-size:.76rem;color:var(--silver);z-index:20;position:relative;
+}
+.sb-right{display:flex;align-items:center;gap:9px}
+.sb-icon{width:15px;height:11px;display:inline-block;opacity:.9}
+.batt{display:inline-flex;align-items:center;gap:5px;font-variant-numeric:tabular-nums}
+.batt i{display:block;width:20px;height:10px;border:1px solid rgba(199,210,229,.7);border-radius:3px;position:relative;padding:1px}
+.batt i b{display:block;height:100%;background:var(--ok);border-radius:1px}
+/* ── screens ──────────────────────────────────────────────────── */
+#stage{position:relative;flex:1 1 auto;overflow:hidden}
+.screen{
+  position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;padding:6px 18px 96px;
+  opacity:0;transform:translateY(14px) scale(.992);pointer-events:none;
+  transition:opacity .28s var(--ease),transform .28s var(--ease);
+  scrollbar-width:none;
+}
+.screen::-webkit-scrollbar{display:none}
+.screen.active{opacity:1;transform:none;pointer-events:auto}
+/* home */
+.widget{
+  border-radius:var(--radius);padding:20px;margin:6px 0 18px;
+  background:linear-gradient(155deg,rgba(47,107,255,.22),rgba(10,18,40,.5));
+  border:1px solid rgba(90,140,255,.28);backdrop-filter:blur(14px);position:relative;overflow:hidden;
+}
+.widget:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;
+  background:radial-gradient(circle,rgba(79,140,255,.42),transparent 65%);top:-70px;right:-50px}
+.widget h2{margin:0;font-size:2.5rem;font-weight:250;letter-spacing:-.02em}
+.widget p{margin:4px 0 0;color:var(--silver);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}
+.widget .badge{margin-top:14px;display:inline-flex;gap:7px;align-items:center;font-size:.72rem;
+  color:#dce8ff;background:rgba(5,10,24,.55);border:1px solid var(--line);padding:6px 11px;border-radius:99px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--ok);box-shadow:0 0 10px var(--ok)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px 10px;padding:4px 0 12px}
+.app{background:none;border:0;color:var(--white);display:flex;flex-direction:column;align-items:center;gap:8px;
+  font-family:inherit;font-size:.66rem;letter-spacing:.02em;cursor:pointer;padding:4px 2px;border-radius:16px;
+  transition:transform .16s var(--ease),background .16s}
+.app:active{transform:scale(.9);background:rgba(255,255,255,.05)}
+.app .ico{
+  width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-size:1.35rem;
+  background:linear-gradient(155deg,rgba(47,107,255,.9),rgba(21,42,102,.95));
+  border:1px solid rgba(140,175,255,.28);box-shadow:0 8px 22px rgba(4,10,26,.55)
+}
+.app.muted .ico{background:linear-gradient(155deg,#243352,#141d33)}
+.dock{
+  position:absolute;left:14px;right:14px;bottom:30px;padding:12px;border-radius:26px;
+  background:rgba(10,18,40,.72);border:1px solid var(--line);backdrop-filter:blur(20px);
+  display:grid;grid-template-columns:repeat(4,1fr);gap:10px;z-index:15
+}
+.dock .app .ico{width:46px;height:46px}
+/* generic ui */
+.hdr{display:flex;align-items:center;gap:12px;padding:14px 0 10px;position:sticky;top:0;
+  background:linear-gradient(var(--navy) 72%,transparent);z-index:5}
+.hdr h1{font-size:1.16rem;margin:0;font-weight:700;letter-spacing:-.01em}
+.hdr .back{border:1px solid var(--line);background:#0b1428;color:var(--silver);width:34px;height:34px;
+  border-radius:11px;cursor:pointer;font-size:1rem;display:grid;place-items:center}
+.card{background:rgba(12,20,40,.72);border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:12px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid rgba(120,150,210,.1)}
+.row:last-child{border-bottom:0}
+.row small{display:block;color:var(--dim);font-size:.74rem;margin-top:3px;line-height:1.4}
+.row .val{color:var(--silver);font-size:.82rem}
+.sw{width:44px;height:26px;border-radius:99px;background:#1b2745;border:1px solid var(--line);position:relative;cursor:pointer;flex:0 0 auto;transition:background .2s}
+.sw b{position:absolute;top:2px;left:2px;width:20px;height:20px;border-radius:50%;background:var(--silver);transition:transform .22s var(--ease),background .2s}
+.sw.on{background:var(--blue)}
+.sw.on b{transform:translateX(18px);background:#fff}
+.searchbar{display:flex;align-items:center;gap:9px;background:rgba(12,20,40,.8);border:1px solid var(--line);
+  border-radius:14px;padding:11px 13px;margin-bottom:14px}
+.searchbar input{flex:1;background:none;border:0;color:var(--white);font-family:inherit;font-size:.9rem;outline:none}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.theme-chip{border-radius:14px;height:74px;border:2px solid transparent;cursor:pointer;position:relative;overflow:hidden}
+.theme-chip.sel{border-color:var(--blue-2)}
+.theme-chip span{position:absolute;bottom:7px;left:9px;font-size:.68rem;color:#fff;text-shadow:0 1px 6px #000}
+/* market */
+.market-card{display:flex;gap:13px;align-items:center}
+.market-card .ico{width:54px;height:54px;border-radius:15px;flex:0 0 auto;display:grid;place-items:center;
+  font-size:1.4rem;background:linear-gradient(155deg,#1d3a80,#0e1c3c);border:1px solid rgba(120,160,255,.25)}
+.btn{border:0;border-radius:11px;padding:9px 16px;font-family:inherit;font-size:.8rem;font-weight:700;cursor:pointer;
+  background:var(--blue);color:#fff;transition:transform .14s,opacity .2s}
+.btn:active{transform:scale(.95)}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--silver)}
+.btn.installed{background:rgba(47,217,138,.14);color:var(--ok);border:1px solid rgba(47,217,138,.35)}
+.progress{height:3px;border-radius:9px;background:#1b2745;overflow:hidden;margin-top:9px}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--ok));transition:width .4s linear}
+/* AI */
+#chat{display:flex;flex-direction:column;gap:11px;padding-bottom:14px}
+.msg{max-width:84%;padding:12px 14px;border-radius:16px;font-size:.87rem;line-height:1.55}
+.msg.ai{background:rgba(47,107,255,.16);border:1px solid rgba(90,140,255,.3);border-bottom-left-radius:6px;align-self:flex-start}
+.msg.me{background:#16223c;border:1px solid var(--line);border-bottom-right-radius:6px;align-self:flex-end}
+.quick{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.quick button{background:rgba(12,20,40,.9);border:1px solid var(--line);color:var(--silver);border-radius:99px;
+  padding:8px 13px;font-size:.76rem;font-family:inherit;cursor:pointer}
+.composer{display:flex;gap:9px;position:sticky;bottom:0;background:linear-gradient(transparent,var(--navy) 28%);padding:12px 0 4px}
+.composer input{flex:1;background:#0b1428;border:1px solid var(--line);border-radius:13px;padding:13px;color:var(--white);
+  font-family:inherit;font-size:.88rem;outline:none}
+/* panels */
+#scrim{position:absolute;inset:0;background:rgba(2,5,14,.55);backdrop-filter:blur(2px);z-index:28;opacity:0;
+  pointer-events:none;transition:opacity .3s}
+#scrim.on{opacity:1;pointer-events:auto}
+#panel{
+  position:absolute;top:0;left:0;right:0;z-index:30;transform:translateY(-102%);
+  transition:transform .36s var(--ease);background:rgba(8,14,30,.97);
+  border-bottom:1px solid var(--line);border-radius:0 0 26px 26px;padding:18px 18px 22px;
+  backdrop-filter:blur(24px);max-height:88%;overflow-y:auto
+}
+#panel.on{transform:translateY(0)}
+.panel-tabs{display:flex;gap:8px;margin-bottom:14px}
+.panel-tabs button{flex:1;border:1px solid var(--line);background:#0b1428;color:var(--dim);border-radius:10px;
+  padding:8px;font-size:.76rem;font-family:inherit;cursor:pointer}
+.panel-tabs button.on{background:rgba(47,107,255,.2);color:#fff;border-color:rgba(90,140,255,.5)}
+.qs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
+.qs button{border:1px solid var(--line);background:#0b1428;border-radius:15px;padding:12px 6px;color:var(--dim);
+  font-family:inherit;font-size:.66rem;display:flex;flex-direction:column;align-items:center;gap:7px;cursor:pointer;transition:.18s}
+.qs button i{font-size:1.15rem;font-style:normal}
+.qs button.on{background:rgba(47,107,255,.22);color:#fff;border-color:rgba(90,140,255,.55)}
+.slider{-webkit-appearance:none;width:100%;height:5px;border-radius:9px;background:#1b2745;outline:none;margin:6px 0 16px}
+.slider::-webkit-slider-thumb{-webkit-appearance:none;width:19px;height:19px;border-radius:50%;background:var(--blue-2);
+  border:3px solid #0b1428;box-shadow:0 0 0 3px rgba(47,107,255,.35);cursor:pointer}
+.notif{background:rgba(12,20,40,.9);border:1px solid var(--line);border-radius:15px;padding:13px;margin-bottom:9px;
+  animation:pop .3s var(--ease)}
+@keyframes pop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.notif h4{margin:0 0 3px;font-size:.83rem}
+.notif p{margin:0;color:var(--dim);font-size:.78rem;line-height:1.45}
+/* gesture bar */
+#gesture{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:130px;height:4px;border-radius:9px;
+  background:rgba(199,210,229,.35);z-index:35;cursor:pointer}
+/* toast */
+#toast{position:absolute;bottom:64px;left:50%;transform:translateX(-50%) translateY(20px);z-index:45;
+  background:rgba(12,20,40,.96);border:1px solid var(--line);border-radius:12px;padding:11px 17px;font-size:.8rem;
+  opacity:0;transition:.3s var(--ease);pointer-events:none;white-space:nowrap;max-width:90%}
+#toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+.note{font-size:.72rem;color:var(--dim);line-height:1.55;margin-top:18px}
+.pill{display:inline-block;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-2);
+  border:1px solid rgba(90,140,255,.35);border-radius:99px;padding:4px 9px;margin-bottom:8px}
+</style>
+</head>
+<body>
+<div id="device">
+
+  <!-- BOOT -->
+  <div id="boot">
+    <div>
+      <div class="boot-mark">D</div>
+      <h1 class="boot-title">DERYCODE</h1>
+      <p class="boot-sub">POWERED</p>
+      <div class="boot-bar"><i></i></div>
+    </div>
+    <div class="boot-skip">TAP TO SKIP</div>
+  </div>
+
+  <!-- LOCK -->
+  <div id="lock">
+    <div>
+      <div class="lock-pill"><span class="dot"></span> DeryOS 0.1 · Prototype</div>
+    </div>
+    <div>
+      <p class="lock-time" id="lockTime">00:00</p>
+      <p class="lock-date" id="lockDate">—</p>
+    </div>
+    <div>
+      <p class="lock-id" id="lockId">DERYCODE ID · — </p>
+      <p class="lock-hint">SWIPE UP TO UNLOCK</p>
+    </div>
+  </div>
+
+  <!-- SHELL -->
+  <div id="shell">
+    <div id="statusbar">
+      <span id="sbClock">00:00</span>
+      <div class="sb-right">
+        <span class="batt"><span id="sbNet">4G</span></span>
+        <svg class="sb-icon" viewBox="0 0 20 14" fill="currentColor"><rect x="0" y="9" width="3" height="5" rx="1"/><rect x="5" y="6" width="3" height="8" rx="1"/><rect x="10" y="3" width="3" height="11" rx="1"/><rect x="15" y="0" width="3" height="14" rx="1" opacity=".4"/></svg>
+        <span class="batt"><i><b id="sbBattFill" style="width:78%"></b></i><span id="sbBattText">78%</span></span>
+      </div>
+    </div>
+
+    <div id="stage">
+      <!-- HOME -->
+      <section class="screen active" id="s-home">
+        <div class="widget">
+          <h2 id="homeTime">00:00</h2>
+          <p id="homeDate">—</p>
+          <div class="badge"><span class="dot"></span> DeryOS · Prototype build · <span id="homeBuild">0.1.0</span></div>
+        </div>
+        <div class="grid" id="homeGrid"></div>
+      </section>
+
+      <!-- DRAWER -->
+      <section class="screen" id="s-drawer">
+        <div class="hdr"><h1>All apps</h1></div>
+        <div class="searchbar">🔍<input id="appSearch" placeholder="Search apps" autocomplete="off"></div>
+        <div class="grid" id="drawerGrid"></div>
+      </section>
+
+      <!-- SETTINGS -->
+      <section class="screen" id="s-settings">
+        <div class="hdr"><button class="back" data-back>‹</button><h1>Settings</h1></div>
+        <div class="card">
+          <div class="row"><div><b>Derycode ID</b><small id="idSub">Not signed in</small></div><span class="val">›</span></div>
+          <div class="row"><div><b>Software update</b><small>DeryOS 0.1.0 prototype</small></div><span class="val">Up to date</span></div>
+        </div>
+        <div class="card">
+          <div class="row"><div><b>Dark interface</b><small>System wide night palette</small></div><div class="sw on" data-toggle="dark"><b></b></div></div>
+          <div class="row"><div><b>Reduce motion</b><small>Turns off transitions</small></div><div class="sw" data-toggle="motion"><b></b></div></div>
+          <div class="row"><div><b>Battery saver</b><small id="saverSub">Off</small></div><div class="sw" data-toggle="saver"><b></b></div></div>
+        </div>
+        <div class="card">
+          <p class="pill">Wallpaper</p>
+          <div class="grid-2" id="themeList" style="margin-top:8px"></div>
+        </div>
+        <div class="card">
+          <div class="row"><div><b>Display</b></div><span class="val">120 Hz · Adaptive</span></div>
+          <div class="row"><div><b>Sound</b></div><span class="val">Media 60%</span></div>
+          <div class="row"><div><b>Storage</b></div><span class="val">42% used</span></div>
+          <div class="row"><div><b>Privacy controls</b></div><span class="val">All permissions reviewed</span></div>
+        </div>
+        <div class="card">
+          <div class="row" data-open="device"><div><b>About device</b><small>Model, build and legal</small></div><span class="val">›</span></div>
+        </div>
+        <p class="note">DeryOS is at Phase 1: interface prototype. Nothing here is a finished operating system, and no system-level code has been replaced yet.</p>
+      </section>
+
+      <!-- MARKET -->
+      <section class="screen" id="s-market">
+        <div class="hdr"><button class="back" data-back>‹</button><h1>Derycode App Market</h1></div>
+        <div class="searchbar">🔍<input placeholder="Search the market" id="marketSearch" autocomplete="off"></div>
+        <p class="pill">Featured this week</p>
+        <div id="marketList"></div>
+        <p class="note">Market entries are illustrative in this prototype. Installs animate locally; the store backend arrives in Phase 3.</p>
+      </section>
+
+      <!-- AI -->
+      <section class="screen" id="s-ai">
+        <div class="hdr"><button class="back" data-back>‹</button><h1>DeryAI</h1></div>
+        <div id="chat"></div>
+        <div class="quick" id="aiQuick">
+          <button>What can DeryOS do?</button>
+          <button>Summarise my notifications</button>
+          <button>Check battery health</button>
+          <button>Roadmap status</button>
+        </div>
+        <div class="composer">
+          <input id="aiInput" placeholder="Ask DeryAI anything" autocomplete="off">
+          <button class="btn" id="aiSend">Send</button>
+        </div>
+        <p class="note">DeryAI runs through secure server-side APIs. No model keys ever live in this interface.</p>
+      </section>
+
+      <!-- PROFILE -->
+      <section class="screen" id="s-profile">
+        <div class="hdr"><button class="back" data-back>‹</button><h1>Derycode ID</h1></div>
+        <div class="card" style="text-align:center">
+          <div class="boot-mark" style="margin-bottom:12px">D</div>
+          <b style="font-size:1.05rem">Derycode ID</b>
+          <p style="margin:6px 0 0;color:var(--dim);font-size:.8rem" id="profileId">—</p>
+          <div class="badge" style="margin-top:12px"><span class="dot"></span> Protected by Derycode Cloud</div>
+        </div>
+        <div class="card">
+          <div class="row"><div><b>Two-factor authentication</b><small>Required for device sign-in</small></div><div class="sw on" data-toggle="2fa"><b></b></div></div>
+          <div class="row"><div><b>Cloud sync</b><small>Photos, notes, files</small></div><div class="sw on" data-toggle="sync"><b></b></div></div>
+          <div class="row"><div><b>Connected devices</b><small>This phone · Laptop (DeryOS Desktop preview)</small></div><span class="val">2</span></div>
+        </div>
+        <div class="card">
+          <div class="row"><div><b>Sign out of all devices</b></div><span class="val">›</span></div>
+        </div>
+      </section>
+
+      <!-- DEVICE -->
+      <section class="screen" id="s-device">
+        <div class="hdr"><button class="back" data-back>‹</button><h1>About device</h1></div>
+        <div class="card">
+          <div class="row"><div><b>Model</b></div><span class="val">DeryOS Prototype P1</span></div>
+          <div class="row"><div><b>OS version</b></div><span class="val">DeryOS 0.1.0 (prototype)</span></div>
+          <div class="row"><div><b>Build</b></div><span class="val" id="devBuild">—</span></div>
+          <div class="row"><div><b>Base</b></div><span class="val">Android Open Source Project (planned)</span></div>
+          <div class="row"><div><b>Processor</b></div><span class="val">Reference device</span></div>
+          <div class="row"><div><b>Storage</b></div><span class="val">128 GB · 42% used</span></div>
+          <div class="row"><div><b>Battery</b></div><span class="val" id="devBatt">78% · Health good</span></div>
+        </div>
+        <div class="card">
+          <div class="row"><div><b>Legal</b></div><span class="val">Derycode Technologies</span></div>
+          <div class="row"><div><b>Security patch</b></div><span class="val">November 2026</span></div>
+        </div>
+        <p class="note">This build is a user-interface prototype. It does not modify system partitions and cannot replace an installed OS.</p>
+      </section>
+    </div>
+
+    <!-- DOCK -->
+    <div class="dock" id="dock"></div>
+
+    <!-- PANEL -->
+    <div id="scrim"></div>
+    <div id="panel">
+      <div class="panel-tabs">
+        <button class="on" data-tab="qs">Quick settings</button>
+        <button data-tab="nt">Notifications</button>
+      </div>
+      <div id="tab-qs">
+        <div class="qs" id="qsGrid"></div>
+        <label style="font-size:.72rem;color:var(--dim);letter-spacing:.12em">BRIGHTNESS</label>
+        <input class="slider" type="range" min="10" max="100" value="72" id="brightness">
+        <div class="card" style="margin:0;display:flex;align-items:center;justify-content:space-between">
+          <div><b style="font-size:.86rem">Derycode ID</b><small style="display:block;color:var(--dim);font-size:.74rem">Signed in on this device</small></div>
+          <span class="val" style="color:var(--ok);font-size:.76rem">● Secure</span>
+        </div>
+      </div>
+      <div id="tab-nt" hidden>
+        <div id="notifList"></div>
+        <button class="btn ghost" id="clearNotifs" style="width:100%">Clear all</button>
+      </div>
+    </div>
+
+    <div id="gesture" title="Home"></div>
+    <div id="toast"></div>
+  </div>
+</div>
+
+<script>
+/* ════════════════════════════════════════════════════════════════
+   DeryOS prototype — Phase 1 interface
+   Single-file build. Each module below is self contained so it can
+   move into the native launcher (Kotlin) without redesign:
+     1. store        – persistent state
+     2. registry     – app catalogue
+     3. router       – screen navigation
+     4. surfaces     – status bar, notifications, quick settings
+     5. apps         – market, DeryAI, settings, profile, device
+   ════════════════════════════════════════════════════════════════ */
+(function () {
+  'use strict';
+
+  /* ── 1. store ─────────────────────────────────────────────── */
+  var KEY = 'deryos.state.v1';
+  var defaults = {
+    theme: 0, dark: true, motion: false, saver: false, sync: true, twofa: true,
+    brightness: 72,
+    id: 'DC-' + String(Math.floor(100000 + Math.random() * 899999)),
+    build: 'P1.261108.004',
+    installed: []
+  };
+  var state = Object.assign({}, defaults, JSON.parse(localStorage.getItem(KEY) || '{}'));
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+
+  /* ── 2. registry ──────────────────────────────────────────── */
+  var THEMES = [
+    { name: 'Midnight Navy', bg: 'radial-gradient(120% 80% at 50% 0%,#12224A 0%,#050A18 62%)', accent: '#2F6BFF' },
+    { name: 'Electric Wave', bg: 'radial-gradient(120% 80% at 20% 10%,#1B3FA8 0%,#070B1C 65%)', accent: '#4F8CFF' },
+    { name: 'Silver Frost', bg: 'radial-gradient(120% 80% at 80% 0%,#30405E 0%,#0A0F1D 62%)', accent: '#9FB6DE' },
+    { name: 'Deep Field', bg: 'radial-gradient(120% 80% at 50% 100%,#0C1B3C 0%,#02040B 70%)', accent: '#6E7BF2' }
+  ];
+
+  var APPS = [
+    { id: 'market',  name: 'Market',   icon: '🛍️', screen: 'market',  dock: true },
+    { id: 'ai',      name: 'DeryAI',   icon: '✦',  screen: 'ai',      dock: true },
+    { id: 'profile', name: 'Derycode ID', icon: '👤', screen: 'profile', dock: true },
+    { id: 'settings',name: 'Settings', icon: '⚙️', screen: 'settings', dock: true },
+    { id: 'cloud',   name: 'Cloud',    icon: '☁️', toast: 'Derycode Cloud syncs in Phase 2' },
+    { id: 'photos',  name: 'Photos',   icon: '🖼️', toast: 'Photos app arrives with Cloud' },
+    { id: 'phone',   name: 'Phone',    icon: '📞', toast: 'Telephony ships with the AOSP image' },
+    { id: 'messages',name: 'Messages', icon: '💬', toast: 'Messaging ships with the AOSP image' },
+    { id: 'camera',  name: 'Camera',   icon: '📷', toast: 'Camera HAL work is Phase 5' },
+    { id: 'files',   name: 'Files',    icon: '📁', toast: 'File manager is queued for Phase 2' },
+    { id: 'browser', name: 'Browser',  icon: '🌐', toast: 'Browser shell is coming with Desktop' },
+    { id: 'device',  name: 'Device',   icon: '📱', screen: 'device' }
+  ];
+
+  var MARKET_APPS = [
+    { id: 'm1', name: 'DeryCode Studio', dev: 'Derycode Technologies', icon: '⌘', note: 'Build and ship DeryOS apps' },
+    { id: 'm2', name: 'Sacco Wallet', dev: 'Derycode Technologies', icon: '💠', note: 'Farmer wallet for Kyenjojo' },
+    { id: 'm3', name: 'School Sync', dev: 'Derycode Technologies', icon: '🎓', note: 'School management suite' },
+    { id: 'm4', name: 'DeryCare', dev: 'Derycode Technologies', icon: '🩺', note: 'Clinic records and billing' },
+    { id: 'm5', name: 'Tropical Stays', dev: 'Tropical Gardens', icon: '🏨', note: 'Hotel booking companion' },
+    { id: 'm6', name: 'DeryCoin Wallet', dev: 'Derycode Technologies', icon: '◈', note: 'Polygon token wallet' }
+  ];
+
+  var NOTIFS = [
+    { t: 'Derycode ID', b: 'New sign-in from a DeryOS Desktop preview device.', when: 'now' },
+    { t: 'Derycode Cloud', b: 'Backup finished: 1.2 GB of photos protected.', when: '12 min' },
+    { t: 'App Market', b: '3 updates ready: Sacco Wallet, School Sync, DeryCare.', when: '1 h' },
+    { t: 'DeryOS', b: 'Prototype build P1.261108.004 installed successfully.', when: '3 h' }
+  ];
+
+  var AI_REPLIES = [
+    { match: /deryos|what can|capab/i, say: 'DeryOS is the Derycode Technologies operating system. In this prototype you can open the launcher, notification centre, quick settings, app market, DeryAI, Derycode ID and device information. System-level work (AOSP image, drivers) is Phase 5.' },
+    { match: /notification/i, say: 'You have four notifications: a new Derycode ID sign-in, a finished cloud backup, three app updates, and the install notice for this build. Nothing needs urgent action.' },
+    { match: /battery/i, say: 'Battery is at 78 percent with good health. Adaptive refresh is on, so expect around 9 hours of mixed use at this brightness.' },
+    { match: /roadmap|phase|progress/i, say: 'Phase 1, brand and interface prototype, is what you are holding. Next is the functional Android launcher in Kotlin, then the App Market backend, then DeryAI, then AOSP customisation.' },
+    { match: /hello|hi\b|hey/i, say: 'Hello. I am DeryAI, the assistant built into DeryOS. Ask me about the system, your notifications, the battery, or the roadmap.' }
+  ];
+
+  /* ── helpers ──────────────────────────────────────────────── */
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  function toast(text) {
+    var el = $('#toast'); el.textContent = text; el.classList.add('on');
+    clearTimeout(toast._t); toast._t = setTimeout(function () { el.classList.remove('on'); }, 1900);
+  }
+  function clock() {
+    var d = new Date();
+    var hh = String(d.getHours()).padStart(2, '0'), mm = String(d.getMinutes()).padStart(2, '0');
+    var date = d.toLocaleDateString(undefined, { weekday: 'long', day: 'numeric', month: 'long' });
+    $('#lockTime').textContent = hh + ':' + mm;
+    $('#homeTime').textContent = hh + ':' + mm;
+    $('#sbClock').textContent = hh + ':' + mm;
+    $('#lockDate').textContent = date;
+    $('#homeDate').textContent = date;
+  }
+
+  /* ── 3. router ────────────────────────────────────────────── */
+  var history = ['home'];
+  function go(name, push) {
+    $$('.screen').forEach(function (s) { s.classList.toggle('active', s.id === 's-' + name); });
+    if (push !== false && history[history.length - 1] !== name) history.push(name);
+    var sc = $('#s-' + name); if (sc) sc.scrollTop = 0;
+  }
+  function back() {
+    if (history.length > 1) { history.pop(); go(history[history.length - 1], false); }
+    else go('home', false);
+  }
+
+  /* ── 4. surfaces ──────────────────────────────────────────── */
+  function applyTheme() {
+    var t = THEMES[state.theme] || THEMES[0];
+    $('#lock').style.background = t.bg;
+    $('#device').style.background = state.dark ? 'var(--navy)' : '#0b1226';
+    document.documentElement.style.setProperty('--blue', t.accent);
+    $$('#themeList .theme-chip').forEach(function (c, i) { c.classList.toggle('sel', i === state.theme); });
+  }
+
+  function renderApps() {
+    var mk = function (a) {
+      var b = document.createElement('button');
+      b.className = 'app' + (a.screen || a.toast ? '' : ' muted');
+      b.innerHTML = '<span class="ico">' + a.icon + '</span>' + a.name;
+      b.addEventListener('click', function () {
+        if (a.screen) { go(a.screen); }
+        else toast(a.toast || 'Coming soon');
+      });
+      return b;
+    };
+    $('#homeGrid').innerHTML = '';
+    APPS.filter(function (a) { return !a.dock; }).slice(0, 8).forEach(function (a) { $('#homeGrid').appendChild(mk(a)); });
+    $('#dock').innerHTML = '';
+    APPS.filter(function (a) { return a.dock; }).forEach(function (a) { $('#dock').appendChild(mk(a)); });
+    renderDrawer('');
+  }
+
+  function renderDrawer(q) {
+    var g = $('#drawerGrid'); g.innerHTML = '';
+    APPS.filter(function (a) { return a.name.toLowerCase().indexOf(q.toLowerCase()) > -1; }).forEach(function (a) {
+      var b = document.createElement('button');
+      b.className = 'app' + (a.screen ? '' : ' muted');
+      b.innerHTML = '<span class="ico">' + a.icon + '</span>' + a.name;
+      b.addEventListener('click', function () { a.screen ? go(a.screen) : toast(a.toast || 'Coming soon'); });
+      g.appendChild(b);
+    });
+    if (!g.children.length) g.innerHTML = '<p style="grid-column:1/-1;color:var(--dim);font-size:.82rem">No app matches that name.</p>';
+  }
+
+  function renderNotifs() {
+    var box = $('#notifList'); box.innerHTML = '';
+    NOTIFS.forEach(function (n) {
+      var d = document.createElement('div');
+      d.className = 'notif';
+      d.innerHTML = '<h4>' + n.t + ' · <span style="color:var(--dim);font-weight:400">' + n.when + '</span></h4><p>' + n.b + '</p>';
+      box.appendChild(d);
+    });
+    if (!NOTIFS.length) box.innerHTML = '<p style="color:var(--dim);font-size:.84rem;padding:8px 2px">Nothing new. You are all caught up.</p>';
+  }
+
+  var QS = [
+    { k: 'wifi', label: 'Wi-Fi', icon: '📶', on: true },
+    { k: 'bt', label: 'Bluetooth', icon: '🔗', on: true },
+    { k: 'data', label: 'Mobile data', icon: '📡', on: true },
+    { k: 'air', label: 'Airplane', icon: '✈️', on: false },
+    { k: 'saver', label: 'Battery saver', icon: '🔋', on: false },
+    { k: 'dark', label: 'Dark theme', icon: '🌙', on: true },
+    { k: 'dnd', label: 'Do not disturb', icon: '🌘', on: false },
+    { k: 'sync', label: 'Cloud sync', icon: '☁️', on: true }
+  ];
+  function renderQS() {
+    var g = $('#qsGrid'); g.innerHTML = '';
+    QS.forEach(function (q) {
+      var b = document.createElement('button');
+      if (q.on) b.classList.add('on');
+      b.innerHTML = '<i>' + q.icon + '</i>' + q.label;
+      b.addEventListener('click', function () {
+        q.on = !q.on; b.classList.toggle('on', q.on);
+        if (q.k === 'saver') { state.saver = q.on; $('#saverSub').textContent = q.on ? 'On' : 'Off'; save(); }
+        if (q.k === 'air' && q.on) toast('Airplane mode on: radios paused');
+        if (q.k === 'dnd' && q.on) toast('Do not disturb until you turn it off');
+      });
+      g.appendChild(b);
+    });
+    var saver = QS.filter(function (q) { return q.k === 'saver'; })[0];
+    saver.on = !!state.saver;
+  }
+
+  function openPanel(tab) {
+    $('#panel').classList.add('on'); $('#scrim').classList.add('on');
+    switchTab(tab || 'qs');
+  }
+  function closePanel() { $('#panel').classList.remove('on'); $('#scrim').classList.remove('on'); }
+  function switchTab(tab) {
+    $$('.panel-tabs button').forEach(function (b) { b.classList.toggle('on', b.dataset.tab === tab); });
+    $('#tab-qs').hidden = tab !== 'qs';
+    $('#tab-nt').hidden = tab !== 'nt';
+  }
+
+  /* ── 5. apps ──────────────────────────────────────────────── */
+  function renderMarket(q) {
+    var list = $('#marketList'); list.innerHTML = '';
+    MARKET_APPS.filter(function (a) { return a.name.toLowerCase().indexOf((q || '').toLowerCase()) > -1; })
+      .forEach(function (a) {
+        var installed = state.installed.indexOf(a.id) > -1;
+        var card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML =
+          '<div class="market-card"><div class="ico">' + a.icon + '</div>' +
+          '<div style="flex:1"><b style="font-size:.92rem">' + a.name + '</b>' +
+          '<small style="display:block;color:var(--dim);font-size:.74rem;margin-top:2px">' + a.dev + ' · ' + a.note + '</small></div>' +
+          '<button class="btn' + (installed ? ' installed' : '') + '">' + (installed ? 'Installed' : 'Install') + '</button></div>' +
+          '<div class="progress"><i></i></div>';
+        var btn = card.querySelector('button'), bar = card.querySelector('.progress i');
+        btn.addEventListener('click', function () {
+          if (state.installed.indexOf(a.id) > -1) { toast(a.name + ' is already installed'); return; }
+          btn.disabled = true; btn.textContent = '0%';
+          var p = 0;
+          var t = setInterval(function () {
+            p += 20; bar.style.width = p + '%'; btn.textContent = p + '%';
+            if (p >= 100) {
+              clearInterval(t);
+              state.installed.push(a.id); save();
+              btn.textContent = 'Installed'; btn.className = 'btn installed'; btn.disabled = false;
+              toast(a.name + ' installed');
+            }
+          }, 220);
+        });
+        list.appendChild(card);
+      });
+  }
+
+  function renderThemes() {
+    var box = $('#themeList'); box.innerHTML = '';
+    THEMES.forEach(function (t, i) {
+      var d = document.createElement('div');
+      d.className = 'theme-chip' + (i === state.theme ? ' sel' : '');
+      d.style.background = t.bg;
+      d.innerHTML = '<span>' + t.name + '</span>';
+      d.addEventListener('click', function () { state.theme = i; save(); applyTheme(); toast('Wallpaper: ' + t.name); });
+      box.appendChild(d);
+    });
+  }
+
+  function pushMsg(text, who) {
+    var d = document.createElement('div');
+    d.className = 'msg ' + who;
+    d.textContent = text;
+    $('#chat').appendChild(d);
+    $('#chat').parentNode.scrollTop = 9999;
+  }
+
+  function askAI(text) {
+    if (!text.trim()) return;
+    pushMsg(text, 'me');
+    $('#aiInput').value = '';
+    var hit = AI_REPLIES.filter(function (r) { return r.match.test(text); })[0];
+    setTimeout(function () {
+      pushMsg(hit ? hit.say : 'I can help with DeryOS, your notifications, battery, the app market and the roadmap. System APIs for deeper answers arrive in Phase 4.', 'ai');
+    }, 480);
+  }
+
+  /* ── wiring ───────────────────────────────────────────────── */
+  function bind() {
+    $('#boot').addEventListener('click', unlock);
+    $('#lock').addEventListener('click', unlock);
+    function unlock() {
+      $('#boot').classList.add('gone');
+      $('#lock').classList.add('up');
+      $('#shell').classList.add('on');
+    }
+
+    $('#statusbar').addEventListener('click', function () { openPanel('qs'); });
+    $('#scrim').addEventListener('click', closePanel);
+    $('#gesture').addEventListener('click', function () { closePanel(); go('home'); });
+
+    $$('.panel-tabs button').forEach(function (b) {
+      b.addEventListener('click', function () { switchTab(b.dataset.tab); });
+    });
+    $('#clearNotifs').addEventListener('click', function () {
+      NOTIFS.length = 0; renderNotifs(); toast('Notifications cleared');
+    });
+
+    $$('[data-back]').forEach(function (b) { b.addEventListener('click', back); });
+    $$('[data-open]').forEach(function (b) {
+      b.addEventListener('click', function () { go(b.dataset.open); });
+    });
+    $$('[data-toggle]').forEach(function (sw) {
+      sw.addEventListener('click', function () {
+        sw.classList.toggle('on');
+        var k = sw.dataset.toggle;
+        state[k] = sw.classList.contains('on'); save();
+        if (k === 'saver') { $('#saverSub').textContent = state.saver ? 'On' : 'Off'; }
+        if (k === 'motion') toast(state.motion ? 'Reduced motion on' : 'Full motion on');
+        if (k === 'sync') toast(state.sync ? 'Cloud sync on' : 'Cloud sync paused');
+      });
+    });
+
+    $('#appSearch').addEventListener('input', function (e) { renderDrawer(e.target.value); });
+    $('#marketSearch').addEventListener('input', function (e) { renderMarket(e.target.value); });
+    $('#aiSend').addEventListener('click', function () { askAI($('#aiInput').value); });
+    $('#aiInput').addEventListener('keydown', function (e) { if (e.key === 'Enter') askAI(e.target.value); });
+    $('#aiQuick').addEventListener('click', function (e) {
+      if (e.target.tagName === 'BUTTON') askAI(e.target.textContent);
+    });
+    $('#brightness').addEventListener('input', function (e) {
+      state.brightness = +e.target.value; save();
+      $('#device').style.filter = 'brightness(' + (0.55 + state.brightness / 200) + ')';
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { closePanel(); back(); }
+    });
+
+    /* swipe up on the lock screen */
+    var sy = null;
+    $('#lock').addEventListener('touchstart', function (e) { sy = e.touches[0].clientY; }, { passive: true });
+    $('#lock').addEventListener('touchend', function (e) {
+      if (sy !== null && sy - e.changedTouches[0].clientY > 40) unlock();
+    });
+    /* pull down from the status bar */
+    $('#statusbar').addEventListener('touchstart', function (e) { sy = e.touches[0].clientY; }, { passive: true });
+    $('#statusbar').addEventListener('touchend', function (e) {
+      if (sy !== null && e.changedTouches[0].clientY - sy > 20) openPanel('nt');
+    });
+  }
+
+  /* ── boot sequence ────────────────────────────────────────── */
+  function init() {
+    clock(); setInterval(clock, 15000);
+    $('#lockId').textContent = 'DERYCODE ID · ' + state.id;
+    $('#profileId').textContent = state.id;
+    $('#idSub').textContent = state.id + ' · signed in';
+    $('#devBuild').textContent = state.build;
+    $('#homeBuild').textContent = state.build.slice(0, 7);
+    $('#sbBattText').textContent = '78%';
+    $('#devBatt').textContent = '78% · Health good';
+    renderApps(); renderThemes(); renderNotifs(); renderQS(); renderMarket('');
+    bind();
+    applyTheme();
+    $('#brightness').value = state.brightness;
+    $('#device').style.filter = 'brightness(' + (0.55 + state.brightness / 200) + ')';
+    setTimeout(function () { $('#boot').classList.add('gone'); }, 3000);
+    setTimeout(function () { pushMsg('Welcome to DeryOS. I am DeryAI, built into the system. Ask me about this build or tap a suggestion below.', 'ai'); }, 1200);
+  }
+  document.addEventListener('DOMContentLoaded', init);
+})();
+</script>
+</body>
+</html>
