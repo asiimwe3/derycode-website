@@ -79,8 +79,10 @@
   window.derypixel = api; // alias
 
   // ---- automatic events ----
-  function fire() { send('page_view', { path: location.pathname }); }
-  if (document.readyState === 'complete') fire(); else window.addEventListener('load', fire);
+  var viewFired = 0;
+  function fire() { if (viewFired) return; viewFired = 1; send('page_view', { path: location.pathname }); }
+  if (document.readyState !== 'loading') fire();
+  else document.addEventListener('DOMContentLoaded', fire);
 
   // outbound / contact intent clicks
   document.addEventListener('click', function (e) {
@@ -104,11 +106,13 @@
   // booking completed (the site dispatches this after a reservation)
   document.addEventListener('booking_completed', function (e) {
     var d = e.detail || {};
+    var ugx = d.value_ugx || 0;
+    var rate = +(script && script.dataset.ugxRate) || 3700;
     send('booking_completed', {
       room: d.room || '',
       nights: d.nights || 0,
-      value_ugx: d.value_ugx || 0,
-      value_usd: d.value || 0,
+      value_ugx: ugx,
+      value_usd: d.value || (ugx ? Math.round(ugx / rate) : 0),
       currency: d.currency || 'UGX'
     });
   });
@@ -124,5 +128,8 @@
   [15, 60].forEach(function (s) {
     setTimeout(function () { send('engaged_' + s + 's', { seconds: s }); }, s * 1000);
   });
-  window.addEventListener('pagehide', function () { send('page_leave', { seconds: Math.round((Date.now() - t0) / 1000) }); });
+  window.addEventListener('pagehide', function () {
+    fire();
+    send('page_leave', { seconds: Math.round((Date.now() - t0) / 1000) });
+  });
 })();
